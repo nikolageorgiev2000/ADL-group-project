@@ -116,3 +116,13 @@ dmypy.json
 .vscode/
 *.swp
 *.swo
+
+# Data
+data/
+
+# Models
+*.pth
+
+# Markdown files for copilot
+approach.md
+assignment.md
