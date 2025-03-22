@@ -6,6 +6,9 @@ print(f"Using device: {device}")
 
 # %%
 
+import segmentation_models_pytorch as smp
+from segmentation_models_pytorch.encoders import get_preprocessing_fn
+
 import os
 import matplotlib.pyplot as plt
 from PIL import Image
@@ -244,9 +247,7 @@ def load_checkpoint(model, checkpoint_path):
 
 def train_model(
     model,
-    dataset,
-    train_samples=128,
-    batch_size=64,
+    train_dataloader,
     epochs=100,
     learning_rate=3e-5,
     optimizer_name='adam',
@@ -256,14 +257,7 @@ def train_model(
 ):
     """Train the segmentation model with checkpointing and scheduling"""
     
-    # Create train/val split
-    train_size = train_samples
-    val_size = len(dataset) - train_size
-    train_dataset, val_dataset = torch.utils.data.random_split(dataset, [train_size, val_size])
-
-    # Create dataloaders
-    train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-    val_dataloader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
+    
 
     # Set up optimizer
     if optimizer_name.lower() == 'adam':
@@ -348,9 +342,23 @@ def train_model(
 
 # %%
 print("\n=== Using Segmentation Models PyTorch (SMP) for improved performance ===\n")
+TRAIN_SAMPLES = 128
+BATCH_SIZE = 64
+EPOCHS = 100
+LEARNING_RATE = 3e-5
+OPTIMIZER_NAME = 'adam'
+SCHEDULER_NAME = 'reduce_on_plateau'
+CHECKPOINT_DIR = 'checkpoints'
+RESUME_FROM = None
 
-import segmentation_models_pytorch as smp
-from segmentation_models_pytorch.encoders import get_preprocessing_fn
+# Create train/val split
+train_size = TRAIN_SAMPLES
+val_size = len(dataset) - train_size
+train_dataset, val_dataset = torch.utils.data.random_split(dataset, [train_size, val_size])
+
+# Create dataloaders
+train_dataloader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
+val_dataloader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
 
 # Create SMP model - Using UNet with ResNet34 encoder pre-trained on ImageNet
 smp_model = smp.Unet(
@@ -360,9 +368,21 @@ smp_model = smp.Unet(
     classes=3,                      # Number of output classes (pet, background, border)
 ).to(device)
 
-train_model(smp_model, dataset, train_samples=128, batch_size=64, epochs=100, learning_rate=3e-5, optimizer_name='adam', scheduler_name='cosine', checkpoint_dir='checkpoints', resume_from=None)
+train_model(
+    smp_model, 
+    train_dataloader, 
+    epochs=EPOCHS, 
+    learning_rate=LEARNING_RATE, 
+    optimizer_name=OPTIMIZER_NAME, 
+    scheduler_name=SCHEDULER_NAME, 
+    checkpoint_dir=CHECKPOINT_DIR, 
+    resume_from=RESUME_FROM
+    )
 
-ckpt_model, ckpt_epoch, ckpt_best_loss = load_checkpoint(smp_model, 'checkpoints/best_model.pth')
+# ckpt_model, ckpt_epoch, ckpt_best_loss = load_checkpoint(smp_model, 'checkpoints/best_model.pth')
 
+# %%
 metrics = visualize_predictions(smp_model, (train_dataset))
+# %%
+metrics = visualize_predictions(smp_model, (val_dataset))
 # %%
