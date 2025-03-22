@@ -1,5 +1,6 @@
 # %%
 import torch
+import torch.nn as nn
 device = torch.device("cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu")
 print(f"Using device: {device}")
 
@@ -68,14 +69,11 @@ from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms
 
 class PetSegmentationDataset(Dataset):
-    def __init__(self, data_dir, annotation_dir):
+    def __init__(self, data_dir, annotation_dir, transform):
         self.data_dir = data_dir
         self.annotation_dir = annotation_dir
         self.image_files = [f for f in os.listdir(data_dir) if f.endswith(('.jpg', '.png'))]
-        self.transform = transforms.Compose([
-            transforms.Resize((256, 256)),
-            transforms.ToTensor(),
-        ])
+        self.transform = transform
         
     def __len__(self):
         return len(self.image_files)
@@ -96,15 +94,6 @@ class PetSegmentationDataset(Dataset):
         
         return img, trimap
 
-# Split dataset into train and validation sets
-dataset = PetSegmentationDataset(data_dir, annotation_dir)
-train_size = int(0.8 * len(dataset))
-val_size = len(dataset) - train_size
-train_dataset, val_dataset = torch.utils.data.random_split(dataset, [train_size, val_size])
-
-# Create dataloaders for training and validation
-train_dataloader = DataLoader(train_dataset, batch_size=4, shuffle=True)
-val_dataloader = DataLoader(val_dataset, batch_size=4, shuffle=False)
 
 # %%
 
@@ -235,6 +224,130 @@ def evaluate_model_metrics(model, dataloader, device):
     return metrics
 
 # %% 
+
+# %%
+
+# preprocess_input = get_preprocessing_fn('resnet18', pretrained='imagenet')
+transform = transforms.Compose([
+    transforms.Resize((256, 256)),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])  # ImageNet stats
+    # transforms.Lambda(preprocess_input),
+])
+dataset = PetSegmentationDataset(data_dir, annotation_dir, transform)
+
+# %%
+def load_checkpoint(model, checkpoint_path):
+    """Load model from checkpoint"""
+    checkpoint = torch.load(checkpoint_path)
+    model.load_state_dict(checkpoint['model_state_dict'])
+    return model, checkpoint['epoch'], checkpoint['best_loss']
+
+def train_model(
+    model,
+    dataset,
+    train_samples=128,
+    batch_size=64,
+    epochs=100,
+    learning_rate=3e-5,
+    optimizer_name='adam',
+    scheduler_name='cosine',
+    checkpoint_dir='checkpoints',
+    resume_from=None
+):
+    """Train the segmentation model with checkpointing and scheduling"""
+    
+    # Create train/val split
+    train_size = train_samples
+    val_size = len(dataset) - train_size
+    train_dataset, val_dataset = torch.utils.data.random_split(dataset, [train_size, val_size])
+
+    # Create dataloaders
+    train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+    val_dataloader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
+
+    # Set up optimizer
+    if optimizer_name.lower() == 'adam':
+        optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
+    elif optimizer_name.lower() == 'sgd':
+        optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate, momentum=0.9)
+    else:
+        raise ValueError(f"Unsupported optimizer: {optimizer_name}")
+
+    # Set up scheduler
+    if scheduler_name.lower() == 'cosine':
+        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=epochs)
+    elif scheduler_name.lower() == 'reduce_on_plateau':
+        scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', patience=5)
+    else:
+        raise ValueError(f"Unsupported scheduler: {scheduler_name}")
+
+    criterion = nn.CrossEntropyLoss()
+    best_loss = float('inf')
+    start_epoch = 0
+
+    # Resume from checkpoint if specified
+    if resume_from:
+        model, start_epoch, best_loss = load_checkpoint(model, resume_from)
+        print(f"Resuming from epoch {start_epoch} with best loss {best_loss:.4f}")
+
+    # Create checkpoint directory
+    os.makedirs(checkpoint_dir, exist_ok=True)
+
+    print("\nStarting training...")
+    for epoch in range(start_epoch, epochs):
+        model.train()
+        running_loss = 0.0
+        
+        for images, targets in train_dataloader:
+            images = images.to(device)
+            targets = targets.to(device)
+            
+            optimizer.zero_grad()
+            outputs = model(images)
+            loss = criterion(outputs, targets)
+            loss.backward()
+            optimizer.step()
+            
+            running_loss += loss.item()
+        
+        epoch_loss = running_loss / len(train_dataloader)
+        print(f"Epoch {epoch+1}/{epochs}, Loss: {epoch_loss:.4f}")
+
+        # Update scheduler
+        if scheduler_name.lower() == 'cosine':
+            scheduler.step()
+        else:
+            scheduler.step(epoch_loss)
+
+        # Save checkpoint if best loss
+        if epoch_loss < best_loss:
+            best_loss = epoch_loss
+            checkpoint = {
+                'epoch': epoch + 1,
+                'model_state_dict': model.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+                'loss': epoch_loss,
+                'best_loss': best_loss
+            }
+            torch.save(checkpoint, f"{checkpoint_dir}/best_model.pth")
+
+        # Save periodic checkpoint
+        if (epoch + 1) % 10 == 0:
+            checkpoint = {
+                'epoch': epoch + 1,
+                'model_state_dict': model.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+                'loss': epoch_loss,
+                'best_loss': best_loss
+            }
+            torch.save(checkpoint, f"{checkpoint_dir}/checkpoint_epoch_{epoch+1}.pth")
+
+    print("\nTraining complete!")
+    return model
+
+
+# %%
 print("\n=== Using Segmentation Models PyTorch (SMP) for improved performance ===\n")
 
 import segmentation_models_pytorch as smp
@@ -247,44 +360,10 @@ smp_model = smp.Unet(
     in_channels=3,                  # Number of input channels (RGB)
     classes=3,                      # Number of output classes (pet, background, border)
 ).to(device)
-preprocess_input = get_preprocessing_fn('resnet18', pretrained='imagenet')
 
-# %%
-# get off-the-shelf validation metrics
-# Preprocess validation data using SMP's preprocessing function
-val_dataset.transform = transforms.Compose([
-    transforms.ToTensor(),
-    transforms.Lambda(lambda x: preprocess_input(x.numpy().transpose(1,2,0)).transpose(2,0,1))
-])
-# %%
+train_model(smp_model, dataset, train_samples=128, batch_size=64, epochs=100, learning_rate=3e-5, optimizer_name='adam', scheduler_name='cosine', checkpoint_dir='checkpoints', resume_from=None)
 
-# Fine-tune the SMP model
-criterion = nn.CrossEntropyLoss()
-optimizer = torch.optim.Adam(smp_model.parameters(), lr=0.001)
+ckpt_model, ckpt_epoch, ckpt_best_loss = load_checkpoint(smp_model, 'checkpoints/best_model.pth')
 
-print("\nFine-tuning SMP model...")
-for epoch in range(10):
-    smp_model.train()
-    running_loss = 0.0
-    
-    for images, targets in train_dataloader:
-        images = images.to(device)
-        targets = targets.to(device)
-        
-        optimizer.zero_grad()
-        outputs = smp_model(images)
-        loss = criterion(outputs, targets)
-        loss.backward()
-        optimizer.step()
-        
-        running_loss += loss.item()
-    
-    epoch_loss = running_loss / len(train_dataloader)
-    print(f"Epoch {epoch+1}/10, Loss: {epoch_loss:.4f}")
-
-print("\nFine-tuning complete!")
-
-
-metrics = visualize_predictions(smp_model, (val_dataset))
-
+metrics = visualize_predictions(smp_model, (train_dataset))
 # %%
