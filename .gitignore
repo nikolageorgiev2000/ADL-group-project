@@ -126,3 +126,6 @@ data/
 # Markdown files for copilot
 approach.md
 assignment.md
+
+logs
+models
