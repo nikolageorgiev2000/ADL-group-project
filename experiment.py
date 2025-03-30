@@ -1,3 +1,4 @@
+import xml.etree.ElementTree as ET
 from torch.utils.data import Dataset, DataLoader
 import torch
 import torch.nn as nn
@@ -16,14 +17,29 @@ import torch.optim as optim
 from torch.utils.data import random_split
 from sklearn.metrics import accuracy_score, recall_score, jaccard_score, f1_score
 import numpy as np
+from enum import Enum
 
-device = torch.device("cuda" if torch.cuda.is_available(
-) else "mps" if torch.backends.mps.is_available() else "cpu")
-print(f"Using device: {device}")
+
+# select the device for computation
+if torch.cuda.is_available():
+    device = torch.device("cuda")
+elif torch.backends.mps.is_available():
+    device = torch.device("mps")
+else:
+    device = torch.device("cpu")
+print(f"using device: {device}")
+
+if device.type == "cuda":
+    # use bfloat16 for the entire notebook
+    torch.autocast("cuda", dtype=torch.bfloat16).__enter__()
+    # turn on tfloat32 for Ampere GPUs (https://pytorch.org/docs/stable/notes/cuda.html#tensorfloat-32-tf32-on-ampere-devices)
+    if torch.cuda.get_device_properties(0).major >= 8:
+        torch.backends.cuda.matmul.allow_tf32 = True
+        torch.backends.cudnn.allow_tf32 = True
 
 # Set up the data directories
-data_dir = 'data/oxford-iiit-pet/images'
-annotation_dir = 'data/oxford-iiit-pet/annotations'  # Add annotations directory
+data_dir = 'data/images'
+annotation_dir = 'data/annotations'  # Add annotations directory
 
 # Get list of image files
 image_files = sorted([f for f in os.listdir(data_dir)
@@ -76,16 +92,51 @@ def print_annotation_info():
 print_annotation_info()
 
 
+DatasetSelection = Enum('DatasetSelection', [('Trimap', 1), ('Class', 2), ('BBox', 3), ('SAM', 4)])
+
 class InMemoryPetSegmentationDataset(Dataset):
-    def __init__(self, data_dir, annotation_dir, transform, target_transform):
+    def __init__(self, data_dir, annotation_dir, transform, target_transform, target_set=[DatasetSelection.BBox]):
+        available_targets = set(DatasetSelection)
+        assert set(target_set).issubset(available_targets)
+        self.target_set = target_set
+        
         self.transform = transform
         self.target_transform = target_transform
         self.samples = []
 
+        # get image filenames
         image_files = [f for f in os.listdir(
             data_dir) if f.endswith(('.jpg', '.png'))]
+        self.image_ind_dict = {
+            f.split('.')[0]: i for i, f in enumerate(image_files)}
 
-        for fname in tqdm.tqdm(image_files[:1_000]):
+        # get image classes
+        contents = np.genfromtxt(os.path.join(annotation_dir, 'list.txt'), skip_header=6, usecols=(
+            0, 1), dtype=[('name', np.str_, 32), ('grades', np.uint8)])
+        # check all animals are present in dict keys
+        self.labels_dict = {str(x[0]): int(x[1]) for x in contents}
+        assert len(contents) == len(self.labels_dict.keys())
+
+        # get bounding boxes
+        xml_dir = os.path.join(annotation_dir, 'xmls')
+        self.bndbox_dict = {}
+        for filename in os.listdir(xml_dir):
+            tree = ET.parse(os.path.join(xml_dir, filename))
+            root = tree.getroot()
+            # xmin, ymin, xmax, ymax
+            bndbox = [int(root[5][4][i].text) for i in range(4)]
+            self.bndbox_dict[root[1].text.split('.')[0]] = bndbox
+
+        self.available_images = set(self.image_ind_dict.keys())
+        if DatasetSelection.Class in target_set:
+            self.available_images.intersection_update(self.labels_dict.keys())
+        elif DatasetSelection.BBox in target_set:
+            self.available_images.intersection_update(self.bndbox_dict.keys())
+        print(f'available samples: {self.__len__()}')
+
+        for fname in tqdm.tqdm(self.available_images):
+            fname += '.jpg'
+            
             # Load image
             img_path = os.path.join(data_dir, fname)
             img = Image.open(img_path).convert('RGB')
@@ -103,9 +154,10 @@ class InMemoryPetSegmentationDataset(Dataset):
 
             # Save original image (not transformed yet) and processed trimap
             self.samples.append((img, trimap))
+            
 
     def __len__(self):
-        return len(self.samples)
+        return len(self.available_images)
 
     def __getitem__(self, idx):
         img, trimap = self.samples[idx]
@@ -128,32 +180,20 @@ data_transform = transforms.Compose([
 
 target_transform = transforms.Compose([
     base_transform,
-    transforms.Lambda(lambda x: x.to(torch.long)),
+    transforms.Lambda(lambda x: x.to(torch.int8)),
 ])
 
 # Load the dataset
 print("Loading dataset...")
-# train_dataset = OxfordIIITPet(root='data',
-#                               split='trainval',
-#                               target_types="segmentation",
-#                               transform=data_transform,
-#                               target_transform=target_transform,
-#                               download=True)
-
-# test_dataset = OxfordIIITPet(root='data',
-#                              split='test',
-#                              target_types="segmentation",
-#                              transform=data_transform,
-#                              target_transform=target_transform,
-#                              download=True)
 
 train_dataset = InMemoryPetSegmentationDataset(
     data_dir, annotation_dir, data_transform, target_transform)
 
 print(len(train_dataset))
 
-
 # Visualization function
+
+
 def visualize_predictions(model, dataset, num_samples=4):
     model.eval()
     fig, axes = plt.subplots(num_samples, 3, figsize=(15, 5*num_samples))
@@ -290,7 +330,8 @@ def train_model(
     # Resume from checkpoint if specified
     if resume_from:
         model, start_epoch, best_loss = load_checkpoint(model, resume_from)
-        print(f"Resuming from epoch {start_epoch} with best loss {best_loss:.4f}")
+        print(
+            f"Resuming from epoch {start_epoch} with best loss {best_loss:.4f}")
 
     # Create checkpoint directory
     os.makedirs(checkpoint_dir, exist_ok=True)
@@ -308,7 +349,7 @@ def train_model(
             # print(images.shape, targets.shape)
             outputs = model(images)
             # print(outputs.shape, targets.shape)
-            loss = criterion(outputs, targets)
+            loss = criterion(outputs, targets.to(torch.long))
             loss.backward()
             optimizer.step()
 
@@ -358,7 +399,7 @@ LEARNING_RATE = 1e-3
 OPTIMIZER_NAME = 'adam'
 SCHEDULER_NAME = 'reduce_on_plateau'
 CHECKPOINT_DIR = 'checkpoints/'
-RESUME_FROM = os.path.join(CHECKPOINT_DIR, 'checkpoint_epoch_20.pth')
+RESUME_FROM = None  # os.path.join(CHECKPOINT_DIR, 'checkpoint_epoch_20.pth')
 seed = 42
 
 torch.manual_seed(seed)
