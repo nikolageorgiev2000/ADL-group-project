@@ -29,7 +29,7 @@ class CAMModel(nn.Module):
     def __init__(self, num_classes=37):  # Oxford-IIIT Pet has 37 categories
         super(CAMModel, self).__init__()
         # Load a pre-trained ResNet
-        self.resnet = torchvision.models.resnet50(weights='IMAGENET1K_V2')
+        self.resnet = torchvision.models.resnet50(weights='IMAGENET1K_V1')
         
         # Remove the final fully connected layer
         self.features = nn.Sequential(*list(self.resnet.children())[:-2])
@@ -41,12 +41,13 @@ class CAMModel(nn.Module):
         self.fc = nn.Linear(2048, num_classes)  # 2048 is output channels for ResNet-50
     
     def forward(self, x):
+        x = x.to(torch.float)
+
         # Feature extraction
         features = self.features(x)
         
         # Save features for CAM generation
         self.last_features = features
-        
         # Global Average Pooling
         x = self.gap(features)
         x = x.view(x.size(0), -1)
@@ -104,12 +105,12 @@ print("Creating model...")
 model = CAMModel()
 if not os.path.exists('./models/'): os.mkdir('./models')
 # Set to True if you want to train, False to load pre-trained
-TRAIN_MODEL = False
+TRAIN_MODEL = True
+dataset = InMemoryPetSegmentationDataset(
+        DATA_DIR, ANNOTATION_DIR, targets_list=[DatasetSelection.Class])
 
 if TRAIN_MODEL:
-    train_dataset = InMemoryPetSegmentationDataset(
-        DATA_DIR, ANNOTATION_DIR, targets_list=[DatasetSelection.Class])
-    train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
+    train_loader = DataLoader(dataset, batch_size=64, shuffle=True)
     model = train_model(model, train_loader, num_epochs=10)
 else:
     # Load pretrained model if it exists
@@ -120,3 +121,57 @@ else:
         print("Loaded pre-trained model")
     else:
         print("No pre-trained model found")
+
+def generate_cam(model, img, label):
+    """
+    Generate Class Activation Map for an image.
+    
+    Args:
+        model: The trained model with CAM capability
+        img_tensor: Preprocessed image tensor
+        label: Class label for which to generate CAM
+    
+    Returns:
+        CAM numpy array
+    """
+    device = next(model.parameters()).device
+    model.eval()
+    
+    # Forward pass
+    with torch.no_grad():
+        output = model(img.unsqueeze(0).to(device))
+    
+    # Get weights from the final FC layer for the specified class
+    fc_weights = model.fc.weight[label].cpu()
+    
+    # Get feature maps from the last convolutional layer
+    feature_maps = model.last_features.squeeze(0).cpu()
+    
+    # Calculate weighted sum of feature maps
+    cam = torch.zeros(feature_maps.shape[1:])
+    for i, weight in enumerate(fc_weights):
+        cam += weight * feature_maps[i]
+    
+    # Apply ReLU and normalize
+    cam = torch.maximum(cam, torch.tensor(0.0))
+    if cam.max() > 0:
+        cam = cam / cam.max()
+    
+    # Convert to numpy and resize
+    cam = cam.detach().numpy()
+    
+    print(img.shape, output.shape, feature_maps.shape, cam.shape)
+    return cam
+
+cams = []
+for fname, d in zip(dataset.available_images, dataset):
+    image, image_data = d
+    res = generate_cam(model, image, image_data[DatasetSelection.Class])
+    cams.append(res)
+
+save_cam_dataset(dataset.available_images, cams)
+
+
+
+import time
+time.sleep(10_000)

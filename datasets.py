@@ -49,7 +49,7 @@ IMAGE_TRANSFORM = transforms.Compose([
     BASE_2D_TRANSFORM,
     transforms.Normalize(mean=[0.485, 0.456, 0.406],
                          std=[0.229, 0.224, 0.225]),
-    transforms.Lambda(lambda x: x.to(torch.float16)),
+    transforms.Lambda(lambda x: x.to(torch.half)),
 ])
 
 TRIMAP_TRANSFORM = transforms.Compose([
@@ -106,7 +106,8 @@ class InMemoryPetSegmentationDataset(Dataset):
             self.available_images.intersection_update(self.bbbox_dict.keys())
         print(f'available samples: {self.__len__()}')
 
-        # self.available_images = list(self.available_images)[:500]
+        # convert to list to give it an ordering
+        self.available_images = sorted(self.available_images)[:500]
         for fname in tqdm.tqdm(self.available_images):
             fname_with_extension = fname + '.jpg'
 
@@ -144,4 +145,5 @@ class InMemoryPetSegmentationDataset(Dataset):
         return self.samples[idx]
 
 
-InMemoryPetSegmentationDataset(DATA_DIR, ANNOTATION_DIR, [DatasetSelection.BBox])
+def save_cam_dataset(image_names, cams):
+    os.makedirs(os.path.join(ANNOTATION_DIR, 'heatmaps'), exist_ok=True)
