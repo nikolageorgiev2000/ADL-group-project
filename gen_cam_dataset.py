@@ -29,25 +29,29 @@ class CAMModel(nn.Module):
     def __init__(self, num_classes=37):  # Oxford-IIIT Pet has 37 categories
         super(CAMModel, self).__init__()
         # Load a pre-trained ResNet
-        self.resnet = torchvision.models.resnet50(weights='IMAGENET1K_V1')
+        self.resnet = torchvision.models.resnet50(weights='IMAGENET1K_V2')
+        # self.resnet = torchvision.models.wide_resnet50_2(weights='IMAGENET1K_V2')  # for a wider ResNet
         
         # Remove the final fully connected layer
-        self.features = nn.Sequential(*list(self.resnet.children())[:-2])
+        self.features = nn.Sequential(*list(self.resnet.children())[:-2]) # for last Conv layer
+        # self.features = nn.Sequential(*list(self.resnet.children())[:-3]) # for 2nd to last Conv layer
         
         # Global Average Pooling
         self.gap = nn.AdaptiveAvgPool2d(1)
         
         # Classification layer
-        self.fc = nn.Linear(2048, num_classes)  # 2048 is output channels for ResNet-50
+        # self.fc = nn.Linear(1024, num_classes)  # 1024 is output channels for ResNet-50 in the 2nd to last Conv layer, which is a 1024x14x14 image
+        self.fc = nn.Linear(2048, num_classes)  # 2048 is output channels for ResNet-50 in the last Conv layer, which is a 2048x7x7 image
     
     def forward(self, x):
         x = x.to(torch.float)
-
+        
         # Feature extraction
         features = self.features(x)
         
         # Save features for CAM generation
         self.last_features = features
+        
         # Global Average Pooling
         x = self.gap(features)
         x = x.view(x.size(0), -1)
@@ -56,7 +60,7 @@ class CAMModel(nn.Module):
         x = self.fc(x)
         return x
 
-def train_model(model, train_loader, num_epochs=5):
+def train_model(model, train_loader, num_epochs):
     # Define loss function and optimizer
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=1e-3)
@@ -107,11 +111,11 @@ if not os.path.exists('./models/'): os.mkdir('./models')
 # Set to True if you want to train, False to load pre-trained
 TRAIN_MODEL = True
 dataset = InMemoryPetSegmentationDataset(
-        DATA_DIR, ANNOTATION_DIR, targets_list=[DatasetSelection.Class])
+        DATA_DIR, ANNOTATION_DIR, targets_list=[DatasetSelection.Class, DatasetSelection.CAM, DatasetSelection.Trimap])
 
 if TRAIN_MODEL:
     train_loader = DataLoader(dataset, batch_size=64, shuffle=True)
-    model = train_model(model, train_loader, num_epochs=10)
+    model = train_model(model, train_loader, num_epochs=5)
 else:
     # Load pretrained model if it exists
     if os.path.exists('./models/cam_model.pth'):
@@ -139,39 +143,32 @@ def generate_cam(model, img, label):
     
     # Forward pass
     with torch.no_grad():
-        output = model(img.unsqueeze(0).to(device))
+        model(img.unsqueeze(0).to(device))  # run a forward pass
     
     # Get weights from the final FC layer for the specified class
     fc_weights = model.fc.weight[label].cpu()
     
     # Get feature maps from the last convolutional layer
-    feature_maps = model.last_features.squeeze(0).cpu()
-    
+    feature_maps = model.last_features.squeeze(0).cpu()  # will be non-negative since last op is RELU
     # Calculate weighted sum of feature maps
-    cam = torch.zeros(feature_maps.shape[1:])
-    for i, weight in enumerate(fc_weights):
-        cam += weight * feature_maps[i]
-    
-    # Apply ReLU and normalize
-    cam = torch.maximum(cam, torch.tensor(0.0))
-    if cam.max() > 0:
-        cam = cam / cam.max()
+    cam = (fc_weights[:, None, None] * feature_maps).sum(0)
+    cam = torch.sigmoid(cam)
     
     # Convert to numpy and resize
     cam = cam.detach().numpy()
-    
-    print(img.shape, output.shape, feature_maps.shape, cam.shape)
     return cam
 
 cams = []
 for fname, d in zip(dataset.available_images, dataset):
     image, image_data = d
-    res = generate_cam(model, image, image_data[DatasetSelection.Class])
-    cams.append(res)
+    label = image_data[DatasetSelection.Class]
+    if label >= 0:
+        res = generate_cam(model, image, label)
+        cams.append((fname, res))
 
-save_cam_dataset(dataset.available_images, cams)
+save_cam_dataset([c[0] for c in cams], [c[1] for c in cams])
 
 
-
+print("DONE!")
 import time
 time.sleep(10_000)
