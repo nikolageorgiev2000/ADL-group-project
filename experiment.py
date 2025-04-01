@@ -20,7 +20,6 @@ from sklearn.metrics import accuracy_score, recall_score, jaccard_score, f1_scor
 import numpy as np
 from enum import Enum
 from typing import Dict, List, Tuple, Set
-
 from datasets import *
 
 # select the device for computation
@@ -95,9 +94,9 @@ def print_annotation_info():
 print_annotation_info()
 
 
-def visualize_predictions(model, dataset, num_samples=4):
+def visualize_predictions(model, dataset, num_samples=8):
     model.eval()
-    fig, axes = plt.subplots(num_samples, 3, figsize=(15, 5*num_samples))
+    _, axes = plt.subplots(num_samples, 5, figsize=(15, 5*num_samples))
 
     for idx in range(num_samples):
         img, sample_data = dataset[idx]
@@ -106,9 +105,11 @@ def visualize_predictions(model, dataset, num_samples=4):
         true_mask = true_mask.cpu()
         with torch.no_grad():
             pred = model(img.unsqueeze(0).to(device))
-            # pred_mask = torch.argmax(pred, dim=1).squeeze().cpu()
-            pred_mask = (pred > 0.0).squeeze().cpu()
-            print(pred.shape)
+            pred_trimap = torch.argmax(
+                pred[DatasetSelection.Trimap], dim=1).squeeze().cpu()
+            pred_cam = torch.sigmoid(
+                pred[DatasetSelection.CAM]).float().squeeze().cpu()
+            pred_bbox = (pred[DatasetSelection.BBox] > 0.0).squeeze().cpu()
 
         img = img * torch.tensor([0.229, 0.224, 0.225])[:, None, None] + torch.tensor(
             [0.485, 0.456, 0.406])[:, None, None]  # Reverse normalization
@@ -125,9 +126,19 @@ def visualize_predictions(model, dataset, num_samples=4):
         axes[idx, 1].axis('off')
 
         # Plot predicted mask
-        axes[idx, 2].imshow(pred_mask, cmap='tab20')
-        axes[idx, 2].set_title('Predicted Mask')
+        axes[idx, 2].imshow(pred_trimap, cmap='tab20')
+        axes[idx, 2].set_title('Trimap Mask')
         axes[idx, 2].axis('off')
+
+        # Plot predicted mask
+        axes[idx, 3].imshow(pred_cam)
+        axes[idx, 3].set_title('Cam Heatmap')
+        axes[idx, 3].axis('off')
+
+        # Plot predicted mask
+        axes[idx, 4].imshow(pred_bbox, cmap='tab20')
+        axes[idx, 4].set_title('Bounding Box')
+        axes[idx, 4].axis('off')
 
     plt.tight_layout()
     plt.savefig('foo.png')
@@ -197,27 +208,54 @@ def load_checkpoint(model, checkpoint_path):
     return model, checkpoint['epoch'], checkpoint['best_loss']
 
 
+class CustomLoss(nn.Module):
+    def __init__(self, targets_weights: Dict[DatasetSelection, float]):
+        super().__init__()
+        self.targets_weights = targets_weights
+        self.loss_funcs = {
+            DatasetSelection.Trimap: TrimapLoss(),
+            DatasetSelection.BBox: BBoxLoss(),
+            DatasetSelection.CAM: CamLoss(),
+        }
+        assert set(self.targets_weights.keys()).issubset(
+            self.loss_funcs.keys())
+
+    def forward(self, logits, targets):
+        total_loss = None
+        for d in set(logits.keys()).intersection(self.targets_weights).intersection(targets):
+            l = self.loss_funcs[d](logits[d], targets[d]) * \
+                self.targets_weights[d]
+            if not total_loss:
+                total_loss = l
+            else:
+                total_loss += l
+        return total_loss
+
+
+class TrimapLoss(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.loss_fn = nn.CrossEntropyLoss()
+
+    def forward(self, logits, targets):
+        # unique_vals = set(torch.unique(targets).detach().cpu().numpy())
+        return self.loss_fn(logits, targets.long())
+
+
 class CamLoss(nn.Module):
     def __init__(self):
         super().__init__()
         self.loss_fn = nn.BCEWithLogitsLoss(
             reduction='none')  # we'll reduce manually
+        self.gap = nn.AvgPool2d(32, 32)
 
-    def forward(self, logits, targets, mask=None):
-        """
-        Args:
-            logits: Tensor of shape (B, 1, H, W) — raw logits
-            targets: Tensor of shape (B, 1, H, W) — soft labels in [0, 1], or a special ignore value
-            mask: Optional Tensor (B, 1, H, W) — 1 to keep, 0 to ignore
-                  If not provided, mask = (targets != -1)
-        Returns:
-            Scalar loss
-        """
-        if mask is None:
-            # Mask everything that is not marked with -1 (ignore signal)
-            mask = (targets != -1).float()
+    def forward(self, logits, targets):
+        # Mask everything that is not marked with -1 (ignore signal)
+        mask = (targets != -1).float()
 
-        loss = self.loss_fn(logits, targets)
+        resized_logits = self.gap(logits).squeeze()
+
+        loss = self.loss_fn(resized_logits, targets)
         loss = loss * mask  # zero out ignored areas
 
         # Avoid division by zero
@@ -260,6 +298,7 @@ class BBoxLoss(nn.Module):
 
 def train_model(
     model,
+    targets_weights,
     train_dataloader,
     epochs,
     learning_rate,
@@ -289,9 +328,7 @@ def train_model(
     else:
         raise ValueError(f"Unsupported scheduler: {scheduler_name}")
 
-    # criterion = nn.CrossEntropyLoss()
-    # criterion = BBoxLoss()
-    criterion = CamLoss()
+    criterion = CustomLoss(targets_weights)
     best_loss = float('inf')
     start_epoch = 0
 
@@ -315,12 +352,8 @@ def train_model(
 
             optimizer.zero_grad()
             outputs = model(images)
-            gapped = nn.AvgPool2d(32, 32)(outputs).squeeze()
-            # print(outputs.shape, gapped.shape)
-            # loss = criterion(
-            #     outputs, image_data[DatasetSelection.Trimap].to(torch.long))
             loss = criterion(
-                gapped, image_data[DatasetSelection.CAM])
+                outputs, image_data)
             loss.backward()
             optimizer.step()
 
@@ -365,8 +398,8 @@ def train_model(
 
 print("\n=== Using Segmentation Models PyTorch (SMP) for improved performance ===\n")
 BATCH_SIZE = 64
-EPOCHS = 10
-LEARNING_RATE = 1e-2
+EPOCHS = 20
+LEARNING_RATE = 1e-3
 OPTIMIZER_NAME = 'adam'
 SCHEDULER_NAME = 'reduce_on_plateau'
 CHECKPOINT_DIR = 'checkpoints/'
@@ -377,30 +410,36 @@ torch.manual_seed(seed)
 
 # TEST
 
-model = smp.Unet(
-    encoder_name="resnet34",        # Choose encoder, e.g. resnet34
-    encoder_weights="imagenet",     # Use pre-trained weights
-    in_channels=3,                  # Number of input channels (RGB)
-    # Number of output classes (pet, background, border)
-    classes=3,
-)
-model.eval()
 
-truncated_model = copy.deepcopy(model)
-truncated_model.segmentation_head = nn.Identity()
+class CustomUNet(nn.Module):
+    def __init__(self):
+        super(CustomUNet, self).__init__()
+        self.feature_extractor = smp.Unet(
+            encoder_name="resnet34",        # Choose encoder, e.g. resnet34
+            encoder_weights="imagenet",     # Use pre-trained weights
+            in_channels=3,                  # Number of input channels (RGB)
+        )
+        self.feature_extractor.segmentation_head = nn.Identity()
 
-# generate random images
-images = torch.rand(2, 3, 224, 224)
+        self.seg_heads = nn.ModuleDict()  # keys must be str for some reason
+        self.seg_heads[DatasetSelection.Trimap.name] = nn.Conv2d(
+            16, 3, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        self.seg_heads[DatasetSelection.CAM.name] = nn.Conv2d(
+            16, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        self.seg_heads[DatasetSelection.BBox.name] = nn.Conv2d(
+            16, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
 
+    def forward(self, img):
+        features = self.feature_extractor(img)
+        res = {}
+        for dataset_name, head in self.seg_heads.items():
+            res[DatasetSelection[dataset_name]] = head(features)
+        return res
+
+
+model = CustomUNet()
 with open('model_arch.txt', 'w') as file:
     file.write(str(model))
-with open('model_arch_trunc.txt', 'w') as file:
-    file.write(str(truncated_model))
-with torch.inference_mode():
-    mask = model(images)
-    print(mask.shape)
-    mask2 = truncated_model(images)
-    print(mask2.shape)
 
 # TEST
 
@@ -424,8 +463,10 @@ target_transform = transforms.Compose([
     transforms.Lambda(lambda x: x.to(torch.int8)),
 ])
 
+
+TARGETS_LIST = [DatasetSelection.CAM, DatasetSelection.Trimap]
 train_dataset = InMemoryPetSegmentationDataset(
-    DATA_DIR, ANNOTATION_DIR, targets_list=[DatasetSelection.CAM, DatasetSelection.Trimap])
+    DATA_DIR, ANNOTATION_DIR, targets_list=TARGETS_LIST)
 
 
 # Create train/val split
@@ -440,17 +481,20 @@ train_dataloader = DataLoader(
 val_dataloader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
 
 # Create SMP model - Using UNet with ResNet34 encoder pre-trained on ImageNet
-smp_model = smp.Unet(
-    encoder_name="resnet34",        # Choose encoder, e.g. resnet34
-    encoder_weights="imagenet",     # Use pre-trained weights
-    in_channels=3,                  # Number of input channels (RGB)
-    # Number of output classes (pet, background, border)
-    # classes=3,
-    classes=1,
-).to(device)
+smp_model = CustomUNet().to(device)
+# smp.Unet(
+#     encoder_name="resnet34",        # Choose encoder, e.g. resnet34
+#     encoder_weights="imagenet",     # Use pre-trained weights
+#     in_channels=3,                  # Number of input channels (RGB)
+#     # Number of output classes (pet, background, border)
+#     # classes=3,
+#     classes=1,
+# ).to(device)
 
 model = train_model(
     smp_model,
+    {DatasetSelection.Trimap: 1.0, DatasetSelection.CAM: 1.0,
+        DatasetSelection.BBox: 1.0},
     train_dataloader,
     epochs=EPOCHS,
     learning_rate=LEARNING_RATE,
@@ -465,4 +509,5 @@ model = train_model(
 smp_model, smp_epoch, smp_best_loss = load_checkpoint(
     smp_model, 'checkpoints/best_model.pth')
 print(smp_epoch)
+
 metrics = visualize_predictions(smp_model, (val_dataset))
