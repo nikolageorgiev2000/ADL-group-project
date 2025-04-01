@@ -40,22 +40,19 @@ else:
 print(f"using device: {device}")
 
 # Define transformations for training
-BASE_2D_TRANSFORM = transforms.Compose([
+IMAGE_TRANSFORM = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.ToTensor(),
-    transforms.Lambda(lambda x: x.to(device).squeeze()),
-])
-
-IMAGE_TRANSFORM = transforms.Compose([
-    BASE_2D_TRANSFORM,
     transforms.Normalize(mean=[0.485, 0.456, 0.406],
                          std=[0.229, 0.224, 0.225]),
     transforms.Lambda(lambda x: x.to(torch.half)),
+    transforms.Lambda(lambda x: x.to(device).squeeze()),
 ])
 
 TRIMAP_TRANSFORM = transforms.Compose([
-    BASE_2D_TRANSFORM,
-    transforms.Lambda(lambda x: x.to(torch.int8)),
+    transforms.Resize((224, 224)),
+    transforms.Lambda(lambda x: torch.tensor(np.array(x), dtype=torch.int8)),
+    transforms.Lambda(lambda x: x.to(device).squeeze()),
 ])
 
 
@@ -74,6 +71,10 @@ class InMemoryPetSegmentationDataset(Dataset):
             data_dir) if f.endswith(('.jpg', '.png'))]
         self.image_ind_dict = {
             f.split('.')[0]: i for i, f in enumerate(image_files)}
+        self.available_images = set(self.image_ind_dict.keys())
+        print(f'available samples: {self.__len__()}')
+        # convert to list to give it an ordering
+        self.available_images = sorted(self.available_images)  # [:100]
 
         # get image classes
         contents = np.genfromtxt(os.path.join(annotation_dir, 'list.txt'), skip_header=6, usecols=(
@@ -99,12 +100,8 @@ class InMemoryPetSegmentationDataset(Dataset):
                 xmax * image_shape[0] / width,
                 ymax * image_shape[1] / height,
             ]).astype(int)
+        print(self.bbbox_dict)
 
-        self.available_images = set(self.image_ind_dict.keys())
-        print(f'available samples: {self.__len__()}')
-
-        # convert to list to give it an ordering
-        self.available_images = sorted(self.available_images)  # [:100]
         for fname in tqdm.tqdm(self.available_images):
             fname_with_extension = fname + '.jpg'
 
@@ -122,21 +119,17 @@ class InMemoryPetSegmentationDataset(Dataset):
                     annotation_dir, 'trimaps', trimap_file)
                 trimap = Image.open(trimap_path)
                 trimap = self.trimap_transform(trimap)
-                trimap[trimap == 0] = 0
-                trimap[trimap == 1] = 0
-                trimap[trimap == 2] = 1
-                trimap[trimap == 3] = 2
-                trimap[trimap == 4] = 2
-                trimap[trimap == 5] = 2
+                # print(torch.unique(trimap), trimap.dtype, trimap.float().mean())
+                trimap -= 1
                 assert torch.all(trimap >= 0)
                 assert torch.all(trimap < 3)
                 sample_data[DatasetSelection.Trimap] = trimap
             if DatasetSelection.Class in self.targets_list:
                 sample_data[DatasetSelection.Class] = self.labels_dict.get(
-                    fname, -100)  # ignore index
+                    fname, -100)  # ignore index if label missing
             if DatasetSelection.BBox in self.targets_list:
                 sample_data[DatasetSelection.BBox] = self.bbbox_dict.get(
-                    fname, None)
+                    fname, -1*np.ones(4, dtype=int))
             if DatasetSelection.CAM in self.targets_list:
                 cam_path = os.path.join(annotation_dir, 'heatmaps', fname)
                 sample_data[DatasetSelection.CAM] = torch.load(

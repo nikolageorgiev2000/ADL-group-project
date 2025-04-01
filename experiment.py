@@ -1,3 +1,4 @@
+import copy
 import xml.etree.ElementTree as ET
 from torch.utils.data import Dataset, DataLoader
 import torch
@@ -93,6 +94,7 @@ def print_annotation_info():
 
 print_annotation_info()
 
+
 def visualize_predictions(model, dataset, num_samples=4):
     model.eval()
     fig, axes = plt.subplots(num_samples, 3, figsize=(15, 5*num_samples))
@@ -104,7 +106,9 @@ def visualize_predictions(model, dataset, num_samples=4):
         true_mask = true_mask.cpu()
         with torch.no_grad():
             pred = model(img.unsqueeze(0).to(device))
-            pred_mask = torch.argmax(pred, dim=1).squeeze().cpu()
+            # pred_mask = torch.argmax(pred, dim=1).squeeze().cpu()
+            pred_mask = (pred > 0.0).squeeze().cpu()
+            print(pred.shape)
 
         img = img * torch.tensor([0.229, 0.224, 0.225])[:, None, None] + torch.tensor(
             [0.485, 0.456, 0.406])[:, None, None]  # Reverse normalization
@@ -126,6 +130,7 @@ def visualize_predictions(model, dataset, num_samples=4):
         axes[idx, 2].axis('off')
 
     plt.tight_layout()
+    plt.savefig('foo.png')
     plt.show()
 
 
@@ -191,11 +196,38 @@ def load_checkpoint(model, checkpoint_path):
     model.load_state_dict(checkpoint['model_state_dict'])
     return model, checkpoint['epoch'], checkpoint['best_loss']
 
+class BBoxLoss(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.loss_fn = nn.CrossEntropyLoss(ignore_index=-100)
+
+    def forward(self, logits, bboxes):
+        """
+        Args:
+            logits: Tensor of shape (B, C=2, H, W) — logits for 2 classes (background/foreground)
+            bboxes: Tensor of shape (B, 4) — (xmin, ymin, xmax, ymax) per image; use -1 for missing
+        Returns:
+            Scalar loss
+        """
+        B, _, H, W = logits.shape
+        background_logits = torch.zeros_like(logits)  # fake bg logits
+        logits_2ch = torch.cat([background_logits, logits], dim=1)
+        targets = torch.full((B, H, W), -100, dtype=torch.long, device=logits.device)  # Default to ignore
+
+        for i in range(B):
+            # print(bboxes[i])
+            xmin, ymin, xmax, ymax = bboxes[i]
+            if all(bboxes[i] >= 0):  # Valid bbox
+                targets[i, :, :] = 0  # Background everywhere
+                targets[i, ymin:ymax, xmin:xmax] = 1  # Foreground inside bbox
+
+        loss = self.loss_fn(logits_2ch, targets)
+        return loss
 
 def train_model(
     model,
     train_dataloader,
-    epochs=20,
+    epochs=3,
     learning_rate=3e-5,
     optimizer_name='adam',
     scheduler_name='cosine',
@@ -223,7 +255,8 @@ def train_model(
     else:
         raise ValueError(f"Unsupported scheduler: {scheduler_name}")
 
-    criterion = nn.CrossEntropyLoss()
+    # criterion = nn.CrossEntropyLoss()
+    criterion = BBoxLoss()
     best_loss = float('inf')
     start_epoch = 0
 
@@ -241,16 +274,16 @@ def train_model(
         model.train()
         running_loss = 0.0
 
-        for images, targets in tqdm.tqdm(train_dataloader):
+        for images, image_data in tqdm.tqdm(train_dataloader):
             # images = images.to(device)
             # targets = targets.to(device)
 
             optimizer.zero_grad()
-            # print(images.shape, targets.shape)
             outputs = model(images)
-            # print(outputs.shape, targets.shape)
+            # loss = criterion(
+            #     outputs, image_data[DatasetSelection.Trimap].to(torch.long))
             loss = criterion(
-                outputs, targets[DatasetSelection.Trimap].to(torch.long))
+                outputs, image_data[DatasetSelection.BBox])
             loss.backward()
             optimizer.step()
 
@@ -295,15 +328,45 @@ def train_model(
 
 print("\n=== Using Segmentation Models PyTorch (SMP) for improved performance ===\n")
 BATCH_SIZE = 64
-EPOCHS = 100
+EPOCHS = 5
 LEARNING_RATE = 1e-3
 OPTIMIZER_NAME = 'adam'
 SCHEDULER_NAME = 'reduce_on_plateau'
 CHECKPOINT_DIR = 'checkpoints/'
-RESUME_FROM = None #os.path.join(CHECKPOINT_DIR, 'checkpoint_epoch_30.pth')
+RESUME_FROM = None  # os.path.join(CHECKPOINT_DIR, 'checkpoint_epoch_30.pth')
 seed = 42
 
 torch.manual_seed(seed)
+
+#### TEST
+
+model = smp.Unet(
+    encoder_name="resnet34",        # Choose encoder, e.g. resnet34
+    encoder_weights="imagenet",     # Use pre-trained weights
+    in_channels=3,                  # Number of input channels (RGB)
+    # Number of output classes (pet, background, border)
+    classes=3,
+)
+model.eval()
+
+truncated_model = copy.deepcopy(model)
+truncated_model.segmentation_head = nn.Identity()
+
+# generate random images
+images = torch.rand(2, 3, 224, 224)
+
+with open('model_arch.txt', 'w') as file:
+    file.write(str(model))
+with open('model_arch_trunc.txt', 'w') as file:
+    file.write(str(truncated_model))
+with torch.inference_mode():
+    mask = model(images)
+    print(mask.shape)
+    mask2 = truncated_model(images)
+    print(mask2.shape)
+
+#### TEST
+
 
 # Define transformations for training
 base_transform = transforms.Compose([
@@ -325,7 +388,7 @@ target_transform = transforms.Compose([
 ])
 
 train_dataset = InMemoryPetSegmentationDataset(
-    DATA_DIR, ANNOTATION_DIR, targets_list=[DatasetSelection.Trimap])
+    DATA_DIR, ANNOTATION_DIR, targets_list=[DatasetSelection.Trimap, DatasetSelection.BBox, DatasetSelection.Class])
 
 
 # Create train/val split
@@ -345,7 +408,8 @@ smp_model = smp.Unet(
     encoder_weights="imagenet",     # Use pre-trained weights
     in_channels=3,                  # Number of input channels (RGB)
     # Number of output classes (pet, background, border)
-    classes=3,
+    # classes=3,
+    classes=1,
 ).to(device)
 
 model = train_model(
@@ -361,6 +425,6 @@ model = train_model(
 
 # smp_model(next(iter(train_dataloader))[0])
 
-# # smp_model, smp_epoch, smp_best_loss = load_checkpoint(smp_model, '/content/drive/My Drive/PetSegmentation/checkpoints/best_model.pth')
-
+smp_model, smp_epoch, smp_best_loss = load_checkpoint(smp_model, 'checkpoints/best_model.pth')
+print(smp_epoch)
 metrics = visualize_predictions(smp_model, (val_dataset))
