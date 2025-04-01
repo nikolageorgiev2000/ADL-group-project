@@ -111,7 +111,7 @@ if not os.path.exists('./models/'): os.mkdir('./models')
 # Set to True if you want to train, False to load pre-trained
 TRAIN_MODEL = True
 dataset = InMemoryPetSegmentationDataset(
-        DATA_DIR, ANNOTATION_DIR, targets_list=[DatasetSelection.Class, DatasetSelection.CAM, DatasetSelection.Trimap])
+        DATA_DIR, ANNOTATION_DIR, targets_list=[DatasetSelection.Class])
 
 if TRAIN_MODEL:
     train_loader = DataLoader(dataset, batch_size=64, shuffle=True)
@@ -144,18 +144,17 @@ def generate_cam(model, img, label):
     # Forward pass
     with torch.no_grad():
         model(img.unsqueeze(0).to(device))  # run a forward pass
-    
-    # Get weights from the final FC layer for the specified class
-    fc_weights = model.fc.weight[label].cpu()
-    
-    # Get feature maps from the last convolutional layer
-    feature_maps = model.last_features.squeeze(0).cpu()  # will be non-negative since last op is RELU
-    # Calculate weighted sum of feature maps
-    cam = (fc_weights[:, None, None] * feature_maps).sum(0)
-    cam = torch.sigmoid(cam)
+        # Get weights from the final FC layer for the specified class
+        fc_weights = model.fc.weight[label].cpu()
+        
+        # Get feature maps from the last convolutional layer
+        feature_maps = model.last_features.squeeze(0).cpu()  # will be non-negative since last op is RELU
+        # Calculate weighted sum of feature maps
+        cam = (fc_weights[:, None, None] * feature_maps).sum(0)
+        cam = torch.sigmoid(cam)
     
     # Convert to numpy and resize
-    cam = cam.detach().numpy()
+    cam = cam.detach()
     return cam
 
 cams = []

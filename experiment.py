@@ -196,6 +196,38 @@ def load_checkpoint(model, checkpoint_path):
     model.load_state_dict(checkpoint['model_state_dict'])
     return model, checkpoint['epoch'], checkpoint['best_loss']
 
+
+class CamLoss(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.loss_fn = nn.BCEWithLogitsLoss(
+            reduction='none')  # we'll reduce manually
+
+    def forward(self, logits, targets, mask=None):
+        """
+        Args:
+            logits: Tensor of shape (B, 1, H, W) — raw logits
+            targets: Tensor of shape (B, 1, H, W) — soft labels in [0, 1], or a special ignore value
+            mask: Optional Tensor (B, 1, H, W) — 1 to keep, 0 to ignore
+                  If not provided, mask = (targets != -1)
+        Returns:
+            Scalar loss
+        """
+        if mask is None:
+            # Mask everything that is not marked with -1 (ignore signal)
+            mask = (targets != -1).float()
+
+        loss = self.loss_fn(logits, targets)
+        loss = loss * mask  # zero out ignored areas
+
+        # Avoid division by zero
+        denom = mask.sum()
+        if denom == 0:
+            return torch.tensor(0.0, device=logits.device, requires_grad=True)
+
+        return loss.sum() / denom
+
+
 class BBoxLoss(nn.Module):
     def __init__(self):
         super().__init__()
@@ -212,7 +244,8 @@ class BBoxLoss(nn.Module):
         B, _, H, W = logits.shape
         background_logits = torch.zeros_like(logits)  # fake bg logits
         logits_2ch = torch.cat([background_logits, logits], dim=1)
-        targets = torch.full((B, H, W), -100, dtype=torch.long, device=logits.device)  # Default to ignore
+        targets = torch.full((B, H, W), -100, dtype=torch.long,
+                             device=logits.device)  # Default to ignore
 
         for i in range(B):
             # print(bboxes[i])
@@ -224,11 +257,12 @@ class BBoxLoss(nn.Module):
         loss = self.loss_fn(logits_2ch, targets)
         return loss
 
+
 def train_model(
     model,
     train_dataloader,
-    epochs=3,
-    learning_rate=3e-5,
+    epochs,
+    learning_rate,
     optimizer_name='adam',
     scheduler_name='cosine',
     checkpoint_dir='checkpoints',
@@ -256,7 +290,8 @@ def train_model(
         raise ValueError(f"Unsupported scheduler: {scheduler_name}")
 
     # criterion = nn.CrossEntropyLoss()
-    criterion = BBoxLoss()
+    # criterion = BBoxLoss()
+    criterion = CamLoss()
     best_loss = float('inf')
     start_epoch = 0
 
@@ -276,14 +311,16 @@ def train_model(
 
         for images, image_data in tqdm.tqdm(train_dataloader):
             # images = images.to(device)
-            # targets = targets.to(device)
+            # image_data = image_data.to(device)
 
             optimizer.zero_grad()
             outputs = model(images)
+            gapped = nn.AvgPool2d(32, 32)(outputs).squeeze()
+            # print(outputs.shape, gapped.shape)
             # loss = criterion(
             #     outputs, image_data[DatasetSelection.Trimap].to(torch.long))
             loss = criterion(
-                outputs, image_data[DatasetSelection.BBox])
+                gapped, image_data[DatasetSelection.CAM])
             loss.backward()
             optimizer.step()
 
@@ -328,8 +365,8 @@ def train_model(
 
 print("\n=== Using Segmentation Models PyTorch (SMP) for improved performance ===\n")
 BATCH_SIZE = 64
-EPOCHS = 5
-LEARNING_RATE = 1e-3
+EPOCHS = 10
+LEARNING_RATE = 1e-2
 OPTIMIZER_NAME = 'adam'
 SCHEDULER_NAME = 'reduce_on_plateau'
 CHECKPOINT_DIR = 'checkpoints/'
@@ -338,7 +375,7 @@ seed = 42
 
 torch.manual_seed(seed)
 
-#### TEST
+# TEST
 
 model = smp.Unet(
     encoder_name="resnet34",        # Choose encoder, e.g. resnet34
@@ -365,7 +402,7 @@ with torch.inference_mode():
     mask2 = truncated_model(images)
     print(mask2.shape)
 
-#### TEST
+# TEST
 
 
 # Define transformations for training
@@ -388,7 +425,7 @@ target_transform = transforms.Compose([
 ])
 
 train_dataset = InMemoryPetSegmentationDataset(
-    DATA_DIR, ANNOTATION_DIR, targets_list=[DatasetSelection.Trimap, DatasetSelection.BBox, DatasetSelection.Class])
+    DATA_DIR, ANNOTATION_DIR, targets_list=[DatasetSelection.CAM, DatasetSelection.Trimap])
 
 
 # Create train/val split
@@ -425,6 +462,7 @@ model = train_model(
 
 # smp_model(next(iter(train_dataloader))[0])
 
-smp_model, smp_epoch, smp_best_loss = load_checkpoint(smp_model, 'checkpoints/best_model.pth')
+smp_model, smp_epoch, smp_best_loss = load_checkpoint(
+    smp_model, 'checkpoints/best_model.pth')
 print(smp_epoch)
 metrics = visualize_predictions(smp_model, (val_dataset))

@@ -100,7 +100,6 @@ class InMemoryPetSegmentationDataset(Dataset):
                 xmax * image_shape[0] / width,
                 ymax * image_shape[1] / height,
             ]).astype(int)
-        print(self.bbbox_dict)
 
         for fname in tqdm.tqdm(self.available_images):
             fname_with_extension = fname + '.jpg'
@@ -132,8 +131,8 @@ class InMemoryPetSegmentationDataset(Dataset):
                     fname, -1*np.ones(4, dtype=int))
             if DatasetSelection.CAM in self.targets_list:
                 cam_path = os.path.join(annotation_dir, 'heatmaps', fname)
-                sample_data[DatasetSelection.CAM] = torch.load(
-                    trimap_path, weights_only=False) if os.path.exists(cam_path) else None
+                sample_data[DatasetSelection.CAM] = (torch.load(
+                    cam_path, weights_only=False) if os.path.exists(cam_path) else -torch.ones((7, 7), dtype=torch.int8)).to(device)
 
             self.samples.append((img, sample_data))
 
