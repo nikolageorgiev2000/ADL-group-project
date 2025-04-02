@@ -58,6 +58,7 @@ TRIMAP_TRANSFORM = transforms.Compose([
 
 class InMemoryPetSegmentationDataset(Dataset):
     def __init__(self, data_dir, annotation_dir, targets_list: List[DatasetSelection], image_transform=IMAGE_TRANSFORM, trimap_transform=TRIMAP_TRANSFORM, image_shape=(224, 224)):
+        print('Loading Dataset')
         available_targets = set(DatasetSelection)
         assert set(targets_list).issubset(available_targets)
         self.targets_list = targets_list
@@ -74,7 +75,8 @@ class InMemoryPetSegmentationDataset(Dataset):
         self.available_images = set(self.image_ind_dict.keys())
         print(f'available samples: {self.__len__()}')
         # convert to list to give it an ordering
-        self.available_images = sorted(self.available_images)  # [:100]
+        self.available_images = sorted(self.available_images)  #[:100]
+        self.mix_trimaps(1.0)
 
         # get image classes
         contents = np.genfromtxt(os.path.join(annotation_dir, 'list.txt'), skip_header=6, usecols=(
@@ -101,7 +103,7 @@ class InMemoryPetSegmentationDataset(Dataset):
                 ymax * image_shape[1] / height,
             ]).astype(int)
 
-        for fname in tqdm.tqdm(self.available_images):
+        for fname in tqdm.tqdm(self.available_images, disable=True):
             fname_with_extension = fname + '.jpg'
 
             # Load image
@@ -136,11 +138,23 @@ class InMemoryPetSegmentationDataset(Dataset):
 
             self.samples.append((img, sample_data))
 
+        self.dummy_trimap = -100 * torch.ones(image_shape, device=img.device, dtype=torch.int8)
+
     def __len__(self):
         return len(self.available_images)
 
+    def mix_trimaps(self, gt_proportion):
+        assert 0 <= gt_proportion <= 1.0
+        # self.selected_trimap_inds = set(torch.randperm(len(self.available_images)).tolist()[:int(gt_proportion * len(self.available_images))])
+        self.selected_trimap_inds = set(list(range(len(self.available_images)))[:int(gt_proportion * len(self.available_images))])
+        print(len(self.selected_trimap_inds))
+
     def __getitem__(self, idx):
-        return self.samples[idx]
+        # print(len(self.samples[idx]), type(self.samples[idx]))
+        img, sample_data = self.samples[idx]
+        if idx not in self.selected_trimap_inds:
+            sample_data[DatasetSelection.Trimap] = self.dummy_trimap.clone()
+        return img, sample_data
 
 
 def save_cam_dataset(image_names, cams):

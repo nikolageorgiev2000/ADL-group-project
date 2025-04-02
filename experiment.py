@@ -20,7 +20,9 @@ from sklearn.metrics import accuracy_score, recall_score, jaccard_score, f1_scor
 import numpy as np
 from enum import Enum
 from typing import Dict, List, Tuple, Set
+from itertools import product
 from datasets import *
+
 
 # select the device for computation
 if torch.cuda.is_available():
@@ -94,7 +96,7 @@ def print_annotation_info():
 print_annotation_info()
 
 
-def visualize_predictions(model, dataset, num_samples=8):
+def visualize_predictions(model, dataset, num_samples=8, visual_fname='foo.png'):
     model.eval()
     _, axes = plt.subplots(num_samples, 5, figsize=(15, 5*num_samples))
 
@@ -141,7 +143,8 @@ def visualize_predictions(model, dataset, num_samples=8):
         axes[idx, 4].axis('off')
 
     plt.tight_layout()
-    plt.savefig('foo.png')
+    os.makedirs('visuals', exist_ok=True)
+    plt.savefig(os.path.join('visuals', visual_fname))
     plt.show()
 
 
@@ -170,8 +173,10 @@ def evaluate_model_metrics(model, dataloader, device):
         for images, targets in tqdm.tqdm(dataloader):
             images = images.to(device)
             outputs = model(images)
-            preds = torch.argmax(outputs, dim=1).cpu().numpy()
-            targets = targets.cpu().numpy()  # Move targets to CPU
+            preds = torch.argmax(
+                outputs[DatasetSelection.Trimap], dim=1).cpu().numpy()
+            # Move targets to CPU
+            targets = targets[DatasetSelection.Trimap].cpu().numpy()
 
             # Calculate metrics for the batch and accumulate
             total_accuracy += accuracy_score(targets.flatten(),
@@ -186,10 +191,10 @@ def evaluate_model_metrics(model, dataloader, device):
 
     # Calculate average metrics
     metrics = {
-        'accuracy': total_accuracy / total_samples,
-        'recall': total_recall / total_samples,
-        'jaccard': total_jaccard / total_samples,
-        'f1': total_f1 / total_samples
+        'accuracy': float(total_accuracy / total_samples),
+        'recall': float(total_recall / total_samples),
+        'jaccard': float(total_jaccard / total_samples),
+        'f1': float(total_f1 / total_samples),
     }
 
     print(f"\nModel Performance Metrics:")
@@ -236,11 +241,11 @@ class CustomLoss(nn.Module):
 class TrimapLoss(nn.Module):
     def __init__(self):
         super().__init__()
-        self.loss_fn = nn.CrossEntropyLoss()  # uses mean by default
+        self.loss_fn = nn.CrossEntropyLoss(
+            ignore_index=-100)  # uses mean by default
 
     def forward(self, logits, targets):
-        # unique_vals = set(torch.unique(targets).detach().cpu().numpy())
-        return self.loss_fn(logits, targets.long())
+        return torch.nan_to_num(self.loss_fn(logits, targets.long()))
 
 
 class CamLoss(nn.Module):
@@ -347,7 +352,7 @@ def train_model(
         model.train()
         running_loss = 0.0
 
-        for images, image_data in tqdm.tqdm(train_dataloader):
+        for images, image_data in tqdm.tqdm(train_dataloader, disable=True):
             # images = images.to(device)
             # image_data = image_data.to(device)
 
@@ -398,10 +403,11 @@ def train_model(
 
 
 print("\n=== Using Segmentation Models PyTorch (SMP) for improved performance ===\n")
-TARGETS_LIST = [DatasetSelection.CAM, DatasetSelection.Trimap, DatasetSelection.BBox]
+TARGETS_LIST = [DatasetSelection.CAM,
+                DatasetSelection.Trimap, DatasetSelection.BBox]
 BATCH_SIZE = 64
-EPOCHS = 100
-LEARNING_RATE = 3e-4
+EPOCHS = 25
+LEARNING_RATE = 1e-3
 OPTIMIZER_NAME = 'adam'
 SCHEDULER_NAME = 'reduce_on_plateau'
 CHECKPOINT_DIR = 'checkpoints/'
@@ -424,6 +430,7 @@ class ConvSegHead(nn.Module):
     def forward(self, x):
         return self.block(x)
 
+
 class CustomUNet(nn.Module):
     def __init__(self):
         super(CustomUNet, self).__init__()
@@ -435,9 +442,11 @@ class CustomUNet(nn.Module):
         self.feature_extractor.segmentation_head = nn.Identity()
 
         self.seg_heads = nn.ModuleDict()
-        self.seg_heads[DatasetSelection.Trimap.name] = ConvSegHead(out_channels=3)
+        self.seg_heads[DatasetSelection.Trimap.name] = ConvSegHead(
+            out_channels=3)
         self.seg_heads[DatasetSelection.CAM.name] = ConvSegHead(out_channels=1)
-        self.seg_heads[DatasetSelection.BBox.name] = ConvSegHead(out_channels=1)
+        self.seg_heads[DatasetSelection.BBox.name] = ConvSegHead(
+            out_channels=1)
 
     def forward(self, img):
         features = self.feature_extractor(img)
@@ -466,37 +475,59 @@ target_transform = transforms.Compose([
     transforms.Lambda(lambda x: x.to(torch.int8)),
 ])
 
-
-train_dataset = InMemoryPetSegmentationDataset(
+print('Loading Dataset')
+dataset = InMemoryPetSegmentationDataset(
     DATA_DIR, ANNOTATION_DIR, targets_list=TARGETS_LIST)
 
-# Create train/val split
-train_size = int(0.8*len(train_dataset))
-val_size = len(train_dataset) - train_size
-train_dataset, val_dataset = torch.utils.data.random_split(
-    train_dataset, [train_size, val_size])
 
-# Create dataloaders
-train_dataloader = DataLoader(
-    train_dataset, batch_size=BATCH_SIZE, shuffle=True)
-val_dataloader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
+GT_PROPORTIONS = [0.0, 0.1, 0.5, 1.0]
+LOSS_WEIGHTS = [0.0, 0.1, 0.5, 1.0]
 
-# Create SMP model - Using UNet with ResNet34 encoder pre-trained on ImageNet
-smp_model = CustomUNet().to(device)
 
-model = train_model(
-    smp_model,
-    {DatasetSelection.Trimap: 1.0, DatasetSelection.CAM: 1.0,
-        DatasetSelection.BBox: 1.0},
-    train_dataloader,
-    epochs=EPOCHS,
-    learning_rate=LEARNING_RATE,
-    optimizer_name=OPTIMIZER_NAME,
-    scheduler_name=SCHEDULER_NAME,
-    checkpoint_dir=CHECKPOINT_DIR,
-    resume_from=RESUME_FROM
-)
-smp_model, smp_epoch, smp_best_loss = load_checkpoint(
-    smp_model, 'checkpoints/best_model.pth')
-print(smp_epoch)
-metrics = visualize_predictions(smp_model, (val_dataset))
+for idx, experiment_weights in enumerate(product(GT_PROPORTIONS, LOSS_WEIGHTS, LOSS_WEIGHTS)):
+    gt_prop, cam_loss_weight, bbox_loss_weight = experiment_weights
+    print(gt_prop, cam_loss_weight, bbox_loss_weight)
+    # set based on how much of the dataset we can use
+    dataset.mix_trimaps(gt_prop)
+
+    # Create train/val split
+    train_size = int(0.8*len(dataset))
+    val_size = len(dataset) - train_size
+    train_dataset = train_dataset = torch.utils.data.Subset(
+        dataset, range(train_size))
+
+    train_dataloader = DataLoader(
+        train_dataset, batch_size=BATCH_SIZE, shuffle=True)
+
+    # Create SMP model - Using UNet with ResNet34 encoder pre-trained on ImageNet
+    smp_model = CustomUNet().to(device)
+
+    model = train_model(
+        smp_model,
+        {DatasetSelection.Trimap: 1.0, DatasetSelection.CAM: cam_loss_weight,
+            DatasetSelection.BBox: bbox_loss_weight},
+        train_dataloader,
+        epochs=EPOCHS,
+        learning_rate=LEARNING_RATE,
+        optimizer_name=OPTIMIZER_NAME,
+        scheduler_name=SCHEDULER_NAME,
+        checkpoint_dir=CHECKPOINT_DIR,
+        resume_from=RESUME_FROM
+    )
+    smp_model, smp_epoch, smp_best_loss = load_checkpoint(
+        smp_model, 'checkpoints/best_model.pth')
+    print(smp_epoch)
+
+    # reset GT proportion to perform evaluation on trimaps correctly
+    dataset.mix_trimaps(1.0)
+    val_dataset = torch.utils.data.Subset(
+        dataset, range(train_size, train_size + val_size))
+    val_dataloader = DataLoader(
+        val_dataset, batch_size=4*BATCH_SIZE, shuffle=False)
+    metrics = visualize_predictions(
+        smp_model, val_dataset, visual_fname=f"{idx}.jpg")
+    metrics = evaluate_model_metrics(model, val_dataloader, device)
+    os.makedirs('run_results', exist_ok=True)
+    with open(f'run_results/{idx}.txt', 'w') as file:
+        res_str = str(experiment_weights)+'\n'+str(metrics)
+        file.write(res_str)
