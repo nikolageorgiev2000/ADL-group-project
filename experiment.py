@@ -406,7 +406,7 @@ print("\n=== Using Segmentation Models PyTorch (SMP) for improved performance ==
 TARGETS_LIST = [DatasetSelection.CAM,
                 DatasetSelection.Trimap, DatasetSelection.BBox]
 BATCH_SIZE = 64
-EPOCHS = 25
+EPOCHS = 50
 LEARNING_RATE = 1e-3
 OPTIMIZER_NAME = 'adam'
 SCHEDULER_NAME = 'reduce_on_plateau'
@@ -478,7 +478,7 @@ target_transform = transforms.Compose([
 print('Loading Dataset')
 dataset = InMemoryPetSegmentationDataset(
     DATA_DIR, ANNOTATION_DIR, targets_list=TARGETS_LIST)
-
+# dataset_perm = torch.randperm(len(dataset))
 
 GT_PROPORTIONS = [0.0, 0.1, 0.5, 1.0]
 LOSS_WEIGHTS = [0.0, 0.1, 0.5, 1.0]
@@ -493,7 +493,8 @@ for idx, experiment_weights in enumerate(product(GT_PROPORTIONS, LOSS_WEIGHTS, L
     # Create train/val split
     train_size = int(0.8*len(dataset))
     val_size = len(dataset) - train_size
-    train_dataset = train_dataset = torch.utils.data.Subset(
+
+    train_dataset = torch.utils.data.Subset(
         dataset, range(train_size))
 
     train_dataloader = DataLoader(

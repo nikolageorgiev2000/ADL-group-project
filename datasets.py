@@ -1,3 +1,4 @@
+from random import shuffle
 import xml.etree.ElementTree as ET
 import torchvision
 from torch.utils.data import Dataset, DataLoader
@@ -75,7 +76,8 @@ class InMemoryPetSegmentationDataset(Dataset):
         self.available_images = set(self.image_ind_dict.keys())
         print(f'available samples: {self.__len__()}')
         # convert to list to give it an ordering
-        self.available_images = sorted(self.available_images)  #[:100]
+        self.available_images = list(self.available_images)  #[:100]
+        shuffle(self.available_images)
         self.mix_trimaps(1.0)
 
         # get image classes
