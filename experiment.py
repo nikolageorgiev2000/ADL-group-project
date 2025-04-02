@@ -229,13 +229,14 @@ class CustomLoss(nn.Module):
                 total_loss = l
             else:
                 total_loss += l
+            # print(d, l.item())
         return total_loss
 
 
 class TrimapLoss(nn.Module):
     def __init__(self):
         super().__init__()
-        self.loss_fn = nn.CrossEntropyLoss()
+        self.loss_fn = nn.CrossEntropyLoss()  # uses mean by default
 
     def forward(self, logits, targets):
         # unique_vals = set(torch.unique(targets).detach().cpu().numpy())
@@ -397,9 +398,10 @@ def train_model(
 
 
 print("\n=== Using Segmentation Models PyTorch (SMP) for improved performance ===\n")
+TARGETS_LIST = [DatasetSelection.CAM, DatasetSelection.Trimap, DatasetSelection.BBox]
 BATCH_SIZE = 64
-EPOCHS = 20
-LEARNING_RATE = 1e-3
+EPOCHS = 100
+LEARNING_RATE = 3e-4
 OPTIMIZER_NAME = 'adam'
 SCHEDULER_NAME = 'reduce_on_plateau'
 CHECKPOINT_DIR = 'checkpoints/'
@@ -408,26 +410,34 @@ seed = 42
 
 torch.manual_seed(seed)
 
-# TEST
 
+class ConvSegHead(nn.Module):
+    def __init__(self, out_channels):
+        super(ConvSegHead, self).__init__()
+        self.block = nn.Sequential(
+            nn.Conv2d(16, 16, kernel_size=3, padding=1),
+            nn.ReLU(inplace=True),
+            nn.BatchNorm2d(16),
+            nn.Conv2d(16, out_channels, kernel_size=3, padding=1)
+        )
+
+    def forward(self, x):
+        return self.block(x)
 
 class CustomUNet(nn.Module):
     def __init__(self):
         super(CustomUNet, self).__init__()
         self.feature_extractor = smp.Unet(
-            encoder_name="resnet34",        # Choose encoder, e.g. resnet34
-            encoder_weights="imagenet",     # Use pre-trained weights
-            in_channels=3,                  # Number of input channels (RGB)
+            encoder_name="resnet34",
+            encoder_weights="imagenet",
+            in_channels=3,
         )
         self.feature_extractor.segmentation_head = nn.Identity()
 
-        self.seg_heads = nn.ModuleDict()  # keys must be str for some reason
-        self.seg_heads[DatasetSelection.Trimap.name] = nn.Conv2d(
-            16, 3, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-        self.seg_heads[DatasetSelection.CAM.name] = nn.Conv2d(
-            16, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-        self.seg_heads[DatasetSelection.BBox.name] = nn.Conv2d(
-            16, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        self.seg_heads = nn.ModuleDict()
+        self.seg_heads[DatasetSelection.Trimap.name] = ConvSegHead(out_channels=3)
+        self.seg_heads[DatasetSelection.CAM.name] = ConvSegHead(out_channels=1)
+        self.seg_heads[DatasetSelection.BBox.name] = ConvSegHead(out_channels=1)
 
     def forward(self, img):
         features = self.feature_extractor(img)
@@ -435,13 +445,6 @@ class CustomUNet(nn.Module):
         for dataset_name, head in self.seg_heads.items():
             res[DatasetSelection[dataset_name]] = head(features)
         return res
-
-
-model = CustomUNet()
-with open('model_arch.txt', 'w') as file:
-    file.write(str(model))
-
-# TEST
 
 
 # Define transformations for training
@@ -464,10 +467,8 @@ target_transform = transforms.Compose([
 ])
 
 
-TARGETS_LIST = [DatasetSelection.CAM, DatasetSelection.Trimap]
 train_dataset = InMemoryPetSegmentationDataset(
     DATA_DIR, ANNOTATION_DIR, targets_list=TARGETS_LIST)
-
 
 # Create train/val split
 train_size = int(0.8*len(train_dataset))
@@ -482,14 +483,6 @@ val_dataloader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
 
 # Create SMP model - Using UNet with ResNet34 encoder pre-trained on ImageNet
 smp_model = CustomUNet().to(device)
-# smp.Unet(
-#     encoder_name="resnet34",        # Choose encoder, e.g. resnet34
-#     encoder_weights="imagenet",     # Use pre-trained weights
-#     in_channels=3,                  # Number of input channels (RGB)
-#     # Number of output classes (pet, background, border)
-#     # classes=3,
-#     classes=1,
-# ).to(device)
 
 model = train_model(
     smp_model,
@@ -503,11 +496,7 @@ model = train_model(
     checkpoint_dir=CHECKPOINT_DIR,
     resume_from=RESUME_FROM
 )
-
-# smp_model(next(iter(train_dataloader))[0])
-
 smp_model, smp_epoch, smp_best_loss = load_checkpoint(
     smp_model, 'checkpoints/best_model.pth')
 print(smp_epoch)
-
 metrics = visualize_predictions(smp_model, (val_dataset))
