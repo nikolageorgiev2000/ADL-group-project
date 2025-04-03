@@ -1,0 +1,617 @@
+NEED TO HAVE FIRST RUN:
+./load_oxfordpets.sh
+using device: cuda
+using device: cuda
+
+Dataset Annotations Include:
+1. Species/Breed Names (37 categories)
+2. Head Bounding Box (ROI)
+3. Trimap Segmentation:
+   - 1: Pet
+   - 2: Background
+   - 3: Border/Undefined
+
+=== Using Segmentation Models PyTorch (SMP) for improved performance ===
+
+Loading Dataset
+available samples: 7390
+0.1 0.0 0.0
+
+Starting training...
+Epoch 1/25, Loss: 1.0523
+Epoch 2/25, Loss: 0.8885
+Epoch 3/25, Loss: 0.7446
+Epoch 4/25, Loss: 0.6276
+Epoch 5/25, Loss: 0.5530
+Epoch 6/25, Loss: 0.4988
+Epoch 7/25, Loss: 0.4543
+Epoch 8/25, Loss: 0.4244
+Epoch 9/25, Loss: 0.3990
+Epoch 10/25, Loss: 0.3748
+Epoch 11/25, Loss: 0.3506
+Epoch 12/25, Loss: 0.3338
+Epoch 13/25, Loss: 0.3197
+Epoch 14/25, Loss: 0.3074
+Epoch 15/25, Loss: 0.3013
+Epoch 16/25, Loss: 0.2886
+Epoch 17/25, Loss: 0.2790
+Epoch 18/25, Loss: 0.2745
+Epoch 19/25, Loss: 0.2681
+Epoch 20/25, Loss: 0.2607
+Epoch 21/25, Loss: 0.2589
+Epoch 22/25, Loss: 0.2523
+Epoch 23/25, Loss: 0.2504
+Epoch 24/25, Loss: 0.2492
+Epoch 25/25, Loss: 0.2410
+
+Training complete!
+25
+
+Model Performance Metrics:
+Accuracy: 0.8753
+Recall: 0.7884
+Jaccard Index: 0.6805
+F1 Score: 0.7869
+0.1 0.0 0.1
+
+Starting training...
+Epoch 1/25, Loss: 1.2101
+Epoch 2/25, Loss: 1.0693
+Epoch 3/25, Loss: 0.9415
+Epoch 4/25, Loss: 0.8232
+Epoch 5/25, Loss: 0.7265
+Epoch 6/25, Loss: 0.6540
+Epoch 7/25, Loss: 0.5955
+Epoch 8/25, Loss: 0.5473
+Epoch 9/25, Loss: 0.5044
+Epoch 10/25, Loss: 0.4684
+Epoch 11/25, Loss: 0.4357
+Epoch 12/25, Loss: 0.4141
+Epoch 13/25, Loss: 0.3888
+Epoch 14/25, Loss: 0.3769
+Epoch 15/25, Loss: 0.3570
+Epoch 16/25, Loss: 0.3507
+Epoch 17/25, Loss: 0.3372
+Epoch 18/25, Loss: 0.3258
+Epoch 19/25, Loss: 0.3180
+Epoch 20/25, Loss: 0.3098
+Epoch 21/25, Loss: 0.3041
+Epoch 22/25, Loss: 0.2959
+Epoch 23/25, Loss: 0.2925
+Epoch 24/25, Loss: 0.2880
+Epoch 25/25, Loss: 0.2868
+
+Training complete!
+25
+
+Model Performance Metrics:
+Accuracy: 0.8723
+Recall: 0.7928
+Jaccard Index: 0.6791
+F1 Score: 0.7862
+0.1 0.0 0.5
+
+Starting training...
+Epoch 1/25, Loss: 1.4921
+Epoch 2/25, Loss: 1.3172
+Epoch 3/25, Loss: 1.1551
+Epoch 4/25, Loss: 0.9936
+Epoch 5/25, Loss: 0.8677
+Epoch 6/25, Loss: 0.7803
+Epoch 7/25, Loss: 0.7129
+Epoch 8/25, Loss: 0.6641
+Epoch 9/25, Loss: 0.6209
+Epoch 10/25, Loss: 0.5911
+Epoch 11/25, Loss: 0.5674
+Epoch 12/25, Loss: 0.5451
+Epoch 13/25, Loss: 0.5294
+Epoch 14/25, Loss: 0.5137
+Epoch 15/25, Loss: 0.4984
+Epoch 16/25, Loss: 0.4874
+Epoch 17/25, Loss: 0.4775
+Epoch 18/25, Loss: 0.4660
+Epoch 19/25, Loss: 0.4504
+Epoch 20/25, Loss: 0.4433
+Epoch 21/25, Loss: 0.4320
+Epoch 22/25, Loss: 0.4242
+Epoch 23/25, Loss: 0.4157
+Epoch 24/25, Loss: 0.4098
+Epoch 25/25, Loss: 0.4053
+
+Training complete!
+25
+
+Model Performance Metrics:
+Accuracy: 0.8652
+Recall: 0.7686
+Jaccard Index: 0.6593
+F1 Score: 0.7661
+0.1 0.0 1.0
+
+Starting training...
+Epoch 1/25, Loss: 1.7507
+Epoch 2/25, Loss: 1.4586
+Epoch 3/25, Loss: 1.2167
+Epoch 4/25, Loss: 1.0433
+Epoch 5/25, Loss: 0.9142
+Epoch 6/25, Loss: 0.8284
+Epoch 7/25, Loss: 0.7589
+Epoch 8/25, Loss: 0.7100
+Epoch 9/25, Loss: 0.6634
+Epoch 10/25, Loss: 0.6286
+Epoch 11/25, Loss: 0.6003
+Epoch 12/25, Loss: 0.5713
+Epoch 13/25, Loss: 0.5449
+Epoch 14/25, Loss: 0.5266
+Epoch 15/25, Loss: 0.5111
+Epoch 16/25, Loss: 0.4992
+Epoch 17/25, Loss: 0.4809
+Epoch 18/25, Loss: 0.4702
+Epoch 19/25, Loss: 0.4626
+Epoch 20/25, Loss: 0.4455
+Epoch 21/25, Loss: 0.4359
+Epoch 22/25, Loss: 0.4346
+Epoch 23/25, Loss: 0.4288
+Epoch 24/25, Loss: 0.4159
+Epoch 25/25, Loss: 0.4105
+
+Training complete!
+25
+
+Model Performance Metrics:
+Accuracy: 0.8698
+Recall: 0.7495
+Jaccard Index: 0.6535
+F1 Score: 0.7586
+0.1 0.1 0.0
+
+Starting training...
+Epoch 1/25, Loss: 1.1846
+Epoch 2/25, Loss: 0.9597
+Epoch 3/25, Loss: 0.7886
+Epoch 4/25, Loss: 0.6658
+Epoch 5/25, Loss: 0.5952
+Epoch 6/25, Loss: 0.5444
+Epoch 7/25, Loss: 0.5123
+Epoch 8/25, Loss: 0.4816
+Epoch 9/25, Loss: 0.4560
+Epoch 10/25, Loss: 0.4390
+Epoch 11/25, Loss: 0.4171
+Epoch 12/25, Loss: 0.3958
+Epoch 13/25, Loss: 0.3890
+Epoch 14/25, Loss: 0.3773
+Epoch 15/25, Loss: 0.3625
+Epoch 16/25, Loss: 0.3518
+Epoch 17/25, Loss: 0.3475
+Epoch 18/25, Loss: 0.3387
+Epoch 19/25, Loss: 0.3271
+Epoch 20/25, Loss: 0.3227
+Epoch 21/25, Loss: 0.3202
+Epoch 22/25, Loss: 0.3140
+Epoch 23/25, Loss: 0.3101
+Epoch 24/25, Loss: 0.3035
+Epoch 25/25, Loss: 0.3089
+
+Training complete!
+24
+
+Model Performance Metrics:
+Accuracy: 0.8739
+Recall: 0.7817
+Jaccard Index: 0.6760
+F1 Score: 0.7831
+0.1 0.1 0.1
+
+Starting training...
+Epoch 1/25, Loss: 1.3226
+Epoch 2/25, Loss: 1.1584
+Epoch 3/25, Loss: 1.0132
+Epoch 4/25, Loss: 0.8745
+Epoch 5/25, Loss: 0.7658
+Epoch 6/25, Loss: 0.6846
+Epoch 7/25, Loss: 0.6197
+Epoch 8/25, Loss: 0.5646
+Epoch 9/25, Loss: 0.5305
+Epoch 10/25, Loss: 0.4939
+Epoch 11/25, Loss: 0.4749
+Epoch 12/25, Loss: 0.4555
+Epoch 13/25, Loss: 0.4374
+Epoch 14/25, Loss: 0.4251
+Epoch 15/25, Loss: 0.4068
+Epoch 16/25, Loss: 0.3971
+Epoch 17/25, Loss: 0.3889
+Epoch 18/25, Loss: 0.3819
+Epoch 19/25, Loss: 0.3783
+Epoch 20/25, Loss: 0.3760
+Epoch 21/25, Loss: 0.3636
+Epoch 22/25, Loss: 0.3564
+Epoch 23/25, Loss: 0.3549
+Epoch 24/25, Loss: 0.3476
+Epoch 25/25, Loss: 0.3464
+
+Training complete!
+25
+
+Model Performance Metrics:
+Accuracy: 0.8761
+Recall: 0.7865
+Jaccard Index: 0.6811
+F1 Score: 0.7863
+0.1 0.1 0.5
+
+Starting training...
+Epoch 1/25, Loss: 1.5531
+Epoch 2/25, Loss: 1.3571
+Epoch 3/25, Loss: 1.1871
+Epoch 4/25, Loss: 1.0379
+Epoch 5/25, Loss: 0.9212
+Epoch 6/25, Loss: 0.8273
+Epoch 7/25, Loss: 0.7627
+Epoch 8/25, Loss: 0.7095
+Epoch 9/25, Loss: 0.6670
+Epoch 10/25, Loss: 0.6318
+Epoch 11/25, Loss: 0.5998
+Epoch 12/25, Loss: 0.5749
+Epoch 13/25, Loss: 0.5543
+Epoch 14/25, Loss: 0.5327
+Epoch 15/25, Loss: 0.5152
+Epoch 16/25, Loss: 0.5044
+Epoch 17/25, Loss: 0.4869
+Epoch 18/25, Loss: 0.4738
+Epoch 19/25, Loss: 0.4641
+Epoch 20/25, Loss: 0.4553
+Epoch 21/25, Loss: 0.4467
+Epoch 22/25, Loss: 0.4366
+Epoch 23/25, Loss: 0.4330
+Epoch 24/25, Loss: 0.4241
+Epoch 25/25, Loss: 0.4191
+
+Training complete!
+25
+
+Model Performance Metrics:
+Accuracy: 0.8693
+Recall: 0.7744
+Jaccard Index: 0.6669
+F1 Score: 0.7736
+0.1 0.1 1.0
+
+Starting training...
+Epoch 1/25, Loss: 1.8791
+Epoch 2/25, Loss: 1.6937
+Epoch 3/25, Loss: 1.5092
+Epoch 4/25, Loss: 1.3241
+Epoch 5/25, Loss: 1.1553
+Epoch 6/25, Loss: 1.0347
+Epoch 7/25, Loss: 0.9411
+Epoch 8/25, Loss: 0.8676
+Epoch 9/25, Loss: 0.8100
+Epoch 10/25, Loss: 0.7686
+Epoch 11/25, Loss: 0.7259
+Epoch 12/25, Loss: 0.6938
+Epoch 13/25, Loss: 0.6677
+Epoch 14/25, Loss: 0.6424
+Epoch 15/25, Loss: 0.6164
+Epoch 16/25, Loss: 0.6015
+Epoch 17/25, Loss: 0.5793
+Epoch 18/25, Loss: 0.5637
+Epoch 19/25, Loss: 0.5495
+Epoch 20/25, Loss: 0.5368
+Epoch 21/25, Loss: 0.5226
+Epoch 22/25, Loss: 0.5177
+Epoch 23/25, Loss: 0.5093
+Epoch 24/25, Loss: 0.4974
+Epoch 25/25, Loss: 0.4911
+
+Training complete!
+25
+
+Model Performance Metrics:
+Accuracy: 0.8677
+Recall: 0.7696
+Jaccard Index: 0.6627
+F1 Score: 0.7704
+0.1 0.5 0.0
+
+Starting training...
+Epoch 1/25, Loss: 1.4524
+Epoch 2/25, Loss: 1.2810
+Epoch 3/25, Loss: 1.0942
+Epoch 4/25, Loss: 0.9436
+Epoch 5/25, Loss: 0.8483
+Epoch 6/25, Loss: 0.7837
+Epoch 7/25, Loss: 0.7467
+Epoch 8/25, Loss: 0.7144
+Epoch 9/25, Loss: 0.6851
+Epoch 10/25, Loss: 0.6600
+Epoch 11/25, Loss: 0.6447
+Epoch 12/25, Loss: 0.6374
+Epoch 13/25, Loss: 0.6205
+Epoch 14/25, Loss: 0.6117
+Epoch 15/25, Loss: 0.6020
+Epoch 16/25, Loss: 0.5928
+Epoch 17/25, Loss: 0.5839
+Epoch 18/25, Loss: 0.5818
+Epoch 19/25, Loss: 0.5787
+Epoch 20/25, Loss: 0.5742
+Epoch 21/25, Loss: 0.5615
+Epoch 22/25, Loss: 0.5522
+Epoch 23/25, Loss: 0.5490
+Epoch 24/25, Loss: 0.5417
+Epoch 25/25, Loss: 0.5423
+
+Training complete!
+24
+
+Model Performance Metrics:
+Accuracy: 0.8648
+Recall: 0.7660
+Jaccard Index: 0.6577
+F1 Score: 0.7644
+0.1 0.5 0.1
+
+Starting training...
+Epoch 1/25, Loss: 1.5028
+Epoch 2/25, Loss: 1.3504
+Epoch 3/25, Loss: 1.2052
+Epoch 4/25, Loss: 1.0749
+Epoch 5/25, Loss: 0.9602
+Epoch 6/25, Loss: 0.8791
+Epoch 7/25, Loss: 0.8225
+Epoch 8/25, Loss: 0.7807
+Epoch 9/25, Loss: 0.7484
+Epoch 10/25, Loss: 0.7202
+Epoch 11/25, Loss: 0.6986
+Epoch 12/25, Loss: 0.6789
+Epoch 13/25, Loss: 0.6601
+Epoch 14/25, Loss: 0.6473
+Epoch 15/25, Loss: 0.6381
+Epoch 16/25, Loss: 0.6266
+Epoch 17/25, Loss: 0.6112
+Epoch 18/25, Loss: 0.6020
+Epoch 19/25, Loss: 0.5955
+Epoch 20/25, Loss: 0.5908
+Epoch 21/25, Loss: 0.5820
+Epoch 22/25, Loss: 0.5716
+Epoch 23/25, Loss: 0.5732
+Epoch 24/25, Loss: 0.5675
+Epoch 25/25, Loss: 0.5744
+
+Training complete!
+24
+
+Model Performance Metrics:
+Accuracy: 0.8788
+Recall: 0.7823
+Jaccard Index: 0.6814
+F1 Score: 0.7872
+0.1 0.5 0.5
+
+Starting training...
+Epoch 1/25, Loss: 1.7853
+Epoch 2/25, Loss: 1.5731
+Epoch 3/25, Loss: 1.3588
+Epoch 4/25, Loss: 1.1904
+Epoch 5/25, Loss: 1.0762
+Epoch 6/25, Loss: 1.0136
+Epoch 7/25, Loss: 0.9635
+Epoch 8/25, Loss: 0.9176
+Epoch 9/25, Loss: 0.8876
+Epoch 10/25, Loss: 0.8663
+Epoch 11/25, Loss: 0.8403
+Epoch 12/25, Loss: 0.8199
+Epoch 13/25, Loss: 0.7984
+Epoch 14/25, Loss: 0.7817
+Epoch 15/25, Loss: 0.7695
+Epoch 16/25, Loss: 0.7486
+Epoch 17/25, Loss: 0.7335
+Epoch 18/25, Loss: 0.7215
+Epoch 19/25, Loss: 0.7103
+Epoch 20/25, Loss: 0.7032
+Epoch 21/25, Loss: 0.6940
+Epoch 22/25, Loss: 0.6805
+Epoch 23/25, Loss: 0.6735
+Epoch 24/25, Loss: 0.6671
+Epoch 25/25, Loss: 0.6583
+
+Training complete!
+25
+
+Model Performance Metrics:
+Accuracy: 0.8654
+Recall: 0.7651
+Jaccard Index: 0.6575
+F1 Score: 0.7638
+0.1 0.5 1.0
+
+Starting training...
+Epoch 1/25, Loss: 2.0981
+Epoch 2/25, Loss: 1.8090
+Epoch 3/25, Loss: 1.5569
+Epoch 4/25, Loss: 1.3849
+Epoch 5/25, Loss: 1.2723
+Epoch 6/25, Loss: 1.1845
+Epoch 7/25, Loss: 1.1120
+Epoch 8/25, Loss: 1.0529
+Epoch 9/25, Loss: 1.0068
+Epoch 10/25, Loss: 0.9712
+Epoch 11/25, Loss: 0.9388
+Epoch 12/25, Loss: 0.9084
+Epoch 13/25, Loss: 0.8826
+Epoch 14/25, Loss: 0.8595
+Epoch 15/25, Loss: 0.8397
+Epoch 16/25, Loss: 0.8280
+Epoch 17/25, Loss: 0.8126
+Epoch 18/25, Loss: 0.7957
+Epoch 19/25, Loss: 0.7792
+Epoch 20/25, Loss: 0.7733
+Epoch 21/25, Loss: 0.7670
+Epoch 22/25, Loss: 0.7471
+Epoch 23/25, Loss: 0.7386
+Epoch 24/25, Loss: 0.7310
+Epoch 25/25, Loss: 0.7286
+
+Training complete!
+25
+
+Model Performance Metrics:
+Accuracy: 0.8627
+Recall: 0.7246
+Jaccard Index: 0.6296
+F1 Score: 0.7308
+0.1 1.0 0.0
+
+Starting training...
+Epoch 1/25, Loss: 1.8348
+Epoch 2/25, Loss: 1.6627
+Epoch 3/25, Loss: 1.4865
+Epoch 4/25, Loss: 1.3461
+Epoch 5/25, Loss: 1.2532
+Epoch 6/25, Loss: 1.1824
+Epoch 7/25, Loss: 1.1321
+Epoch 8/25, Loss: 1.0884
+Epoch 9/25, Loss: 1.0589
+Epoch 10/25, Loss: 1.0298
+Epoch 11/25, Loss: 1.0087
+Epoch 12/25, Loss: 0.9869
+Epoch 13/25, Loss: 0.9661
+Epoch 14/25, Loss: 0.9520
+Epoch 15/25, Loss: 0.9396
+Epoch 16/25, Loss: 0.9208
+Epoch 17/25, Loss: 0.9083
+Epoch 18/25, Loss: 0.8995
+Epoch 19/25, Loss: 0.8888
+Epoch 20/25, Loss: 0.8795
+Epoch 21/25, Loss: 0.8698
+Epoch 22/25, Loss: 0.8636
+Epoch 23/25, Loss: 0.8567
+Epoch 24/25, Loss: 0.8494
+Epoch 25/25, Loss: 0.8420
+
+Training complete!
+25
+
+Model Performance Metrics:
+Accuracy: 0.8633
+Recall: 0.7539
+Jaccard Index: 0.6500
+F1 Score: 0.7560
+0.1 1.0 0.1
+
+Starting training...
+Epoch 1/25, Loss: 1.8322
+Epoch 2/25, Loss: 1.5987
+Epoch 3/25, Loss: 1.4110
+Epoch 4/25, Loss: 1.2620
+Epoch 5/25, Loss: 1.1693
+Epoch 6/25, Loss: 1.1055
+Epoch 7/25, Loss: 1.0600
+Epoch 8/25, Loss: 1.0275
+Epoch 9/25, Loss: 0.9982
+Epoch 10/25, Loss: 0.9695
+Epoch 11/25, Loss: 0.9538
+Epoch 12/25, Loss: 0.9340
+Epoch 13/25, Loss: 0.9237
+Epoch 14/25, Loss: 0.9076
+Epoch 15/25, Loss: 0.9002
+Epoch 16/25, Loss: 0.8921
+Epoch 17/25, Loss: 0.8842
+Epoch 18/25, Loss: 0.8731
+Epoch 19/25, Loss: 0.8669
+Epoch 20/25, Loss: 0.8605
+Epoch 21/25, Loss: 0.8553
+Epoch 22/25, Loss: 0.8498
+Epoch 23/25, Loss: 0.8443
+Epoch 24/25, Loss: 0.8377
+Epoch 25/25, Loss: 0.8371
+
+Training complete!
+25
+
+Model Performance Metrics:
+Accuracy: 0.8659
+Recall: 0.7700
+Jaccard Index: 0.6615
+F1 Score: 0.7680
+0.1 1.0 0.5
+
+Starting training...
+Epoch 1/25, Loss: 2.1346
+Epoch 2/25, Loss: 1.8864
+Epoch 3/25, Loss: 1.6667
+Epoch 4/25, Loss: 1.5091
+Epoch 5/25, Loss: 1.4025
+Epoch 6/25, Loss: 1.3241
+Epoch 7/25, Loss: 1.2587
+Epoch 8/25, Loss: 1.2036
+Epoch 9/25, Loss: 1.1649
+Epoch 10/25, Loss: 1.1251
+Epoch 11/25, Loss: 1.0956
+Epoch 12/25, Loss: 1.0706
+Epoch 13/25, Loss: 1.0466
+Epoch 14/25, Loss: 1.0284
+Epoch 15/25, Loss: 1.0133
+Epoch 16/25, Loss: 0.9952
+Epoch 17/25, Loss: 0.9826
+Epoch 18/25, Loss: 0.9682
+Epoch 19/25, Loss: 0.9521
+Epoch 20/25, Loss: 0.9453
+Epoch 21/25, Loss: 0.9347
+Epoch 22/25, Loss: 0.9322
+Epoch 23/25, Loss: 0.9252
+Epoch 24/25, Loss: 0.9108
+Epoch 25/25, Loss: 0.9070
+
+Training complete!
+25
+
+Model Performance Metrics:
+Accuracy: 0.8730
+Recall: 0.7817
+Jaccard Index: 0.6743
+F1 Score: 0.7808
+0.1 1.0 1.0
+
+Starting training...
+Epoch 1/25, Loss: 2.4765
+Epoch 2/25, Loss: 2.1801
+Epoch 3/25, Loss: 1.8977
+Epoch 4/25, Loss: 1.6770
+Epoch 5/25, Loss: 1.5216
+Epoch 6/25, Loss: 1.4198
+Epoch 7/25, Loss: 1.3461
+Epoch 8/25, Loss: 1.2905
+Epoch 9/25, Loss: 1.2389
+Epoch 10/25, Loss: 1.1985
+Epoch 11/25, Loss: 1.1809
+Epoch 12/25, Loss: 1.1495
+Epoch 13/25, Loss: 1.1216
+Epoch 14/25, Loss: 1.1015
+Epoch 15/25, Loss: 1.0813
+Epoch 16/25, Loss: 1.0644
+Epoch 17/25, Loss: 1.0467
+Epoch 18/25, Loss: 1.0346
+Epoch 19/25, Loss: 1.0234
+Epoch 20/25, Loss: 1.0099
+Epoch 21/25, Loss: 1.0050
+Epoch 22/25, Loss: 0.9998
+Epoch 23/25, Loss: 0.9859
+Epoch 24/25, Loss: 0.9742
+Epoch 25/25, Loss: 0.9800
+
+Training complete!
+24
+
+Model Performance Metrics:
+Accuracy: 0.8633
+Recall: 0.7559
+Jaccard Index: 0.6500
+F1 Score: 0.7561
+0.5 0.0 0.0
+
+Starting training...
+Epoch 1/25, Loss: 1.0010
+Epoch 2/25, Loss: 0.7485
+Epoch 3/25, Loss: 0.5994
+Epoch 4/25, Loss: 0.5149
+Epoch 5/25, Loss: 0.4542
