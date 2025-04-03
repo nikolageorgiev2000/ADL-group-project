@@ -198,10 +198,10 @@ def evaluate_model_metrics(model, dataloader, device):
     }
 
     print(f"\nModel Performance Metrics:")
-    print(f"Accuracy: {metrics['accuracy']:.4f}")
-    print(f"Recall: {metrics['recall']:.4f}")
-    print(f"Jaccard Index: {metrics['jaccard']:.4f}")
-    print(f"F1 Score: {metrics['f1']:.4f}")
+    print(f"Accuracy: {metrics['accuracy']:.6f}")
+    print(f"Recall: {metrics['recall']:.6f}")
+    print(f"Jaccard Index: {metrics['jaccard']:.6f}")
+    print(f"F1 Score: {metrics['f1']:.6f}")
 
     return metrics
 
@@ -342,7 +342,7 @@ def train_model(
     if resume_from:
         model, start_epoch, best_loss = load_checkpoint(model, resume_from)
         print(
-            f"Resuming from epoch {start_epoch} with best loss {best_loss:.4f}")
+            f"Resuming from epoch {start_epoch} with best loss {best_loss:.6f}")
 
     # Create checkpoint directory
     os.makedirs(checkpoint_dir, exist_ok=True)
@@ -366,7 +366,7 @@ def train_model(
             running_loss += loss.item()
 
         epoch_loss = running_loss / len(train_dataloader)
-        print(f"Epoch {epoch+1}/{epochs}, Loss: {epoch_loss:.4f}")
+        print(f"Epoch {epoch+1}/{epochs}, Loss: {epoch_loss:.6f}")
 
         # Update scheduler
         if scheduler_name.lower() == 'cosine':
@@ -480,8 +480,8 @@ dataset = InMemoryPetSegmentationDataset(
     DATA_DIR, ANNOTATION_DIR, targets_list=TARGETS_LIST)
 # dataset_perm = torch.randperm(len(dataset))
 
-GT_PROPORTIONS = [0.1, 0.5, 1.0]
-LOSS_WEIGHTS = [0.0, 0.1, 0.5, 1.0]
+GT_PROPORTIONS = [0.005, 0.01, 0.05]
+LOSS_WEIGHTS = [0.0, 0.1, 0.5]
 
 
 for idx, experiment_weights in enumerate(product(GT_PROPORTIONS, LOSS_WEIGHTS, LOSS_WEIGHTS)):
