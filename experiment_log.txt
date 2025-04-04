@@ -15,1677 +15,3027 @@ Dataset Annotations Include:
 
 Loading Dataset
 available samples: 7390
-0.005 0.0 0.0
+0.1 0.0 0.0
 
 Starting training...
-Epoch 1/50, Loss: 0.349789
-Epoch 2/50, Loss: 0.313335
-Epoch 3/50, Loss: 0.303699
-Epoch 4/50, Loss: 0.256244
-Epoch 5/50, Loss: 0.270193
-Epoch 6/50, Loss: 0.229674
-Epoch 7/50, Loss: 0.200504
-Epoch 8/50, Loss: 0.169954
-Epoch 9/50, Loss: 0.160372
-Epoch 10/50, Loss: 0.149545
-Epoch 11/50, Loss: 0.132530
-Epoch 12/50, Loss: 0.141518
-Epoch 13/50, Loss: 0.143306
-Epoch 14/50, Loss: 0.133647
-Epoch 15/50, Loss: 0.123122
-Epoch 16/50, Loss: 0.110687
-Epoch 17/50, Loss: 0.103473
-Epoch 18/50, Loss: 0.111760
-Epoch 19/50, Loss: 0.107411
-Epoch 20/50, Loss: 0.111586
-Epoch 21/50, Loss: 0.100871
-Epoch 22/50, Loss: 0.107320
-Epoch 23/50, Loss: 0.085130
-Epoch 24/50, Loss: 0.088153
-Epoch 25/50, Loss: 0.082186
-Epoch 26/50, Loss: 0.087662
-Epoch 27/50, Loss: 0.084908
-Epoch 28/50, Loss: 0.082931
-Epoch 29/50, Loss: 0.083927
-Epoch 30/50, Loss: 0.084259
-Epoch 31/50, Loss: 0.077306
-Epoch 32/50, Loss: 0.076524
-Epoch 33/50, Loss: 0.072083
-Epoch 34/50, Loss: 0.069270
-Epoch 35/50, Loss: 0.074671
-Epoch 36/50, Loss: 0.078457
-Epoch 37/50, Loss: 0.068537
-Epoch 38/50, Loss: 0.073196
-Epoch 39/50, Loss: 0.070538
-Epoch 40/50, Loss: 0.072600
-Epoch 41/50, Loss: 0.074824
-Epoch 42/50, Loss: 0.078445
-Epoch 43/50, Loss: 0.072958
-Epoch 44/50, Loss: 0.072057
-Epoch 45/50, Loss: 0.062398
-Epoch 46/50, Loss: 0.058662
-Epoch 47/50, Loss: 0.061277
-Epoch 48/50, Loss: 0.055971
-Epoch 49/50, Loss: 0.049764
-Epoch 50/50, Loss: 0.058121
+Epoch 1/100, Loss: 1.230422
+Epoch 2/100, Loss: 1.190787
+Epoch 3/100, Loss: 1.158167
+Epoch 4/100, Loss: 1.131296
+Epoch 5/100, Loss: 1.104106
+Epoch 6/100, Loss: 1.083065
+Epoch 7/100, Loss: 1.063474
+Epoch 8/100, Loss: 1.044517
+Epoch 9/100, Loss: 1.027630
+Epoch 10/100, Loss: 1.009919
+Epoch 11/100, Loss: 0.990927
+Epoch 12/100, Loss: 0.972232
+Epoch 13/100, Loss: 0.956015
+Epoch 14/100, Loss: 0.934897
+Epoch 15/100, Loss: 0.915623
+Epoch 16/100, Loss: 0.895978
+Epoch 17/100, Loss: 0.876894
+Epoch 18/100, Loss: 0.860184
+Epoch 19/100, Loss: 0.845816
+Epoch 20/100, Loss: 0.831360
+Epoch 21/100, Loss: 0.819867
+Epoch 22/100, Loss: 0.811262
+Epoch 23/100, Loss: 0.799992
+Epoch 24/100, Loss: 0.793861
+Epoch 25/100, Loss: 0.782719
+Epoch 26/100, Loss: 0.773133
+Epoch 27/100, Loss: 0.775247
+Epoch 28/100, Loss: 0.761567
+Epoch 29/100, Loss: 0.754572
+Epoch 30/100, Loss: 0.748349
+Epoch 31/100, Loss: 0.742214
+Epoch 32/100, Loss: 0.738317
+Epoch 33/100, Loss: 0.736116
+Epoch 34/100, Loss: 0.723939
+Epoch 35/100, Loss: 0.722710
+Epoch 36/100, Loss: 0.716821
+Epoch 37/100, Loss: 0.714886
+Epoch 38/100, Loss: 0.712595
+Epoch 39/100, Loss: 0.706151
+Epoch 40/100, Loss: 0.705063
+Epoch 41/100, Loss: 0.699830
+Epoch 42/100, Loss: 0.686683
+Epoch 43/100, Loss: 0.701037
+Epoch 44/100, Loss: 0.690161
+Epoch 45/100, Loss: 0.688710
+Epoch 46/100, Loss: 0.689959
+Epoch 47/100, Loss: 0.686320
+Epoch 48/100, Loss: 0.679839
+Epoch 49/100, Loss: 0.676260
+Epoch 50/100, Loss: 0.678025
+Epoch 51/100, Loss: 0.673085
+Epoch 52/100, Loss: 0.662959
+Epoch 53/100, Loss: 0.669839
+Epoch 54/100, Loss: 0.666959
+Epoch 55/100, Loss: 0.661601
+Epoch 56/100, Loss: 0.662803
+Epoch 57/100, Loss: 0.655649
+Epoch 58/100, Loss: 0.656808
+Epoch 59/100, Loss: 0.654227
+Epoch 60/100, Loss: 0.649216
+Epoch 61/100, Loss: 0.648614
+Epoch 62/100, Loss: 0.651676
+Epoch 63/100, Loss: 0.644777
+Epoch 64/100, Loss: 0.644371
+Epoch 65/100, Loss: 0.629346
+Epoch 66/100, Loss: 0.637173
+Epoch 67/100, Loss: 0.637060
+Epoch 68/100, Loss: 0.633661
+Epoch 69/100, Loss: 0.630625
+Epoch 70/100, Loss: 0.625196
+Epoch 71/100, Loss: 0.626650
+Epoch 72/100, Loss: 0.630317
+Epoch 73/100, Loss: 0.626734
+Epoch 74/100, Loss: 0.615657
+Epoch 75/100, Loss: 0.615562
+Epoch 76/100, Loss: 0.617571
+Epoch 77/100, Loss: 0.619113
+Epoch 78/100, Loss: 0.606909
+Epoch 79/100, Loss: 0.608808
+Epoch 80/100, Loss: 0.608765
+Epoch 81/100, Loss: 0.606359
+Epoch 82/100, Loss: 0.605480
+Epoch 83/100, Loss: 0.595033
+Epoch 84/100, Loss: 0.603181
+Epoch 85/100, Loss: 0.604579
+Epoch 86/100, Loss: 0.602716
+Epoch 87/100, Loss: 0.593710
+Epoch 88/100, Loss: 0.594807
+Epoch 89/100, Loss: 0.594569
+Epoch 90/100, Loss: 0.592450
+Epoch 91/100, Loss: 0.587828
+Epoch 92/100, Loss: 0.582685
+Epoch 93/100, Loss: 0.583342
+Epoch 94/100, Loss: 0.591107
+Epoch 95/100, Loss: 0.585629
+Epoch 96/100, Loss: 0.582694
+Epoch 97/100, Loss: 0.577967
+Epoch 98/100, Loss: 0.579513
+Epoch 99/100, Loss: 0.582067
+Epoch 100/100, Loss: 0.573426
 
 Training complete!
-49
+100
 
 Model Performance Metrics:
-Accuracy: 0.641468
-Recall: 0.576433
-Jaccard Index: 0.405094
-F1 Score: 0.542929
-0.005 0.0 0.1
+Accuracy: 0.719107
+Recall: 0.553485
+Jaccard Index: 0.428616
+F1 Score: 0.555791
+0.1 0.0 0.1
 
 Starting training...
-Epoch 1/50, Loss: 0.418723
-Epoch 2/50, Loss: 0.397270
-Epoch 3/50, Loss: 0.383747
-Epoch 4/50, Loss: 0.316672
-Epoch 5/50, Loss: 0.285108
-Epoch 6/50, Loss: 0.265323
-Epoch 7/50, Loss: 0.207892
-Epoch 8/50, Loss: 0.189191
-Epoch 9/50, Loss: 0.217449
-Epoch 10/50, Loss: 0.206441
-Epoch 11/50, Loss: 0.190515
-Epoch 12/50, Loss: 0.182952
-Epoch 13/50, Loss: 0.182887
-Epoch 14/50, Loss: 0.174027
-Epoch 15/50, Loss: 0.162697
-Epoch 16/50, Loss: 0.166498
-Epoch 17/50, Loss: 0.152126
-Epoch 18/50, Loss: 0.147818
-Epoch 19/50, Loss: 0.148560
-Epoch 20/50, Loss: 0.132619
-Epoch 21/50, Loss: 0.135143
-Epoch 22/50, Loss: 0.135197
-Epoch 23/50, Loss: 0.141476
-Epoch 24/50, Loss: 0.121417
-Epoch 25/50, Loss: 0.130881
-Epoch 26/50, Loss: 0.131458
-Epoch 27/50, Loss: 0.131458
-Epoch 28/50, Loss: 0.124600
-Epoch 29/50, Loss: 0.127872
-Epoch 30/50, Loss: 0.114144
-Epoch 31/50, Loss: 0.109325
-Epoch 32/50, Loss: 0.106411
-Epoch 33/50, Loss: 0.103069
-Epoch 34/50, Loss: 0.108182
-Epoch 35/50, Loss: 0.103207
-Epoch 36/50, Loss: 0.101003
-Epoch 37/50, Loss: 0.090965
-Epoch 38/50, Loss: 0.096486
-Epoch 39/50, Loss: 0.094849
-Epoch 40/50, Loss: 0.091134
-Epoch 41/50, Loss: 0.093765
-Epoch 42/50, Loss: 0.089523
-Epoch 43/50, Loss: 0.087972
-Epoch 44/50, Loss: 0.092573
-Epoch 45/50, Loss: 0.094748
-Epoch 46/50, Loss: 0.090167
-Epoch 47/50, Loss: 0.087194
-Epoch 48/50, Loss: 0.076427
-Epoch 49/50, Loss: 0.091006
-Epoch 50/50, Loss: 0.083585
+Epoch 1/100, Loss: 1.257337
+Epoch 2/100, Loss: 1.231660
+Epoch 3/100, Loss: 1.208457
+Epoch 4/100, Loss: 1.186857
+Epoch 5/100, Loss: 1.165326
+Epoch 6/100, Loss: 1.142762
+Epoch 7/100, Loss: 1.125030
+Epoch 8/100, Loss: 1.104620
+Epoch 9/100, Loss: 1.086644
+Epoch 10/100, Loss: 1.066505
+Epoch 11/100, Loss: 1.047009
+Epoch 12/100, Loss: 1.027887
+Epoch 13/100, Loss: 1.007268
+Epoch 14/100, Loss: 0.987172
+Epoch 15/100, Loss: 0.967089
+Epoch 16/100, Loss: 0.952756
+Epoch 17/100, Loss: 0.937533
+Epoch 18/100, Loss: 0.923276
+Epoch 19/100, Loss: 0.908838
+Epoch 20/100, Loss: 0.896919
+Epoch 21/100, Loss: 0.884531
+Epoch 22/100, Loss: 0.874840
+Epoch 23/100, Loss: 0.863610
+Epoch 24/100, Loss: 0.856653
+Epoch 25/100, Loss: 0.849065
+Epoch 26/100, Loss: 0.837838
+Epoch 27/100, Loss: 0.831038
+Epoch 28/100, Loss: 0.824362
+Epoch 29/100, Loss: 0.823257
+Epoch 30/100, Loss: 0.814269
+Epoch 31/100, Loss: 0.806901
+Epoch 32/100, Loss: 0.803952
+Epoch 33/100, Loss: 0.795134
+Epoch 34/100, Loss: 0.790366
+Epoch 35/100, Loss: 0.791544
+Epoch 36/100, Loss: 0.780289
+Epoch 37/100, Loss: 0.775669
+Epoch 38/100, Loss: 0.773761
+Epoch 39/100, Loss: 0.769525
+Epoch 40/100, Loss: 0.768372
+Epoch 41/100, Loss: 0.764796
+Epoch 42/100, Loss: 0.751785
+Epoch 43/100, Loss: 0.755744
+Epoch 44/100, Loss: 0.749411
+Epoch 45/100, Loss: 0.750588
+Epoch 46/100, Loss: 0.747508
+Epoch 47/100, Loss: 0.733863
+Epoch 48/100, Loss: 0.736926
+Epoch 49/100, Loss: 0.735249
+Epoch 50/100, Loss: 0.730766
+Epoch 51/100, Loss: 0.732555
+Epoch 52/100, Loss: 0.725567
+Epoch 53/100, Loss: 0.723614
+Epoch 54/100, Loss: 0.718292
+Epoch 55/100, Loss: 0.717236
+Epoch 56/100, Loss: 0.718418
+Epoch 57/100, Loss: 0.716308
+Epoch 58/100, Loss: 0.717150
+Epoch 59/100, Loss: 0.704717
+Epoch 60/100, Loss: 0.703645
+Epoch 61/100, Loss: 0.701429
+Epoch 62/100, Loss: 0.701769
+Epoch 63/100, Loss: 0.690891
+Epoch 64/100, Loss: 0.693686
+Epoch 65/100, Loss: 0.693669
+Epoch 66/100, Loss: 0.687377
+Epoch 67/100, Loss: 0.690821
+Epoch 68/100, Loss: 0.686825
+Epoch 69/100, Loss: 0.683825
+Epoch 70/100, Loss: 0.679571
+Epoch 71/100, Loss: 0.680173
+Epoch 72/100, Loss: 0.667941
+Epoch 73/100, Loss: 0.673558
+Epoch 74/100, Loss: 0.677969
+Epoch 75/100, Loss: 0.672656
+Epoch 76/100, Loss: 0.668212
+Epoch 77/100, Loss: 0.664231
+Epoch 78/100, Loss: 0.670126
+Epoch 79/100, Loss: 0.657737
+Epoch 80/100, Loss: 0.661221
+Epoch 81/100, Loss: 0.660848
+Epoch 82/100, Loss: 0.650802
+Epoch 83/100, Loss: 0.656242
+Epoch 84/100, Loss: 0.648138
+Epoch 85/100, Loss: 0.650904
+Epoch 86/100, Loss: 0.646625
+Epoch 87/100, Loss: 0.641517
+Epoch 88/100, Loss: 0.638903
+Epoch 89/100, Loss: 0.644863
+Epoch 90/100, Loss: 0.641082
+Epoch 91/100, Loss: 0.594957
+Epoch 92/100, Loss: 0.600312
+Epoch 93/100, Loss: 0.588745
+Epoch 94/100, Loss: 0.582768
+Epoch 95/100, Loss: 0.586159
+Epoch 96/100, Loss: 0.588063
+Epoch 97/100, Loss: 0.584321
+Epoch 98/100, Loss: 0.582128
+Epoch 99/100, Loss: 0.577554
+Epoch 100/100, Loss: 0.571851
 
 Training complete!
-48
+100
 
 Model Performance Metrics:
-Accuracy: 0.697929
-Recall: 0.607755
-Jaccard Index: 0.457440
-F1 Score: 0.597606
-0.005 0.0 0.5
+Accuracy: 0.720374
+Recall: 0.543993
+Jaccard Index: 0.416901
+F1 Score: 0.533689
+0.1 0.0 0.5
 
 Starting training...
-Epoch 1/50, Loss: 0.761443
-Epoch 2/50, Loss: 0.674309
-Epoch 3/50, Loss: 0.635047
-Epoch 4/50, Loss: 0.593104
-Epoch 5/50, Loss: 0.529676
-Epoch 6/50, Loss: 0.495746
-Epoch 7/50, Loss: 0.447488
-Epoch 8/50, Loss: 0.423771
-Epoch 9/50, Loss: 0.393494
-Epoch 10/50, Loss: 0.344585
-Epoch 11/50, Loss: 0.347588
-Epoch 12/50, Loss: 0.327590
-Epoch 13/50, Loss: 0.309850
-Epoch 14/50, Loss: 0.314851
-Epoch 15/50, Loss: 0.271070
-Epoch 16/50, Loss: 0.275371
-Epoch 17/50, Loss: 0.261011
-Epoch 18/50, Loss: 0.257909
-Epoch 19/50, Loss: 0.244335
-Epoch 20/50, Loss: 0.237297
-Epoch 21/50, Loss: 0.232109
-Epoch 22/50, Loss: 0.223810
-Epoch 23/50, Loss: 0.208986
-Epoch 24/50, Loss: 0.208701
-Epoch 25/50, Loss: 0.205815
-Epoch 26/50, Loss: 0.200094
-Epoch 27/50, Loss: 0.189817
-Epoch 28/50, Loss: 0.190830
-Epoch 29/50, Loss: 0.182562
-Epoch 30/50, Loss: 0.184576
-Epoch 31/50, Loss: 0.183896
-Epoch 32/50, Loss: 0.177682
-Epoch 33/50, Loss: 0.179887
-Epoch 34/50, Loss: 0.175740
-Epoch 35/50, Loss: 0.158926
-Epoch 36/50, Loss: 0.166377
-Epoch 37/50, Loss: 0.165219
-Epoch 38/50, Loss: 0.168828
-Epoch 39/50, Loss: 0.163581
-Epoch 40/50, Loss: 0.160251
-Epoch 41/50, Loss: 0.156335
-Epoch 42/50, Loss: 0.161755
-Epoch 43/50, Loss: 0.148618
-Epoch 44/50, Loss: 0.148953
-Epoch 45/50, Loss: 0.145870
-Epoch 46/50, Loss: 0.146595
-Epoch 47/50, Loss: 0.153069
-Epoch 48/50, Loss: 0.146651
-Epoch 49/50, Loss: 0.144302
-Epoch 50/50, Loss: 0.146601
+Epoch 1/100, Loss: 1.550084
+Epoch 2/100, Loss: 1.518174
+Epoch 3/100, Loss: 1.488874
+Epoch 4/100, Loss: 1.460659
+Epoch 5/100, Loss: 1.436705
+Epoch 6/100, Loss: 1.414563
+Epoch 7/100, Loss: 1.391004
+Epoch 8/100, Loss: 1.370115
+Epoch 9/100, Loss: 1.351265
+Epoch 10/100, Loss: 1.332987
+Epoch 11/100, Loss: 1.315391
+Epoch 12/100, Loss: 1.297750
+Epoch 13/100, Loss: 1.283761
+Epoch 14/100, Loss: 1.266721
+Epoch 15/100, Loss: 1.251706
+Epoch 16/100, Loss: 1.234488
+Epoch 17/100, Loss: 1.208101
+Epoch 18/100, Loss: 1.203906
+Epoch 19/100, Loss: 1.183369
+Epoch 20/100, Loss: 1.169458
+Epoch 21/100, Loss: 1.154251
+Epoch 22/100, Loss: 1.140656
+Epoch 23/100, Loss: 1.123553
+Epoch 24/100, Loss: 1.099774
+Epoch 25/100, Loss: 1.098142
+Epoch 26/100, Loss: 1.084842
+Epoch 27/100, Loss: 1.078011
+Epoch 28/100, Loss: 1.065203
+Epoch 29/100, Loss: 1.056331
+Epoch 30/100, Loss: 1.038813
+Epoch 31/100, Loss: 1.037893
+Epoch 32/100, Loss: 1.031512
+Epoch 33/100, Loss: 1.023023
+Epoch 34/100, Loss: 1.015619
+Epoch 35/100, Loss: 1.004250
+Epoch 36/100, Loss: 1.000028
+Epoch 37/100, Loss: 0.998660
+Epoch 38/100, Loss: 0.989572
+Epoch 39/100, Loss: 0.985331
+Epoch 40/100, Loss: 0.977185
+Epoch 41/100, Loss: 0.967286
+Epoch 42/100, Loss: 0.963130
+Epoch 43/100, Loss: 0.958446
+Epoch 44/100, Loss: 0.950736
+Epoch 45/100, Loss: 0.947753
+Epoch 46/100, Loss: 0.949429
+Epoch 47/100, Loss: 0.939123
+Epoch 48/100, Loss: 0.930654
+Epoch 49/100, Loss: 0.925347
+Epoch 50/100, Loss: 0.925870
+Epoch 51/100, Loss: 0.917329
+Epoch 52/100, Loss: 0.912829
+Epoch 53/100, Loss: 0.913754
+Epoch 54/100, Loss: 0.909903
+Epoch 55/100, Loss: 0.912252
+Epoch 56/100, Loss: 0.898229
+Epoch 57/100, Loss: 0.897920
+Epoch 58/100, Loss: 0.899222
+Epoch 59/100, Loss: 0.896300
+Epoch 60/100, Loss: 0.890798
+Epoch 61/100, Loss: 0.889156
+Epoch 62/100, Loss: 0.879383
+Epoch 63/100, Loss: 0.877217
+Epoch 64/100, Loss: 0.877822
+Epoch 65/100, Loss: 0.871709
+Epoch 66/100, Loss: 0.870288
+Epoch 67/100, Loss: 0.863160
+Epoch 68/100, Loss: 0.869845
+Epoch 69/100, Loss: 0.863183
+Epoch 70/100, Loss: 0.862032
+Epoch 71/100, Loss: 0.855973
+Epoch 72/100, Loss: 0.853061
+Epoch 73/100, Loss: 0.854002
+Epoch 74/100, Loss: 0.851904
+Epoch 75/100, Loss: 0.845888
+Epoch 76/100, Loss: 0.846365
+Epoch 77/100, Loss: 0.840228
+Epoch 78/100, Loss: 0.841683
+Epoch 79/100, Loss: 0.837816
+Epoch 80/100, Loss: 0.836171
+Epoch 81/100, Loss: 0.824355
+Epoch 82/100, Loss: 0.828081
+Epoch 83/100, Loss: 0.825849
+Epoch 84/100, Loss: 0.829045
+Epoch 85/100, Loss: 0.820302
+Epoch 86/100, Loss: 0.818681
+Epoch 87/100, Loss: 0.818933
+Epoch 88/100, Loss: 0.811491
+Epoch 89/100, Loss: 0.816495
+Epoch 90/100, Loss: 0.812123
+Epoch 91/100, Loss: 0.606974
+Epoch 92/100, Loss: 0.599799
+Epoch 93/100, Loss: 0.598999
+Epoch 94/100, Loss: 0.596876
+Epoch 95/100, Loss: 0.587152
+Epoch 96/100, Loss: 0.589344
+Epoch 97/100, Loss: 0.587029
+Epoch 98/100, Loss: 0.573804
+Epoch 99/100, Loss: 0.577894
+Epoch 100/100, Loss: 0.581779
 
 Training complete!
-49
+98
 
 Model Performance Metrics:
-Accuracy: 0.654529
-Recall: 0.566846
-Jaccard Index: 0.420512
-F1 Score: 0.560665
-0.005 0.1 0.0
+Accuracy: 0.717943
+Recall: 0.520505
+Jaccard Index: 0.393011
+F1 Score: 0.493003
+0.1 0.1 0.0
 
 Starting training...
-Epoch 1/50, Loss: 0.477293
-Epoch 2/50, Loss: 0.405264
-Epoch 3/50, Loss: 0.384823
-Epoch 4/50, Loss: 0.332489
-Epoch 5/50, Loss: 0.348125
-Epoch 6/50, Loss: 0.334080
-Epoch 7/50, Loss: 0.298253
-Epoch 8/50, Loss: 0.273431
-Epoch 9/50, Loss: 0.234100
-Epoch 10/50, Loss: 0.238100
-Epoch 11/50, Loss: 0.238739
-Epoch 12/50, Loss: 0.206025
-Epoch 13/50, Loss: 0.217862
-Epoch 14/50, Loss: 0.199331
-Epoch 15/50, Loss: 0.207036
-Epoch 16/50, Loss: 0.184913
-Epoch 17/50, Loss: 0.189491
-Epoch 18/50, Loss: 0.193176
-Epoch 19/50, Loss: 0.175310
-Epoch 20/50, Loss: 0.178544
-Epoch 21/50, Loss: 0.167162
-Epoch 22/50, Loss: 0.169790
-Epoch 23/50, Loss: 0.152301
-Epoch 24/50, Loss: 0.172986
-Epoch 25/50, Loss: 0.162220
-Epoch 26/50, Loss: 0.150982
-Epoch 27/50, Loss: 0.153072
-Epoch 28/50, Loss: 0.150307
-Epoch 29/50, Loss: 0.150060
-Epoch 30/50, Loss: 0.141147
-Epoch 31/50, Loss: 0.156060
-Epoch 32/50, Loss: 0.150879
-Epoch 33/50, Loss: 0.151064
-Epoch 34/50, Loss: 0.135223
-Epoch 35/50, Loss: 0.128164
-Epoch 36/50, Loss: 0.132527
-Epoch 37/50, Loss: 0.129920
-Epoch 38/50, Loss: 0.135072
-Epoch 39/50, Loss: 0.134077
-Epoch 40/50, Loss: 0.130288
-Epoch 41/50, Loss: 0.130337
-Epoch 42/50, Loss: 0.133122
-Epoch 43/50, Loss: 0.127050
-Epoch 44/50, Loss: 0.124394
-Epoch 45/50, Loss: 0.126612
-Epoch 46/50, Loss: 0.118139
-Epoch 47/50, Loss: 0.128772
-Epoch 48/50, Loss: 0.117054
-Epoch 49/50, Loss: 0.121657
-Epoch 50/50, Loss: 0.114764
+Epoch 1/100, Loss: 1.243980
+Epoch 2/100, Loss: 1.222921
+Epoch 3/100, Loss: 1.203026
+Epoch 4/100, Loss: 1.184236
+Epoch 5/100, Loss: 1.169994
+Epoch 6/100, Loss: 1.159727
+Epoch 7/100, Loss: 1.137866
+Epoch 8/100, Loss: 1.125507
+Epoch 9/100, Loss: 1.110698
+Epoch 10/100, Loss: 1.095365
+Epoch 11/100, Loss: 1.079900
+Epoch 12/100, Loss: 1.063084
+Epoch 13/100, Loss: 1.045376
+Epoch 14/100, Loss: 1.029605
+Epoch 15/100, Loss: 1.010410
+Epoch 16/100, Loss: 0.995524
+Epoch 17/100, Loss: 0.978024
+Epoch 18/100, Loss: 0.962983
+Epoch 19/100, Loss: 0.939778
+Epoch 20/100, Loss: 0.937167
+Epoch 21/100, Loss: 0.922975
+Epoch 22/100, Loss: 0.911798
+Epoch 23/100, Loss: 0.894350
+Epoch 24/100, Loss: 0.896685
+Epoch 25/100, Loss: 0.888182
+Epoch 26/100, Loss: 0.882258
+Epoch 27/100, Loss: 0.872434
+Epoch 28/100, Loss: 0.863813
+Epoch 29/100, Loss: 0.859762
+Epoch 30/100, Loss: 0.854404
+Epoch 31/100, Loss: 0.846629
+Epoch 32/100, Loss: 0.839721
+Epoch 33/100, Loss: 0.836117
+Epoch 34/100, Loss: 0.835157
+Epoch 35/100, Loss: 0.828629
+Epoch 36/100, Loss: 0.824793
+Epoch 37/100, Loss: 0.816326
+Epoch 38/100, Loss: 0.813276
+Epoch 39/100, Loss: 0.811664
+Epoch 40/100, Loss: 0.807944
+Epoch 41/100, Loss: 0.804704
+Epoch 42/100, Loss: 0.801572
+Epoch 43/100, Loss: 0.798199
+Epoch 44/100, Loss: 0.790366
+Epoch 45/100, Loss: 0.785443
+Epoch 46/100, Loss: 0.787494
+Epoch 47/100, Loss: 0.783646
+Epoch 48/100, Loss: 0.782605
+Epoch 49/100, Loss: 0.777999
+Epoch 50/100, Loss: 0.778892
+Epoch 51/100, Loss: 0.771323
+Epoch 52/100, Loss: 0.769029
+Epoch 53/100, Loss: 0.766358
+Epoch 54/100, Loss: 0.763706
+Epoch 55/100, Loss: 0.763132
+Epoch 56/100, Loss: 0.757817
+Epoch 57/100, Loss: 0.761481
+Epoch 58/100, Loss: 0.747931
+Epoch 59/100, Loss: 0.755213
+Epoch 60/100, Loss: 0.751261
+Epoch 61/100, Loss: 0.746987
+Epoch 62/100, Loss: 0.741135
+Epoch 63/100, Loss: 0.745139
+Epoch 64/100, Loss: 0.742573
+Epoch 65/100, Loss: 0.740080
+Epoch 66/100, Loss: 0.740251
+Epoch 67/100, Loss: 0.737796
+Epoch 68/100, Loss: 0.737838
+Epoch 69/100, Loss: 0.731980
+Epoch 70/100, Loss: 0.731702
+Epoch 71/100, Loss: 0.730471
+Epoch 72/100, Loss: 0.728904
+Epoch 73/100, Loss: 0.715296
+Epoch 74/100, Loss: 0.721646
+Epoch 75/100, Loss: 0.721190
+Epoch 76/100, Loss: 0.720469
+Epoch 77/100, Loss: 0.711262
+Epoch 78/100, Loss: 0.717734
+Epoch 79/100, Loss: 0.715952
+Epoch 80/100, Loss: 0.703412
+Epoch 81/100, Loss: 0.707824
+Epoch 82/100, Loss: 0.704267
+Epoch 83/100, Loss: 0.703179
+Epoch 84/100, Loss: 0.709615
+Epoch 85/100, Loss: 0.704321
+Epoch 86/100, Loss: 0.706010
+Epoch 87/100, Loss: 0.693075
+Epoch 88/100, Loss: 0.700027
+Epoch 89/100, Loss: 0.698996
+Epoch 90/100, Loss: 0.684132
+Epoch 91/100, Loss: 0.628283
+Epoch 92/100, Loss: 0.632513
+Epoch 93/100, Loss: 0.625766
+Epoch 94/100, Loss: 0.623514
+Epoch 95/100, Loss: 0.622534
+Epoch 96/100, Loss: 0.622583
+Epoch 97/100, Loss: 0.626340
+Epoch 98/100, Loss: 0.617652
+Epoch 99/100, Loss: 0.621382
+Epoch 100/100, Loss: 0.616946
 
 Training complete!
-50
+100
 
 Model Performance Metrics:
-Accuracy: 0.657105
-Recall: 0.619851
-Jaccard Index: 0.445788
-F1 Score: 0.587639
-0.005 0.1 0.1
+Accuracy: 0.706749
+Recall: 0.515548
+Jaccard Index: 0.385996
+F1 Score: 0.487311
+0.1 0.1 0.1
 
 Starting training...
-Epoch 1/50, Loss: 0.457507
-Epoch 2/50, Loss: 0.477963
-Epoch 3/50, Loss: 0.439179
-Epoch 4/50, Loss: 0.382810
-Epoch 5/50, Loss: 0.375146
-Epoch 6/50, Loss: 0.327980
-Epoch 7/50, Loss: 0.299411
-Epoch 8/50, Loss: 0.280921
-Epoch 9/50, Loss: 0.272641
-Epoch 10/50, Loss: 0.267607
-Epoch 11/50, Loss: 0.223118
-Epoch 12/50, Loss: 0.232666
-Epoch 13/50, Loss: 0.240683
-Epoch 14/50, Loss: 0.237981
-Epoch 15/50, Loss: 0.229745
-Epoch 16/50, Loss: 0.217563
-Epoch 17/50, Loss: 0.223402
-Epoch 18/50, Loss: 0.209224
-Epoch 19/50, Loss: 0.204669
-Epoch 20/50, Loss: 0.218248
-Epoch 21/50, Loss: 0.202163
-Epoch 22/50, Loss: 0.206775
-Epoch 23/50, Loss: 0.206685
-Epoch 24/50, Loss: 0.192604
-Epoch 25/50, Loss: 0.196611
-Epoch 26/50, Loss: 0.177425
-Epoch 27/50, Loss: 0.176375
-Epoch 28/50, Loss: 0.172341
-Epoch 29/50, Loss: 0.187666
-Epoch 30/50, Loss: 0.172368
-Epoch 31/50, Loss: 0.172890
-Epoch 32/50, Loss: 0.171619
-Epoch 33/50, Loss: 0.175770
-Epoch 34/50, Loss: 0.173295
-Epoch 35/50, Loss: 0.171570
-Epoch 36/50, Loss: 0.161092
-Epoch 37/50, Loss: 0.166210
-Epoch 38/50, Loss: 0.169747
-Epoch 39/50, Loss: 0.160000
-Epoch 40/50, Loss: 0.159152
-Epoch 41/50, Loss: 0.161139
-Epoch 42/50, Loss: 0.163387
-Epoch 43/50, Loss: 0.158184
-Epoch 44/50, Loss: 0.166900
-Epoch 45/50, Loss: 0.157580
-Epoch 46/50, Loss: 0.152514
-Epoch 47/50, Loss: 0.153126
-Epoch 48/50, Loss: 0.154972
-Epoch 49/50, Loss: 0.155538
-Epoch 50/50, Loss: 0.151732
+Epoch 1/100, Loss: 1.366444
+Epoch 2/100, Loss: 1.343131
+Epoch 3/100, Loss: 1.316375
+Epoch 4/100, Loss: 1.296564
+Epoch 5/100, Loss: 1.276935
+Epoch 6/100, Loss: 1.255148
+Epoch 7/100, Loss: 1.235254
+Epoch 8/100, Loss: 1.220035
+Epoch 9/100, Loss: 1.204385
+Epoch 10/100, Loss: 1.187167
+Epoch 11/100, Loss: 1.173544
+Epoch 12/100, Loss: 1.159823
+Epoch 13/100, Loss: 1.146243
+Epoch 14/100, Loss: 1.136660
+Epoch 15/100, Loss: 1.121238
+Epoch 16/100, Loss: 1.110987
+Epoch 17/100, Loss: 1.100242
+Epoch 18/100, Loss: 1.087240
+Epoch 19/100, Loss: 1.073730
+Epoch 20/100, Loss: 1.060385
+Epoch 21/100, Loss: 1.051632
+Epoch 22/100, Loss: 1.036636
+Epoch 23/100, Loss: 1.025775
+Epoch 24/100, Loss: 1.012094
+Epoch 25/100, Loss: 1.002805
+Epoch 26/100, Loss: 0.993229
+Epoch 27/100, Loss: 0.983203
+Epoch 28/100, Loss: 0.973305
+Epoch 29/100, Loss: 0.954072
+Epoch 30/100, Loss: 0.958914
+Epoch 31/100, Loss: 0.944461
+Epoch 32/100, Loss: 0.940195
+Epoch 33/100, Loss: 0.932353
+Epoch 34/100, Loss: 0.925854
+Epoch 35/100, Loss: 0.920804
+Epoch 36/100, Loss: 0.912231
+Epoch 37/100, Loss: 0.906146
+Epoch 38/100, Loss: 0.902141
+Epoch 39/100, Loss: 0.887225
+Epoch 40/100, Loss: 0.891063
+Epoch 41/100, Loss: 0.883683
+Epoch 42/100, Loss: 0.881687
+Epoch 43/100, Loss: 0.878387
+Epoch 44/100, Loss: 0.872721
+Epoch 45/100, Loss: 0.868725
+Epoch 46/100, Loss: 0.864526
+Epoch 47/100, Loss: 0.856822
+Epoch 48/100, Loss: 0.851448
+Epoch 49/100, Loss: 0.851141
+Epoch 50/100, Loss: 0.845106
+Epoch 51/100, Loss: 0.842147
+Epoch 52/100, Loss: 0.843304
+Epoch 53/100, Loss: 0.832744
+Epoch 54/100, Loss: 0.830111
+Epoch 55/100, Loss: 0.830738
+Epoch 56/100, Loss: 0.822764
+Epoch 57/100, Loss: 0.819958
+Epoch 58/100, Loss: 0.819447
+Epoch 59/100, Loss: 0.816744
+Epoch 60/100, Loss: 0.811173
+Epoch 61/100, Loss: 0.808367
+Epoch 62/100, Loss: 0.807582
+Epoch 63/100, Loss: 0.801633
+Epoch 64/100, Loss: 0.801137
+Epoch 65/100, Loss: 0.801253
+Epoch 66/100, Loss: 0.789026
+Epoch 67/100, Loss: 0.796110
+Epoch 68/100, Loss: 0.783260
+Epoch 69/100, Loss: 0.789024
+Epoch 70/100, Loss: 0.786147
+Epoch 71/100, Loss: 0.777871
+Epoch 72/100, Loss: 0.778643
+Epoch 73/100, Loss: 0.780164
+Epoch 74/100, Loss: 0.773911
+Epoch 75/100, Loss: 0.772964
+Epoch 76/100, Loss: 0.767828
+Epoch 77/100, Loss: 0.765967
+Epoch 78/100, Loss: 0.764507
+Epoch 79/100, Loss: 0.765663
+Epoch 80/100, Loss: 0.758916
+Epoch 81/100, Loss: 0.762523
+Epoch 82/100, Loss: 0.759168
+Epoch 83/100, Loss: 0.745684
+Epoch 84/100, Loss: 0.748574
+Epoch 85/100, Loss: 0.753404
+Epoch 86/100, Loss: 0.739919
+Epoch 87/100, Loss: 0.738843
+Epoch 88/100, Loss: 0.736750
+Epoch 89/100, Loss: 0.737351
+Epoch 90/100, Loss: 0.733252
+Epoch 91/100, Loss: 0.628563
+Epoch 92/100, Loss: 0.628578
+Epoch 93/100, Loss: 0.625005
+Epoch 94/100, Loss: 0.624513
+Epoch 95/100, Loss: 0.621000
+Epoch 96/100, Loss: 0.622529
+Epoch 97/100, Loss: 0.617783
+Epoch 98/100, Loss: 0.619299
+Epoch 99/100, Loss: 0.616929
+Epoch 100/100, Loss: 0.607225
 
 Training complete!
-50
+100
 
 Model Performance Metrics:
-Accuracy: 0.616933
-Recall: 0.575646
-Jaccard Index: 0.408565
-F1 Score: 0.551144
-0.005 0.1 0.5
+Accuracy: 0.712891
+Recall: 0.519386
+Jaccard Index: 0.393683
+F1 Score: 0.500683
+0.1 0.1 0.5
 
 Starting training...
-Epoch 1/50, Loss: 0.836945
-Epoch 2/50, Loss: 0.717910
-Epoch 3/50, Loss: 0.681034
-Epoch 4/50, Loss: 0.639078
-Epoch 5/50, Loss: 0.609757
-Epoch 6/50, Loss: 0.560047
-Epoch 7/50, Loss: 0.490521
-Epoch 8/50, Loss: 0.500471
-Epoch 9/50, Loss: 0.459708
-Epoch 10/50, Loss: 0.459310
-Epoch 11/50, Loss: 0.406438
-Epoch 12/50, Loss: 0.401325
-Epoch 13/50, Loss: 0.381902
-Epoch 14/50, Loss: 0.360787
-Epoch 15/50, Loss: 0.356721
-Epoch 16/50, Loss: 0.357482
-Epoch 17/50, Loss: 0.330961
-Epoch 18/50, Loss: 0.317188
-Epoch 19/50, Loss: 0.315788
-Epoch 20/50, Loss: 0.309436
-Epoch 21/50, Loss: 0.303524
-Epoch 22/50, Loss: 0.303138
-Epoch 23/50, Loss: 0.290254
-Epoch 24/50, Loss: 0.277061
-Epoch 25/50, Loss: 0.283018
-Epoch 26/50, Loss: 0.275709
-Epoch 27/50, Loss: 0.257114
-Epoch 28/50, Loss: 0.260584
-Epoch 29/50, Loss: 0.244177
-Epoch 30/50, Loss: 0.244605
-Epoch 31/50, Loss: 0.243765
-Epoch 32/50, Loss: 0.248595
-Epoch 33/50, Loss: 0.252876
-Epoch 34/50, Loss: 0.255435
-Epoch 35/50, Loss: 0.250021
-Epoch 36/50, Loss: 0.236862
-Epoch 37/50, Loss: 0.232295
-Epoch 38/50, Loss: 0.226869
-Epoch 39/50, Loss: 0.232255
-Epoch 40/50, Loss: 0.229694
-Epoch 41/50, Loss: 0.230095
-Epoch 42/50, Loss: 0.235277
-Epoch 43/50, Loss: 0.224006
-Epoch 44/50, Loss: 0.227617
-Epoch 45/50, Loss: 0.224434
-Epoch 46/50, Loss: 0.213553
-Epoch 47/50, Loss: 0.200757
-Epoch 48/50, Loss: 0.196414
-Epoch 49/50, Loss: 0.202384
-Epoch 50/50, Loss: 0.199815
+Epoch 1/100, Loss: 1.599326
+Epoch 2/100, Loss: 1.557774
+Epoch 3/100, Loss: 1.542885
+Epoch 4/100, Loss: 1.516828
+Epoch 5/100, Loss: 1.494585
+Epoch 6/100, Loss: 1.474486
+Epoch 7/100, Loss: 1.452165
+Epoch 8/100, Loss: 1.432278
+Epoch 9/100, Loss: 1.415723
+Epoch 10/100, Loss: 1.398520
+Epoch 11/100, Loss: 1.379887
+Epoch 12/100, Loss: 1.363786
+Epoch 13/100, Loss: 1.353650
+Epoch 14/100, Loss: 1.337354
+Epoch 15/100, Loss: 1.328539
+Epoch 16/100, Loss: 1.315991
+Epoch 17/100, Loss: 1.306249
+Epoch 18/100, Loss: 1.293610
+Epoch 19/100, Loss: 1.283025
+Epoch 20/100, Loss: 1.273662
+Epoch 21/100, Loss: 1.262852
+Epoch 22/100, Loss: 1.251529
+Epoch 23/100, Loss: 1.239044
+Epoch 24/100, Loss: 1.227883
+Epoch 25/100, Loss: 1.213786
+Epoch 26/100, Loss: 1.204715
+Epoch 27/100, Loss: 1.188443
+Epoch 28/100, Loss: 1.178587
+Epoch 29/100, Loss: 1.166326
+Epoch 30/100, Loss: 1.156955
+Epoch 31/100, Loss: 1.150439
+Epoch 32/100, Loss: 1.137020
+Epoch 33/100, Loss: 1.129569
+Epoch 34/100, Loss: 1.117955
+Epoch 35/100, Loss: 1.112346
+Epoch 36/100, Loss: 1.103582
+Epoch 37/100, Loss: 1.094459
+Epoch 38/100, Loss: 1.092973
+Epoch 39/100, Loss: 1.079884
+Epoch 40/100, Loss: 1.073686
+Epoch 41/100, Loss: 1.071621
+Epoch 42/100, Loss: 1.059194
+Epoch 43/100, Loss: 1.056377
+Epoch 44/100, Loss: 1.054479
+Epoch 45/100, Loss: 1.037590
+Epoch 46/100, Loss: 1.037598
+Epoch 47/100, Loss: 1.041499
+Epoch 48/100, Loss: 1.030775
+Epoch 49/100, Loss: 1.023856
+Epoch 50/100, Loss: 1.021927
+Epoch 51/100, Loss: 1.019597
+Epoch 52/100, Loss: 1.021174
+Epoch 53/100, Loss: 1.010000
+Epoch 54/100, Loss: 1.007722
+Epoch 55/100, Loss: 1.003492
+Epoch 56/100, Loss: 1.001952
+Epoch 57/100, Loss: 0.994447
+Epoch 58/100, Loss: 0.992853
+Epoch 59/100, Loss: 0.993562
+Epoch 60/100, Loss: 0.987801
+Epoch 61/100, Loss: 0.984202
+Epoch 62/100, Loss: 0.978344
+Epoch 63/100, Loss: 0.980320
+Epoch 64/100, Loss: 0.975785
+Epoch 65/100, Loss: 0.969871
+Epoch 66/100, Loss: 0.962965
+Epoch 67/100, Loss: 0.966824
+Epoch 68/100, Loss: 0.962385
+Epoch 69/100, Loss: 0.957196
+Epoch 70/100, Loss: 0.958856
+Epoch 71/100, Loss: 0.947727
+Epoch 72/100, Loss: 0.952518
+Epoch 73/100, Loss: 0.942445
+Epoch 74/100, Loss: 0.945392
+Epoch 75/100, Loss: 0.939899
+Epoch 76/100, Loss: 0.945120
+Epoch 77/100, Loss: 0.938183
+Epoch 78/100, Loss: 0.939084
+Epoch 79/100, Loss: 0.932992
+Epoch 80/100, Loss: 0.928624
+Epoch 81/100, Loss: 0.927826
+Epoch 82/100, Loss: 0.923618
+Epoch 83/100, Loss: 0.920505
+Epoch 84/100, Loss: 0.916252
+Epoch 85/100, Loss: 0.918357
+Epoch 86/100, Loss: 0.912837
+Epoch 87/100, Loss: 0.914262
+Epoch 88/100, Loss: 0.904769
+Epoch 89/100, Loss: 0.903316
+Epoch 90/100, Loss: 0.902670
+Epoch 91/100, Loss: 0.641055
+Epoch 92/100, Loss: 0.640050
+Epoch 93/100, Loss: 0.633157
+Epoch 94/100, Loss: 0.631163
+Epoch 95/100, Loss: 0.625452
+Epoch 96/100, Loss: 0.621636
+Epoch 97/100, Loss: 0.624194
+Epoch 98/100, Loss: 0.625677
+Epoch 99/100, Loss: 0.621652
+Epoch 100/100, Loss: 0.617537
 
 Training complete!
-48
+100
 
 Model Performance Metrics:
-Accuracy: 0.684006
-Recall: 0.561317
-Jaccard Index: 0.427773
-F1 Score: 0.559782
-0.005 0.5 0.0
+Accuracy: 0.713428
+Recall: 0.522606
+Jaccard Index: 0.391593
+F1 Score: 0.493392
+0.1 0.5 0.0
 
 Starting training...
-Epoch 1/50, Loss: 0.730548
-Epoch 2/50, Loss: 0.651586
-Epoch 3/50, Loss: 0.617451
-Epoch 4/50, Loss: 0.547729
-Epoch 5/50, Loss: 0.524276
-Epoch 6/50, Loss: 0.461805
-Epoch 7/50, Loss: 0.446125
-Epoch 8/50, Loss: 0.459227
-Epoch 9/50, Loss: 0.434636
-Epoch 10/50, Loss: 0.430597
-Epoch 11/50, Loss: 0.419533
-Epoch 12/50, Loss: 0.420118
-Epoch 13/50, Loss: 0.411332
-Epoch 14/50, Loss: 0.401885
-Epoch 15/50, Loss: 0.413183
-Epoch 16/50, Loss: 0.388301
-Epoch 17/50, Loss: 0.380559
-Epoch 18/50, Loss: 0.382054
-Epoch 19/50, Loss: 0.387515
-Epoch 20/50, Loss: 0.375283
-Epoch 21/50, Loss: 0.370281
-Epoch 22/50, Loss: 0.361670
-Epoch 23/50, Loss: 0.360550
-Epoch 24/50, Loss: 0.371860
-Epoch 25/50, Loss: 0.358870
-Epoch 26/50, Loss: 0.375499
-Epoch 27/50, Loss: 0.372835
-Epoch 28/50, Loss: 0.364877
-Epoch 29/50, Loss: 0.363168
-Epoch 30/50, Loss: 0.362385
-Epoch 31/50, Loss: 0.356731
-Epoch 32/50, Loss: 0.359752
-Epoch 33/50, Loss: 0.355771
-Epoch 34/50, Loss: 0.348781
-Epoch 35/50, Loss: 0.354737
-Epoch 36/50, Loss: 0.355814
-Epoch 37/50, Loss: 0.359119
-Epoch 38/50, Loss: 0.355382
-Epoch 39/50, Loss: 0.348640
-Epoch 40/50, Loss: 0.343219
-Epoch 41/50, Loss: 0.341584
-Epoch 42/50, Loss: 0.336913
-Epoch 43/50, Loss: 0.343077
-Epoch 44/50, Loss: 0.335326
-Epoch 45/50, Loss: 0.339403
-Epoch 46/50, Loss: 0.342758
-Epoch 47/50, Loss: 0.344018
-Epoch 48/50, Loss: 0.338864
-Epoch 49/50, Loss: 0.345192
-Epoch 50/50, Loss: 0.337357
+Epoch 1/100, Loss: 1.521889
+Epoch 2/100, Loss: 1.478402
+Epoch 3/100, Loss: 1.458710
+Epoch 4/100, Loss: 1.428415
+Epoch 5/100, Loss: 1.400216
+Epoch 6/100, Loss: 1.375317
+Epoch 7/100, Loss: 1.348578
+Epoch 8/100, Loss: 1.325018
+Epoch 9/100, Loss: 1.302406
+Epoch 10/100, Loss: 1.277158
+Epoch 11/100, Loss: 1.257991
+Epoch 12/100, Loss: 1.235554
+Epoch 13/100, Loss: 1.219561
+Epoch 14/100, Loss: 1.202379
+Epoch 15/100, Loss: 1.186902
+Epoch 16/100, Loss: 1.173238
+Epoch 17/100, Loss: 1.159583
+Epoch 18/100, Loss: 1.146960
+Epoch 19/100, Loss: 1.136339
+Epoch 20/100, Loss: 1.126178
+Epoch 21/100, Loss: 1.116104
+Epoch 22/100, Loss: 1.106425
+Epoch 23/100, Loss: 1.101719
+Epoch 24/100, Loss: 1.089582
+Epoch 25/100, Loss: 1.083630
+Epoch 26/100, Loss: 1.077914
+Epoch 27/100, Loss: 1.071054
+Epoch 28/100, Loss: 1.063863
+Epoch 29/100, Loss: 1.058067
+Epoch 30/100, Loss: 1.043779
+Epoch 31/100, Loss: 1.046642
+Epoch 32/100, Loss: 1.040617
+Epoch 33/100, Loss: 1.035417
+Epoch 34/100, Loss: 1.031633
+Epoch 35/100, Loss: 1.026937
+Epoch 36/100, Loss: 1.025983
+Epoch 37/100, Loss: 1.019960
+Epoch 38/100, Loss: 1.013266
+Epoch 39/100, Loss: 1.009721
+Epoch 40/100, Loss: 1.011260
+Epoch 41/100, Loss: 1.007413
+Epoch 42/100, Loss: 1.000581
+Epoch 43/100, Loss: 0.996572
+Epoch 44/100, Loss: 0.991189
+Epoch 45/100, Loss: 0.990022
+Epoch 46/100, Loss: 0.986309
+Epoch 47/100, Loss: 0.978978
+Epoch 48/100, Loss: 0.982043
+Epoch 49/100, Loss: 0.981535
+Epoch 50/100, Loss: 0.976013
+Epoch 51/100, Loss: 0.978328
+Epoch 52/100, Loss: 0.972846
+Epoch 53/100, Loss: 0.967439
+Epoch 54/100, Loss: 0.962839
+Epoch 55/100, Loss: 0.965434
+Epoch 56/100, Loss: 0.961073
+Epoch 57/100, Loss: 0.959614
+Epoch 58/100, Loss: 0.954868
+Epoch 59/100, Loss: 0.959764
+Epoch 60/100, Loss: 0.953803
+Epoch 61/100, Loss: 0.952323
+Epoch 62/100, Loss: 0.953842
+Epoch 63/100, Loss: 0.941170
+Epoch 64/100, Loss: 0.944561
+Epoch 65/100, Loss: 0.944472
+Epoch 66/100, Loss: 0.942005
+Epoch 67/100, Loss: 0.939409
+Epoch 68/100, Loss: 0.933017
+Epoch 69/100, Loss: 0.931527
+Epoch 70/100, Loss: 0.932972
+Epoch 71/100, Loss: 0.929078
+Epoch 72/100, Loss: 0.928815
+Epoch 73/100, Loss: 0.923110
+Epoch 74/100, Loss: 0.921113
+Epoch 75/100, Loss: 0.918854
+Epoch 76/100, Loss: 0.923567
+Epoch 77/100, Loss: 0.912927
+Epoch 78/100, Loss: 0.918638
+Epoch 79/100, Loss: 0.912880
+Epoch 80/100, Loss: 0.909109
+Epoch 81/100, Loss: 0.911202
+Epoch 82/100, Loss: 0.904943
+Epoch 83/100, Loss: 0.907546
+Epoch 84/100, Loss: 0.906759
+Epoch 85/100, Loss: 0.909581
+Epoch 86/100, Loss: 0.903574
+Epoch 87/100, Loss: 0.903519
+Epoch 88/100, Loss: 0.898347
+Epoch 89/100, Loss: 0.895091
+Epoch 90/100, Loss: 0.894252
+Epoch 91/100, Loss: 0.594480
+Epoch 92/100, Loss: 0.591845
+Epoch 93/100, Loss: 0.591593
+Epoch 94/100, Loss: 0.588590
+Epoch 95/100, Loss: 0.588190
+Epoch 96/100, Loss: 0.584715
+Epoch 97/100, Loss: 0.584440
+Epoch 98/100, Loss: 0.584245
+Epoch 99/100, Loss: 0.581989
+Epoch 100/100, Loss: 0.575976
 
 Training complete!
-44
+100
 
 Model Performance Metrics:
-Accuracy: 0.634194
-Recall: 0.591300
-Jaccard Index: 0.424362
-F1 Score: 0.566184
-0.005 0.5 0.1
+Accuracy: 0.713880
+Recall: 0.530560
+Jaccard Index: 0.402691
+F1 Score: 0.513328
+0.1 0.5 0.1
 
 Starting training...
-Epoch 1/50, Loss: 0.806491
-Epoch 2/50, Loss: 0.718760
-Epoch 3/50, Loss: 0.702604
-Epoch 4/50, Loss: 0.630665
-Epoch 5/50, Loss: 0.591194
-Epoch 6/50, Loss: 0.556893
-Epoch 7/50, Loss: 0.528712
-Epoch 8/50, Loss: 0.502748
-Epoch 9/50, Loss: 0.489120
-Epoch 10/50, Loss: 0.485531
-Epoch 11/50, Loss: 0.471344
-Epoch 12/50, Loss: 0.461157
-Epoch 13/50, Loss: 0.457838
-Epoch 14/50, Loss: 0.448907
-Epoch 15/50, Loss: 0.454996
-Epoch 16/50, Loss: 0.442696
-Epoch 17/50, Loss: 0.439323
-Epoch 18/50, Loss: 0.433882
-Epoch 19/50, Loss: 0.421270
-Epoch 20/50, Loss: 0.429522
-Epoch 21/50, Loss: 0.416165
-Epoch 22/50, Loss: 0.419975
-Epoch 23/50, Loss: 0.423241
-Epoch 24/50, Loss: 0.408738
-Epoch 25/50, Loss: 0.423840
-Epoch 26/50, Loss: 0.415490
-Epoch 27/50, Loss: 0.401712
-Epoch 28/50, Loss: 0.410540
-Epoch 29/50, Loss: 0.408914
-Epoch 30/50, Loss: 0.407873
-Epoch 31/50, Loss: 0.408261
-Epoch 32/50, Loss: 0.395581
-Epoch 33/50, Loss: 0.391959
-Epoch 34/50, Loss: 0.397154
-Epoch 35/50, Loss: 0.381099
-Epoch 36/50, Loss: 0.402877
-Epoch 37/50, Loss: 0.391902
-Epoch 38/50, Loss: 0.385523
-Epoch 39/50, Loss: 0.393678
-Epoch 40/50, Loss: 0.392214
-Epoch 41/50, Loss: 0.384532
-Epoch 42/50, Loss: 0.385325
-Epoch 43/50, Loss: 0.381362
-Epoch 44/50, Loss: 0.386164
-Epoch 45/50, Loss: 0.372934
-Epoch 46/50, Loss: 0.368932
-Epoch 47/50, Loss: 0.376850
-Epoch 48/50, Loss: 0.379887
-Epoch 49/50, Loss: 0.379311
-Epoch 50/50, Loss: 0.370006
+Epoch 1/100, Loss: 1.525294
+Epoch 2/100, Loss: 1.500000
+Epoch 3/100, Loss: 1.479169
+Epoch 4/100, Loss: 1.461871
+Epoch 5/100, Loss: 1.445894
+Epoch 6/100, Loss: 1.428856
+Epoch 7/100, Loss: 1.418269
+Epoch 8/100, Loss: 1.401275
+Epoch 9/100, Loss: 1.390205
+Epoch 10/100, Loss: 1.375603
+Epoch 11/100, Loss: 1.363207
+Epoch 12/100, Loss: 1.348769
+Epoch 13/100, Loss: 1.331455
+Epoch 14/100, Loss: 1.313495
+Epoch 15/100, Loss: 1.291912
+Epoch 16/100, Loss: 1.283798
+Epoch 17/100, Loss: 1.268573
+Epoch 18/100, Loss: 1.254686
+Epoch 19/100, Loss: 1.241769
+Epoch 20/100, Loss: 1.230751
+Epoch 21/100, Loss: 1.217146
+Epoch 22/100, Loss: 1.206812
+Epoch 23/100, Loss: 1.193419
+Epoch 24/100, Loss: 1.183397
+Epoch 25/100, Loss: 1.170965
+Epoch 26/100, Loss: 1.162636
+Epoch 27/100, Loss: 1.156212
+Epoch 28/100, Loss: 1.147659
+Epoch 29/100, Loss: 1.138873
+Epoch 30/100, Loss: 1.133996
+Epoch 31/100, Loss: 1.125330
+Epoch 32/100, Loss: 1.115326
+Epoch 33/100, Loss: 1.116995
+Epoch 34/100, Loss: 1.108504
+Epoch 35/100, Loss: 1.102299
+Epoch 36/100, Loss: 1.095802
+Epoch 37/100, Loss: 1.089930
+Epoch 38/100, Loss: 1.087625
+Epoch 39/100, Loss: 1.081466
+Epoch 40/100, Loss: 1.078437
+Epoch 41/100, Loss: 1.072781
+Epoch 42/100, Loss: 1.062335
+Epoch 43/100, Loss: 1.062426
+Epoch 44/100, Loss: 1.054880
+Epoch 45/100, Loss: 1.060787
+Epoch 46/100, Loss: 1.054401
+Epoch 47/100, Loss: 1.051359
+Epoch 48/100, Loss: 1.040900
+Epoch 49/100, Loss: 1.041668
+Epoch 50/100, Loss: 1.040082
+Epoch 51/100, Loss: 1.035002
+Epoch 52/100, Loss: 1.030493
+Epoch 53/100, Loss: 1.027879
+Epoch 54/100, Loss: 1.030355
+Epoch 55/100, Loss: 1.022265
+Epoch 56/100, Loss: 1.022228
+Epoch 57/100, Loss: 1.020893
+Epoch 58/100, Loss: 1.005896
+Epoch 59/100, Loss: 1.013257
+Epoch 60/100, Loss: 1.004626
+Epoch 61/100, Loss: 1.001082
+Epoch 62/100, Loss: 1.004504
+Epoch 63/100, Loss: 1.002614
+Epoch 64/100, Loss: 0.997612
+Epoch 65/100, Loss: 0.997026
+Epoch 66/100, Loss: 0.992287
+Epoch 67/100, Loss: 0.993569
+Epoch 68/100, Loss: 0.988009
+Epoch 69/100, Loss: 0.986163
+Epoch 70/100, Loss: 0.979895
+Epoch 71/100, Loss: 0.982362
+Epoch 72/100, Loss: 0.982620
+Epoch 73/100, Loss: 0.977933
+Epoch 74/100, Loss: 0.977216
+Epoch 75/100, Loss: 0.973643
+Epoch 76/100, Loss: 0.971033
+Epoch 77/100, Loss: 0.965132
+Epoch 78/100, Loss: 0.968347
+Epoch 79/100, Loss: 0.966924
+Epoch 80/100, Loss: 0.960525
+Epoch 81/100, Loss: 0.960761
+Epoch 82/100, Loss: 0.957284
+Epoch 83/100, Loss: 0.956652
+Epoch 84/100, Loss: 0.952579
+Epoch 85/100, Loss: 0.947692
+Epoch 86/100, Loss: 0.950385
+Epoch 87/100, Loss: 0.953596
+Epoch 88/100, Loss: 0.947001
+Epoch 89/100, Loss: 0.940390
+Epoch 90/100, Loss: 0.938647
+Epoch 91/100, Loss: 0.610589
+Epoch 92/100, Loss: 0.596468
+Epoch 93/100, Loss: 0.592086
+Epoch 94/100, Loss: 0.595136
+Epoch 95/100, Loss: 0.592177
+Epoch 96/100, Loss: 0.588847
+Epoch 97/100, Loss: 0.589467
+Epoch 98/100, Loss: 0.582001
+Epoch 99/100, Loss: 0.578615
+Epoch 100/100, Loss: 0.576210
 
 Training complete!
-46
+100
 
 Model Performance Metrics:
-Accuracy: 0.655648
-Recall: 0.550854
-Jaccard Index: 0.409700
-F1 Score: 0.546436
-0.005 0.5 0.5
+Accuracy: 0.716606
+Recall: 0.541787
+Jaccard Index: 0.416704
+F1 Score: 0.538381
+0.1 0.5 0.5
 
 Starting training...
-Epoch 1/50, Loss: 1.050186
-Epoch 2/50, Loss: 0.970110
-Epoch 3/50, Loss: 0.926641
-Epoch 4/50, Loss: 0.852310
-Epoch 5/50, Loss: 0.842173
-Epoch 6/50, Loss: 0.752997
-Epoch 7/50, Loss: 0.688965
-Epoch 8/50, Loss: 0.697542
-Epoch 9/50, Loss: 0.640398
-Epoch 10/50, Loss: 0.615694
-Epoch 11/50, Loss: 0.598380
-Epoch 12/50, Loss: 0.593677
-Epoch 13/50, Loss: 0.570081
-Epoch 14/50, Loss: 0.553215
-Epoch 15/50, Loss: 0.534817
-Epoch 16/50, Loss: 0.542433
-Epoch 17/50, Loss: 0.514381
-Epoch 18/50, Loss: 0.525485
-Epoch 19/50, Loss: 0.518172
-Epoch 20/50, Loss: 0.505140
-Epoch 21/50, Loss: 0.499795
-Epoch 22/50, Loss: 0.485341
-Epoch 23/50, Loss: 0.478731
-Epoch 24/50, Loss: 0.490679
-Epoch 25/50, Loss: 0.481933
-Epoch 26/50, Loss: 0.473335
-Epoch 27/50, Loss: 0.475140
-Epoch 28/50, Loss: 0.473929
-Epoch 29/50, Loss: 0.468516
-Epoch 30/50, Loss: 0.456031
-Epoch 31/50, Loss: 0.453982
-Epoch 32/50, Loss: 0.458086
-Epoch 33/50, Loss: 0.452783
-Epoch 34/50, Loss: 0.437953
-Epoch 35/50, Loss: 0.445165
-Epoch 36/50, Loss: 0.447296
-Epoch 37/50, Loss: 0.445414
-Epoch 38/50, Loss: 0.453159
-Epoch 39/50, Loss: 0.440558
-Epoch 40/50, Loss: 0.445157
-Epoch 41/50, Loss: 0.436328
-Epoch 42/50, Loss: 0.429034
-Epoch 43/50, Loss: 0.425008
-Epoch 44/50, Loss: 0.422596
-Epoch 45/50, Loss: 0.425189
-Epoch 46/50, Loss: 0.416546
-Epoch 47/50, Loss: 0.421504
-Epoch 48/50, Loss: 0.419165
-Epoch 49/50, Loss: 0.414003
-Epoch 50/50, Loss: 0.421701
+Epoch 1/100, Loss: 1.921391
+Epoch 2/100, Loss: 1.881244
+Epoch 3/100, Loss: 1.848343
+Epoch 4/100, Loss: 1.820286
+Epoch 5/100, Loss: 1.791639
+Epoch 6/100, Loss: 1.763510
+Epoch 7/100, Loss: 1.740415
+Epoch 8/100, Loss: 1.717955
+Epoch 9/100, Loss: 1.697986
+Epoch 10/100, Loss: 1.678454
+Epoch 11/100, Loss: 1.659575
+Epoch 12/100, Loss: 1.638998
+Epoch 13/100, Loss: 1.619235
+Epoch 14/100, Loss: 1.602479
+Epoch 15/100, Loss: 1.586666
+Epoch 16/100, Loss: 1.568855
+Epoch 17/100, Loss: 1.552430
+Epoch 18/100, Loss: 1.536200
+Epoch 19/100, Loss: 1.519587
+Epoch 20/100, Loss: 1.503012
+Epoch 21/100, Loss: 1.490910
+Epoch 22/100, Loss: 1.473481
+Epoch 23/100, Loss: 1.459903
+Epoch 24/100, Loss: 1.446969
+Epoch 25/100, Loss: 1.431319
+Epoch 26/100, Loss: 1.421046
+Epoch 27/100, Loss: 1.409287
+Epoch 28/100, Loss: 1.394766
+Epoch 29/100, Loss: 1.380464
+Epoch 30/100, Loss: 1.375026
+Epoch 31/100, Loss: 1.364096
+Epoch 32/100, Loss: 1.354592
+Epoch 33/100, Loss: 1.349519
+Epoch 34/100, Loss: 1.338379
+Epoch 35/100, Loss: 1.329995
+Epoch 36/100, Loss: 1.316807
+Epoch 37/100, Loss: 1.314187
+Epoch 38/100, Loss: 1.307119
+Epoch 39/100, Loss: 1.293656
+Epoch 40/100, Loss: 1.294831
+Epoch 41/100, Loss: 1.286369
+Epoch 42/100, Loss: 1.280656
+Epoch 43/100, Loss: 1.274959
+Epoch 44/100, Loss: 1.269212
+Epoch 45/100, Loss: 1.264325
+Epoch 46/100, Loss: 1.250072
+Epoch 47/100, Loss: 1.254972
+Epoch 48/100, Loss: 1.251228
+Epoch 49/100, Loss: 1.243970
+Epoch 50/100, Loss: 1.238139
+Epoch 51/100, Loss: 1.235997
+Epoch 52/100, Loss: 1.228666
+Epoch 53/100, Loss: 1.222091
+Epoch 54/100, Loss: 1.217543
+Epoch 55/100, Loss: 1.217538
+Epoch 56/100, Loss: 1.215452
+Epoch 57/100, Loss: 1.209932
+Epoch 58/100, Loss: 1.204744
+Epoch 59/100, Loss: 1.196611
+Epoch 60/100, Loss: 1.198602
+Epoch 61/100, Loss: 1.192589
+Epoch 62/100, Loss: 1.182884
+Epoch 63/100, Loss: 1.186500
+Epoch 64/100, Loss: 1.184470
+Epoch 65/100, Loss: 1.179223
+Epoch 66/100, Loss: 1.174745
+Epoch 67/100, Loss: 1.176773
+Epoch 68/100, Loss: 1.167713
+Epoch 69/100, Loss: 1.167584
+Epoch 70/100, Loss: 1.162879
+Epoch 71/100, Loss: 1.163585
+Epoch 72/100, Loss: 1.158111
+Epoch 73/100, Loss: 1.154022
+Epoch 74/100, Loss: 1.148619
+Epoch 75/100, Loss: 1.153146
+Epoch 76/100, Loss: 1.151747
+Epoch 77/100, Loss: 1.143415
+Epoch 78/100, Loss: 1.141410
+Epoch 79/100, Loss: 1.139289
+Epoch 80/100, Loss: 1.142539
+Epoch 81/100, Loss: 1.137231
+Epoch 82/100, Loss: 1.129232
+Epoch 83/100, Loss: 1.134940
+Epoch 84/100, Loss: 1.126636
+Epoch 85/100, Loss: 1.120726
+Epoch 86/100, Loss: 1.123774
+Epoch 87/100, Loss: 1.118574
+Epoch 88/100, Loss: 1.122785
+Epoch 89/100, Loss: 1.112188
+Epoch 90/100, Loss: 1.117378
+Epoch 91/100, Loss: 0.615805
+Epoch 92/100, Loss: 0.608127
+Epoch 93/100, Loss: 0.602801
+Epoch 94/100, Loss: 0.603874
+Epoch 95/100, Loss: 0.601261
+Epoch 96/100, Loss: 0.592043
+Epoch 97/100, Loss: 0.597178
+Epoch 98/100, Loss: 0.599061
+Epoch 99/100, Loss: 0.587439
+Epoch 100/100, Loss: 0.596663
 
 Training complete!
-49
+99
 
 Model Performance Metrics:
-Accuracy: 0.654128
-Recall: 0.572740
-Jaccard Index: 0.422519
-F1 Score: 0.561430
-0.01 0.0 0.0
+Accuracy: 0.718529
+Recall: 0.531104
+Jaccard Index: 0.406034
+F1 Score: 0.517927
+0.2 0.0 0.0
 
 Starting training...
-Epoch 1/50, Loss: 0.581928
-Epoch 2/50, Loss: 0.524947
-Epoch 3/50, Loss: 0.514642
-Epoch 4/50, Loss: 0.440797
-Epoch 5/50, Loss: 0.362506
-Epoch 6/50, Loss: 0.320005
-Epoch 7/50, Loss: 0.267317
-Epoch 8/50, Loss: 0.251264
-Epoch 9/50, Loss: 0.262441
-Epoch 10/50, Loss: 0.257322
-Epoch 11/50, Loss: 0.211628
-Epoch 12/50, Loss: 0.216056
-Epoch 13/50, Loss: 0.210379
-Epoch 14/50, Loss: 0.198510
-Epoch 15/50, Loss: 0.178343
-Epoch 16/50, Loss: 0.201828
-Epoch 17/50, Loss: 0.170568
-Epoch 18/50, Loss: 0.185652
-Epoch 19/50, Loss: 0.182861
-Epoch 20/50, Loss: 0.148910
-Epoch 21/50, Loss: 0.160953
-Epoch 22/50, Loss: 0.167344
-Epoch 23/50, Loss: 0.169194
-Epoch 24/50, Loss: 0.179741
-Epoch 25/50, Loss: 0.153539
-Epoch 26/50, Loss: 0.147700
-Epoch 27/50, Loss: 0.156919
-Epoch 28/50, Loss: 0.171672
-Epoch 29/50, Loss: 0.152497
-Epoch 30/50, Loss: 0.141247
-Epoch 31/50, Loss: 0.135951
-Epoch 32/50, Loss: 0.150604
-Epoch 33/50, Loss: 0.131954
-Epoch 34/50, Loss: 0.132473
-Epoch 35/50, Loss: 0.141948
-Epoch 36/50, Loss: 0.129442
-Epoch 37/50, Loss: 0.131211
-Epoch 38/50, Loss: 0.122618
-Epoch 39/50, Loss: 0.133757
-Epoch 40/50, Loss: 0.108476
-Epoch 41/50, Loss: 0.119162
-Epoch 42/50, Loss: 0.112967
-Epoch 43/50, Loss: 0.115359
-Epoch 44/50, Loss: 0.119146
-Epoch 45/50, Loss: 0.120585
-Epoch 46/50, Loss: 0.118975
-Epoch 47/50, Loss: 0.114080
-Epoch 48/50, Loss: 0.106769
-Epoch 49/50, Loss: 0.115552
-Epoch 50/50, Loss: 0.111151
+Epoch 1/100, Loss: 1.171675
+Epoch 2/100, Loss: 1.155927
+Epoch 3/100, Loss: 1.142411
+Epoch 4/100, Loss: 1.127073
+Epoch 5/100, Loss: 1.112415
+Epoch 6/100, Loss: 1.098979
+Epoch 7/100, Loss: 1.084026
+Epoch 8/100, Loss: 1.069062
+Epoch 9/100, Loss: 1.054477
+Epoch 10/100, Loss: 1.038927
+Epoch 11/100, Loss: 1.022213
+Epoch 12/100, Loss: 1.005943
+Epoch 13/100, Loss: 0.987964
+Epoch 14/100, Loss: 0.970064
+Epoch 15/100, Loss: 0.953031
+Epoch 16/100, Loss: 0.936256
+Epoch 17/100, Loss: 0.919592
+Epoch 18/100, Loss: 0.904056
+Epoch 19/100, Loss: 0.890338
+Epoch 20/100, Loss: 0.875121
+Epoch 21/100, Loss: 0.862169
+Epoch 22/100, Loss: 0.851939
+Epoch 23/100, Loss: 0.840812
+Epoch 24/100, Loss: 0.828900
+Epoch 25/100, Loss: 0.819489
+Epoch 26/100, Loss: 0.811198
+Epoch 27/100, Loss: 0.802720
+Epoch 28/100, Loss: 0.794189
+Epoch 29/100, Loss: 0.786265
+Epoch 30/100, Loss: 0.778929
+Epoch 31/100, Loss: 0.773000
+Epoch 32/100, Loss: 0.766359
+Epoch 33/100, Loss: 0.761679
+Epoch 34/100, Loss: 0.753858
+Epoch 35/100, Loss: 0.749463
+Epoch 36/100, Loss: 0.744362
+Epoch 37/100, Loss: 0.739102
+Epoch 38/100, Loss: 0.734670
+Epoch 39/100, Loss: 0.728979
+Epoch 40/100, Loss: 0.724832
+Epoch 41/100, Loss: 0.722220
+Epoch 42/100, Loss: 0.715683
+Epoch 43/100, Loss: 0.714273
+Epoch 44/100, Loss: 0.712580
+Epoch 45/100, Loss: 0.707297
+Epoch 46/100, Loss: 0.703160
+Epoch 47/100, Loss: 0.700518
+Epoch 48/100, Loss: 0.698687
+Epoch 49/100, Loss: 0.694788
+Epoch 50/100, Loss: 0.691649
+Epoch 51/100, Loss: 0.688521
+Epoch 52/100, Loss: 0.687101
+Epoch 53/100, Loss: 0.683438
+Epoch 54/100, Loss: 0.681913
+Epoch 55/100, Loss: 0.675688
+Epoch 56/100, Loss: 0.674677
+Epoch 57/100, Loss: 0.672471
+Epoch 58/100, Loss: 0.671638
+Epoch 59/100, Loss: 0.669105
+Epoch 60/100, Loss: 0.667481
+Epoch 61/100, Loss: 0.662992
+Epoch 62/100, Loss: 0.662067
+Epoch 63/100, Loss: 0.659291
+Epoch 64/100, Loss: 0.657085
+Epoch 65/100, Loss: 0.657070
+Epoch 66/100, Loss: 0.651374
+Epoch 67/100, Loss: 0.653268
+Epoch 68/100, Loss: 0.650340
+Epoch 69/100, Loss: 0.646157
+Epoch 70/100, Loss: 0.644893
+Epoch 71/100, Loss: 0.644772
+Epoch 72/100, Loss: 0.642248
+Epoch 73/100, Loss: 0.642466
+Epoch 74/100, Loss: 0.639790
+Epoch 75/100, Loss: 0.638713
+Epoch 76/100, Loss: 0.636305
+Epoch 77/100, Loss: 0.630846
+Epoch 78/100, Loss: 0.632682
+Epoch 79/100, Loss: 0.629147
+Epoch 80/100, Loss: 0.629630
+Epoch 81/100, Loss: 0.626454
+Epoch 82/100, Loss: 0.627656
+Epoch 83/100, Loss: 0.622952
+Epoch 84/100, Loss: 0.623460
+Epoch 85/100, Loss: 0.624106
+Epoch 86/100, Loss: 0.619288
+Epoch 87/100, Loss: 0.616447
+Epoch 88/100, Loss: 0.616020
+Epoch 89/100, Loss: 0.618269
+Epoch 90/100, Loss: 0.611410
+Epoch 91/100, Loss: 0.610679
+Epoch 92/100, Loss: 0.610287
+Epoch 93/100, Loss: 0.606132
+Epoch 94/100, Loss: 0.607063
+Epoch 95/100, Loss: 0.604311
+Epoch 96/100, Loss: 0.601869
+Epoch 97/100, Loss: 0.602300
+Epoch 98/100, Loss: 0.598136
+Epoch 99/100, Loss: 0.601454
+Epoch 100/100, Loss: 0.598448
 
 Training complete!
-48
+98
 
 Model Performance Metrics:
-Accuracy: 0.748763
-Recall: 0.652373
-Jaccard Index: 0.514825
-F1 Score: 0.643713
-0.01 0.0 0.1
+Accuracy: 0.722386
+Recall: 0.530262
+Jaccard Index: 0.404253
+F1 Score: 0.509381
+0.2 0.0 0.1
 
 Starting training...
-Epoch 1/50, Loss: 0.640225
-Epoch 2/50, Loss: 0.659260
-Epoch 3/50, Loss: 0.576238
-Epoch 4/50, Loss: 0.508898
-Epoch 5/50, Loss: 0.471934
-Epoch 6/50, Loss: 0.389894
-Epoch 7/50, Loss: 0.399651
-Epoch 8/50, Loss: 0.336340
-Epoch 9/50, Loss: 0.331738
-Epoch 10/50, Loss: 0.300488
-Epoch 11/50, Loss: 0.270690
-Epoch 12/50, Loss: 0.251926
-Epoch 13/50, Loss: 0.282160
-Epoch 14/50, Loss: 0.250426
-Epoch 15/50, Loss: 0.242308
-Epoch 16/50, Loss: 0.251702
-Epoch 17/50, Loss: 0.221531
-Epoch 18/50, Loss: 0.232392
-Epoch 19/50, Loss: 0.219468
-Epoch 20/50, Loss: 0.198409
-Epoch 21/50, Loss: 0.197638
-Epoch 22/50, Loss: 0.204727
-Epoch 23/50, Loss: 0.225500
-Epoch 24/50, Loss: 0.186038
-Epoch 25/50, Loss: 0.188180
-Epoch 26/50, Loss: 0.178205
-Epoch 27/50, Loss: 0.181697
-Epoch 28/50, Loss: 0.187194
-Epoch 29/50, Loss: 0.174436
-Epoch 30/50, Loss: 0.181838
-Epoch 31/50, Loss: 0.176892
-Epoch 32/50, Loss: 0.156920
-Epoch 33/50, Loss: 0.166350
-Epoch 34/50, Loss: 0.165775
-Epoch 35/50, Loss: 0.153037
-Epoch 36/50, Loss: 0.158781
-Epoch 37/50, Loss: 0.144172
-Epoch 38/50, Loss: 0.151259
-Epoch 39/50, Loss: 0.162829
-Epoch 40/50, Loss: 0.152186
-Epoch 41/50, Loss: 0.144159
-Epoch 42/50, Loss: 0.145128
-Epoch 43/50, Loss: 0.140726
-Epoch 44/50, Loss: 0.149215
-Epoch 45/50, Loss: 0.130146
-Epoch 46/50, Loss: 0.136315
-Epoch 47/50, Loss: 0.139886
-Epoch 48/50, Loss: 0.142208
-Epoch 49/50, Loss: 0.137039
-Epoch 50/50, Loss: 0.137718
+Epoch 1/100, Loss: 1.292926
+Epoch 2/100, Loss: 1.256463
+Epoch 3/100, Loss: 1.223532
+Epoch 4/100, Loss: 1.194406
+Epoch 5/100, Loss: 1.166540
+Epoch 6/100, Loss: 1.142567
+Epoch 7/100, Loss: 1.119307
+Epoch 8/100, Loss: 1.095085
+Epoch 9/100, Loss: 1.071927
+Epoch 10/100, Loss: 1.050002
+Epoch 11/100, Loss: 1.022781
+Epoch 12/100, Loss: 1.002526
+Epoch 13/100, Loss: 0.981921
+Epoch 14/100, Loss: 0.961176
+Epoch 15/100, Loss: 0.943262
+Epoch 16/100, Loss: 0.925599
+Epoch 17/100, Loss: 0.910862
+Epoch 18/100, Loss: 0.895801
+Epoch 19/100, Loss: 0.881743
+Epoch 20/100, Loss: 0.869962
+Epoch 21/100, Loss: 0.855699
+Epoch 22/100, Loss: 0.845521
+Epoch 23/100, Loss: 0.837057
+Epoch 24/100, Loss: 0.829597
+Epoch 25/100, Loss: 0.820949
+Epoch 26/100, Loss: 0.814208
+Epoch 27/100, Loss: 0.805589
+Epoch 28/100, Loss: 0.801102
+Epoch 29/100, Loss: 0.794848
+Epoch 30/100, Loss: 0.790137
+Epoch 31/100, Loss: 0.785016
+Epoch 32/100, Loss: 0.776956
+Epoch 33/100, Loss: 0.777569
+Epoch 34/100, Loss: 0.771135
+Epoch 35/100, Loss: 0.770503
+Epoch 36/100, Loss: 0.763944
+Epoch 37/100, Loss: 0.762096
+Epoch 38/100, Loss: 0.758115
+Epoch 39/100, Loss: 0.756424
+Epoch 40/100, Loss: 0.752881
+Epoch 41/100, Loss: 0.750565
+Epoch 42/100, Loss: 0.748243
+Epoch 43/100, Loss: 0.744886
+Epoch 44/100, Loss: 0.742121
+Epoch 45/100, Loss: 0.739554
+Epoch 46/100, Loss: 0.736327
+Epoch 47/100, Loss: 0.734926
+Epoch 48/100, Loss: 0.731204
+Epoch 49/100, Loss: 0.731849
+Epoch 50/100, Loss: 0.728231
+Epoch 51/100, Loss: 0.724918
+Epoch 52/100, Loss: 0.725588
+Epoch 53/100, Loss: 0.721303
+Epoch 54/100, Loss: 0.723023
+Epoch 55/100, Loss: 0.719605
+Epoch 56/100, Loss: 0.717429
+Epoch 57/100, Loss: 0.715494
+Epoch 58/100, Loss: 0.713205
+Epoch 59/100, Loss: 0.713923
+Epoch 60/100, Loss: 0.710356
+Epoch 61/100, Loss: 0.707348
+Epoch 62/100, Loss: 0.708401
+Epoch 63/100, Loss: 0.705471
+Epoch 64/100, Loss: 0.704737
+Epoch 65/100, Loss: 0.702117
+Epoch 66/100, Loss: 0.698903
+Epoch 67/100, Loss: 0.698571
+Epoch 68/100, Loss: 0.698720
+Epoch 69/100, Loss: 0.692885
+Epoch 70/100, Loss: 0.692463
+Epoch 71/100, Loss: 0.692951
+Epoch 72/100, Loss: 0.688812
+Epoch 73/100, Loss: 0.689528
+Epoch 74/100, Loss: 0.687172
+Epoch 75/100, Loss: 0.687443
+Epoch 76/100, Loss: 0.684359
+Epoch 77/100, Loss: 0.688461
+Epoch 78/100, Loss: 0.682441
+Epoch 79/100, Loss: 0.680772
+Epoch 80/100, Loss: 0.680243
+Epoch 81/100, Loss: 0.679969
+Epoch 82/100, Loss: 0.675083
+Epoch 83/100, Loss: 0.672543
+Epoch 84/100, Loss: 0.671745
+Epoch 85/100, Loss: 0.674197
+Epoch 86/100, Loss: 0.671929
+Epoch 87/100, Loss: 0.669600
+Epoch 88/100, Loss: 0.667241
+Epoch 89/100, Loss: 0.667192
+Epoch 90/100, Loss: 0.666138
+Epoch 91/100, Loss: 0.620884
+Epoch 92/100, Loss: 0.617869
+Epoch 93/100, Loss: 0.618020
+Epoch 94/100, Loss: 0.616049
+Epoch 95/100, Loss: 0.613412
+Epoch 96/100, Loss: 0.614214
+Epoch 97/100, Loss: 0.614008
+Epoch 98/100, Loss: 0.611537
+Epoch 99/100, Loss: 0.609550
+Epoch 100/100, Loss: 0.611902
 
 Training complete!
-45
+99
 
 Model Performance Metrics:
-Accuracy: 0.741472
-Recall: 0.678806
-Jaccard Index: 0.521482
-F1 Score: 0.656964
-0.01 0.0 0.5
+Accuracy: 0.724380
+Recall: 0.525134
+Jaccard Index: 0.397523
+F1 Score: 0.494805
+0.2 0.0 0.5
 
 Starting training...
-Epoch 1/50, Loss: 0.895242
-Epoch 2/50, Loss: 0.705822
-Epoch 3/50, Loss: 0.673476
-Epoch 4/50, Loss: 0.639074
-Epoch 5/50, Loss: 0.555171
-Epoch 6/50, Loss: 0.506809
-Epoch 7/50, Loss: 0.458943
-Epoch 8/50, Loss: 0.416904
-Epoch 9/50, Loss: 0.410773
-Epoch 10/50, Loss: 0.393912
-Epoch 11/50, Loss: 0.381802
-Epoch 12/50, Loss: 0.343633
-Epoch 13/50, Loss: 0.338456
-Epoch 14/50, Loss: 0.313038
-Epoch 15/50, Loss: 0.307552
-Epoch 16/50, Loss: 0.289368
-Epoch 17/50, Loss: 0.294099
-Epoch 18/50, Loss: 0.282558
-Epoch 19/50, Loss: 0.279282
-Epoch 20/50, Loss: 0.267818
-Epoch 21/50, Loss: 0.296189
-Epoch 22/50, Loss: 0.275600
-Epoch 23/50, Loss: 0.272027
-Epoch 24/50, Loss: 0.255940
-Epoch 25/50, Loss: 0.251755
-Epoch 26/50, Loss: 0.253567
-Epoch 27/50, Loss: 0.268158
-Epoch 28/50, Loss: 0.239043
-Epoch 29/50, Loss: 0.242899
-Epoch 30/50, Loss: 0.236494
-Epoch 31/50, Loss: 0.230918
-Epoch 32/50, Loss: 0.231212
-Epoch 33/50, Loss: 0.234477
-Epoch 34/50, Loss: 0.235600
-Epoch 35/50, Loss: 0.220364
-Epoch 36/50, Loss: 0.222536
-Epoch 37/50, Loss: 0.220459
-Epoch 38/50, Loss: 0.224235
-Epoch 39/50, Loss: 0.214485
-Epoch 40/50, Loss: 0.207239
-Epoch 41/50, Loss: 0.214204
-Epoch 42/50, Loss: 0.219085
-Epoch 43/50, Loss: 0.214439
-Epoch 44/50, Loss: 0.225736
-Epoch 45/50, Loss: 0.210542
-Epoch 46/50, Loss: 0.197240
-Epoch 47/50, Loss: 0.192201
-Epoch 48/50, Loss: 0.194501
-Epoch 49/50, Loss: 0.207210
-Epoch 50/50, Loss: 0.194204
+Epoch 1/100, Loss: 1.604231
+Epoch 2/100, Loss: 1.560328
+Epoch 3/100, Loss: 1.521054
+Epoch 4/100, Loss: 1.484163
+Epoch 5/100, Loss: 1.452884
+Epoch 6/100, Loss: 1.422572
+Epoch 7/100, Loss: 1.393538
+Epoch 8/100, Loss: 1.367508
+Epoch 9/100, Loss: 1.340777
+Epoch 10/100, Loss: 1.315662
+Epoch 11/100, Loss: 1.293327
+Epoch 12/100, Loss: 1.271741
+Epoch 13/100, Loss: 1.251858
+Epoch 14/100, Loss: 1.230957
+Epoch 15/100, Loss: 1.214134
+Epoch 16/100, Loss: 1.197716
+Epoch 17/100, Loss: 1.181698
+Epoch 18/100, Loss: 1.167698
+Epoch 19/100, Loss: 1.153970
+Epoch 20/100, Loss: 1.140144
+Epoch 21/100, Loss: 1.127597
+Epoch 22/100, Loss: 1.115048
+Epoch 23/100, Loss: 1.102975
+Epoch 24/100, Loss: 1.090758
+Epoch 25/100, Loss: 1.080869
+Epoch 26/100, Loss: 1.070476
+Epoch 27/100, Loss: 1.058021
+Epoch 28/100, Loss: 1.049021
+Epoch 29/100, Loss: 1.039060
+Epoch 30/100, Loss: 1.029511
+Epoch 31/100, Loss: 1.020756
+Epoch 32/100, Loss: 1.011610
+Epoch 33/100, Loss: 1.003252
+Epoch 34/100, Loss: 0.993559
+Epoch 35/100, Loss: 0.987941
+Epoch 36/100, Loss: 0.979715
+Epoch 37/100, Loss: 0.970683
+Epoch 38/100, Loss: 0.965451
+Epoch 39/100, Loss: 0.959420
+Epoch 40/100, Loss: 0.952574
+Epoch 41/100, Loss: 0.947989
+Epoch 42/100, Loss: 0.941874
+Epoch 43/100, Loss: 0.936459
+Epoch 44/100, Loss: 0.930957
+Epoch 45/100, Loss: 0.927554
+Epoch 46/100, Loss: 0.922461
+Epoch 47/100, Loss: 0.918746
+Epoch 48/100, Loss: 0.914624
+Epoch 49/100, Loss: 0.909380
+Epoch 50/100, Loss: 0.907841
+Epoch 51/100, Loss: 0.901220
+Epoch 52/100, Loss: 0.899629
+Epoch 53/100, Loss: 0.895862
+Epoch 54/100, Loss: 0.891430
+Epoch 55/100, Loss: 0.890778
+Epoch 56/100, Loss: 0.884952
+Epoch 57/100, Loss: 0.884017
+Epoch 58/100, Loss: 0.879655
+Epoch 59/100, Loss: 0.877445
+Epoch 60/100, Loss: 0.870274
+Epoch 61/100, Loss: 0.869222
+Epoch 62/100, Loss: 0.867342
+Epoch 63/100, Loss: 0.866955
+Epoch 64/100, Loss: 0.865175
+Epoch 65/100, Loss: 0.861823
+Epoch 66/100, Loss: 0.859186
+Epoch 67/100, Loss: 0.855175
+Epoch 68/100, Loss: 0.854873
+Epoch 69/100, Loss: 0.850681
+Epoch 70/100, Loss: 0.849703
+Epoch 71/100, Loss: 0.848188
+Epoch 72/100, Loss: 0.846688
+Epoch 73/100, Loss: 0.841622
+Epoch 74/100, Loss: 0.840873
+Epoch 75/100, Loss: 0.838563
+Epoch 76/100, Loss: 0.836081
+Epoch 77/100, Loss: 0.834212
+Epoch 78/100, Loss: 0.834522
+Epoch 79/100, Loss: 0.832662
+Epoch 80/100, Loss: 0.826327
+Epoch 81/100, Loss: 0.826729
+Epoch 82/100, Loss: 0.823211
+Epoch 83/100, Loss: 0.822035
+Epoch 84/100, Loss: 0.819824
+Epoch 85/100, Loss: 0.822792
+Epoch 86/100, Loss: 0.818523
+Epoch 87/100, Loss: 0.814523
+Epoch 88/100, Loss: 0.813176
+Epoch 89/100, Loss: 0.813412
+Epoch 90/100, Loss: 0.810004
+Epoch 91/100, Loss: 0.609536
+Epoch 92/100, Loss: 0.609063
+Epoch 93/100, Loss: 0.608845
+Epoch 94/100, Loss: 0.605753
+Epoch 95/100, Loss: 0.599919
+Epoch 96/100, Loss: 0.601337
+Epoch 97/100, Loss: 0.598938
+Epoch 98/100, Loss: 0.598805
+Epoch 99/100, Loss: 0.594991
+Epoch 100/100, Loss: 0.597281
 
 Training complete!
-47
+99
 
 Model Performance Metrics:
-Accuracy: 0.701665
-Recall: 0.577059
-Jaccard Index: 0.447035
-F1 Score: 0.578709
-0.01 0.1 0.0
+Accuracy: 0.728188
+Recall: 0.556763
+Jaccard Index: 0.431972
+F1 Score: 0.552311
+0.2 0.1 0.0
 
 Starting training...
-Epoch 1/50, Loss: 0.669937
-Epoch 2/50, Loss: 0.578644
-Epoch 3/50, Loss: 0.577911
-Epoch 4/50, Loss: 0.483510
-Epoch 5/50, Loss: 0.470796
-Epoch 6/50, Loss: 0.439146
-Epoch 7/50, Loss: 0.382717
-Epoch 8/50, Loss: 0.376365
-Epoch 9/50, Loss: 0.338598
-Epoch 10/50, Loss: 0.306974
-Epoch 11/50, Loss: 0.313561
-Epoch 12/50, Loss: 0.299591
-Epoch 13/50, Loss: 0.279712
-Epoch 14/50, Loss: 0.284993
-Epoch 15/50, Loss: 0.261170
-Epoch 16/50, Loss: 0.261937
-Epoch 17/50, Loss: 0.261138
-Epoch 18/50, Loss: 0.244557
-Epoch 19/50, Loss: 0.223411
-Epoch 20/50, Loss: 0.241198
-Epoch 21/50, Loss: 0.227573
-Epoch 22/50, Loss: 0.209012
-Epoch 23/50, Loss: 0.232713
-Epoch 24/50, Loss: 0.212050
-Epoch 25/50, Loss: 0.229977
-Epoch 26/50, Loss: 0.228574
-Epoch 27/50, Loss: 0.208308
-Epoch 28/50, Loss: 0.203079
-Epoch 29/50, Loss: 0.212382
-Epoch 30/50, Loss: 0.210030
-Epoch 31/50, Loss: 0.179068
-Epoch 32/50, Loss: 0.201900
-Epoch 33/50, Loss: 0.186517
-Epoch 34/50, Loss: 0.186170
-Epoch 35/50, Loss: 0.180273
-Epoch 36/50, Loss: 0.191706
-Epoch 37/50, Loss: 0.187651
-Epoch 38/50, Loss: 0.189941
-Epoch 39/50, Loss: 0.186087
-Epoch 40/50, Loss: 0.157674
-Epoch 41/50, Loss: 0.164387
-Epoch 42/50, Loss: 0.167042
-Epoch 43/50, Loss: 0.157759
-Epoch 44/50, Loss: 0.168073
-Epoch 45/50, Loss: 0.160724
-Epoch 46/50, Loss: 0.169273
-Epoch 47/50, Loss: 0.169459
-Epoch 48/50, Loss: 0.175666
-Epoch 49/50, Loss: 0.168596
-Epoch 50/50, Loss: 0.165272
+Epoch 1/100, Loss: 1.255331
+Epoch 2/100, Loss: 1.235168
+Epoch 3/100, Loss: 1.214969
+Epoch 4/100, Loss: 1.195963
+Epoch 5/100, Loss: 1.180932
+Epoch 6/100, Loss: 1.163233
+Epoch 7/100, Loss: 1.147105
+Epoch 8/100, Loss: 1.131389
+Epoch 9/100, Loss: 1.115651
+Epoch 10/100, Loss: 1.099053
+Epoch 11/100, Loss: 1.084548
+Epoch 12/100, Loss: 1.068529
+Epoch 13/100, Loss: 1.053689
+Epoch 14/100, Loss: 1.041020
+Epoch 15/100, Loss: 1.026543
+Epoch 16/100, Loss: 1.012912
+Epoch 17/100, Loss: 1.000596
+Epoch 18/100, Loss: 0.987087
+Epoch 19/100, Loss: 0.974140
+Epoch 20/100, Loss: 0.962941
+Epoch 21/100, Loss: 0.951563
+Epoch 22/100, Loss: 0.941476
+Epoch 23/100, Loss: 0.930918
+Epoch 24/100, Loss: 0.922041
+Epoch 25/100, Loss: 0.911458
+Epoch 26/100, Loss: 0.901957
+Epoch 27/100, Loss: 0.893489
+Epoch 28/100, Loss: 0.883083
+Epoch 29/100, Loss: 0.875812
+Epoch 30/100, Loss: 0.867409
+Epoch 31/100, Loss: 0.859663
+Epoch 32/100, Loss: 0.851672
+Epoch 33/100, Loss: 0.843560
+Epoch 34/100, Loss: 0.835787
+Epoch 35/100, Loss: 0.830560
+Epoch 36/100, Loss: 0.823377
+Epoch 37/100, Loss: 0.818645
+Epoch 38/100, Loss: 0.811500
+Epoch 39/100, Loss: 0.804129
+Epoch 40/100, Loss: 0.799135
+Epoch 41/100, Loss: 0.793717
+Epoch 42/100, Loss: 0.788036
+Epoch 43/100, Loss: 0.785359
+Epoch 44/100, Loss: 0.778180
+Epoch 45/100, Loss: 0.772411
+Epoch 46/100, Loss: 0.767409
+Epoch 47/100, Loss: 0.765227
+Epoch 48/100, Loss: 0.761960
+Epoch 49/100, Loss: 0.755287
+Epoch 50/100, Loss: 0.751878
+Epoch 51/100, Loss: 0.749519
+Epoch 52/100, Loss: 0.744750
+Epoch 53/100, Loss: 0.743410
+Epoch 54/100, Loss: 0.741330
+Epoch 55/100, Loss: 0.735362
+Epoch 56/100, Loss: 0.731642
+Epoch 57/100, Loss: 0.730266
+Epoch 58/100, Loss: 0.724920
+Epoch 59/100, Loss: 0.721502
+Epoch 60/100, Loss: 0.721806
+Epoch 61/100, Loss: 0.718360
+Epoch 62/100, Loss: 0.715696
+Epoch 63/100, Loss: 0.711883
+Epoch 64/100, Loss: 0.711214
+Epoch 65/100, Loss: 0.706947
+Epoch 66/100, Loss: 0.704852
+Epoch 67/100, Loss: 0.701888
+Epoch 68/100, Loss: 0.701073
+Epoch 69/100, Loss: 0.698515
+Epoch 70/100, Loss: 0.695830
+Epoch 71/100, Loss: 0.693066
+Epoch 72/100, Loss: 0.688691
+Epoch 73/100, Loss: 0.686405
+Epoch 74/100, Loss: 0.686468
+Epoch 75/100, Loss: 0.683943
+Epoch 76/100, Loss: 0.680236
+Epoch 77/100, Loss: 0.677464
+Epoch 78/100, Loss: 0.675711
+Epoch 79/100, Loss: 0.677297
+Epoch 80/100, Loss: 0.672940
+Epoch 81/100, Loss: 0.672490
+Epoch 82/100, Loss: 0.670319
+Epoch 83/100, Loss: 0.669719
+Epoch 84/100, Loss: 0.666126
+Epoch 85/100, Loss: 0.661856
+Epoch 86/100, Loss: 0.662202
+Epoch 87/100, Loss: 0.661590
+Epoch 88/100, Loss: 0.656488
+Epoch 89/100, Loss: 0.656688
+Epoch 90/100, Loss: 0.656396
+Epoch 91/100, Loss: 0.594160
+Epoch 92/100, Loss: 0.590922
+Epoch 93/100, Loss: 0.591141
+Epoch 94/100, Loss: 0.585927
+Epoch 95/100, Loss: 0.588112
+Epoch 96/100, Loss: 0.586653
+Epoch 97/100, Loss: 0.582874
+Epoch 98/100, Loss: 0.580664
+Epoch 99/100, Loss: 0.580468
+Epoch 100/100, Loss: 0.578110
 
 Training complete!
-40
+100
 
 Model Performance Metrics:
-Accuracy: 0.746751
-Recall: 0.667269
-Jaccard Index: 0.519618
-F1 Score: 0.652017
-0.01 0.1 0.1
+Accuracy: 0.733901
+Recall: 0.564922
+Jaccard Index: 0.440415
+F1 Score: 0.562637
+0.2 0.1 0.1
 
 Starting training...
-Epoch 1/50, Loss: 0.734496
-Epoch 2/50, Loss: 0.685819
-Epoch 3/50, Loss: 0.650012
-Epoch 4/50, Loss: 0.559914
-Epoch 5/50, Loss: 0.548203
-Epoch 6/50, Loss: 0.425005
-Epoch 7/50, Loss: 0.465754
-Epoch 8/50, Loss: 0.430406
-Epoch 9/50, Loss: 0.375722
-Epoch 10/50, Loss: 0.353617
-Epoch 11/50, Loss: 0.371440
-Epoch 12/50, Loss: 0.348910
-Epoch 13/50, Loss: 0.316454
-Epoch 14/50, Loss: 0.284838
-Epoch 15/50, Loss: 0.302490
-Epoch 16/50, Loss: 0.296056
-Epoch 17/50, Loss: 0.327188
-Epoch 18/50, Loss: 0.318385
-Epoch 19/50, Loss: 0.302950
-Epoch 20/50, Loss: 0.278740
-Epoch 21/50, Loss: 0.270666
-Epoch 22/50, Loss: 0.293106
-Epoch 23/50, Loss: 0.267268
-Epoch 24/50, Loss: 0.261431
-Epoch 25/50, Loss: 0.248143
-Epoch 26/50, Loss: 0.250050
-Epoch 27/50, Loss: 0.248697
-Epoch 28/50, Loss: 0.250019
-Epoch 29/50, Loss: 0.239923
-Epoch 30/50, Loss: 0.225309
-Epoch 31/50, Loss: 0.223605
-Epoch 32/50, Loss: 0.225103
-Epoch 33/50, Loss: 0.213804
-Epoch 34/50, Loss: 0.230762
-Epoch 35/50, Loss: 0.223522
-Epoch 36/50, Loss: 0.223584
-Epoch 37/50, Loss: 0.218920
-Epoch 38/50, Loss: 0.213091
-Epoch 39/50, Loss: 0.204662
-Epoch 40/50, Loss: 0.197302
-Epoch 41/50, Loss: 0.202849
-Epoch 42/50, Loss: 0.201565
-Epoch 43/50, Loss: 0.206218
-Epoch 44/50, Loss: 0.200790
-Epoch 45/50, Loss: 0.208243
-Epoch 46/50, Loss: 0.209102
-Epoch 47/50, Loss: 0.196618
-Epoch 48/50, Loss: 0.191185
-Epoch 49/50, Loss: 0.196361
-Epoch 50/50, Loss: 0.176022
+Epoch 1/100, Loss: 1.294101
+Epoch 2/100, Loss: 1.258368
+Epoch 3/100, Loss: 1.225087
+Epoch 4/100, Loss: 1.197510
+Epoch 5/100, Loss: 1.171232
+Epoch 6/100, Loss: 1.150041
+Epoch 7/100, Loss: 1.126613
+Epoch 8/100, Loss: 1.105143
+Epoch 9/100, Loss: 1.081757
+Epoch 10/100, Loss: 1.060005
+Epoch 11/100, Loss: 1.034430
+Epoch 12/100, Loss: 1.011006
+Epoch 13/100, Loss: 0.988435
+Epoch 14/100, Loss: 0.970646
+Epoch 15/100, Loss: 0.954499
+Epoch 16/100, Loss: 0.939096
+Epoch 17/100, Loss: 0.926743
+Epoch 18/100, Loss: 0.917321
+Epoch 19/100, Loss: 0.906267
+Epoch 20/100, Loss: 0.896713
+Epoch 21/100, Loss: 0.888385
+Epoch 22/100, Loss: 0.882781
+Epoch 23/100, Loss: 0.873758
+Epoch 24/100, Loss: 0.864797
+Epoch 25/100, Loss: 0.859755
+Epoch 26/100, Loss: 0.853303
+Epoch 27/100, Loss: 0.848868
+Epoch 28/100, Loss: 0.843152
+Epoch 29/100, Loss: 0.840357
+Epoch 30/100, Loss: 0.837205
+Epoch 31/100, Loss: 0.827625
+Epoch 32/100, Loss: 0.826004
+Epoch 33/100, Loss: 0.822981
+Epoch 34/100, Loss: 0.818138
+Epoch 35/100, Loss: 0.812679
+Epoch 36/100, Loss: 0.808957
+Epoch 37/100, Loss: 0.806349
+Epoch 38/100, Loss: 0.805680
+Epoch 39/100, Loss: 0.798716
+Epoch 40/100, Loss: 0.798598
+Epoch 41/100, Loss: 0.794996
+Epoch 42/100, Loss: 0.793511
+Epoch 43/100, Loss: 0.788306
+Epoch 44/100, Loss: 0.788709
+Epoch 45/100, Loss: 0.782776
+Epoch 46/100, Loss: 0.782013
+Epoch 47/100, Loss: 0.781581
+Epoch 48/100, Loss: 0.776821
+Epoch 49/100, Loss: 0.774456
+Epoch 50/100, Loss: 0.771282
+Epoch 51/100, Loss: 0.771630
+Epoch 52/100, Loss: 0.767507
+Epoch 53/100, Loss: 0.766145
+Epoch 54/100, Loss: 0.766936
+Epoch 55/100, Loss: 0.765716
+Epoch 56/100, Loss: 0.763250
+Epoch 57/100, Loss: 0.761579
+Epoch 58/100, Loss: 0.756196
+Epoch 59/100, Loss: 0.755739
+Epoch 60/100, Loss: 0.751730
+Epoch 61/100, Loss: 0.754751
+Epoch 62/100, Loss: 0.751133
+Epoch 63/100, Loss: 0.749829
+Epoch 64/100, Loss: 0.745912
+Epoch 65/100, Loss: 0.744089
+Epoch 66/100, Loss: 0.744560
+Epoch 67/100, Loss: 0.745053
+Epoch 68/100, Loss: 0.740653
+Epoch 69/100, Loss: 0.742024
+Epoch 70/100, Loss: 0.738574
+Epoch 71/100, Loss: 0.736730
+Epoch 72/100, Loss: 0.736056
+Epoch 73/100, Loss: 0.733343
+Epoch 74/100, Loss: 0.731339
+Epoch 75/100, Loss: 0.732209
+Epoch 76/100, Loss: 0.728435
+Epoch 77/100, Loss: 0.727144
+Epoch 78/100, Loss: 0.724807
+Epoch 79/100, Loss: 0.724110
+Epoch 80/100, Loss: 0.722387
+Epoch 81/100, Loss: 0.723465
+Epoch 82/100, Loss: 0.723157
+Epoch 83/100, Loss: 0.717024
+Epoch 84/100, Loss: 0.715142
+Epoch 85/100, Loss: 0.717970
+Epoch 86/100, Loss: 0.715882
+Epoch 87/100, Loss: 0.715663
+Epoch 88/100, Loss: 0.706611
+Epoch 89/100, Loss: 0.712733
+Epoch 90/100, Loss: 0.710862
+Epoch 91/100, Loss: 0.605707
+Epoch 92/100, Loss: 0.604044
+Epoch 93/100, Loss: 0.601616
+Epoch 94/100, Loss: 0.598385
+Epoch 95/100, Loss: 0.599400
+Epoch 96/100, Loss: 0.599262
+Epoch 97/100, Loss: 0.596879
+Epoch 98/100, Loss: 0.592774
+Epoch 99/100, Loss: 0.595717
+Epoch 100/100, Loss: 0.595477
 
 Training complete!
-50
+98
 
 Model Performance Metrics:
-Accuracy: 0.679626
-Recall: 0.626709
-Jaccard Index: 0.446399
-F1 Score: 0.586868
-0.01 0.1 0.5
+Accuracy: 0.729533
+Recall: 0.533207
+Jaccard Index: 0.405196
+F1 Score: 0.503033
+0.2 0.1 0.5
 
 Starting training...
-Epoch 1/50, Loss: 1.015840
-Epoch 2/50, Loss: 0.945222
-Epoch 3/50, Loss: 0.903077
-Epoch 4/50, Loss: 0.770262
-Epoch 5/50, Loss: 0.697643
-Epoch 6/50, Loss: 0.716391
-Epoch 7/50, Loss: 0.593471
-Epoch 8/50, Loss: 0.544541
-Epoch 9/50, Loss: 0.531649
-Epoch 10/50, Loss: 0.489603
-Epoch 11/50, Loss: 0.471889
-Epoch 12/50, Loss: 0.453083
-Epoch 13/50, Loss: 0.422456
-Epoch 14/50, Loss: 0.416150
-Epoch 15/50, Loss: 0.406401
-Epoch 16/50, Loss: 0.393539
-Epoch 17/50, Loss: 0.366628
-Epoch 18/50, Loss: 0.355186
-Epoch 19/50, Loss: 0.364882
-Epoch 20/50, Loss: 0.368282
-Epoch 21/50, Loss: 0.354837
-Epoch 22/50, Loss: 0.359867
-Epoch 23/50, Loss: 0.337103
-Epoch 24/50, Loss: 0.336570
-Epoch 25/50, Loss: 0.337730
-Epoch 26/50, Loss: 0.329444
-Epoch 27/50, Loss: 0.323337
-Epoch 28/50, Loss: 0.312166
-Epoch 29/50, Loss: 0.306333
-Epoch 30/50, Loss: 0.285568
-Epoch 31/50, Loss: 0.287609
-Epoch 32/50, Loss: 0.283882
-Epoch 33/50, Loss: 0.288155
-Epoch 34/50, Loss: 0.308806
-Epoch 35/50, Loss: 0.308728
-Epoch 36/50, Loss: 0.293806
-Epoch 37/50, Loss: 0.285702
-Epoch 38/50, Loss: 0.300709
-Epoch 39/50, Loss: 0.284862
-Epoch 40/50, Loss: 0.274958
-Epoch 41/50, Loss: 0.267573
-Epoch 42/50, Loss: 0.259265
-Epoch 43/50, Loss: 0.264429
-Epoch 44/50, Loss: 0.264689
-Epoch 45/50, Loss: 0.261489
-Epoch 46/50, Loss: 0.260551
-Epoch 47/50, Loss: 0.267299
-Epoch 48/50, Loss: 0.259530
-Epoch 49/50, Loss: 0.259180
-Epoch 50/50, Loss: 0.264314
+Epoch 1/100, Loss: 1.623770
+Epoch 2/100, Loss: 1.599673
+Epoch 3/100, Loss: 1.574576
+Epoch 4/100, Loss: 1.555767
+Epoch 5/100, Loss: 1.535059
+Epoch 6/100, Loss: 1.517562
+Epoch 7/100, Loss: 1.499583
+Epoch 8/100, Loss: 1.484201
+Epoch 9/100, Loss: 1.468249
+Epoch 10/100, Loss: 1.452268
+Epoch 11/100, Loss: 1.437844
+Epoch 12/100, Loss: 1.423354
+Epoch 13/100, Loss: 1.409167
+Epoch 14/100, Loss: 1.395737
+Epoch 15/100, Loss: 1.382974
+Epoch 16/100, Loss: 1.369258
+Epoch 17/100, Loss: 1.356306
+Epoch 18/100, Loss: 1.344274
+Epoch 19/100, Loss: 1.331951
+Epoch 20/100, Loss: 1.321807
+Epoch 21/100, Loss: 1.310508
+Epoch 22/100, Loss: 1.299042
+Epoch 23/100, Loss: 1.289567
+Epoch 24/100, Loss: 1.280191
+Epoch 25/100, Loss: 1.269044
+Epoch 26/100, Loss: 1.259463
+Epoch 27/100, Loss: 1.249207
+Epoch 28/100, Loss: 1.239799
+Epoch 29/100, Loss: 1.230589
+Epoch 30/100, Loss: 1.222178
+Epoch 31/100, Loss: 1.211401
+Epoch 32/100, Loss: 1.203780
+Epoch 33/100, Loss: 1.193896
+Epoch 34/100, Loss: 1.185393
+Epoch 35/100, Loss: 1.177349
+Epoch 36/100, Loss: 1.168085
+Epoch 37/100, Loss: 1.159566
+Epoch 38/100, Loss: 1.151983
+Epoch 39/100, Loss: 1.142877
+Epoch 40/100, Loss: 1.134948
+Epoch 41/100, Loss: 1.128990
+Epoch 42/100, Loss: 1.121626
+Epoch 43/100, Loss: 1.113669
+Epoch 44/100, Loss: 1.105923
+Epoch 45/100, Loss: 1.098457
+Epoch 46/100, Loss: 1.092789
+Epoch 47/100, Loss: 1.084685
+Epoch 48/100, Loss: 1.078203
+Epoch 49/100, Loss: 1.071565
+Epoch 50/100, Loss: 1.063697
+Epoch 51/100, Loss: 1.058229
+Epoch 52/100, Loss: 1.051948
+Epoch 53/100, Loss: 1.045275
+Epoch 54/100, Loss: 1.040049
+Epoch 55/100, Loss: 1.033374
+Epoch 56/100, Loss: 1.027111
+Epoch 57/100, Loss: 1.022421
+Epoch 58/100, Loss: 1.017115
+Epoch 59/100, Loss: 1.011460
+Epoch 60/100, Loss: 1.006779
+Epoch 61/100, Loss: 1.003628
+Epoch 62/100, Loss: 0.995780
+Epoch 63/100, Loss: 0.991698
+Epoch 64/100, Loss: 0.988105
+Epoch 65/100, Loss: 0.981030
+Epoch 66/100, Loss: 0.981166
+Epoch 67/100, Loss: 0.977587
+Epoch 68/100, Loss: 0.973533
+Epoch 69/100, Loss: 0.967812
+Epoch 70/100, Loss: 0.965368
+Epoch 71/100, Loss: 0.962917
+Epoch 72/100, Loss: 0.960250
+Epoch 73/100, Loss: 0.956707
+Epoch 74/100, Loss: 0.949951
+Epoch 75/100, Loss: 0.948302
+Epoch 76/100, Loss: 0.944677
+Epoch 77/100, Loss: 0.941337
+Epoch 78/100, Loss: 0.938347
+Epoch 79/100, Loss: 0.936197
+Epoch 80/100, Loss: 0.931407
+Epoch 81/100, Loss: 0.930101
+Epoch 82/100, Loss: 0.927955
+Epoch 83/100, Loss: 0.924887
+Epoch 84/100, Loss: 0.922631
+Epoch 85/100, Loss: 0.919875
+Epoch 86/100, Loss: 0.918634
+Epoch 87/100, Loss: 0.911612
+Epoch 88/100, Loss: 0.911718
+Epoch 89/100, Loss: 0.910381
+Epoch 90/100, Loss: 0.908817
+Epoch 91/100, Loss: 0.640713
+Epoch 92/100, Loss: 0.640095
+Epoch 93/100, Loss: 0.635190
+Epoch 94/100, Loss: 0.632343
+Epoch 95/100, Loss: 0.629794
+Epoch 96/100, Loss: 0.628383
+Epoch 97/100, Loss: 0.624234
+Epoch 98/100, Loss: 0.622715
+Epoch 99/100, Loss: 0.618673
+Epoch 100/100, Loss: 0.619054
 
 Training complete!
-49
+99
 
 Model Performance Metrics:
-Accuracy: 0.753721
-Recall: 0.632340
-Jaccard Index: 0.507767
-F1 Score: 0.632567
-0.01 0.5 0.0
+Accuracy: 0.730108
+Recall: 0.564500
+Jaccard Index: 0.440865
+F1 Score: 0.568920
+0.2 0.5 0.0
 
 Starting training...
-Epoch 1/50, Loss: 0.980590
-Epoch 2/50, Loss: 0.848303
-Epoch 3/50, Loss: 0.773783
-Epoch 4/50, Loss: 0.758295
-Epoch 5/50, Loss: 0.674868
-Epoch 6/50, Loss: 0.624389
-Epoch 7/50, Loss: 0.594673
-Epoch 8/50, Loss: 0.558886
-Epoch 9/50, Loss: 0.544339
-Epoch 10/50, Loss: 0.546557
-Epoch 11/50, Loss: 0.501977
-Epoch 12/50, Loss: 0.484190
-Epoch 13/50, Loss: 0.512726
-Epoch 14/50, Loss: 0.517870
-Epoch 15/50, Loss: 0.504700
-Epoch 16/50, Loss: 0.498070
-Epoch 17/50, Loss: 0.476520
-Epoch 18/50, Loss: 0.463848
-Epoch 19/50, Loss: 0.468487
-Epoch 20/50, Loss: 0.467955
-Epoch 21/50, Loss: 0.446706
-Epoch 22/50, Loss: 0.440823
-Epoch 23/50, Loss: 0.453841
-Epoch 24/50, Loss: 0.448165
-Epoch 25/50, Loss: 0.458762
-Epoch 26/50, Loss: 0.436901
-Epoch 27/50, Loss: 0.451570
-Epoch 28/50, Loss: 0.441479
-Epoch 29/50, Loss: 0.449549
-Epoch 30/50, Loss: 0.440833
-Epoch 31/50, Loss: 0.420252
-Epoch 32/50, Loss: 0.418199
-Epoch 33/50, Loss: 0.406206
-Epoch 34/50, Loss: 0.411538
-Epoch 35/50, Loss: 0.404737
-Epoch 36/50, Loss: 0.413399
-Epoch 37/50, Loss: 0.415597
-Epoch 38/50, Loss: 0.419245
-Epoch 39/50, Loss: 0.403119
-Epoch 40/50, Loss: 0.406728
-Epoch 41/50, Loss: 0.405979
-Epoch 42/50, Loss: 0.398106
-Epoch 43/50, Loss: 0.405641
-Epoch 44/50, Loss: 0.391945
-Epoch 45/50, Loss: 0.399799
-Epoch 46/50, Loss: 0.408823
-Epoch 47/50, Loss: 0.405743
-Epoch 48/50, Loss: 0.390367
-Epoch 49/50, Loss: 0.387550
-Epoch 50/50, Loss: 0.388480
+Epoch 1/100, Loss: 1.489323
+Epoch 2/100, Loss: 1.460499
+Epoch 3/100, Loss: 1.435119
+Epoch 4/100, Loss: 1.413859
+Epoch 5/100, Loss: 1.392432
+Epoch 6/100, Loss: 1.374074
+Epoch 7/100, Loss: 1.355883
+Epoch 8/100, Loss: 1.340293
+Epoch 9/100, Loss: 1.322601
+Epoch 10/100, Loss: 1.306724
+Epoch 11/100, Loss: 1.289998
+Epoch 12/100, Loss: 1.270156
+Epoch 13/100, Loss: 1.250624
+Epoch 14/100, Loss: 1.230675
+Epoch 15/100, Loss: 1.210207
+Epoch 16/100, Loss: 1.189849
+Epoch 17/100, Loss: 1.173536
+Epoch 18/100, Loss: 1.159234
+Epoch 19/100, Loss: 1.141413
+Epoch 20/100, Loss: 1.127570
+Epoch 21/100, Loss: 1.114171
+Epoch 22/100, Loss: 1.102318
+Epoch 23/100, Loss: 1.090472
+Epoch 24/100, Loss: 1.080616
+Epoch 25/100, Loss: 1.072438
+Epoch 26/100, Loss: 1.062436
+Epoch 27/100, Loss: 1.054905
+Epoch 28/100, Loss: 1.047091
+Epoch 29/100, Loss: 1.041245
+Epoch 30/100, Loss: 1.035774
+Epoch 31/100, Loss: 1.030728
+Epoch 32/100, Loss: 1.025056
+Epoch 33/100, Loss: 1.019322
+Epoch 34/100, Loss: 1.013410
+Epoch 35/100, Loss: 1.010286
+Epoch 36/100, Loss: 1.007998
+Epoch 37/100, Loss: 1.002673
+Epoch 38/100, Loss: 0.999475
+Epoch 39/100, Loss: 0.995605
+Epoch 40/100, Loss: 0.994536
+Epoch 41/100, Loss: 0.988575
+Epoch 42/100, Loss: 0.987701
+Epoch 43/100, Loss: 0.986137
+Epoch 44/100, Loss: 0.983162
+Epoch 45/100, Loss: 0.979292
+Epoch 46/100, Loss: 0.976153
+Epoch 47/100, Loss: 0.974885
+Epoch 48/100, Loss: 0.973316
+Epoch 49/100, Loss: 0.971454
+Epoch 50/100, Loss: 0.964913
+Epoch 51/100, Loss: 0.965812
+Epoch 52/100, Loss: 0.964290
+Epoch 53/100, Loss: 0.958396
+Epoch 54/100, Loss: 0.960550
+Epoch 55/100, Loss: 0.954606
+Epoch 56/100, Loss: 0.953295
+Epoch 57/100, Loss: 0.949006
+Epoch 58/100, Loss: 0.950241
+Epoch 59/100, Loss: 0.947694
+Epoch 60/100, Loss: 0.944135
+Epoch 61/100, Loss: 0.945535
+Epoch 62/100, Loss: 0.940736
+Epoch 63/100, Loss: 0.938893
+Epoch 64/100, Loss: 0.938273
+Epoch 65/100, Loss: 0.935020
+Epoch 66/100, Loss: 0.933196
+Epoch 67/100, Loss: 0.929685
+Epoch 68/100, Loss: 0.930651
+Epoch 69/100, Loss: 0.928341
+Epoch 70/100, Loss: 0.926223
+Epoch 71/100, Loss: 0.926654
+Epoch 72/100, Loss: 0.920439
+Epoch 73/100, Loss: 0.920583
+Epoch 74/100, Loss: 0.920308
+Epoch 75/100, Loss: 0.916851
+Epoch 76/100, Loss: 0.914871
+Epoch 77/100, Loss: 0.914068
+Epoch 78/100, Loss: 0.911183
+Epoch 79/100, Loss: 0.910043
+Epoch 80/100, Loss: 0.906227
+Epoch 81/100, Loss: 0.906784
+Epoch 82/100, Loss: 0.902963
+Epoch 83/100, Loss: 0.902087
+Epoch 84/100, Loss: 0.902368
+Epoch 85/100, Loss: 0.901663
+Epoch 86/100, Loss: 0.897253
+Epoch 87/100, Loss: 0.896866
+Epoch 88/100, Loss: 0.895358
+Epoch 89/100, Loss: 0.895915
+Epoch 90/100, Loss: 0.892920
+Epoch 91/100, Loss: 0.592760
+Epoch 92/100, Loss: 0.591843
+Epoch 93/100, Loss: 0.589845
+Epoch 94/100, Loss: 0.586190
+Epoch 95/100, Loss: 0.587151
+Epoch 96/100, Loss: 0.583989
+Epoch 97/100, Loss: 0.583588
+Epoch 98/100, Loss: 0.582154
+Epoch 99/100, Loss: 0.580239
+Epoch 100/100, Loss: 0.579102
 
 Training complete!
-49
+100
 
 Model Performance Metrics:
-Accuracy: 0.720230
-Recall: 0.632600
-Jaccard Index: 0.486105
-F1 Score: 0.620175
-0.01 0.5 0.1
+Accuracy: 0.729288
+Recall: 0.545741
+Jaccard Index: 0.420753
+F1 Score: 0.533082
+0.2 0.5 0.1
 
 Starting training...
-Epoch 1/50, Loss: 1.016889
-Epoch 2/50, Loss: 0.961495
-Epoch 3/50, Loss: 0.973923
-Epoch 4/50, Loss: 0.872691
-Epoch 5/50, Loss: 0.806038
-Epoch 6/50, Loss: 0.713750
-Epoch 7/50, Loss: 0.684341
-Epoch 8/50, Loss: 0.663988
-Epoch 9/50, Loss: 0.608634
-Epoch 10/50, Loss: 0.604125
-Epoch 11/50, Loss: 0.574405
-Epoch 12/50, Loss: 0.570793
-Epoch 13/50, Loss: 0.574066
-Epoch 14/50, Loss: 0.579814
-Epoch 15/50, Loss: 0.536153
-Epoch 16/50, Loss: 0.539872
-Epoch 17/50, Loss: 0.541945
-Epoch 18/50, Loss: 0.544183
-Epoch 19/50, Loss: 0.514423
-Epoch 20/50, Loss: 0.488561
-Epoch 21/50, Loss: 0.501759
-Epoch 22/50, Loss: 0.496139
-Epoch 23/50, Loss: 0.490180
-Epoch 24/50, Loss: 0.502888
-Epoch 25/50, Loss: 0.477656
-Epoch 26/50, Loss: 0.468015
-Epoch 27/50, Loss: 0.461465
-Epoch 28/50, Loss: 0.459977
-Epoch 29/50, Loss: 0.464372
-Epoch 30/50, Loss: 0.456474
-Epoch 31/50, Loss: 0.467714
-Epoch 32/50, Loss: 0.447898
-Epoch 33/50, Loss: 0.460719
-Epoch 34/50, Loss: 0.447866
-Epoch 35/50, Loss: 0.449887
-Epoch 36/50, Loss: 0.447096
-Epoch 37/50, Loss: 0.444807
-Epoch 38/50, Loss: 0.456881
-Epoch 39/50, Loss: 0.448326
-Epoch 40/50, Loss: 0.436892
-Epoch 41/50, Loss: 0.443002
-Epoch 42/50, Loss: 0.430008
-Epoch 43/50, Loss: 0.435185
-Epoch 44/50, Loss: 0.432911
-Epoch 45/50, Loss: 0.428202
-Epoch 46/50, Loss: 0.436612
-Epoch 47/50, Loss: 0.412319
-Epoch 48/50, Loss: 0.420918
-Epoch 49/50, Loss: 0.420772
-Epoch 50/50, Loss: 0.417357
+Epoch 1/100, Loss: 1.581540
+Epoch 2/100, Loss: 1.553492
+Epoch 3/100, Loss: 1.528654
+Epoch 4/100, Loss: 1.505352
+Epoch 5/100, Loss: 1.484779
+Epoch 6/100, Loss: 1.464363
+Epoch 7/100, Loss: 1.444044
+Epoch 8/100, Loss: 1.426766
+Epoch 9/100, Loss: 1.410704
+Epoch 10/100, Loss: 1.393776
+Epoch 11/100, Loss: 1.376464
+Epoch 12/100, Loss: 1.358474
+Epoch 13/100, Loss: 1.340133
+Epoch 14/100, Loss: 1.322917
+Epoch 15/100, Loss: 1.305162
+Epoch 16/100, Loss: 1.289289
+Epoch 17/100, Loss: 1.273752
+Epoch 18/100, Loss: 1.258643
+Epoch 19/100, Loss: 1.246263
+Epoch 20/100, Loss: 1.236061
+Epoch 21/100, Loss: 1.224942
+Epoch 22/100, Loss: 1.212222
+Epoch 23/100, Loss: 1.203492
+Epoch 24/100, Loss: 1.193613
+Epoch 25/100, Loss: 1.183557
+Epoch 26/100, Loss: 1.175795
+Epoch 27/100, Loss: 1.167290
+Epoch 28/100, Loss: 1.159981
+Epoch 29/100, Loss: 1.151351
+Epoch 30/100, Loss: 1.141898
+Epoch 31/100, Loss: 1.135504
+Epoch 32/100, Loss: 1.128408
+Epoch 33/100, Loss: 1.121693
+Epoch 34/100, Loss: 1.116362
+Epoch 35/100, Loss: 1.109293
+Epoch 36/100, Loss: 1.105112
+Epoch 37/100, Loss: 1.098862
+Epoch 38/100, Loss: 1.093365
+Epoch 39/100, Loss: 1.088472
+Epoch 40/100, Loss: 1.084210
+Epoch 41/100, Loss: 1.080072
+Epoch 42/100, Loss: 1.076258
+Epoch 43/100, Loss: 1.072506
+Epoch 44/100, Loss: 1.069588
+Epoch 45/100, Loss: 1.064807
+Epoch 46/100, Loss: 1.063809
+Epoch 47/100, Loss: 1.056702
+Epoch 48/100, Loss: 1.058148
+Epoch 49/100, Loss: 1.051558
+Epoch 50/100, Loss: 1.051236
+Epoch 51/100, Loss: 1.046431
+Epoch 52/100, Loss: 1.045878
+Epoch 53/100, Loss: 1.041597
+Epoch 54/100, Loss: 1.038581
+Epoch 55/100, Loss: 1.037263
+Epoch 56/100, Loss: 1.035241
+Epoch 57/100, Loss: 1.031558
+Epoch 58/100, Loss: 1.029861
+Epoch 59/100, Loss: 1.025948
+Epoch 60/100, Loss: 1.023611
+Epoch 61/100, Loss: 1.023918
+Epoch 62/100, Loss: 1.018884
+Epoch 63/100, Loss: 1.018083
+Epoch 64/100, Loss: 1.016820
+Epoch 65/100, Loss: 1.013557
+Epoch 66/100, Loss: 1.011795
+Epoch 67/100, Loss: 1.008520
+Epoch 68/100, Loss: 1.007388
+Epoch 69/100, Loss: 1.003555
+Epoch 70/100, Loss: 1.001146
+Epoch 71/100, Loss: 0.999708
+Epoch 72/100, Loss: 0.997337
+Epoch 73/100, Loss: 0.993287
+Epoch 74/100, Loss: 0.993367
+Epoch 75/100, Loss: 0.993011
+Epoch 76/100, Loss: 0.988632
+Epoch 77/100, Loss: 0.984949
+Epoch 78/100, Loss: 0.984003
+Epoch 79/100, Loss: 0.983210
+Epoch 80/100, Loss: 0.983533
+Epoch 81/100, Loss: 0.979878
+Epoch 82/100, Loss: 0.977599
+Epoch 83/100, Loss: 0.975255
+Epoch 84/100, Loss: 0.972578
+Epoch 85/100, Loss: 0.970286
+Epoch 86/100, Loss: 0.969923
+Epoch 87/100, Loss: 0.969771
+Epoch 88/100, Loss: 0.967686
+Epoch 89/100, Loss: 0.967019
+Epoch 90/100, Loss: 0.959788
+Epoch 91/100, Loss: 0.622130
+Epoch 92/100, Loss: 0.616181
+Epoch 93/100, Loss: 0.619981
+Epoch 94/100, Loss: 0.617882
+Epoch 95/100, Loss: 0.614440
+Epoch 96/100, Loss: 0.614743
+Epoch 97/100, Loss: 0.612729
+Epoch 98/100, Loss: 0.608491
+Epoch 99/100, Loss: 0.605674
+Epoch 100/100, Loss: 0.603193
 
 Training complete!
-47
+100
 
 Model Performance Metrics:
-Accuracy: 0.731888
-Recall: 0.652883
-Jaccard Index: 0.501129
-F1 Score: 0.635552
-0.01 0.5 0.5
+Accuracy: 0.729125
+Recall: 0.540338
+Jaccard Index: 0.414921
+F1 Score: 0.521962
+0.2 0.5 0.5
 
 Starting training...
-Epoch 1/50, Loss: 1.374450
-Epoch 2/50, Loss: 1.275708
-Epoch 3/50, Loss: 1.116031
-Epoch 4/50, Loss: 1.087736
-Epoch 5/50, Loss: 1.075665
-Epoch 6/50, Loss: 1.019846
-Epoch 7/50, Loss: 0.934613
-Epoch 8/50, Loss: 0.875723
-Epoch 9/50, Loss: 0.879148
-Epoch 10/50, Loss: 0.800863
-Epoch 11/50, Loss: 0.765103
-Epoch 12/50, Loss: 0.739733
-Epoch 13/50, Loss: 0.754868
-Epoch 14/50, Loss: 0.730181
-Epoch 15/50, Loss: 0.707952
-Epoch 16/50, Loss: 0.689584
-Epoch 17/50, Loss: 0.695749
-Epoch 18/50, Loss: 0.660796
-Epoch 19/50, Loss: 0.636870
-Epoch 20/50, Loss: 0.616449
-Epoch 21/50, Loss: 0.631046
-Epoch 22/50, Loss: 0.628978
-Epoch 23/50, Loss: 0.607366
-Epoch 24/50, Loss: 0.603065
-Epoch 25/50, Loss: 0.617373
-Epoch 26/50, Loss: 0.589004
-Epoch 27/50, Loss: 0.574944
-Epoch 28/50, Loss: 0.571277
-Epoch 29/50, Loss: 0.570884
-Epoch 30/50, Loss: 0.553609
-Epoch 31/50, Loss: 0.536232
-Epoch 32/50, Loss: 0.545830
-Epoch 33/50, Loss: 0.536154
-Epoch 34/50, Loss: 0.555053
-Epoch 35/50, Loss: 0.549266
-Epoch 36/50, Loss: 0.516315
-Epoch 37/50, Loss: 0.539964
-Epoch 38/50, Loss: 0.531527
-Epoch 39/50, Loss: 0.537191
-Epoch 40/50, Loss: 0.530790
-Epoch 41/50, Loss: 0.524137
-Epoch 42/50, Loss: 0.498245
-Epoch 43/50, Loss: 0.514150
-Epoch 44/50, Loss: 0.514314
-Epoch 45/50, Loss: 0.510939
-Epoch 46/50, Loss: 0.511524
-Epoch 47/50, Loss: 0.500091
-Epoch 48/50, Loss: 0.512634
-Epoch 49/50, Loss: 0.504596
-Epoch 50/50, Loss: 0.493279
+Epoch 1/100, Loss: 1.888612
+Epoch 2/100, Loss: 1.856369
+Epoch 3/100, Loss: 1.825815
+Epoch 4/100, Loss: 1.795574
+Epoch 5/100, Loss: 1.768081
+Epoch 6/100, Loss: 1.740471
+Epoch 7/100, Loss: 1.712955
+Epoch 8/100, Loss: 1.688821
+Epoch 9/100, Loss: 1.665238
+Epoch 10/100, Loss: 1.641814
+Epoch 11/100, Loss: 1.620192
+Epoch 12/100, Loss: 1.598148
+Epoch 13/100, Loss: 1.577501
+Epoch 14/100, Loss: 1.554943
+Epoch 15/100, Loss: 1.536329
+Epoch 16/100, Loss: 1.518153
+Epoch 17/100, Loss: 1.499834
+Epoch 18/100, Loss: 1.483933
+Epoch 19/100, Loss: 1.466826
+Epoch 20/100, Loss: 1.450509
+Epoch 21/100, Loss: 1.436224
+Epoch 22/100, Loss: 1.421440
+Epoch 23/100, Loss: 1.407332
+Epoch 24/100, Loss: 1.395125
+Epoch 25/100, Loss: 1.381906
+Epoch 26/100, Loss: 1.371291
+Epoch 27/100, Loss: 1.359780
+Epoch 28/100, Loss: 1.347789
+Epoch 29/100, Loss: 1.336442
+Epoch 30/100, Loss: 1.326439
+Epoch 31/100, Loss: 1.316071
+Epoch 32/100, Loss: 1.305837
+Epoch 33/100, Loss: 1.297421
+Epoch 34/100, Loss: 1.288416
+Epoch 35/100, Loss: 1.280507
+Epoch 36/100, Loss: 1.270203
+Epoch 37/100, Loss: 1.262116
+Epoch 38/100, Loss: 1.257381
+Epoch 39/100, Loss: 1.250121
+Epoch 40/100, Loss: 1.244089
+Epoch 41/100, Loss: 1.231345
+Epoch 42/100, Loss: 1.228736
+Epoch 43/100, Loss: 1.223144
+Epoch 44/100, Loss: 1.217890
+Epoch 45/100, Loss: 1.211797
+Epoch 46/100, Loss: 1.208140
+Epoch 47/100, Loss: 1.203711
+Epoch 48/100, Loss: 1.200637
+Epoch 49/100, Loss: 1.196206
+Epoch 50/100, Loss: 1.192196
+Epoch 51/100, Loss: 1.186377
+Epoch 52/100, Loss: 1.180703
+Epoch 53/100, Loss: 1.181729
+Epoch 54/100, Loss: 1.176858
+Epoch 55/100, Loss: 1.174010
+Epoch 56/100, Loss: 1.171773
+Epoch 57/100, Loss: 1.168449
+Epoch 58/100, Loss: 1.168160
+Epoch 59/100, Loss: 1.160938
+Epoch 60/100, Loss: 1.157521
+Epoch 61/100, Loss: 1.156046
+Epoch 62/100, Loss: 1.152285
+Epoch 63/100, Loss: 1.151747
+Epoch 64/100, Loss: 1.148016
+Epoch 65/100, Loss: 1.145020
+Epoch 66/100, Loss: 1.142178
+Epoch 67/100, Loss: 1.141254
+Epoch 68/100, Loss: 1.140606
+Epoch 69/100, Loss: 1.137156
+Epoch 70/100, Loss: 1.135735
+Epoch 71/100, Loss: 1.131716
+Epoch 72/100, Loss: 1.131773
+Epoch 73/100, Loss: 1.130270
+Epoch 74/100, Loss: 1.124331
+Epoch 75/100, Loss: 1.125400
+Epoch 76/100, Loss: 1.122331
+Epoch 77/100, Loss: 1.120086
+Epoch 78/100, Loss: 1.117403
+Epoch 79/100, Loss: 1.115834
+Epoch 80/100, Loss: 1.115629
+Epoch 81/100, Loss: 1.112054
+Epoch 82/100, Loss: 1.112348
+Epoch 83/100, Loss: 1.108849
+Epoch 84/100, Loss: 1.105720
+Epoch 85/100, Loss: 1.106256
+Epoch 86/100, Loss: 1.103555
+Epoch 87/100, Loss: 1.103278
+Epoch 88/100, Loss: 1.100906
+Epoch 89/100, Loss: 1.097527
+Epoch 90/100, Loss: 1.095209
+Epoch 91/100, Loss: 0.606911
+Epoch 92/100, Loss: 0.601497
+Epoch 93/100, Loss: 0.598830
+Epoch 94/100, Loss: 0.596237
+Epoch 95/100, Loss: 0.593479
+Epoch 96/100, Loss: 0.595175
+Epoch 97/100, Loss: 0.591903
+Epoch 98/100, Loss: 0.592010
+Epoch 99/100, Loss: 0.588440
+Epoch 100/100, Loss: 0.586979
 
 Training complete!
-50
+100
 
 Model Performance Metrics:
-Accuracy: 0.714803
-Recall: 0.591479
-Jaccard Index: 0.459803
-F1 Score: 0.592974
-0.05 0.0 0.0
+Accuracy: 0.733124
+Recall: 0.563012
+Jaccard Index: 0.441109
+F1 Score: 0.566168
+1.0 0.0 0.0
 
 Starting training...
-Epoch 1/50, Loss: 1.054876
-Epoch 2/50, Loss: 0.879532
-Epoch 3/50, Loss: 0.720675
-Epoch 4/50, Loss: 0.591679
-Epoch 5/50, Loss: 0.544766
-Epoch 6/50, Loss: 0.481510
-Epoch 7/50, Loss: 0.438873
-Epoch 8/50, Loss: 0.413187
-Epoch 9/50, Loss: 0.388218
-Epoch 10/50, Loss: 0.363016
-Epoch 11/50, Loss: 0.346762
-Epoch 12/50, Loss: 0.320986
-Epoch 13/50, Loss: 0.313004
-Epoch 14/50, Loss: 0.306822
-Epoch 15/50, Loss: 0.300573
-Epoch 16/50, Loss: 0.288030
-Epoch 17/50, Loss: 0.285785
-Epoch 18/50, Loss: 0.285109
-Epoch 19/50, Loss: 0.275638
-Epoch 20/50, Loss: 0.268259
-Epoch 21/50, Loss: 0.263227
-Epoch 22/50, Loss: 0.257535
-Epoch 23/50, Loss: 0.250557
-Epoch 24/50, Loss: 0.240449
-Epoch 25/50, Loss: 0.241297
-Epoch 26/50, Loss: 0.236537
-Epoch 27/50, Loss: 0.227640
-Epoch 28/50, Loss: 0.226572
-Epoch 29/50, Loss: 0.230962
-Epoch 30/50, Loss: 0.230499
-Epoch 31/50, Loss: 0.224271
-Epoch 32/50, Loss: 0.215327
-Epoch 33/50, Loss: 0.213342
-Epoch 34/50, Loss: 0.212230
-Epoch 35/50, Loss: 0.217535
-Epoch 36/50, Loss: 0.212813
-Epoch 37/50, Loss: 0.215496
-Epoch 38/50, Loss: 0.209745
-Epoch 39/50, Loss: 0.204058
-Epoch 40/50, Loss: 0.203319
-Epoch 41/50, Loss: 0.202035
-Epoch 42/50, Loss: 0.198589
-Epoch 43/50, Loss: 0.195046
-Epoch 44/50, Loss: 0.197400
-Epoch 45/50, Loss: 0.185322
-Epoch 46/50, Loss: 0.190006
-Epoch 47/50, Loss: 0.188265
-Epoch 48/50, Loss: 0.202491
-Epoch 49/50, Loss: 0.201388
-Epoch 50/50, Loss: 0.191568
+Epoch 1/100, Loss: 1.202150
+Epoch 2/100, Loss: 1.164165
+Epoch 3/100, Loss: 1.130060
+Epoch 4/100, Loss: 1.096517
+Epoch 5/100, Loss: 1.062042
+Epoch 6/100, Loss: 1.027802
+Epoch 7/100, Loss: 0.995447
+Epoch 8/100, Loss: 0.965541
+Epoch 9/100, Loss: 0.939145
+Epoch 10/100, Loss: 0.915893
+Epoch 11/100, Loss: 0.894821
+Epoch 12/100, Loss: 0.875352
+Epoch 13/100, Loss: 0.858248
+Epoch 14/100, Loss: 0.841390
+Epoch 15/100, Loss: 0.825926
+Epoch 16/100, Loss: 0.812508
+Epoch 17/100, Loss: 0.800117
+Epoch 18/100, Loss: 0.788626
+Epoch 19/100, Loss: 0.778086
+Epoch 20/100, Loss: 0.767818
+Epoch 21/100, Loss: 0.759000
+Epoch 22/100, Loss: 0.751048
+Epoch 23/100, Loss: 0.743348
+Epoch 24/100, Loss: 0.736451
+Epoch 25/100, Loss: 0.729509
+Epoch 26/100, Loss: 0.724298
+Epoch 27/100, Loss: 0.718197
+Epoch 28/100, Loss: 0.713102
+Epoch 29/100, Loss: 0.707560
+Epoch 30/100, Loss: 0.702884
+Epoch 31/100, Loss: 0.698581
+Epoch 32/100, Loss: 0.694511
+Epoch 33/100, Loss: 0.690281
+Epoch 34/100, Loss: 0.687146
+Epoch 35/100, Loss: 0.682006
+Epoch 36/100, Loss: 0.679208
+Epoch 37/100, Loss: 0.676204
+Epoch 38/100, Loss: 0.671939
+Epoch 39/100, Loss: 0.668987
+Epoch 40/100, Loss: 0.666881
+Epoch 41/100, Loss: 0.662771
+Epoch 42/100, Loss: 0.659804
+Epoch 43/100, Loss: 0.658697
+Epoch 44/100, Loss: 0.655444
+Epoch 45/100, Loss: 0.651939
+Epoch 46/100, Loss: 0.649331
+Epoch 47/100, Loss: 0.647186
+Epoch 48/100, Loss: 0.644271
+Epoch 49/100, Loss: 0.642171
+Epoch 50/100, Loss: 0.639167
+Epoch 51/100, Loss: 0.638076
+Epoch 52/100, Loss: 0.634882
+Epoch 53/100, Loss: 0.632728
+Epoch 54/100, Loss: 0.631694
+Epoch 55/100, Loss: 0.628989
+Epoch 56/100, Loss: 0.627555
+Epoch 57/100, Loss: 0.627723
+Epoch 58/100, Loss: 0.624741
+Epoch 59/100, Loss: 0.623206
+Epoch 60/100, Loss: 0.621015
+Epoch 61/100, Loss: 0.619340
+Epoch 62/100, Loss: 0.616887
+Epoch 63/100, Loss: 0.615327
+Epoch 64/100, Loss: 0.615404
+Epoch 65/100, Loss: 0.613153
+Epoch 66/100, Loss: 0.611938
+Epoch 67/100, Loss: 0.610504
+Epoch 68/100, Loss: 0.609896
+Epoch 69/100, Loss: 0.607586
+Epoch 70/100, Loss: 0.606256
+Epoch 71/100, Loss: 0.605240
+Epoch 72/100, Loss: 0.603470
+Epoch 73/100, Loss: 0.603045
+Epoch 74/100, Loss: 0.601215
+Epoch 75/100, Loss: 0.600155
+Epoch 76/100, Loss: 0.599136
+Epoch 77/100, Loss: 0.596561
+Epoch 78/100, Loss: 0.597664
+Epoch 79/100, Loss: 0.595345
+Epoch 80/100, Loss: 0.594423
+Epoch 81/100, Loss: 0.592643
+Epoch 82/100, Loss: 0.591859
+Epoch 83/100, Loss: 0.591874
+Epoch 84/100, Loss: 0.590480
+Epoch 85/100, Loss: 0.587800
+Epoch 86/100, Loss: 0.588919
+Epoch 87/100, Loss: 0.587017
+Epoch 88/100, Loss: 0.585967
+Epoch 89/100, Loss: 0.584782
+Epoch 90/100, Loss: 0.583879
+Epoch 91/100, Loss: 0.583091
+Epoch 92/100, Loss: 0.581960
+Epoch 93/100, Loss: 0.583959
+Epoch 94/100, Loss: 0.580771
+Epoch 95/100, Loss: 0.578208
+Epoch 96/100, Loss: 0.578043
+Epoch 97/100, Loss: 0.577925
+Epoch 98/100, Loss: 0.575861
+Epoch 99/100, Loss: 0.576611
+Epoch 100/100, Loss: 0.574357
 
 Training complete!
-45
+100
 
 Model Performance Metrics:
-Accuracy: 0.863378
-Recall: 0.784415
-Jaccard Index: 0.668555
-F1 Score: 0.777600
-0.05 0.0 0.1
+Accuracy: 0.757254
+Recall: 0.581163
+Jaccard Index: 0.459757
+F1 Score: 0.573346
+1.0 0.0 0.1
 
 Starting training...
-Epoch 1/50, Loss: 1.259947
-Epoch 2/50, Loss: 1.076426
-Epoch 3/50, Loss: 0.937605
-Epoch 4/50, Loss: 0.801718
-Epoch 5/50, Loss: 0.687822
-Epoch 6/50, Loss: 0.615351
-Epoch 7/50, Loss: 0.567664
-Epoch 8/50, Loss: 0.525932
-Epoch 9/50, Loss: 0.482479
-Epoch 10/50, Loss: 0.460778
-Epoch 11/50, Loss: 0.436356
-Epoch 12/50, Loss: 0.415209
-Epoch 13/50, Loss: 0.400988
-Epoch 14/50, Loss: 0.380422
-Epoch 15/50, Loss: 0.376435
-Epoch 16/50, Loss: 0.360935
-Epoch 17/50, Loss: 0.358353
-Epoch 18/50, Loss: 0.337007
-Epoch 19/50, Loss: 0.337266
-Epoch 20/50, Loss: 0.335315
-Epoch 21/50, Loss: 0.319369
-Epoch 22/50, Loss: 0.329914
-Epoch 23/50, Loss: 0.318471
-Epoch 24/50, Loss: 0.305203
-Epoch 25/50, Loss: 0.306272
-Epoch 26/50, Loss: 0.301885
-Epoch 27/50, Loss: 0.296787
-Epoch 28/50, Loss: 0.286573
-Epoch 29/50, Loss: 0.282856
-Epoch 30/50, Loss: 0.277040
-Epoch 31/50, Loss: 0.276574
-Epoch 32/50, Loss: 0.266454
-Epoch 33/50, Loss: 0.276772
-Epoch 34/50, Loss: 0.272627
-Epoch 35/50, Loss: 0.267179
-Epoch 36/50, Loss: 0.265769
-Epoch 37/50, Loss: 0.255869
-Epoch 38/50, Loss: 0.254947
-Epoch 39/50, Loss: 0.255660
-Epoch 40/50, Loss: 0.250487
-Epoch 41/50, Loss: 0.243731
-Epoch 42/50, Loss: 0.244334
-Epoch 43/50, Loss: 0.247751
-Epoch 44/50, Loss: 0.244023
-Epoch 45/50, Loss: 0.236143
-Epoch 46/50, Loss: 0.237433
-Epoch 47/50, Loss: 0.238644
-Epoch 48/50, Loss: 0.228894
-Epoch 49/50, Loss: 0.231079
-Epoch 50/50, Loss: 0.233449
+Epoch 1/100, Loss: 1.228777
+Epoch 2/100, Loss: 1.198265
+Epoch 3/100, Loss: 1.170144
+Epoch 4/100, Loss: 1.143706
+Epoch 5/100, Loss: 1.117989
+Epoch 6/100, Loss: 1.092423
+Epoch 7/100, Loss: 1.066495
+Epoch 8/100, Loss: 1.041290
+Epoch 9/100, Loss: 1.016797
+Epoch 10/100, Loss: 0.993449
+Epoch 11/100, Loss: 0.972716
+Epoch 12/100, Loss: 0.952894
+Epoch 13/100, Loss: 0.934122
+Epoch 14/100, Loss: 0.916744
+Epoch 15/100, Loss: 0.899844
+Epoch 16/100, Loss: 0.884379
+Epoch 17/100, Loss: 0.870924
+Epoch 18/100, Loss: 0.858226
+Epoch 19/100, Loss: 0.846210
+Epoch 20/100, Loss: 0.836306
+Epoch 21/100, Loss: 0.825863
+Epoch 22/100, Loss: 0.816296
+Epoch 23/100, Loss: 0.807071
+Epoch 24/100, Loss: 0.799092
+Epoch 25/100, Loss: 0.791546
+Epoch 26/100, Loss: 0.784397
+Epoch 27/100, Loss: 0.777500
+Epoch 28/100, Loss: 0.770400
+Epoch 29/100, Loss: 0.764863
+Epoch 30/100, Loss: 0.758873
+Epoch 31/100, Loss: 0.752875
+Epoch 32/100, Loss: 0.747715
+Epoch 33/100, Loss: 0.742274
+Epoch 34/100, Loss: 0.737524
+Epoch 35/100, Loss: 0.732669
+Epoch 36/100, Loss: 0.727589
+Epoch 37/100, Loss: 0.723906
+Epoch 38/100, Loss: 0.719270
+Epoch 39/100, Loss: 0.714040
+Epoch 40/100, Loss: 0.710256
+Epoch 41/100, Loss: 0.706758
+Epoch 42/100, Loss: 0.702886
+Epoch 43/100, Loss: 0.699464
+Epoch 44/100, Loss: 0.695867
+Epoch 45/100, Loss: 0.692793
+Epoch 46/100, Loss: 0.689210
+Epoch 47/100, Loss: 0.686034
+Epoch 48/100, Loss: 0.682751
+Epoch 49/100, Loss: 0.681411
+Epoch 50/100, Loss: 0.677881
+Epoch 51/100, Loss: 0.674879
+Epoch 52/100, Loss: 0.672078
+Epoch 53/100, Loss: 0.669296
+Epoch 54/100, Loss: 0.666777
+Epoch 55/100, Loss: 0.665707
+Epoch 56/100, Loss: 0.662747
+Epoch 57/100, Loss: 0.659591
+Epoch 58/100, Loss: 0.658110
+Epoch 59/100, Loss: 0.656333
+Epoch 60/100, Loss: 0.653509
+Epoch 61/100, Loss: 0.652421
+Epoch 62/100, Loss: 0.649685
+Epoch 63/100, Loss: 0.647860
+Epoch 64/100, Loss: 0.646433
+Epoch 65/100, Loss: 0.645378
+Epoch 66/100, Loss: 0.643428
+Epoch 67/100, Loss: 0.640983
+Epoch 68/100, Loss: 0.639449
+Epoch 69/100, Loss: 0.638511
+Epoch 70/100, Loss: 0.636656
+Epoch 71/100, Loss: 0.635313
+Epoch 72/100, Loss: 0.633095
+Epoch 73/100, Loss: 0.631330
+Epoch 74/100, Loss: 0.629312
+Epoch 75/100, Loss: 0.627886
+Epoch 76/100, Loss: 0.627672
+Epoch 77/100, Loss: 0.625987
+Epoch 78/100, Loss: 0.623526
+Epoch 79/100, Loss: 0.622599
+Epoch 80/100, Loss: 0.620782
+Epoch 81/100, Loss: 0.620289
+Epoch 82/100, Loss: 0.619527
+Epoch 83/100, Loss: 0.617982
+Epoch 84/100, Loss: 0.616922
+Epoch 85/100, Loss: 0.615459
+Epoch 86/100, Loss: 0.615425
+Epoch 87/100, Loss: 0.613271
+Epoch 88/100, Loss: 0.612077
+Epoch 89/100, Loss: 0.610899
+Epoch 90/100, Loss: 0.609397
+Epoch 91/100, Loss: 0.568966
+Epoch 92/100, Loss: 0.567276
+Epoch 93/100, Loss: 0.567522
+Epoch 94/100, Loss: 0.564904
+Epoch 95/100, Loss: 0.564973
+Epoch 96/100, Loss: 0.563335
+Epoch 97/100, Loss: 0.563053
+Epoch 98/100, Loss: 0.562008
+Epoch 99/100, Loss: 0.560912
+Epoch 100/100, Loss: 0.559490
 
 Training complete!
-48
+100
 
 Model Performance Metrics:
-Accuracy: 0.857853
-Recall: 0.777717
-Jaccard Index: 0.659705
-F1 Score: 0.770761
-0.05 0.0 0.5
+Accuracy: 0.764165
+Recall: 0.604870
+Jaccard Index: 0.486109
+F1 Score: 0.611629
+1.0 0.0 0.5
 
 Starting training...
-Epoch 1/50, Loss: 1.517618
-Epoch 2/50, Loss: 1.375509
-Epoch 3/50, Loss: 1.249492
-Epoch 4/50, Loss: 1.100119
-Epoch 5/50, Loss: 0.956790
-Epoch 6/50, Loss: 0.859003
-Epoch 7/50, Loss: 0.777201
-Epoch 8/50, Loss: 0.743072
-Epoch 9/50, Loss: 0.677781
-Epoch 10/50, Loss: 0.630099
-Epoch 11/50, Loss: 0.618716
-Epoch 12/50, Loss: 0.585182
-Epoch 13/50, Loss: 0.555840
-Epoch 14/50, Loss: 0.548448
-Epoch 15/50, Loss: 0.526999
-Epoch 16/50, Loss: 0.512752
-Epoch 17/50, Loss: 0.506001
-Epoch 18/50, Loss: 0.484838
-Epoch 19/50, Loss: 0.472905
-Epoch 20/50, Loss: 0.444386
-Epoch 21/50, Loss: 0.442630
-Epoch 22/50, Loss: 0.433783
-Epoch 23/50, Loss: 0.413771
-Epoch 24/50, Loss: 0.406326
-Epoch 25/50, Loss: 0.393977
-Epoch 26/50, Loss: 0.398749
-Epoch 27/50, Loss: 0.391632
-Epoch 28/50, Loss: 0.388087
-Epoch 29/50, Loss: 0.367980
-Epoch 30/50, Loss: 0.377339
-Epoch 31/50, Loss: 0.349681
-Epoch 32/50, Loss: 0.351374
-Epoch 33/50, Loss: 0.354408
-Epoch 34/50, Loss: 0.344924
-Epoch 35/50, Loss: 0.342840
-Epoch 36/50, Loss: 0.339313
-Epoch 37/50, Loss: 0.338413
-Epoch 38/50, Loss: 0.325617
-Epoch 39/50, Loss: 0.327667
-Epoch 40/50, Loss: 0.321691
-Epoch 41/50, Loss: 0.318468
-Epoch 42/50, Loss: 0.317268
-Epoch 43/50, Loss: 0.317097
-Epoch 44/50, Loss: 0.313353
-Epoch 45/50, Loss: 0.305120
-Epoch 46/50, Loss: 0.306629
-Epoch 47/50, Loss: 0.302576
-Epoch 48/50, Loss: 0.293196
-Epoch 49/50, Loss: 0.300454
-Epoch 50/50, Loss: 0.301871
+Epoch 1/100, Loss: 1.569136
+Epoch 2/100, Loss: 1.531301
+Epoch 3/100, Loss: 1.498476
+Epoch 4/100, Loss: 1.468165
+Epoch 5/100, Loss: 1.439161
+Epoch 6/100, Loss: 1.410893
+Epoch 7/100, Loss: 1.384413
+Epoch 8/100, Loss: 1.359593
+Epoch 9/100, Loss: 1.336735
+Epoch 10/100, Loss: 1.314837
+Epoch 11/100, Loss: 1.293885
+Epoch 12/100, Loss: 1.274508
+Epoch 13/100, Loss: 1.255241
+Epoch 14/100, Loss: 1.237572
+Epoch 15/100, Loss: 1.220725
+Epoch 16/100, Loss: 1.204522
+Epoch 17/100, Loss: 1.189691
+Epoch 18/100, Loss: 1.175821
+Epoch 19/100, Loss: 1.161850
+Epoch 20/100, Loss: 1.149338
+Epoch 21/100, Loss: 1.137712
+Epoch 22/100, Loss: 1.125096
+Epoch 23/100, Loss: 1.114163
+Epoch 24/100, Loss: 1.103987
+Epoch 25/100, Loss: 1.093468
+Epoch 26/100, Loss: 1.083401
+Epoch 27/100, Loss: 1.074807
+Epoch 28/100, Loss: 1.065203
+Epoch 29/100, Loss: 1.055738
+Epoch 30/100, Loss: 1.047115
+Epoch 31/100, Loss: 1.039063
+Epoch 32/100, Loss: 1.030432
+Epoch 33/100, Loss: 1.022416
+Epoch 34/100, Loss: 1.014741
+Epoch 35/100, Loss: 1.007957
+Epoch 36/100, Loss: 1.000230
+Epoch 37/100, Loss: 0.993698
+Epoch 38/100, Loss: 0.986634
+Epoch 39/100, Loss: 0.979042
+Epoch 40/100, Loss: 0.972200
+Epoch 41/100, Loss: 0.966269
+Epoch 42/100, Loss: 0.959371
+Epoch 43/100, Loss: 0.953938
+Epoch 44/100, Loss: 0.946935
+Epoch 45/100, Loss: 0.941452
+Epoch 46/100, Loss: 0.934854
+Epoch 47/100, Loss: 0.928739
+Epoch 48/100, Loss: 0.923667
+Epoch 49/100, Loss: 0.918408
+Epoch 50/100, Loss: 0.912869
+Epoch 51/100, Loss: 0.905990
+Epoch 52/100, Loss: 0.900763
+Epoch 53/100, Loss: 0.893891
+Epoch 54/100, Loss: 0.888717
+Epoch 55/100, Loss: 0.882646
+Epoch 56/100, Loss: 0.876605
+Epoch 57/100, Loss: 0.871071
+Epoch 58/100, Loss: 0.865253
+Epoch 59/100, Loss: 0.859041
+Epoch 60/100, Loss: 0.853919
+Epoch 61/100, Loss: 0.849683
+Epoch 62/100, Loss: 0.844938
+Epoch 63/100, Loss: 0.841809
+Epoch 64/100, Loss: 0.836426
+Epoch 65/100, Loss: 0.832804
+Epoch 66/100, Loss: 0.830543
+Epoch 67/100, Loss: 0.826075
+Epoch 68/100, Loss: 0.822628
+Epoch 69/100, Loss: 0.820490
+Epoch 70/100, Loss: 0.816567
+Epoch 71/100, Loss: 0.812657
+Epoch 72/100, Loss: 0.810263
+Epoch 73/100, Loss: 0.807851
+Epoch 74/100, Loss: 0.804796
+Epoch 75/100, Loss: 0.801004
+Epoch 76/100, Loss: 0.798337
+Epoch 77/100, Loss: 0.796549
+Epoch 78/100, Loss: 0.794136
+Epoch 79/100, Loss: 0.792251
+Epoch 80/100, Loss: 0.790112
+Epoch 81/100, Loss: 0.786262
+Epoch 82/100, Loss: 0.785840
+Epoch 83/100, Loss: 0.783987
+Epoch 84/100, Loss: 0.781022
+Epoch 85/100, Loss: 0.780487
+Epoch 86/100, Loss: 0.776996
+Epoch 87/100, Loss: 0.774285
+Epoch 88/100, Loss: 0.774749
+Epoch 89/100, Loss: 0.772015
+Epoch 90/100, Loss: 0.769342
+Epoch 91/100, Loss: 0.598035
+Epoch 92/100, Loss: 0.595194
+Epoch 93/100, Loss: 0.594863
+Epoch 94/100, Loss: 0.592056
+Epoch 95/100, Loss: 0.592145
+Epoch 96/100, Loss: 0.589730
+Epoch 97/100, Loss: 0.589089
+Epoch 98/100, Loss: 0.585720
+Epoch 99/100, Loss: 0.583730
+Epoch 100/100, Loss: 0.583585
 
 Training complete!
-48
+100
 
 Model Performance Metrics:
-Accuracy: 0.849954
-Recall: 0.769070
-Jaccard Index: 0.647295
-F1 Score: 0.759949
-0.05 0.1 0.0
+Accuracy: 0.761567
+Recall: 0.560965
+Jaccard Index: 0.441486
+F1 Score: 0.535209
+1.0 0.1 0.0
 
 Starting training...
-Epoch 1/50, Loss: 1.151935
-Epoch 2/50, Loss: 1.009503
-Epoch 3/50, Loss: 0.871476
-Epoch 4/50, Loss: 0.746098
-Epoch 5/50, Loss: 0.653211
-Epoch 6/50, Loss: 0.596402
-Epoch 7/50, Loss: 0.557490
-Epoch 8/50, Loss: 0.512161
-Epoch 9/50, Loss: 0.499528
-Epoch 10/50, Loss: 0.469049
-Epoch 11/50, Loss: 0.449461
-Epoch 12/50, Loss: 0.419348
-Epoch 13/50, Loss: 0.411543
-Epoch 14/50, Loss: 0.391666
-Epoch 15/50, Loss: 0.390985
-Epoch 16/50, Loss: 0.383029
-Epoch 17/50, Loss: 0.370093
-Epoch 18/50, Loss: 0.358349
-Epoch 19/50, Loss: 0.356453
-Epoch 20/50, Loss: 0.341789
-Epoch 21/50, Loss: 0.334119
-Epoch 22/50, Loss: 0.336813
-Epoch 23/50, Loss: 0.341174
-Epoch 24/50, Loss: 0.328933
-Epoch 25/50, Loss: 0.318403
-Epoch 26/50, Loss: 0.309316
-Epoch 27/50, Loss: 0.309624
-Epoch 28/50, Loss: 0.301857
-Epoch 29/50, Loss: 0.305108
-Epoch 30/50, Loss: 0.291360
-Epoch 31/50, Loss: 0.296942
-Epoch 32/50, Loss: 0.293662
-Epoch 33/50, Loss: 0.290030
-Epoch 34/50, Loss: 0.290584
-Epoch 35/50, Loss: 0.279222
-Epoch 36/50, Loss: 0.278574
-Epoch 37/50, Loss: 0.280362
-Epoch 38/50, Loss: 0.273747
-Epoch 39/50, Loss: 0.272595
-Epoch 40/50, Loss: 0.274665
-Epoch 41/50, Loss: 0.270515
-Epoch 42/50, Loss: 0.263727
-Epoch 43/50, Loss: 0.265396
-Epoch 44/50, Loss: 0.265093
-Epoch 45/50, Loss: 0.269403
-Epoch 46/50, Loss: 0.254177
-Epoch 47/50, Loss: 0.260590
-Epoch 48/50, Loss: 0.271504
-Epoch 49/50, Loss: 0.271579
-Epoch 50/50, Loss: 0.259219
+Epoch 1/100, Loss: 1.257801
+Epoch 2/100, Loss: 1.225984
+Epoch 3/100, Loss: 1.196407
+Epoch 4/100, Loss: 1.167105
+Epoch 5/100, Loss: 1.137192
+Epoch 6/100, Loss: 1.106824
+Epoch 7/100, Loss: 1.076587
+Epoch 8/100, Loss: 1.046247
+Epoch 9/100, Loss: 1.017851
+Epoch 10/100, Loss: 0.992783
+Epoch 11/100, Loss: 0.970397
+Epoch 12/100, Loss: 0.951248
+Epoch 13/100, Loss: 0.933893
+Epoch 14/100, Loss: 0.917771
+Epoch 15/100, Loss: 0.903059
+Epoch 16/100, Loss: 0.889507
+Epoch 17/100, Loss: 0.877120
+Epoch 18/100, Loss: 0.865876
+Epoch 19/100, Loss: 0.855157
+Epoch 20/100, Loss: 0.845937
+Epoch 21/100, Loss: 0.837118
+Epoch 22/100, Loss: 0.828512
+Epoch 23/100, Loss: 0.821215
+Epoch 24/100, Loss: 0.813864
+Epoch 25/100, Loss: 0.807049
+Epoch 26/100, Loss: 0.800849
+Epoch 27/100, Loss: 0.794543
+Epoch 28/100, Loss: 0.789648
+Epoch 29/100, Loss: 0.783585
+Epoch 30/100, Loss: 0.778674
+Epoch 31/100, Loss: 0.774739
+Epoch 32/100, Loss: 0.769040
+Epoch 33/100, Loss: 0.765278
+Epoch 34/100, Loss: 0.761530
+Epoch 35/100, Loss: 0.756956
+Epoch 36/100, Loss: 0.753435
+Epoch 37/100, Loss: 0.750507
+Epoch 38/100, Loss: 0.746909
+Epoch 39/100, Loss: 0.743646
+Epoch 40/100, Loss: 0.740492
+Epoch 41/100, Loss: 0.737499
+Epoch 42/100, Loss: 0.734204
+Epoch 43/100, Loss: 0.731117
+Epoch 44/100, Loss: 0.728406
+Epoch 45/100, Loss: 0.725764
+Epoch 46/100, Loss: 0.723275
+Epoch 47/100, Loss: 0.720620
+Epoch 48/100, Loss: 0.718388
+Epoch 49/100, Loss: 0.715681
+Epoch 50/100, Loss: 0.712591
+Epoch 51/100, Loss: 0.709470
+Epoch 52/100, Loss: 0.707326
+Epoch 53/100, Loss: 0.704860
+Epoch 54/100, Loss: 0.703114
+Epoch 55/100, Loss: 0.700129
+Epoch 56/100, Loss: 0.698040
+Epoch 57/100, Loss: 0.695328
+Epoch 58/100, Loss: 0.693441
+Epoch 59/100, Loss: 0.690459
+Epoch 60/100, Loss: 0.688483
+Epoch 61/100, Loss: 0.686456
+Epoch 62/100, Loss: 0.685540
+Epoch 63/100, Loss: 0.681892
+Epoch 64/100, Loss: 0.681103
+Epoch 65/100, Loss: 0.678384
+Epoch 66/100, Loss: 0.677331
+Epoch 67/100, Loss: 0.675972
+Epoch 68/100, Loss: 0.672598
+Epoch 69/100, Loss: 0.670789
+Epoch 70/100, Loss: 0.668941
+Epoch 71/100, Loss: 0.668100
+Epoch 72/100, Loss: 0.666039
+Epoch 73/100, Loss: 0.664000
+Epoch 74/100, Loss: 0.662233
+Epoch 75/100, Loss: 0.662207
+Epoch 76/100, Loss: 0.658939
+Epoch 77/100, Loss: 0.658018
+Epoch 78/100, Loss: 0.656108
+Epoch 79/100, Loss: 0.655410
+Epoch 80/100, Loss: 0.653034
+Epoch 81/100, Loss: 0.652382
+Epoch 82/100, Loss: 0.649562
+Epoch 83/100, Loss: 0.649610
+Epoch 84/100, Loss: 0.648765
+Epoch 85/100, Loss: 0.646484
+Epoch 86/100, Loss: 0.645203
+Epoch 87/100, Loss: 0.644071
+Epoch 88/100, Loss: 0.642520
+Epoch 89/100, Loss: 0.642235
+Epoch 90/100, Loss: 0.640018
+Epoch 91/100, Loss: 0.578882
+Epoch 92/100, Loss: 0.578861
+Epoch 93/100, Loss: 0.576300
+Epoch 94/100, Loss: 0.575596
+Epoch 95/100, Loss: 0.575590
+Epoch 96/100, Loss: 0.574249
+Epoch 97/100, Loss: 0.571788
+Epoch 98/100, Loss: 0.572437
+Epoch 99/100, Loss: 0.569900
+Epoch 100/100, Loss: 0.569981
 
 Training complete!
-46
+99
 
 Model Performance Metrics:
-Accuracy: 0.852366
-Recall: 0.774291
-Jaccard Index: 0.653351
-F1 Score: 0.764652
-0.05 0.1 0.1
+Accuracy: 0.762798
+Recall: 0.598577
+Jaccard Index: 0.478383
+F1 Score: 0.600530
+1.0 0.1 0.1
 
 Starting training...
-Epoch 1/50, Loss: 1.244260
-Epoch 2/50, Loss: 1.054042
-Epoch 3/50, Loss: 0.923643
-Epoch 4/50, Loss: 0.830341
-Epoch 5/50, Loss: 0.725684
-Epoch 6/50, Loss: 0.678439
-Epoch 7/50, Loss: 0.622469
-Epoch 8/50, Loss: 0.568959
-Epoch 9/50, Loss: 0.553086
-Epoch 10/50, Loss: 0.526970
-Epoch 11/50, Loss: 0.504712
-Epoch 12/50, Loss: 0.484517
-Epoch 13/50, Loss: 0.461659
-Epoch 14/50, Loss: 0.453702
-Epoch 15/50, Loss: 0.430891
-Epoch 16/50, Loss: 0.424105
-Epoch 17/50, Loss: 0.406903
-Epoch 18/50, Loss: 0.400934
-Epoch 19/50, Loss: 0.395748
-Epoch 20/50, Loss: 0.387067
-Epoch 21/50, Loss: 0.380993
-Epoch 22/50, Loss: 0.379411
-Epoch 23/50, Loss: 0.362566
-Epoch 24/50, Loss: 0.360262
-Epoch 25/50, Loss: 0.357767
-Epoch 26/50, Loss: 0.346469
-Epoch 27/50, Loss: 0.347388
-Epoch 28/50, Loss: 0.334956
-Epoch 29/50, Loss: 0.345489
-Epoch 30/50, Loss: 0.333970
-Epoch 31/50, Loss: 0.343330
-Epoch 32/50, Loss: 0.337119
-Epoch 33/50, Loss: 0.321155
-Epoch 34/50, Loss: 0.317998
-Epoch 35/50, Loss: 0.317080
-Epoch 36/50, Loss: 0.309175
-Epoch 37/50, Loss: 0.307456
-Epoch 38/50, Loss: 0.310623
-Epoch 39/50, Loss: 0.306127
-Epoch 40/50, Loss: 0.308366
-Epoch 41/50, Loss: 0.301822
-Epoch 42/50, Loss: 0.300723
-Epoch 43/50, Loss: 0.297533
-Epoch 44/50, Loss: 0.297993
-Epoch 45/50, Loss: 0.289106
-Epoch 46/50, Loss: 0.283686
-Epoch 47/50, Loss: 0.283490
-Epoch 48/50, Loss: 0.287194
-Epoch 49/50, Loss: 0.291899
-Epoch 50/50, Loss: 0.286533
+Epoch 1/100, Loss: 1.325824
+Epoch 2/100, Loss: 1.298311
+Epoch 3/100, Loss: 1.271483
+Epoch 4/100, Loss: 1.243667
+Epoch 5/100, Loss: 1.213142
+Epoch 6/100, Loss: 1.180338
+Epoch 7/100, Loss: 1.145188
+Epoch 8/100, Loss: 1.113790
+Epoch 9/100, Loss: 1.086831
+Epoch 10/100, Loss: 1.063249
+Epoch 11/100, Loss: 1.042017
+Epoch 12/100, Loss: 1.023102
+Epoch 13/100, Loss: 1.005491
+Epoch 14/100, Loss: 0.988815
+Epoch 15/100, Loss: 0.973320
+Epoch 16/100, Loss: 0.959325
+Epoch 17/100, Loss: 0.946239
+Epoch 18/100, Loss: 0.933714
+Epoch 19/100, Loss: 0.921824
+Epoch 20/100, Loss: 0.911716
+Epoch 21/100, Loss: 0.901180
+Epoch 22/100, Loss: 0.891386
+Epoch 23/100, Loss: 0.882049
+Epoch 24/100, Loss: 0.873380
+Epoch 25/100, Loss: 0.864980
+Epoch 26/100, Loss: 0.857356
+Epoch 27/100, Loss: 0.849725
+Epoch 28/100, Loss: 0.843103
+Epoch 29/100, Loss: 0.836600
+Epoch 30/100, Loss: 0.830308
+Epoch 31/100, Loss: 0.824124
+Epoch 32/100, Loss: 0.818250
+Epoch 33/100, Loss: 0.812437
+Epoch 34/100, Loss: 0.807852
+Epoch 35/100, Loss: 0.801939
+Epoch 36/100, Loss: 0.797397
+Epoch 37/100, Loss: 0.792524
+Epoch 38/100, Loss: 0.788327
+Epoch 39/100, Loss: 0.783761
+Epoch 40/100, Loss: 0.779376
+Epoch 41/100, Loss: 0.775431
+Epoch 42/100, Loss: 0.770738
+Epoch 43/100, Loss: 0.768205
+Epoch 44/100, Loss: 0.762918
+Epoch 45/100, Loss: 0.760917
+Epoch 46/100, Loss: 0.757487
+Epoch 47/100, Loss: 0.753896
+Epoch 48/100, Loss: 0.749679
+Epoch 49/100, Loss: 0.746971
+Epoch 50/100, Loss: 0.743287
+Epoch 51/100, Loss: 0.739748
+Epoch 52/100, Loss: 0.737629
+Epoch 53/100, Loss: 0.734956
+Epoch 54/100, Loss: 0.732501
+Epoch 55/100, Loss: 0.729741
+Epoch 56/100, Loss: 0.726691
+Epoch 57/100, Loss: 0.724204
+Epoch 58/100, Loss: 0.722721
+Epoch 59/100, Loss: 0.720033
+Epoch 60/100, Loss: 0.717867
+Epoch 61/100, Loss: 0.715859
+Epoch 62/100, Loss: 0.713297
+Epoch 63/100, Loss: 0.711106
+Epoch 64/100, Loss: 0.708291
+Epoch 65/100, Loss: 0.707887
+Epoch 66/100, Loss: 0.705371
+Epoch 67/100, Loss: 0.704056
+Epoch 68/100, Loss: 0.702594
+Epoch 69/100, Loss: 0.699179
+Epoch 70/100, Loss: 0.697418
+Epoch 71/100, Loss: 0.696697
+Epoch 72/100, Loss: 0.695029
+Epoch 73/100, Loss: 0.692439
+Epoch 74/100, Loss: 0.691918
+Epoch 75/100, Loss: 0.690501
+Epoch 76/100, Loss: 0.688324
+Epoch 77/100, Loss: 0.685229
+Epoch 78/100, Loss: 0.685493
+Epoch 79/100, Loss: 0.684463
+Epoch 80/100, Loss: 0.682292
+Epoch 81/100, Loss: 0.680768
+Epoch 82/100, Loss: 0.680318
+Epoch 83/100, Loss: 0.678106
+Epoch 84/100, Loss: 0.676849
+Epoch 85/100, Loss: 0.675066
+Epoch 86/100, Loss: 0.674468
+Epoch 87/100, Loss: 0.672821
+Epoch 88/100, Loss: 0.673575
+Epoch 89/100, Loss: 0.671645
+Epoch 90/100, Loss: 0.669215
+Epoch 91/100, Loss: 0.568007
+Epoch 92/100, Loss: 0.565533
+Epoch 93/100, Loss: 0.565887
+Epoch 94/100, Loss: 0.564195
+Epoch 95/100, Loss: 0.563151
+Epoch 96/100, Loss: 0.562018
+Epoch 97/100, Loss: 0.561208
+Epoch 98/100, Loss: 0.560481
+Epoch 99/100, Loss: 0.560434
+Epoch 100/100, Loss: 0.558560
 
 Training complete!
-47
+100
 
 Model Performance Metrics:
-Accuracy: 0.857374
-Recall: 0.772341
-Jaccard Index: 0.657127
-F1 Score: 0.768249
-0.05 0.1 0.5
+Accuracy: 0.764902
+Recall: 0.608108
+Jaccard Index: 0.488172
+F1 Score: 0.614232
+1.0 0.1 0.5
 
 Starting training...
-Epoch 1/50, Loss: 1.486505
-Epoch 2/50, Loss: 1.304026
-Epoch 3/50, Loss: 1.145827
-Epoch 4/50, Loss: 1.017191
-Epoch 5/50, Loss: 0.900289
-Epoch 6/50, Loss: 0.832315
-Epoch 7/50, Loss: 0.760492
-Epoch 8/50, Loss: 0.710406
-Epoch 9/50, Loss: 0.670242
-Epoch 10/50, Loss: 0.625123
-Epoch 11/50, Loss: 0.596745
-Epoch 12/50, Loss: 0.567342
-Epoch 13/50, Loss: 0.554792
-Epoch 14/50, Loss: 0.525353
-Epoch 15/50, Loss: 0.516103
-Epoch 16/50, Loss: 0.493246
-Epoch 17/50, Loss: 0.490239
-Epoch 18/50, Loss: 0.479481
-Epoch 19/50, Loss: 0.467645
-Epoch 20/50, Loss: 0.457769
-Epoch 21/50, Loss: 0.445555
-Epoch 22/50, Loss: 0.433014
-Epoch 23/50, Loss: 0.423133
-Epoch 24/50, Loss: 0.423101
-Epoch 25/50, Loss: 0.411627
-Epoch 26/50, Loss: 0.409658
-Epoch 27/50, Loss: 0.385367
-Epoch 28/50, Loss: 0.394656
-Epoch 29/50, Loss: 0.396836
-Epoch 30/50, Loss: 0.384284
-Epoch 31/50, Loss: 0.383670
-Epoch 32/50, Loss: 0.369761
-Epoch 33/50, Loss: 0.376444
-Epoch 34/50, Loss: 0.373891
-Epoch 35/50, Loss: 0.361452
-Epoch 36/50, Loss: 0.361268
-Epoch 37/50, Loss: 0.351714
-Epoch 38/50, Loss: 0.355723
-Epoch 39/50, Loss: 0.349335
-Epoch 40/50, Loss: 0.350623
-Epoch 41/50, Loss: 0.344540
-Epoch 42/50, Loss: 0.345656
-Epoch 43/50, Loss: 0.348679
-Epoch 44/50, Loss: 0.341875
-Epoch 45/50, Loss: 0.348651
-Epoch 46/50, Loss: 0.334288
-Epoch 47/50, Loss: 0.338096
-Epoch 48/50, Loss: 0.330066
-Epoch 49/50, Loss: 0.329162
-Epoch 50/50, Loss: 0.338704
+Epoch 1/100, Loss: 1.622951
+Epoch 2/100, Loss: 1.590020
+Epoch 3/100, Loss: 1.558666
+Epoch 4/100, Loss: 1.528859
+Epoch 5/100, Loss: 1.500715
+Epoch 6/100, Loss: 1.474808
+Epoch 7/100, Loss: 1.449101
+Epoch 8/100, Loss: 1.423435
+Epoch 9/100, Loss: 1.396458
+Epoch 10/100, Loss: 1.366395
+Epoch 11/100, Loss: 1.335069
+Epoch 12/100, Loss: 1.303664
+Epoch 13/100, Loss: 1.275052
+Epoch 14/100, Loss: 1.248597
+Epoch 15/100, Loss: 1.223679
+Epoch 16/100, Loss: 1.200915
+Epoch 17/100, Loss: 1.179917
+Epoch 18/100, Loss: 1.161134
+Epoch 19/100, Loss: 1.143183
+Epoch 20/100, Loss: 1.128086
+Epoch 21/100, Loss: 1.112720
+Epoch 22/100, Loss: 1.098987
+Epoch 23/100, Loss: 1.086450
+Epoch 24/100, Loss: 1.075748
+Epoch 25/100, Loss: 1.063801
+Epoch 26/100, Loss: 1.054258
+Epoch 27/100, Loss: 1.044294
+Epoch 28/100, Loss: 1.035517
+Epoch 29/100, Loss: 1.027414
+Epoch 30/100, Loss: 1.019429
+Epoch 31/100, Loss: 1.012600
+Epoch 32/100, Loss: 1.005464
+Epoch 33/100, Loss: 0.998831
+Epoch 34/100, Loss: 0.991854
+Epoch 35/100, Loss: 0.986959
+Epoch 36/100, Loss: 0.980311
+Epoch 37/100, Loss: 0.975584
+Epoch 38/100, Loss: 0.970153
+Epoch 39/100, Loss: 0.964496
+Epoch 40/100, Loss: 0.960508
+Epoch 41/100, Loss: 0.955830
+Epoch 42/100, Loss: 0.950295
+Epoch 43/100, Loss: 0.946427
+Epoch 44/100, Loss: 0.942685
+Epoch 45/100, Loss: 0.938229
+Epoch 46/100, Loss: 0.934196
+Epoch 47/100, Loss: 0.929533
+Epoch 48/100, Loss: 0.927572
+Epoch 49/100, Loss: 0.923314
+Epoch 50/100, Loss: 0.919509
+Epoch 51/100, Loss: 0.916334
+Epoch 52/100, Loss: 0.913061
+Epoch 53/100, Loss: 0.909000
+Epoch 54/100, Loss: 0.905163
+Epoch 55/100, Loss: 0.902490
+Epoch 56/100, Loss: 0.900138
+Epoch 57/100, Loss: 0.897470
+Epoch 58/100, Loss: 0.894486
+Epoch 59/100, Loss: 0.890587
+Epoch 60/100, Loss: 0.887822
+Epoch 61/100, Loss: 0.885744
+Epoch 62/100, Loss: 0.883277
+Epoch 63/100, Loss: 0.881546
+Epoch 64/100, Loss: 0.877525
+Epoch 65/100, Loss: 0.874321
+Epoch 66/100, Loss: 0.872882
+Epoch 67/100, Loss: 0.869664
+Epoch 68/100, Loss: 0.867915
+Epoch 69/100, Loss: 0.864800
+Epoch 70/100, Loss: 0.863422
+Epoch 71/100, Loss: 0.861438
+Epoch 72/100, Loss: 0.858697
+Epoch 73/100, Loss: 0.856248
+Epoch 74/100, Loss: 0.853714
+Epoch 75/100, Loss: 0.853425
+Epoch 76/100, Loss: 0.851219
+Epoch 77/100, Loss: 0.848284
+Epoch 78/100, Loss: 0.847220
+Epoch 79/100, Loss: 0.845755
+Epoch 80/100, Loss: 0.843177
+Epoch 81/100, Loss: 0.840946
+Epoch 82/100, Loss: 0.839166
+Epoch 83/100, Loss: 0.837516
+Epoch 84/100, Loss: 0.836579
+Epoch 85/100, Loss: 0.835345
+Epoch 86/100, Loss: 0.833576
+Epoch 87/100, Loss: 0.831000
+Epoch 88/100, Loss: 0.830061
+Epoch 89/100, Loss: 0.828367
+Epoch 90/100, Loss: 0.825933
+Epoch 91/100, Loss: 0.598400
+Epoch 92/100, Loss: 0.596095
+Epoch 93/100, Loss: 0.594896
+Epoch 94/100, Loss: 0.592598
+Epoch 95/100, Loss: 0.590866
+Epoch 96/100, Loss: 0.589928
+Epoch 97/100, Loss: 0.588557
+Epoch 98/100, Loss: 0.588199
+Epoch 99/100, Loss: 0.585705
+Epoch 100/100, Loss: 0.585027
 
 Training complete!
-49
+100
 
 Model Performance Metrics:
-Accuracy: 0.860946
-Recall: 0.779866
-Jaccard Index: 0.664909
-F1 Score: 0.777347
-0.05 0.5 0.0
+Accuracy: 0.757965
+Recall: 0.566924
+Jaccard Index: 0.446971
+F1 Score: 0.550287
+1.0 0.5 0.0
 
 Starting training...
-Epoch 1/50, Loss: 1.449598
-Epoch 2/50, Loss: 1.298508
-Epoch 3/50, Loss: 1.170171
-Epoch 4/50, Loss: 1.039663
-Epoch 5/50, Loss: 0.965513
-Epoch 6/50, Loss: 0.902303
-Epoch 7/50, Loss: 0.844286
-Epoch 8/50, Loss: 0.787571
-Epoch 9/50, Loss: 0.745982
-Epoch 10/50, Loss: 0.705822
-Epoch 11/50, Loss: 0.688338
-Epoch 12/50, Loss: 0.684288
-Epoch 13/50, Loss: 0.655861
-Epoch 14/50, Loss: 0.636657
-Epoch 15/50, Loss: 0.641857
-Epoch 16/50, Loss: 0.622877
-Epoch 17/50, Loss: 0.605713
-Epoch 18/50, Loss: 0.598610
-Epoch 19/50, Loss: 0.592226
-Epoch 20/50, Loss: 0.585330
-Epoch 21/50, Loss: 0.581105
-Epoch 22/50, Loss: 0.566464
-Epoch 23/50, Loss: 0.562267
-Epoch 24/50, Loss: 0.550849
-Epoch 25/50, Loss: 0.553305
-Epoch 26/50, Loss: 0.547604
-Epoch 27/50, Loss: 0.555221
-Epoch 28/50, Loss: 0.543508
-Epoch 29/50, Loss: 0.544533
-Epoch 30/50, Loss: 0.531440
-Epoch 31/50, Loss: 0.538571
-Epoch 32/50, Loss: 0.535808
-Epoch 33/50, Loss: 0.523003
-Epoch 34/50, Loss: 0.518294
-Epoch 35/50, Loss: 0.515029
-Epoch 36/50, Loss: 0.511510
-Epoch 37/50, Loss: 0.509502
-Epoch 38/50, Loss: 0.510510
-Epoch 39/50, Loss: 0.498862
-Epoch 40/50, Loss: 0.509068
-Epoch 41/50, Loss: 0.500613
-Epoch 42/50, Loss: 0.495695
-Epoch 43/50, Loss: 0.491724
-Epoch 44/50, Loss: 0.488772
-Epoch 45/50, Loss: 0.494779
-Epoch 46/50, Loss: 0.491561
-Epoch 47/50, Loss: 0.488354
-Epoch 48/50, Loss: 0.491019
-Epoch 49/50, Loss: 0.494244
-Epoch 50/50, Loss: 0.484467
+Epoch 1/100, Loss: 1.534479
+Epoch 2/100, Loss: 1.501386
+Epoch 3/100, Loss: 1.471763
+Epoch 4/100, Loss: 1.442683
+Epoch 5/100, Loss: 1.413260
+Epoch 6/100, Loss: 1.384280
+Epoch 7/100, Loss: 1.356305
+Epoch 8/100, Loss: 1.329105
+Epoch 9/100, Loss: 1.303352
+Epoch 10/100, Loss: 1.278765
+Epoch 11/100, Loss: 1.256193
+Epoch 12/100, Loss: 1.234978
+Epoch 13/100, Loss: 1.215715
+Epoch 14/100, Loss: 1.197581
+Epoch 15/100, Loss: 1.180879
+Epoch 16/100, Loss: 1.165906
+Epoch 17/100, Loss: 1.151477
+Epoch 18/100, Loss: 1.137943
+Epoch 19/100, Loss: 1.125534
+Epoch 20/100, Loss: 1.113853
+Epoch 21/100, Loss: 1.102690
+Epoch 22/100, Loss: 1.093355
+Epoch 23/100, Loss: 1.083566
+Epoch 24/100, Loss: 1.075141
+Epoch 25/100, Loss: 1.066731
+Epoch 26/100, Loss: 1.059358
+Epoch 27/100, Loss: 1.051749
+Epoch 28/100, Loss: 1.044859
+Epoch 29/100, Loss: 1.038509
+Epoch 30/100, Loss: 1.032018
+Epoch 31/100, Loss: 1.026494
+Epoch 32/100, Loss: 1.020906
+Epoch 33/100, Loss: 1.015877
+Epoch 34/100, Loss: 1.010624
+Epoch 35/100, Loss: 1.005178
+Epoch 36/100, Loss: 1.001242
+Epoch 37/100, Loss: 0.997232
+Epoch 38/100, Loss: 0.992337
+Epoch 39/100, Loss: 0.987563
+Epoch 40/100, Loss: 0.984031
+Epoch 41/100, Loss: 0.980821
+Epoch 42/100, Loss: 0.976372
+Epoch 43/100, Loss: 0.972182
+Epoch 44/100, Loss: 0.970424
+Epoch 45/100, Loss: 0.966021
+Epoch 46/100, Loss: 0.963078
+Epoch 47/100, Loss: 0.959307
+Epoch 48/100, Loss: 0.957189
+Epoch 49/100, Loss: 0.953812
+Epoch 50/100, Loss: 0.951370
+Epoch 51/100, Loss: 0.948115
+Epoch 52/100, Loss: 0.946284
+Epoch 53/100, Loss: 0.943966
+Epoch 54/100, Loss: 0.941950
+Epoch 55/100, Loss: 0.939302
+Epoch 56/100, Loss: 0.936840
+Epoch 57/100, Loss: 0.934839
+Epoch 58/100, Loss: 0.932500
+Epoch 59/100, Loss: 0.930821
+Epoch 60/100, Loss: 0.926571
+Epoch 61/100, Loss: 0.925833
+Epoch 62/100, Loss: 0.924130
+Epoch 63/100, Loss: 0.922310
+Epoch 64/100, Loss: 0.920206
+Epoch 65/100, Loss: 0.918900
+Epoch 66/100, Loss: 0.917546
+Epoch 67/100, Loss: 0.915349
+Epoch 68/100, Loss: 0.913668
+Epoch 69/100, Loss: 0.912394
+Epoch 70/100, Loss: 0.910311
+Epoch 71/100, Loss: 0.909821
+Epoch 72/100, Loss: 0.907942
+Epoch 73/100, Loss: 0.905799
+Epoch 74/100, Loss: 0.903844
+Epoch 75/100, Loss: 0.902739
+Epoch 76/100, Loss: 0.902026
+Epoch 77/100, Loss: 0.900862
+Epoch 78/100, Loss: 0.899170
+Epoch 79/100, Loss: 0.896320
+Epoch 80/100, Loss: 0.896309
+Epoch 81/100, Loss: 0.894453
+Epoch 82/100, Loss: 0.893766
+Epoch 83/100, Loss: 0.892679
+Epoch 84/100, Loss: 0.891366
+Epoch 85/100, Loss: 0.889233
+Epoch 86/100, Loss: 0.888166
+Epoch 87/100, Loss: 0.887155
+Epoch 88/100, Loss: 0.885534
+Epoch 89/100, Loss: 0.885191
+Epoch 90/100, Loss: 0.883069
+Epoch 91/100, Loss: 0.589815
+Epoch 92/100, Loss: 0.588097
+Epoch 93/100, Loss: 0.588010
+Epoch 94/100, Loss: 0.586641
+Epoch 95/100, Loss: 0.584543
+Epoch 96/100, Loss: 0.583809
+Epoch 97/100, Loss: 0.583210
+Epoch 98/100, Loss: 0.581576
+Epoch 99/100, Loss: 0.579995
+Epoch 100/100, Loss: 0.579557
 
 Training complete!
-50
+100
 
 Model Performance Metrics:
-Accuracy: 0.853320
-Recall: 0.771562
-Jaccard Index: 0.652722
-F1 Score: 0.765649
-0.05 0.5 0.1
+Accuracy: 0.757719
+Recall: 0.575056
+Jaccard Index: 0.455178
+F1 Score: 0.564561
+1.0 0.5 0.1
 
 Starting training...
-Epoch 1/50, Loss: 1.493264
-Epoch 2/50, Loss: 1.330834
-Epoch 3/50, Loss: 1.199070
-Epoch 4/50, Loss: 1.056711
-Epoch 5/50, Loss: 0.949269
-Epoch 6/50, Loss: 0.884476
-Epoch 7/50, Loss: 0.836223
-Epoch 8/50, Loss: 0.774216
-Epoch 9/50, Loss: 0.769153
-Epoch 10/50, Loss: 0.739270
-Epoch 11/50, Loss: 0.720591
-Epoch 12/50, Loss: 0.708125
-Epoch 13/50, Loss: 0.682018
-Epoch 14/50, Loss: 0.673391
-Epoch 15/50, Loss: 0.661880
-Epoch 16/50, Loss: 0.653547
-Epoch 17/50, Loss: 0.642638
-Epoch 18/50, Loss: 0.638553
-Epoch 19/50, Loss: 0.619125
-Epoch 20/50, Loss: 0.620272
-Epoch 21/50, Loss: 0.606476
-Epoch 22/50, Loss: 0.595772
-Epoch 23/50, Loss: 0.595213
-Epoch 24/50, Loss: 0.589533
-Epoch 25/50, Loss: 0.586207
-Epoch 26/50, Loss: 0.579414
-Epoch 27/50, Loss: 0.587690
-Epoch 28/50, Loss: 0.575038
-Epoch 29/50, Loss: 0.567266
-Epoch 30/50, Loss: 0.556896
-Epoch 31/50, Loss: 0.553614
-Epoch 32/50, Loss: 0.558967
-Epoch 33/50, Loss: 0.553518
-Epoch 34/50, Loss: 0.553120
-Epoch 35/50, Loss: 0.539712
-Epoch 36/50, Loss: 0.547670
-Epoch 37/50, Loss: 0.527347
-Epoch 38/50, Loss: 0.537374
-Epoch 39/50, Loss: 0.530143
-Epoch 40/50, Loss: 0.533084
-Epoch 41/50, Loss: 0.532024
-Epoch 42/50, Loss: 0.521388
-Epoch 43/50, Loss: 0.524598
-Epoch 44/50, Loss: 0.522232
-Epoch 45/50, Loss: 0.519216
-Epoch 46/50, Loss: 0.515312
-Epoch 47/50, Loss: 0.515933
-Epoch 48/50, Loss: 0.509436
-Epoch 49/50, Loss: 0.513419
-Epoch 50/50, Loss: 0.518412
+Epoch 1/100, Loss: 1.593934
+Epoch 2/100, Loss: 1.551684
+Epoch 3/100, Loss: 1.515108
+Epoch 4/100, Loss: 1.480175
+Epoch 5/100, Loss: 1.444767
+Epoch 6/100, Loss: 1.407208
+Epoch 7/100, Loss: 1.368120
+Epoch 8/100, Loss: 1.331015
+Epoch 9/100, Loss: 1.297099
+Epoch 10/100, Loss: 1.268261
+Epoch 11/100, Loss: 1.242282
+Epoch 12/100, Loss: 1.219583
+Epoch 13/100, Loss: 1.199390
+Epoch 14/100, Loss: 1.181221
+Epoch 15/100, Loss: 1.165714
+Epoch 16/100, Loss: 1.151430
+Epoch 17/100, Loss: 1.138953
+Epoch 18/100, Loss: 1.128292
+Epoch 19/100, Loss: 1.117447
+Epoch 20/100, Loss: 1.108189
+Epoch 21/100, Loss: 1.100362
+Epoch 22/100, Loss: 1.091823
+Epoch 23/100, Loss: 1.085016
+Epoch 24/100, Loss: 1.078385
+Epoch 25/100, Loss: 1.072356
+Epoch 26/100, Loss: 1.066646
+Epoch 27/100, Loss: 1.060703
+Epoch 28/100, Loss: 1.055241
+Epoch 29/100, Loss: 1.050450
+Epoch 30/100, Loss: 1.045853
+Epoch 31/100, Loss: 1.041035
+Epoch 32/100, Loss: 1.036325
+Epoch 33/100, Loss: 1.032271
+Epoch 34/100, Loss: 1.027735
+Epoch 35/100, Loss: 1.024178
+Epoch 36/100, Loss: 1.020301
+Epoch 37/100, Loss: 1.017065
+Epoch 38/100, Loss: 1.013517
+Epoch 39/100, Loss: 1.010840
+Epoch 40/100, Loss: 1.007615
+Epoch 41/100, Loss: 1.003235
+Epoch 42/100, Loss: 1.000868
+Epoch 43/100, Loss: 0.998152
+Epoch 44/100, Loss: 0.995203
+Epoch 45/100, Loss: 0.992623
+Epoch 46/100, Loss: 0.989466
+Epoch 47/100, Loss: 0.986700
+Epoch 48/100, Loss: 0.984179
+Epoch 49/100, Loss: 0.982779
+Epoch 50/100, Loss: 0.979126
+Epoch 51/100, Loss: 0.977100
+Epoch 52/100, Loss: 0.975227
+Epoch 53/100, Loss: 0.972325
+Epoch 54/100, Loss: 0.971325
+Epoch 55/100, Loss: 0.969356
+Epoch 56/100, Loss: 0.966271
+Epoch 57/100, Loss: 0.965392
+Epoch 58/100, Loss: 0.962102
+Epoch 59/100, Loss: 0.960932
+Epoch 60/100, Loss: 0.959530
+Epoch 61/100, Loss: 0.957188
+Epoch 62/100, Loss: 0.955608
+Epoch 63/100, Loss: 0.955001
+Epoch 64/100, Loss: 0.953226
+Epoch 65/100, Loss: 0.950452
+Epoch 66/100, Loss: 0.949708
+Epoch 67/100, Loss: 0.947709
+Epoch 68/100, Loss: 0.947879
+Epoch 69/100, Loss: 0.944584
+Epoch 70/100, Loss: 0.943270
+Epoch 71/100, Loss: 0.941896
+Epoch 72/100, Loss: 0.941473
+Epoch 73/100, Loss: 0.939184
+Epoch 74/100, Loss: 0.938350
+Epoch 75/100, Loss: 0.936972
+Epoch 76/100, Loss: 0.935359
+Epoch 77/100, Loss: 0.933501
+Epoch 78/100, Loss: 0.932645
+Epoch 79/100, Loss: 0.930822
+Epoch 80/100, Loss: 0.930960
+Epoch 81/100, Loss: 0.929172
+Epoch 82/100, Loss: 0.928239
+Epoch 83/100, Loss: 0.926950
+Epoch 84/100, Loss: 0.926280
+Epoch 85/100, Loss: 0.924389
+Epoch 86/100, Loss: 0.923472
+Epoch 87/100, Loss: 0.922173
+Epoch 88/100, Loss: 0.919654
+Epoch 89/100, Loss: 0.920752
+Epoch 90/100, Loss: 0.918611
+Epoch 91/100, Loss: 0.582569
+Epoch 92/100, Loss: 0.581058
+Epoch 93/100, Loss: 0.581905
+Epoch 94/100, Loss: 0.580426
+Epoch 95/100, Loss: 0.579974
+Epoch 96/100, Loss: 0.577446
+Epoch 97/100, Loss: 0.575821
+Epoch 98/100, Loss: 0.575199
+Epoch 99/100, Loss: 0.574696
+Epoch 100/100, Loss: 0.573826
 
 Training complete!
-48
+100
 
 Model Performance Metrics:
-Accuracy: 0.859257
-Recall: 0.778691
-Jaccard Index: 0.662126
-F1 Score: 0.774213
-0.05 0.5 0.5
+Accuracy: 0.759009
+Recall: 0.593431
+Jaccard Index: 0.472484
+F1 Score: 0.593522
+1.0 0.5 0.5
 
 Starting training...
-Epoch 1/50, Loss: 1.829917
-Epoch 2/50, Loss: 1.694571
-Epoch 3/50, Loss: 1.517372
-Epoch 4/50, Loss: 1.396691
-Epoch 5/50, Loss: 1.251262
-Epoch 6/50, Loss: 1.153606
-Epoch 7/50, Loss: 1.072404
-Epoch 8/50, Loss: 1.035975
-Epoch 9/50, Loss: 0.952794
-Epoch 10/50, Loss: 0.928561
-Epoch 11/50, Loss: 0.900700
-Epoch 12/50, Loss: 0.861260
-Epoch 13/50, Loss: 0.844278
-Epoch 14/50, Loss: 0.826125
-Epoch 15/50, Loss: 0.789071
-Epoch 16/50, Loss: 0.771811
-Epoch 17/50, Loss: 0.755256
-Epoch 18/50, Loss: 0.740977
-Epoch 19/50, Loss: 0.725541
-Epoch 20/50, Loss: 0.714114
-Epoch 21/50, Loss: 0.712243
-Epoch 22/50, Loss: 0.697064
-Epoch 23/50, Loss: 0.691957
-Epoch 24/50, Loss: 0.679445
-Epoch 25/50, Loss: 0.670740
-Epoch 26/50, Loss: 0.663093
-Epoch 27/50, Loss: 0.654556
-Epoch 28/50, Loss: 0.648716
-Epoch 29/50, Loss: 0.640871
-Epoch 30/50, Loss: 0.635926
-Epoch 31/50, Loss: 0.634302
-Epoch 32/50, Loss: 0.628282
-Epoch 33/50, Loss: 0.627167
-Epoch 34/50, Loss: 0.625834
-Epoch 35/50, Loss: 0.618454
-Epoch 36/50, Loss: 0.621381
-Epoch 37/50, Loss: 0.609595
-Epoch 38/50, Loss: 0.606152
-Epoch 39/50, Loss: 0.598435
-Epoch 40/50, Loss: 0.601170
-Epoch 41/50, Loss: 0.600334
-Epoch 42/50, Loss: 0.592967
-Epoch 43/50, Loss: 0.590649
-Epoch 44/50, Loss: 0.592799
-Epoch 45/50, Loss: 0.584643
-Epoch 46/50, Loss: 0.582589
-Epoch 47/50, Loss: 0.575760
-Epoch 48/50, Loss: 0.575017
-Epoch 49/50, Loss: 0.576209
-Epoch 50/50, Loss: 0.582243
+Epoch 1/100, Loss: 1.854883
+Epoch 2/100, Loss: 1.818060
+Epoch 3/100, Loss: 1.784389
+Epoch 4/100, Loss: 1.753405
+Epoch 5/100, Loss: 1.725066
+Epoch 6/100, Loss: 1.697277
+Epoch 7/100, Loss: 1.669522
+Epoch 8/100, Loss: 1.640021
+Epoch 9/100, Loss: 1.607406
+Epoch 10/100, Loss: 1.573821
+Epoch 11/100, Loss: 1.542627
+Epoch 12/100, Loss: 1.515306
+Epoch 13/100, Loss: 1.490411
+Epoch 14/100, Loss: 1.468968
+Epoch 15/100, Loss: 1.448871
+Epoch 16/100, Loss: 1.430774
+Epoch 17/100, Loss: 1.413108
+Epoch 18/100, Loss: 1.397348
+Epoch 19/100, Loss: 1.381861
+Epoch 20/100, Loss: 1.367327
+Epoch 21/100, Loss: 1.352005
+Epoch 22/100, Loss: 1.338446
+Epoch 23/100, Loss: 1.326123
+Epoch 24/100, Loss: 1.314829
+Epoch 25/100, Loss: 1.304390
+Epoch 26/100, Loss: 1.295226
+Epoch 27/100, Loss: 1.285773
+Epoch 28/100, Loss: 1.278094
+Epoch 29/100, Loss: 1.269072
+Epoch 30/100, Loss: 1.262322
+Epoch 31/100, Loss: 1.255194
+Epoch 32/100, Loss: 1.248338
+Epoch 33/100, Loss: 1.242402
+Epoch 34/100, Loss: 1.235207
+Epoch 35/100, Loss: 1.229326
+Epoch 36/100, Loss: 1.223389
+Epoch 37/100, Loss: 1.217899
+Epoch 38/100, Loss: 1.213531
+Epoch 39/100, Loss: 1.207813
+Epoch 40/100, Loss: 1.202750
+Epoch 41/100, Loss: 1.198218
+Epoch 42/100, Loss: 1.193845
+Epoch 43/100, Loss: 1.188971
+Epoch 44/100, Loss: 1.184507
+Epoch 45/100, Loss: 1.181659
+Epoch 46/100, Loss: 1.176621
+Epoch 47/100, Loss: 1.173351
+Epoch 48/100, Loss: 1.169755
+Epoch 49/100, Loss: 1.165942
+Epoch 50/100, Loss: 1.163006
+Epoch 51/100, Loss: 1.160308
+Epoch 52/100, Loss: 1.156916
+Epoch 53/100, Loss: 1.152790
+Epoch 54/100, Loss: 1.151597
+Epoch 55/100, Loss: 1.146621
+Epoch 56/100, Loss: 1.144007
+Epoch 57/100, Loss: 1.142626
+Epoch 58/100, Loss: 1.139868
+Epoch 59/100, Loss: 1.136468
+Epoch 60/100, Loss: 1.135049
+Epoch 61/100, Loss: 1.131681
+Epoch 62/100, Loss: 1.129811
+Epoch 63/100, Loss: 1.127422
+Epoch 64/100, Loss: 1.124370
+Epoch 65/100, Loss: 1.121882
+Epoch 66/100, Loss: 1.120413
+Epoch 67/100, Loss: 1.119474
+Epoch 68/100, Loss: 1.117592
+Epoch 69/100, Loss: 1.113621
+Epoch 70/100, Loss: 1.112567
+Epoch 71/100, Loss: 1.111836
+Epoch 72/100, Loss: 1.109383
+Epoch 73/100, Loss: 1.108347
+Epoch 74/100, Loss: 1.105043
+Epoch 75/100, Loss: 1.103611
+Epoch 76/100, Loss: 1.102713
+Epoch 77/100, Loss: 1.101479
+Epoch 78/100, Loss: 1.098964
+Epoch 79/100, Loss: 1.097137
+Epoch 80/100, Loss: 1.094654
+Epoch 81/100, Loss: 1.093017
+Epoch 82/100, Loss: 1.091774
+Epoch 83/100, Loss: 1.090106
+Epoch 84/100, Loss: 1.088940
+Epoch 85/100, Loss: 1.087363
+Epoch 86/100, Loss: 1.086156
+Epoch 87/100, Loss: 1.086099
+Epoch 88/100, Loss: 1.083235
+Epoch 89/100, Loss: 1.083590
+Epoch 90/100, Loss: 1.080664
+Epoch 91/100, Loss: 0.609413
+Epoch 92/100, Loss: 0.608667
+Epoch 93/100, Loss: 0.607570
+Epoch 94/100, Loss: 0.605926
+Epoch 95/100, Loss: 0.604251
+Epoch 96/100, Loss: 0.602203
+Epoch 97/100, Loss: 0.600771
+Epoch 98/100, Loss: 0.601659
+Epoch 99/100, Loss: 0.600055
+Epoch 100/100, Loss: 0.598526
 
 Training complete!
-48
+100
 
 Model Performance Metrics:
-Accuracy: 0.847865
-Recall: 0.764500
-Jaccard Index: 0.644155
-F1 Score: 0.758542
+Accuracy: 0.750739
+Recall: 0.556272
+Jaccard Index: 0.432426
+F1 Score: 0.529818

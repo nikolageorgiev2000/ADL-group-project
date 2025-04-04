@@ -335,6 +335,8 @@ def train_model(
         raise ValueError(f"Unsupported scheduler: {scheduler_name}")
 
     criterion = CustomLoss(targets_weights)
+    end_criterion = CustomLoss(
+        {t: (1.0 if t == DatasetSelection.Trimap else 0.0) for t in targets_weights})
     best_loss = float('inf')
     start_epoch = 0
 
@@ -358,8 +360,12 @@ def train_model(
 
             optimizer.zero_grad()
             outputs = model(images)
-            loss = criterion(
-                outputs, image_data)
+            if (epoch+1) / epochs <= 0.9:
+                loss = criterion(
+                    outputs, image_data)
+            else:
+                loss = end_criterion(
+                    outputs, image_data)
             loss.backward()
             optimizer.step()
 
@@ -406,8 +412,8 @@ print("\n=== Using Segmentation Models PyTorch (SMP) for improved performance ==
 TARGETS_LIST = [DatasetSelection.CAM,
                 DatasetSelection.Trimap, DatasetSelection.BBox]
 BATCH_SIZE = 64
-EPOCHS = 50
-LEARNING_RATE = 1e-3
+EPOCHS = 100
+LEARNING_RATE = 3e-4
 OPTIMIZER_NAME = 'adam'
 SCHEDULER_NAME = 'reduce_on_plateau'
 CHECKPOINT_DIR = 'checkpoints/'
@@ -421,10 +427,10 @@ class ConvSegHead(nn.Module):
     def __init__(self, out_channels):
         super(ConvSegHead, self).__init__()
         self.block = nn.Sequential(
-            nn.Conv2d(16, 16, kernel_size=3, padding=1),
+            nn.Conv2d(16, 8, kernel_size=5, padding=2),
             nn.ReLU(inplace=True),
-            nn.BatchNorm2d(16),
-            nn.Conv2d(16, out_channels, kernel_size=3, padding=1)
+            nn.BatchNorm2d(8),
+            nn.Conv2d(8, out_channels, kernel_size=3, padding=1)
         )
 
     def forward(self, x):
@@ -436,7 +442,7 @@ class CustomUNet(nn.Module):
         super(CustomUNet, self).__init__()
         self.feature_extractor = smp.Unet(
             encoder_name="resnet34",
-            encoder_weights="imagenet",
+            encoder_weights=None,  # "imagenet",
             in_channels=3,
         )
         self.feature_extractor.segmentation_head = nn.Identity()
@@ -480,7 +486,7 @@ dataset = InMemoryPetSegmentationDataset(
     DATA_DIR, ANNOTATION_DIR, targets_list=TARGETS_LIST)
 # dataset_perm = torch.randperm(len(dataset))
 
-GT_PROPORTIONS = [0.005, 0.01, 0.05]
+GT_PROPORTIONS = [0.1, 0.2, 1.0]
 LOSS_WEIGHTS = [0.0, 0.1, 0.5]
 
 
