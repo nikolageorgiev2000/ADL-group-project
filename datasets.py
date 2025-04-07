@@ -78,7 +78,7 @@ class InMemoryPetSegmentationDataset(Dataset):
         # convert to list to give it an ordering
         self.available_images: List[str] = list(self.image_ind_dict.keys())
         print(f'available samples: {self.__len__()}')
-        self.available_images = list(self.available_images)  # [:100]
+        self.available_images = list(self.available_images)  #[:100]
         shuffle(self.available_images)
         self.selected_trimap_inds: Set[int] = set(
             range(len(self.available_images)))
@@ -143,10 +143,10 @@ class InMemoryPetSegmentationDataset(Dataset):
             self.annotation_dir, 'trimaps', trimap_file)
         trimap = Image.open(trimap_path)
         trimap = self.trimap_transform(trimap)
-        # print(torch.unique(trimap), trimap.dtype, trimap.float().mean())
-        trimap -= 1
-        assert torch.all(trimap >= 0)
-        assert torch.all(trimap < 3)
+        trimap[trimap == 1] = -100
+        trimap[trimap == 2] = 0
+        trimap[trimap == 3] = 1
+        # print(torch.unique(trimap))
         return trimap
 
     def __len__(self):

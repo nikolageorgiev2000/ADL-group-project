@@ -103,12 +103,14 @@ def visualize_predictions(model, dataset, num_samples=8, visual_fname='foo.png')
     for idx in range(num_samples):
         img, sample_data = dataset[idx]
         true_mask = sample_data[DatasetSelection.Trimap]
+        true_mask[true_mask == -100] = 2  # bring back the unknown pixels
         img = img.cpu()  # Move to CPU
         true_mask = true_mask.cpu()
         with torch.no_grad():
             pred = model(img.unsqueeze(0).to(device))
-            pred_trimap = torch.argmax(
-                pred[DatasetSelection.Trimap], dim=1).squeeze().cpu()
+            pred_trimap = (pred[DatasetSelection.Trimap] > 0.0).squeeze().cpu()
+            # pred_trimap = torch.argmax(
+            #     pred[DatasetSelection.Trimap], dim=1).squeeze().cpu()
             pred_cam = torch.sigmoid(
                 pred[DatasetSelection.CAM]).float().squeeze().cpu()
             pred_bbox = (pred[DatasetSelection.BBox] > 0.0).squeeze().cpu()
@@ -173,20 +175,24 @@ def evaluate_model_metrics(model, dataloader, device):
         for images, targets in tqdm.tqdm(dataloader):
             images = images.to(device)
             outputs = model(images)
-            preds = torch.argmax(
-                outputs[DatasetSelection.Trimap], dim=1).cpu().numpy()
+            preds = (outputs[DatasetSelection.Trimap]
+                     > 0.0).cpu().numpy().flatten()
             # Move targets to CPU
-            targets = targets[DatasetSelection.Trimap].cpu().numpy()
+            targets = targets[DatasetSelection.Trimap].cpu().numpy().flatten()
+            # mask to filter out the 'unknown' class
+            mask = (targets == 0) | (targets == 1)
+            print(preds.shape, targets.shape)
+            preds = preds[mask]
+            targets = targets[mask]
 
             # Calculate metrics for the batch and accumulate
-            total_accuracy += accuracy_score(targets.flatten(),
-                                             preds.flatten()) * len(targets)
-            total_recall += recall_score(targets.flatten(),
-                                         preds.flatten(), average='macro') * len(targets)
-            total_jaccard += jaccard_score(targets.flatten(),
-                                           preds.flatten(), average='macro') * len(targets)
-            total_f1 += f1_score(targets.flatten(),
-                                 preds.flatten(), average='macro') * len(targets)
+            total_accuracy += accuracy_score(targets, preds) * len(targets)
+            total_recall += recall_score(targets,
+                                         preds, average='macro') * len(targets)
+            total_jaccard += jaccard_score(targets,
+                                           preds, average='macro') * len(targets)
+            total_f1 += f1_score(targets, preds,
+                                 average='macro') * len(targets)
             total_samples += len(targets)
 
     # Calculate average metrics
@@ -245,7 +251,9 @@ class TrimapLoss(nn.Module):
 
     def forward(self, logits, targets):
         # print((targets == -100).sum() > 0)
-        return torch.nan_to_num(self.loss_fn(logits, targets.long()))
+        background_logits = torch.zeros_like(logits)  # fake bg logits
+        logits_2ch = torch.cat([background_logits, logits], dim=1)
+        return torch.nan_to_num(self.loss_fn(logits_2ch, targets.long()))
 
 
 class CamLoss(nn.Module):
@@ -424,7 +432,7 @@ torch.manual_seed(seed)
 
 
 class ConvSegHead(nn.Module):
-    def __init__(self, out_channels):
+    def __init__(self, out_channels=1):
         super(ConvSegHead, self).__init__()
         self.block = nn.Sequential(
             nn.Conv2d(16, 8, kernel_size=5, padding=2),
@@ -442,17 +450,15 @@ class CustomUNet(nn.Module):
         super(CustomUNet, self).__init__()
         self.feature_extractor = smp.Unet(
             encoder_name="resnet34",
-            encoder_weights=None,  # "imagenet",
+            encoder_weights="imagenet",
             in_channels=3,
         )
         self.feature_extractor.segmentation_head = nn.Identity()
 
         self.seg_heads = nn.ModuleDict()
-        self.seg_heads[DatasetSelection.Trimap.name] = ConvSegHead(
-            out_channels=3)
-        self.seg_heads[DatasetSelection.CAM.name] = ConvSegHead(out_channels=1)
-        self.seg_heads[DatasetSelection.BBox.name] = ConvSegHead(
-            out_channels=1)
+        self.seg_heads[DatasetSelection.Trimap.name] = ConvSegHead()
+        self.seg_heads[DatasetSelection.CAM.name] = ConvSegHead()
+        self.seg_heads[DatasetSelection.BBox.name] = ConvSegHead()
 
     def forward(self, img):
         features = self.feature_extractor(img)
@@ -486,7 +492,7 @@ dataset = InMemoryPetSegmentationDataset(
     DATA_DIR, ANNOTATION_DIR, targets_list=TARGETS_LIST)
 # dataset_perm = torch.randperm(len(dataset))
 
-GT_PROPORTIONS = [0.1, 0.2, 1.0]
+GT_PROPORTIONS = [1.0, 0.1, 0.2, 1.0]
 LOSS_WEIGHTS = [0.0, 0.1, 0.5]
 
 
@@ -533,7 +539,7 @@ for idx, experiment_weights in enumerate(product(GT_PROPORTIONS, LOSS_WEIGHTS, L
         val_dataset, batch_size=4*BATCH_SIZE, shuffle=False)
     metrics = visualize_predictions(
         smp_model, val_dataset, visual_fname=f"{idx}.jpg")
-    metrics = evaluate_model_metrics(model, val_dataloader, device)
+    metrics = evaluate_model_metrics(smp_model, val_dataloader, device)
     os.makedirs('run_results', exist_ok=True)
     with open(f'run_results/{idx}.txt', 'w') as file:
         res_str = str(experiment_weights)+'\n'+str(metrics)
