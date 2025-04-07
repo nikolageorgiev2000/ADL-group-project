@@ -18,459 +18,573 @@ available samples: 7390
 0.1 0.0 0.0
 
 Starting training...
-Epoch 1/20, Loss: 0.684621
-Epoch 2/20, Loss: 0.596968
+Epoch 1/50, Loss: 0.757426
+Epoch 2/50, Loss: 0.704241
+Epoch 3/50, Loss: 0.653286
+Epoch 4/50, Loss: 0.597145
 Loss is NaN
-Epoch 3/20, Loss: 0.507436
-Epoch 4/20, Loss: 0.441667
-Epoch 5/20, Loss: 0.382113
-Epoch 6/20, Loss: 0.338175
-Epoch 7/20, Loss: 0.307009
-Epoch 8/20, Loss: 0.278746
-Epoch 9/20, Loss: 0.258280
-Epoch 10/20, Loss: 0.243046
-Epoch 11/20, Loss: 0.231336
-Epoch 12/20, Loss: 0.218900
-Epoch 13/20, Loss: 0.210796
-Epoch 14/20, Loss: 0.202439
-Epoch 15/20, Loss: 0.196175
-Epoch 16/20, Loss: 0.190655
-Epoch 17/20, Loss: 0.185825
-Epoch 18/20, Loss: 0.179176
-Epoch 19/20, Loss: 0.175536
-Epoch 20/20, Loss: 0.171120
+Epoch 5/50, Loss: 0.533099
+Epoch 6/50, Loss: 0.491174
+Epoch 7/50, Loss: 0.446184
+Epoch 8/50, Loss: 0.408692
+Epoch 9/50, Loss: 0.375846
+Loss is NaN
+Epoch 10/50, Loss: 0.342660
+Epoch 11/50, Loss: 0.327660
+Loss is NaN
+Epoch 12/50, Loss: 0.301979
+Epoch 13/50, Loss: 0.291559
+Loss is NaN
+Epoch 14/50, Loss: 0.273580
+Epoch 15/50, Loss: 0.265969
+Epoch 16/50, Loss: 0.255885
+Epoch 17/50, Loss: 0.245958
+Epoch 18/50, Loss: 0.236859
+Loss is NaN
+Epoch 19/50, Loss: 0.224797
+Epoch 20/50, Loss: 0.219986
+Epoch 21/50, Loss: 0.214131
+Epoch 22/50, Loss: 0.210967
+Epoch 23/50, Loss: 0.201775
+Epoch 24/50, Loss: 0.198575
+Epoch 25/50, Loss: 0.194402
+Epoch 26/50, Loss: 0.188877
+Epoch 27/50, Loss: 0.184019
+Loss is NaN
+Epoch 28/50, Loss: 0.177510
+Epoch 29/50, Loss: 0.179868
+Epoch 30/50, Loss: 0.178439
+Epoch 31/50, Loss: 0.174036
+Epoch 32/50, Loss: 0.170190
+Epoch 33/50, Loss: 0.167364
+Epoch 34/50, Loss: 0.165163
+Epoch 35/50, Loss: 0.166480
+Loss is NaN
+Epoch 36/50, Loss: 0.159671
+Epoch 37/50, Loss: 0.159916
+Epoch 38/50, Loss: 0.157588
+Epoch 39/50, Loss: 0.155246
+Epoch 40/50, Loss: 0.153006
+Epoch 41/50, Loss: 0.156249
+Epoch 42/50, Loss: 0.156468
+Epoch 43/50, Loss: 0.151581
+Epoch 44/50, Loss: 0.148885
+Epoch 45/50, Loss: 0.148571
+Epoch 46/50, Loss: 0.147804
+Epoch 47/50, Loss: 0.148419
+Epoch 48/50, Loss: 0.142890
+Epoch 49/50, Loss: 0.146734
+Epoch 50/50, Loss: 0.141583
 
 Training complete!
-20
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(9934848,) (9934848,)
+50
+(25690112,) (25690112,)
+(25690112,) (25690112,)
+(22779904,) (22779904,)
 
 Model Performance Metrics:
-Accuracy: 0.897118
-Recall: 0.860799
-Jaccard Index: 0.721868
-F1 Score: 0.828373
+Accuracy: 0.840428
+Recall: 0.842446
+Jaccard Index: 0.639280
+F1 Score: 0.765764
 0.1 0.0 0.1
 
 Starting training...
-Epoch 1/20, Loss: 0.731083
-Epoch 2/20, Loss: 0.654715
-Epoch 3/20, Loss: 0.584263
-Epoch 4/20, Loss: 0.518000
-Epoch 5/20, Loss: 0.460301
-Epoch 6/20, Loss: 0.415744
-Epoch 7/20, Loss: 0.378751
-Epoch 8/20, Loss: 0.352453
-Epoch 9/20, Loss: 0.327615
-Epoch 10/20, Loss: 0.309916
-Epoch 11/20, Loss: 0.296769
-Epoch 12/20, Loss: 0.281815
-Epoch 13/20, Loss: 0.270582
-Epoch 14/20, Loss: 0.263816
-Epoch 15/20, Loss: 0.255524
-Epoch 16/20, Loss: 0.243981
-Epoch 17/20, Loss: 0.238903
-Epoch 18/20, Loss: 0.232391
-Epoch 19/20, Loss: 0.190468
-Epoch 20/20, Loss: 0.185851
+Loss is NaN
+Epoch 1/50, Loss: 0.734660
+Epoch 2/50, Loss: 0.703087
+Epoch 3/50, Loss: 0.653796
+Epoch 4/50, Loss: 0.605356
+Epoch 5/50, Loss: 0.569340
+Epoch 6/50, Loss: 0.542466
+Epoch 7/50, Loss: 0.517568
+Epoch 8/50, Loss: 0.494535
+Epoch 9/50, Loss: 0.474320
+Epoch 10/50, Loss: 0.457276
+Epoch 11/50, Loss: 0.434419
+Epoch 12/50, Loss: 0.415702
+Epoch 13/50, Loss: 0.400912
+Epoch 14/50, Loss: 0.385716
+Epoch 15/50, Loss: 0.370842
+Epoch 16/50, Loss: 0.355378
+Epoch 17/50, Loss: 0.347652
+Epoch 18/50, Loss: 0.339704
+Epoch 19/50, Loss: 0.325817
+Epoch 20/50, Loss: 0.318665
+Epoch 21/50, Loss: 0.311045
+Epoch 22/50, Loss: 0.299548
+Epoch 23/50, Loss: 0.290117
+Epoch 24/50, Loss: 0.285927
+Epoch 25/50, Loss: 0.281340
+Epoch 26/50, Loss: 0.276687
+Loss is NaN
+Epoch 27/50, Loss: 0.266233
+Epoch 28/50, Loss: 0.262747
+Epoch 29/50, Loss: 0.257557
+Epoch 30/50, Loss: 0.256952
+Epoch 31/50, Loss: 0.248827
+Epoch 32/50, Loss: 0.244463
+Loss is NaN
+Epoch 33/50, Loss: 0.233157
+Epoch 34/50, Loss: 0.234978
+Epoch 35/50, Loss: 0.236710
+Epoch 36/50, Loss: 0.230791
+Epoch 37/50, Loss: 0.230761
+Epoch 38/50, Loss: 0.223218
+Epoch 39/50, Loss: 0.221721
+Epoch 40/50, Loss: 0.216078
+Epoch 41/50, Loss: 0.185400
+Epoch 42/50, Loss: 0.182021
+Epoch 43/50, Loss: 0.180271
+Epoch 44/50, Loss: 0.179760
+Loss is NaN
+Epoch 45/50, Loss: 0.181495
+Epoch 46/50, Loss: 0.177973
+Epoch 47/50, Loss: 0.171858
+Epoch 48/50, Loss: 0.174440
+Epoch 49/50, Loss: 0.168589
+Epoch 50/50, Loss: 0.169660
 
 Training complete!
-20
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(9934848,) (9934848,)
+49
+(25690112,) (25690112,)
+(25690112,) (25690112,)
+(22779904,) (22779904,)
 
 Model Performance Metrics:
-Accuracy: 0.878502
-Recall: 0.857857
-Jaccard Index: 0.693367
-F1 Score: 0.807396
+Accuracy: 0.703429
+Recall: 0.775012
+Jaccard Index: 0.490133
+F1 Score: 0.641424
+0.1 0.0 1.0
+
+Starting training...
+Epoch 1/50, Loss: 1.358859
+Epoch 2/50, Loss: 1.247548
+Epoch 3/50, Loss: 1.139631
+Epoch 4/50, Loss: 1.038624
+Epoch 5/50, Loss: 0.950812
+Epoch 6/50, Loss: 0.875532
+Epoch 7/50, Loss: 0.813486
+Epoch 8/50, Loss: 0.759792
+Epoch 9/50, Loss: 0.715683
+Epoch 10/50, Loss: 0.678046
+Epoch 11/50, Loss: 0.644482
+Loss is NaN
+Epoch 12/50, Loss: 0.607659
+Epoch 13/50, Loss: 0.586096
+Epoch 14/50, Loss: 0.560761
+Epoch 15/50, Loss: 0.541664
+Epoch 16/50, Loss: 0.519160
+Epoch 17/50, Loss: 0.501074
+Epoch 18/50, Loss: 0.487146
+Epoch 19/50, Loss: 0.472403
+Epoch 20/50, Loss: 0.458562
+Epoch 21/50, Loss: 0.446179
+Epoch 22/50, Loss: 0.434866
+Epoch 23/50, Loss: 0.423772
+Epoch 24/50, Loss: 0.419255
+Epoch 25/50, Loss: 0.408702
+Loss is NaN
+Epoch 26/50, Loss: 0.393052
+Epoch 27/50, Loss: 0.389940
+Epoch 28/50, Loss: 0.381677
+Epoch 29/50, Loss: 0.374346
+Epoch 30/50, Loss: 0.367920
+Epoch 31/50, Loss: 0.362021
+Epoch 32/50, Loss: 0.354409
+Epoch 33/50, Loss: 0.349154
+Epoch 34/50, Loss: 0.350251
+Epoch 35/50, Loss: 0.342292
+Epoch 36/50, Loss: 0.336947
+Epoch 37/50, Loss: 0.330846
+Epoch 38/50, Loss: 0.328687
+Epoch 39/50, Loss: 0.322809
+Epoch 40/50, Loss: 0.320981
+Loss is NaN
+Epoch 41/50, Loss: 0.169533
+Epoch 42/50, Loss: 0.166639
+Epoch 43/50, Loss: 0.167060
+Epoch 44/50, Loss: 0.162089
+Epoch 45/50, Loss: 0.161600
+Epoch 46/50, Loss: 0.160758
+Loss is NaN
+Epoch 47/50, Loss: 0.153019
+Epoch 48/50, Loss: 0.156832
+Epoch 49/50, Loss: 0.154385
+Epoch 50/50, Loss: 0.148931
+
+Training complete!
+50
+(25690112,) (25690112,)
+(25690112,) (25690112,)
+(22779904,) (22779904,)
+
+Model Performance Metrics:
+Accuracy: 0.875182
+Recall: 0.860271
+Jaccard Index: 0.689077
+F1 Score: 0.804320
 0.1 0.1 0.0
 
 Starting training...
-Epoch 1/20, Loss: 0.717352
-Epoch 2/20, Loss: 0.631597
-Epoch 3/20, Loss: 0.549608
-Epoch 4/20, Loss: 0.481017
-Epoch 5/20, Loss: 0.425391
-Epoch 6/20, Loss: 0.383181
-Epoch 7/20, Loss: 0.351901
-Epoch 8/20, Loss: 0.330142
-Epoch 9/20, Loss: 0.310908
-Epoch 10/20, Loss: 0.294058
-Epoch 11/20, Loss: 0.282753
+Epoch 1/50, Loss: 0.740467
+Epoch 2/50, Loss: 0.708222
+Epoch 3/50, Loss: 0.679381
+Epoch 4/50, Loss: 0.652112
+Epoch 5/50, Loss: 0.622208
+Epoch 6/50, Loss: 0.594702
+Epoch 7/50, Loss: 0.568990
+Epoch 8/50, Loss: 0.540980
+Epoch 9/50, Loss: 0.517983
+Epoch 10/50, Loss: 0.496813
+Epoch 11/50, Loss: 0.479444
+Epoch 12/50, Loss: 0.461815
+Epoch 13/50, Loss: 0.446764
+Epoch 14/50, Loss: 0.432844
+Epoch 15/50, Loss: 0.423560
+Epoch 16/50, Loss: 0.408230
+Epoch 17/50, Loss: 0.397629
+Epoch 18/50, Loss: 0.389960
+Epoch 19/50, Loss: 0.379445
+Epoch 20/50, Loss: 0.369710
 Loss is NaN
-Epoch 12/20, Loss: 0.270886
-Epoch 13/20, Loss: 0.266355
-Epoch 14/20, Loss: 0.259556
-Epoch 15/20, Loss: 0.252112
-Epoch 16/20, Loss: 0.250618
-Epoch 17/20, Loss: 0.244090
-Epoch 18/20, Loss: 0.236190
-Epoch 19/20, Loss: 0.174416
-Epoch 20/20, Loss: 0.171298
+Epoch 21/50, Loss: 0.353863
+Epoch 22/50, Loss: 0.352573
+Epoch 23/50, Loss: 0.344485
+Epoch 24/50, Loss: 0.336852
+Epoch 25/50, Loss: 0.329766
+Epoch 26/50, Loss: 0.325399
+Epoch 27/50, Loss: 0.319040
+Epoch 28/50, Loss: 0.312405
+Epoch 29/50, Loss: 0.308435
+Epoch 30/50, Loss: 0.303237
+Epoch 31/50, Loss: 0.298920
+Epoch 32/50, Loss: 0.294609
+Epoch 33/50, Loss: 0.295151
+Epoch 34/50, Loss: 0.286274
+Epoch 35/50, Loss: 0.279138
+Epoch 36/50, Loss: 0.274871
+Epoch 37/50, Loss: 0.273554
+Epoch 38/50, Loss: 0.271219
+Loss is NaN
+Epoch 39/50, Loss: 0.262647
+Epoch 40/50, Loss: 0.262371
+Epoch 41/50, Loss: 0.198443
+Loss is NaN
+Epoch 42/50, Loss: 0.199839
+Loss is NaN
+Epoch 43/50, Loss: 0.195190
+Epoch 44/50, Loss: 0.192329
+Epoch 45/50, Loss: 0.195932
+Epoch 46/50, Loss: 0.191765
+Epoch 47/50, Loss: 0.184532
+Epoch 48/50, Loss: 0.181613
+Loss is NaN
+Epoch 49/50, Loss: 0.175037
+Epoch 50/50, Loss: 0.175163
 
 Training complete!
-20
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(9934848,) (9934848,)
+49
+(25690112,) (25690112,)
+(25690112,) (25690112,)
+(22779904,) (22779904,)
 
 Model Performance Metrics:
-Accuracy: 0.892676
-Recall: 0.868924
-Jaccard Index: 0.717872
-F1 Score: 0.825806
+Accuracy: 0.763645
+Recall: 0.759699
+Jaccard Index: 0.536392
+F1 Score: 0.677109
 0.1 0.1 0.1
 
 Starting training...
-Epoch 1/20, Loss: 0.763273
-Epoch 2/20, Loss: 0.643860
+Epoch 1/50, Loss: 0.822548
+Epoch 2/50, Loss: 0.744214
+Epoch 3/50, Loss: 0.682124
+Epoch 4/50, Loss: 0.622060
+Epoch 5/50, Loss: 0.567889
+Epoch 6/50, Loss: 0.516555
+Epoch 7/50, Loss: 0.470968
+Epoch 8/50, Loss: 0.433826
+Epoch 9/50, Loss: 0.406963
+Epoch 10/50, Loss: 0.387320
+Epoch 11/50, Loss: 0.367479
+Epoch 12/50, Loss: 0.353668
+Epoch 13/50, Loss: 0.343557
+Epoch 14/50, Loss: 0.331525
+Epoch 15/50, Loss: 0.320127
+Epoch 16/50, Loss: 0.312407
+Epoch 17/50, Loss: 0.305432
+Epoch 18/50, Loss: 0.299251
+Epoch 19/50, Loss: 0.291553
+Epoch 20/50, Loss: 0.290231
+Epoch 21/50, Loss: 0.283467
+Epoch 22/50, Loss: 0.278343
 Loss is NaN
-Epoch 3/20, Loss: 0.558011
-Epoch 4/20, Loss: 0.500355
-Epoch 5/20, Loss: 0.450360
-Epoch 6/20, Loss: 0.411708
-Epoch 7/20, Loss: 0.381877
-Epoch 8/20, Loss: 0.355556
-Epoch 9/20, Loss: 0.340246
-Epoch 10/20, Loss: 0.322340
-Epoch 11/20, Loss: 0.310313
-Epoch 12/20, Loss: 0.301463
-Epoch 13/20, Loss: 0.293861
-Epoch 14/20, Loss: 0.288970
-Epoch 15/20, Loss: 0.287937
-Epoch 16/20, Loss: 0.279057
-Epoch 17/20, Loss: 0.273700
-Epoch 18/20, Loss: 0.267999
-Epoch 19/20, Loss: 0.170042
-Epoch 20/20, Loss: 0.166946
+Epoch 23/50, Loss: 0.270251
+Epoch 24/50, Loss: 0.267923
+Epoch 25/50, Loss: 0.266222
+Epoch 26/50, Loss: 0.262663
+Epoch 27/50, Loss: 0.260408
+Epoch 28/50, Loss: 0.259479
+Epoch 29/50, Loss: 0.253443
+Epoch 30/50, Loss: 0.250266
+Epoch 31/50, Loss: 0.249686
+Epoch 32/50, Loss: 0.249043
+Epoch 33/50, Loss: 0.245721
+Epoch 34/50, Loss: 0.242482
+Epoch 35/50, Loss: 0.241647
+Epoch 36/50, Loss: 0.237912
+Epoch 37/50, Loss: 0.239443
+Epoch 38/50, Loss: 0.235257
+Epoch 39/50, Loss: 0.234534
+Epoch 40/50, Loss: 0.233629
+Epoch 41/50, Loss: 0.140077
+Epoch 42/50, Loss: 0.138536
+Epoch 43/50, Loss: 0.135650
+Epoch 44/50, Loss: 0.138107
+Epoch 45/50, Loss: 0.138165
+Epoch 46/50, Loss: 0.136337
+Epoch 47/50, Loss: 0.137553
+Epoch 48/50, Loss: 0.133501
+Epoch 49/50, Loss: 0.129317
+Epoch 50/50, Loss: 0.128256
 
 Training complete!
-20
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(9934848,) (9934848,)
+50
+(25690112,) (25690112,)
+(25690112,) (25690112,)
+(22779904,) (22779904,)
 
 Model Performance Metrics:
-Accuracy: 0.903224
-Recall: 0.858139
-Jaccard Index: 0.730573
-F1 Score: 0.834546
-0.25 0.0 0.0
+Accuracy: 0.887549
+Recall: 0.867503
+Jaccard Index: 0.709171
+F1 Score: 0.819407
+0.1 0.1 1.0
 
 Starting training...
-Epoch 1/20, Loss: 0.674994
-Epoch 2/20, Loss: 0.591424
-Epoch 3/20, Loss: 0.513509
-Epoch 4/20, Loss: 0.453974
-Epoch 5/20, Loss: 0.412239
-Epoch 6/20, Loss: 0.377615
-Epoch 7/20, Loss: 0.350340
-Epoch 8/20, Loss: 0.327042
-Epoch 9/20, Loss: 0.307971
-Epoch 10/20, Loss: 0.291232
-Epoch 11/20, Loss: 0.277570
-Epoch 12/20, Loss: 0.265270
-Epoch 13/20, Loss: 0.254671
-Epoch 14/20, Loss: 0.245113
-Epoch 15/20, Loss: 0.237010
-Epoch 16/20, Loss: 0.228469
-Epoch 17/20, Loss: 0.223396
-Epoch 18/20, Loss: 0.215348
-Epoch 19/20, Loss: 0.210253
-Epoch 20/20, Loss: 0.204719
+Epoch 1/50, Loss: 1.504233
+Epoch 2/50, Loss: 1.377077
+Epoch 3/50, Loss: 1.282352
+Epoch 4/50, Loss: 1.187421
+Epoch 5/50, Loss: 1.108681
+Epoch 6/50, Loss: 1.034445
+Epoch 7/50, Loss: 0.972174
+Epoch 8/50, Loss: 0.917559
+Epoch 9/50, Loss: 0.869377
+Epoch 10/50, Loss: 0.824942
+Epoch 11/50, Loss: 0.786058
+Epoch 12/50, Loss: 0.754057
+Epoch 13/50, Loss: 0.725801
+Epoch 14/50, Loss: 0.698261
+Epoch 15/50, Loss: 0.675190
+Epoch 16/50, Loss: 0.651136
+Epoch 17/50, Loss: 0.631490
+Epoch 18/50, Loss: 0.615948
+Epoch 19/50, Loss: 0.603143
+Epoch 20/50, Loss: 0.587334
+Epoch 21/50, Loss: 0.573988
+Epoch 22/50, Loss: 0.563240
+Epoch 23/50, Loss: 0.549291
+Loss is NaN
+Epoch 24/50, Loss: 0.536686
+Epoch 25/50, Loss: 0.529908
+Epoch 26/50, Loss: 0.519026
+Epoch 27/50, Loss: 0.513506
+Epoch 28/50, Loss: 0.507033
+Epoch 29/50, Loss: 0.499910
+Epoch 30/50, Loss: 0.487849
+Epoch 31/50, Loss: 0.480342
+Epoch 32/50, Loss: 0.473075
+Epoch 33/50, Loss: 0.469358
+Epoch 34/50, Loss: 0.464499
+Epoch 35/50, Loss: 0.456897
+Epoch 36/50, Loss: 0.450640
+Epoch 37/50, Loss: 0.445331
+Epoch 38/50, Loss: 0.442671
+Epoch 39/50, Loss: 0.434146
+Epoch 40/50, Loss: 0.431122
+Epoch 41/50, Loss: 0.148657
+Epoch 42/50, Loss: 0.144853
+Epoch 43/50, Loss: 0.145264
+Epoch 44/50, Loss: 0.141733
+Epoch 45/50, Loss: 0.139099
+Epoch 46/50, Loss: 0.138623
+Epoch 47/50, Loss: 0.137105
+Epoch 48/50, Loss: 0.139812
+Epoch 49/50, Loss: 0.135720
+Epoch 50/50, Loss: 0.136320
 
 Training complete!
-20
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(9934848,) (9934848,)
+49
+(25690112,) (25690112,)
+(25690112,) (25690112,)
+(22779904,) (22779904,)
 
 Model Performance Metrics:
-Accuracy: 0.915588
-Recall: 0.878433
-Jaccard Index: 0.758782
-F1 Score: 0.855148
-0.25 0.0 0.1
+Accuracy: 0.893004
+Recall: 0.868903
+Jaccard Index: 0.717830
+F1 Score: 0.825758
+0.1 1.0 0.0
 
 Starting training...
-Epoch 1/20, Loss: 0.708227
-Epoch 2/20, Loss: 0.582765
-Epoch 3/20, Loss: 0.481525
-Epoch 4/20, Loss: 0.416802
-Epoch 5/20, Loss: 0.367500
-Epoch 6/20, Loss: 0.332350
-Epoch 7/20, Loss: 0.304447
-Epoch 8/20, Loss: 0.284074
-Epoch 9/20, Loss: 0.267468
-Epoch 10/20, Loss: 0.255047
-Epoch 11/20, Loss: 0.243666
-Epoch 12/20, Loss: 0.233741
-Epoch 13/20, Loss: 0.227529
-Epoch 14/20, Loss: 0.219532
-Epoch 15/20, Loss: 0.214498
-Epoch 16/20, Loss: 0.207842
-Epoch 17/20, Loss: 0.204430
-Epoch 18/20, Loss: 0.199786
-Epoch 19/20, Loss: 0.173905
-Epoch 20/20, Loss: 0.169601
+Epoch 1/50, Loss: 1.363829
+Epoch 2/50, Loss: 1.302747
+Epoch 3/50, Loss: 1.248685
+Epoch 4/50, Loss: 1.197115
+Epoch 5/50, Loss: 1.147393
+Epoch 6/50, Loss: 1.105078
+Epoch 7/50, Loss: 1.065900
+Epoch 8/50, Loss: 1.030355
+Epoch 9/50, Loss: 0.999941
+Epoch 10/50, Loss: 0.971424
+Epoch 11/50, Loss: 0.943186
+Epoch 12/50, Loss: 0.921387
+Epoch 13/50, Loss: 0.899643
+Epoch 14/50, Loss: 0.884474
+Epoch 15/50, Loss: 0.868834
+Epoch 16/50, Loss: 0.855499
+Loss is NaN
+Epoch 17/50, Loss: 0.836272
+Epoch 18/50, Loss: 0.829745
+Epoch 19/50, Loss: 0.820171
+Epoch 20/50, Loss: 0.809781
+Epoch 21/50, Loss: 0.802523
+Epoch 22/50, Loss: 0.794368
+Epoch 23/50, Loss: 0.787187
+Epoch 24/50, Loss: 0.779554
+Loss is NaN
+Epoch 25/50, Loss: 0.769869
+Epoch 26/50, Loss: 0.769090
+Epoch 27/50, Loss: 0.763469
+Epoch 28/50, Loss: 0.759626
+Epoch 29/50, Loss: 0.758970
+Epoch 30/50, Loss: 0.753261
+Epoch 31/50, Loss: 0.746292
+Epoch 32/50, Loss: 0.741593
+Epoch 33/50, Loss: 0.739958
+Epoch 34/50, Loss: 0.733944
+Epoch 35/50, Loss: 0.730682
+Epoch 36/50, Loss: 0.727457
+Epoch 37/50, Loss: 0.725326
+Epoch 38/50, Loss: 0.720654
+Epoch 39/50, Loss: 0.721635
+Epoch 40/50, Loss: 0.716940
+Loss is NaN
+Epoch 41/50, Loss: 0.177984
+Epoch 42/50, Loss: 0.178984
+Epoch 43/50, Loss: 0.178344
+Epoch 44/50, Loss: 0.175124
+Epoch 45/50, Loss: 0.173183
+Epoch 46/50, Loss: 0.169181
+Epoch 47/50, Loss: 0.167831
+Epoch 48/50, Loss: 0.165173
+Epoch 49/50, Loss: 0.164366
+Epoch 50/50, Loss: 0.162870
 
 Training complete!
-20
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(9934848,) (9934848,)
+50
+(25690112,) (25690112,)
+(25690112,) (25690112,)
+(22779904,) (22779904,)
 
 Model Performance Metrics:
-Accuracy: 0.919557
-Recall: 0.877845
-Jaccard Index: 0.765754
-F1 Score: 0.859964
-0.25 0.1 0.0
+Accuracy: 0.853679
+Recall: 0.851134
+Jaccard Index: 0.657984
+F1 Score: 0.780555
+0.1 1.0 0.1
 
 Starting training...
-Epoch 1/20, Loss: 0.709369
-Epoch 2/20, Loss: 0.600013
-Epoch 3/20, Loss: 0.495263
-Epoch 4/20, Loss: 0.428343
-Epoch 5/20, Loss: 0.386850
-Epoch 6/20, Loss: 0.355058
-Epoch 7/20, Loss: 0.328963
-Epoch 8/20, Loss: 0.304645
-Epoch 9/20, Loss: 0.285632
-Epoch 10/20, Loss: 0.272982
-Epoch 11/20, Loss: 0.263422
-Epoch 12/20, Loss: 0.255640
-Epoch 13/20, Loss: 0.248487
-Epoch 14/20, Loss: 0.242550
-Epoch 15/20, Loss: 0.236478
-Epoch 16/20, Loss: 0.233656
-Epoch 17/20, Loss: 0.229300
-Epoch 18/20, Loss: 0.228505
-Epoch 19/20, Loss: 0.164751
-Epoch 20/20, Loss: 0.162546
+Epoch 1/50, Loss: 1.483057
+Epoch 2/50, Loss: 1.380422
+Epoch 3/50, Loss: 1.295915
+Epoch 4/50, Loss: 1.223694
+Epoch 5/50, Loss: 1.162690
+Epoch 6/50, Loss: 1.106167
+Epoch 7/50, Loss: 1.061125
+Epoch 8/50, Loss: 1.025776
+Epoch 9/50, Loss: 0.991653
+Epoch 10/50, Loss: 0.967953
+Epoch 11/50, Loss: 0.941507
+Epoch 12/50, Loss: 0.923339
+Epoch 13/50, Loss: 0.903856
+Epoch 14/50, Loss: 0.892463
+Epoch 15/50, Loss: 0.872936
+Epoch 16/50, Loss: 0.861661
+Epoch 17/50, Loss: 0.848773
+Epoch 18/50, Loss: 0.841659
+Epoch 19/50, Loss: 0.833198
+Epoch 20/50, Loss: 0.822899
+Epoch 21/50, Loss: 0.815357
+Epoch 22/50, Loss: 0.809625
+Epoch 23/50, Loss: 0.803059
+Epoch 24/50, Loss: 0.797055
+Loss is NaN
+Epoch 25/50, Loss: 0.787481
+Epoch 26/50, Loss: 0.783211
+Epoch 27/50, Loss: 0.781824
+Epoch 28/50, Loss: 0.775680
+Loss is NaN
+Epoch 29/50, Loss: 0.768193
+Epoch 30/50, Loss: 0.767276
+Epoch 31/50, Loss: 0.765899
+Epoch 32/50, Loss: 0.761170
+Epoch 33/50, Loss: 0.759099
+Epoch 34/50, Loss: 0.756787
+Epoch 35/50, Loss: 0.752591
+Loss is NaN
+Epoch 36/50, Loss: 0.747329
+Epoch 37/50, Loss: 0.746526
+Epoch 38/50, Loss: 0.745019
+Epoch 39/50, Loss: 0.741777
+Epoch 40/50, Loss: 0.740904
+Epoch 41/50, Loss: 0.161427
+Epoch 42/50, Loss: 0.156621
+Epoch 43/50, Loss: 0.155721
+Epoch 44/50, Loss: 0.155119
+Epoch 45/50, Loss: 0.152061
+Epoch 46/50, Loss: 0.148164
+Epoch 47/50, Loss: 0.147700
+Epoch 48/50, Loss: 0.147924
+Epoch 49/50, Loss: 0.144632
+Epoch 50/50, Loss: 0.142820
 
 Training complete!
-20
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(9934848,) (9934848,)
+50
+(25690112,) (25690112,)
+(25690112,) (25690112,)
+(22779904,) (22779904,)
 
 Model Performance Metrics:
-Accuracy: 0.920204
-Recall: 0.880466
-Jaccard Index: 0.767754
-F1 Score: 0.861439
-0.25 0.1 0.1
+Accuracy: 0.852368
+Recall: 0.852952
+Jaccard Index: 0.656966
+F1 Score: 0.779889
+0.1 1.0 1.0
 
 Starting training...
-Epoch 1/20, Loss: 0.829690
-Epoch 2/20, Loss: 0.685441
-Epoch 3/20, Loss: 0.588888
-Epoch 4/20, Loss: 0.518030
-Epoch 5/20, Loss: 0.464347
-Epoch 6/20, Loss: 0.422419
-Epoch 7/20, Loss: 0.389054
-Epoch 8/20, Loss: 0.364432
-Epoch 9/20, Loss: 0.344382
-Epoch 10/20, Loss: 0.328178
-Epoch 11/20, Loss: 0.315957
-Epoch 12/20, Loss: 0.304461
-Epoch 13/20, Loss: 0.296234
-Epoch 14/20, Loss: 0.287713
-Epoch 15/20, Loss: 0.280576
-Epoch 16/20, Loss: 0.275840
-Epoch 17/20, Loss: 0.269905
-Epoch 18/20, Loss: 0.266837
-Epoch 19/20, Loss: 0.173403
-Epoch 20/20, Loss: 0.169159
-
-Training complete!
-20
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(9934848,) (9934848,)
-
-Model Performance Metrics:
-Accuracy: 0.919427
-Recall: 0.869921
-Jaccard Index: 0.762791
-F1 Score: 0.857703
-1.0 0.0 0.0
-
-Starting training...
-Epoch 1/20, Loss: 0.698551
-Epoch 2/20, Loss: 0.593322
-Epoch 3/20, Loss: 0.481606
-Epoch 4/20, Loss: 0.412533
-Epoch 5/20, Loss: 0.372603
-Epoch 6/20, Loss: 0.343992
-Epoch 7/20, Loss: 0.320407
-Epoch 8/20, Loss: 0.301144
-Epoch 9/20, Loss: 0.284185
-Epoch 10/20, Loss: 0.269615
-Epoch 11/20, Loss: 0.257908
-Epoch 12/20, Loss: 0.247193
-Epoch 13/20, Loss: 0.237452
-Epoch 14/20, Loss: 0.229175
-Epoch 15/20, Loss: 0.221534
-Epoch 16/20, Loss: 0.214878
-Epoch 17/20, Loss: 0.208879
-Epoch 18/20, Loss: 0.203465
-Epoch 19/20, Loss: 0.198374
-Epoch 20/20, Loss: 0.194365
-
-Training complete!
-20
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(9934848,) (9934848,)
-
-Model Performance Metrics:
-Accuracy: 0.931009
-Recall: 0.891422
-Jaccard Index: 0.792081
-F1 Score: 0.878224
-1.0 0.0 0.1
-
-Starting training...
-Epoch 1/20, Loss: 0.686289
-Epoch 2/20, Loss: 0.563507
-Epoch 3/20, Loss: 0.468825
-Epoch 4/20, Loss: 0.406959
-Epoch 5/20, Loss: 0.361900
-Epoch 6/20, Loss: 0.326563
-Epoch 7/20, Loss: 0.300172
-Epoch 8/20, Loss: 0.279029
-Epoch 9/20, Loss: 0.262727
-Epoch 10/20, Loss: 0.250310
-Epoch 11/20, Loss: 0.239443
-Epoch 12/20, Loss: 0.230942
-Epoch 13/20, Loss: 0.223401
-Epoch 14/20, Loss: 0.217363
-Epoch 15/20, Loss: 0.211979
-Epoch 16/20, Loss: 0.207275
-Epoch 17/20, Loss: 0.202612
-Epoch 18/20, Loss: 0.199164
-Epoch 19/20, Loss: 0.170014
-Epoch 20/20, Loss: 0.166290
-
-Training complete!
-20
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(9934848,) (9934848,)
-
-Model Performance Metrics:
-Accuracy: 0.930724
-Recall: 0.880438
-Jaccard Index: 0.787936
-F1 Score: 0.875213
-1.0 0.1 0.0
-
-Starting training...
-Epoch 1/20, Loss: 0.699144
-Epoch 2/20, Loss: 0.545776
-Epoch 3/20, Loss: 0.451727
-Epoch 4/20, Loss: 0.391909
-Epoch 5/20, Loss: 0.350663
-Epoch 6/20, Loss: 0.321382
-Epoch 7/20, Loss: 0.300696
-Epoch 8/20, Loss: 0.283567
-Epoch 9/20, Loss: 0.271783
-Epoch 10/20, Loss: 0.262333
-Epoch 11/20, Loss: 0.254959
-Epoch 12/20, Loss: 0.248511
-Epoch 13/20, Loss: 0.242398
-Epoch 14/20, Loss: 0.238428
-Epoch 15/20, Loss: 0.234234
-Epoch 16/20, Loss: 0.230766
-Epoch 17/20, Loss: 0.228468
-Epoch 18/20, Loss: 0.225699
-Epoch 19/20, Loss: 0.164927
-Epoch 20/20, Loss: 0.164130
-
-Training complete!
-20
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(9934848,) (9934848,)
-
-Model Performance Metrics:
-Accuracy: 0.929161
-Recall: 0.877058
-Jaccard Index: 0.783692
-F1 Score: 0.872266
-1.0 0.1 0.1
-
-Starting training...
-Epoch 1/20, Loss: 0.826585
-Epoch 2/20, Loss: 0.674028
-Epoch 3/20, Loss: 0.545913
-Epoch 4/20, Loss: 0.462445
-Epoch 5/20, Loss: 0.413259
-Epoch 6/20, Loss: 0.382032
-Epoch 7/20, Loss: 0.359530
-Epoch 8/20, Loss: 0.342199
-Epoch 9/20, Loss: 0.328871
-Epoch 10/20, Loss: 0.317936
-Epoch 11/20, Loss: 0.307978
-Epoch 12/20, Loss: 0.299237
-Epoch 13/20, Loss: 0.292978
-Epoch 14/20, Loss: 0.286543
-Epoch 15/20, Loss: 0.280921
-Epoch 16/20, Loss: 0.276369
-Epoch 17/20, Loss: 0.271603
-Epoch 18/20, Loss: 0.267220
-Epoch 19/20, Loss: 0.172920
-Epoch 20/20, Loss: 0.169899
-
-Training complete!
-20
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(12845056,) (12845056,)
-(9934848,) (9934848,)
-
-Model Performance Metrics:
-Accuracy: 0.929846
-Recall: 0.887129
-Jaccard Index: 0.788362
-F1 Score: 0.875644
+Epoch 1/50, Loss: 2.141248
+Loss is NaN
+Epoch 2/50, Loss: 2.024433
+Epoch 3/50, Loss: 1.946382
+Loss is NaN
+Epoch 4/50, Loss: 1.842330
+Epoch 5/50, Loss: 1.763509
+Epoch 6/50, Loss: 1.679191
+Epoch 7/50, Loss: 1.599408
+Epoch 8/50, Loss: 1.526479
+Epoch 9/50, Loss: 1.461996
+Epoch 10/50, Loss: 1.409779
+Epoch 11/50, Loss: 1.364072
+Loss is NaN
+Epoch 12/50, Loss: 1.317061
+Epoch 13/50, Loss: 1.291826
+Epoch 14/50, Loss: 1.265941
+Epoch 15/50, Loss: 1.234980
+Epoch 16/50, Loss: 1.214440
+Epoch 17/50, Loss: 1.189121
+Epoch 18/50, Loss: 1.168987
+Epoch 19/50, Loss: 1.151260

@@ -339,7 +339,7 @@ def train_model(
             optimizer, T_max=epochs)
     elif scheduler_name.lower() == 'reduce_on_plateau':
         scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-            optimizer, mode='min', patience=5, factor=0.5)
+            optimizer, mode='min', patience=3, factor=0.5)
     else:
         raise ValueError(f"Unsupported scheduler: {scheduler_name}")
 
@@ -422,7 +422,7 @@ print("\n=== Using Segmentation Models PyTorch (SMP) for improved performance ==
 TARGETS_LIST = [DatasetSelection.CAM,
                 DatasetSelection.Trimap, DatasetSelection.BBox]
 BATCH_SIZE = 128
-EPOCHS = 40
+EPOCHS = 50
 LEARNING_RATE = 1e-3
 OPTIMIZER_NAME = 'adam'
 SCHEDULER_NAME = 'reduce_on_plateau'
@@ -494,7 +494,7 @@ dataset = InMemoryPetSegmentationDataset(
     DATA_DIR, ANNOTATION_DIR, targets_list=TARGETS_LIST)
 # dataset_perm = torch.randperm(len(dataset))
 
-GT_PROPORTIONS = [0.1, 0.25, 1.0]
+GT_PROPORTIONS = [0.1, 1.0]
 LOSS_WEIGHTS = [0.0, 0.1, 1.0]
 
 

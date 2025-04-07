@@ -1,4 +1,3 @@
-from random import shuffle
 import xml.etree.ElementTree as ET
 import torchvision
 from torch.utils.data import Dataset, DataLoader
@@ -76,12 +75,14 @@ class InMemoryPetSegmentationDataset(Dataset):
         self.image_ind_dict = {
             f.split('.')[0]: i for i, f in enumerate(image_files)}
         # convert to list to give it an ordering
-        self.available_images: List[str] = list(self.image_ind_dict.keys())
+        self.available_images: List[str] = sorted(self.image_ind_dict.keys())
         print(f'available samples: {self.__len__()}')
-        self.available_images = list(self.available_images)  #[:100]
-        shuffle(self.available_images)
-        self.selected_trimap_inds: Set[int] = set(
-            range(len(self.available_images)))
+        # shuffle
+        dataset_permutation = torch.randperm(len(self.available_images))
+        self.available_images = [self.available_images[i]
+                                 for i in dataset_permutation]  # [:100]
+        self.selected_trimap_inds: Set[int] = set(self.available_images)
+        self.masking_permutation = torch.randperm(len(self.available_images))
 
         # get image classes
         contents = np.genfromtxt(os.path.join(annotation_dir, 'list.txt'), skip_header=6, usecols=(
@@ -174,7 +175,9 @@ class InMemoryPetSegmentationDataset(Dataset):
         self.selected_trimap_inds = new_selected_trimap_inds
 
     def __getitem__(self, idx):
-        return self.samples[idx]
+        # since the masking is applied to the prefix of the dataset
+        # we use a permutation at sample-time to ensure masks are uniform
+        return self.samples[self.masking_permutation[idx]]
 
 
 def save_cam_dataset(image_names, cams):
