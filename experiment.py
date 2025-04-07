@@ -102,19 +102,18 @@ def visualize_predictions(model, dataset, num_samples=8, visual_fname='foo.png')
 
     for idx in range(num_samples):
         img, sample_data = dataset[idx]
-        true_mask = sample_data[DatasetSelection.Trimap]
-        true_mask[true_mask == -100] = 2  # bring back the unknown pixels
-        img = img.cpu()  # Move to CPU
-        true_mask = true_mask.cpu()
         with torch.no_grad():
-            pred = model(img.unsqueeze(0).to(device))
+            pred = model(img.unsqueeze(0))
             pred_trimap = (pred[DatasetSelection.Trimap] > 0.0).squeeze().cpu()
-            # pred_trimap = torch.argmax(
-            #     pred[DatasetSelection.Trimap], dim=1).squeeze().cpu()
             pred_cam = torch.sigmoid(
                 pred[DatasetSelection.CAM]).float().squeeze().cpu()
             pred_bbox = (pred[DatasetSelection.BBox] > 0.0).squeeze().cpu()
 
+        true_mask = sample_data[DatasetSelection.Trimap]
+        true_mask[true_mask == -100] = 2  # bring back the unknown pixels
+        true_mask = true_mask.cpu()
+
+        img = img.cpu()  # Move to CPU
         img = img * torch.tensor([0.229, 0.224, 0.225])[:, None, None] + torch.tensor(
             [0.485, 0.456, 0.406])[:, None, None]  # Reverse normalization
         img = img.clip(0, 1)  # Clip to valid range
@@ -250,10 +249,12 @@ class TrimapLoss(nn.Module):
             ignore_index=-100)  # uses mean by default
 
     def forward(self, logits, targets):
-        # print((targets == -100).sum() > 0)
         background_logits = torch.zeros_like(logits)  # fake bg logits
         logits_2ch = torch.cat([background_logits, logits], dim=1)
-        return torch.nan_to_num(self.loss_fn(logits_2ch, targets.long()))
+        res = self.loss_fn(logits_2ch, targets.long())
+        if torch.isnan(res).item():
+            print('Loss is NaN')
+        return torch.nan_to_num(res)
 
 
 class CamLoss(nn.Module):
@@ -338,7 +339,7 @@ def train_model(
             optimizer, T_max=epochs)
     elif scheduler_name.lower() == 'reduce_on_plateau':
         scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-            optimizer, mode='min', patience=5)
+            optimizer, mode='min', patience=5, factor=0.5)
     else:
         raise ValueError(f"Unsupported scheduler: {scheduler_name}")
 
@@ -368,7 +369,8 @@ def train_model(
 
             optimizer.zero_grad()
             outputs = model(images)
-            if (epoch+1) / epochs <= 0.9:
+            # in the last 20% of the training we focus on the Trimap loss
+            if (epoch+1) / epochs <= 0.8:
                 loss = criterion(
                     outputs, image_data)
             else:
@@ -419,9 +421,9 @@ def train_model(
 print("\n=== Using Segmentation Models PyTorch (SMP) for improved performance ===\n")
 TARGETS_LIST = [DatasetSelection.CAM,
                 DatasetSelection.Trimap, DatasetSelection.BBox]
-BATCH_SIZE = 64
-EPOCHS = 100
-LEARNING_RATE = 3e-4
+BATCH_SIZE = 128
+EPOCHS = 40
+LEARNING_RATE = 1e-3
 OPTIMIZER_NAME = 'adam'
 SCHEDULER_NAME = 'reduce_on_plateau'
 CHECKPOINT_DIR = 'checkpoints/'
@@ -492,8 +494,8 @@ dataset = InMemoryPetSegmentationDataset(
     DATA_DIR, ANNOTATION_DIR, targets_list=TARGETS_LIST)
 # dataset_perm = torch.randperm(len(dataset))
 
-GT_PROPORTIONS = [1.0, 0.1, 0.2, 1.0]
-LOSS_WEIGHTS = [0.0, 0.1, 0.5]
+GT_PROPORTIONS = [0.1, 0.25, 1.0]
+LOSS_WEIGHTS = [0.0, 0.1, 1.0]
 
 
 for idx, experiment_weights in enumerate(product(GT_PROPORTIONS, LOSS_WEIGHTS, LOSS_WEIGHTS)):

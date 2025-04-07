@@ -143,10 +143,9 @@ class InMemoryPetSegmentationDataset(Dataset):
             self.annotation_dir, 'trimaps', trimap_file)
         trimap = Image.open(trimap_path)
         trimap = self.trimap_transform(trimap)
-        trimap[trimap == 1] = -100
-        trimap[trimap == 2] = 0
-        trimap[trimap == 3] = 1
-        # print(torch.unique(trimap))
+        trimap[trimap == 1] = -100  # unknown
+        trimap[trimap == 2] = 0     # background
+        trimap[trimap == 3] = 1     # foreground
         return trimap
 
     def __len__(self):
