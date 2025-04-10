@@ -1,25 +1,13 @@
 import xml.etree.ElementTree as ET
-import torchvision
-from torch.utils.data import Dataset, DataLoader
-import torch
-import torch.nn as nn
-import tqdm
 import os
-import matplotlib.pyplot as plt
+import torch
+import numpy as np
+import tqdm
 from PIL import Image
-from torchvision import transforms
-import numpy as np
-import segmentation_models_pytorch as smp
-from segmentation_models_pytorch.encoders import get_preprocessing_fn
-from torchvision.datasets import OxfordIIITPet
-import torch.nn as nn
-import torch.nn.functional as F
-import torch.optim as optim
-from torch.utils.data import random_split
-from sklearn.metrics import accuracy_score, recall_score, jaccard_score, f1_score
-import numpy as np
 from enum import Enum
-from typing import Dict, List, Tuple, Set
+from typing import List, Set
+from torch.utils.data import Dataset
+from torchvision import transforms
 
 print("NEED TO HAVE FIRST RUN:\n./load_oxfordpets.sh")
 
@@ -27,10 +15,16 @@ print("NEED TO HAVE FIRST RUN:\n./load_oxfordpets.sh")
 DATA_DIR = 'data/images'
 ANNOTATION_DIR = 'data/annotations'
 
-DatasetSelection = Enum('DatasetSelection', [(
-    'Trimap', 1), ('Class', 2), ('BBox', 3), ('CAM', 4)])
+# Enum for dataset targets
+DatasetSelection = Enum('DatasetSelection', [
+    ('Trimap', 1),
+    ('Class', 2),
+    ('BBox', 3),
+    ('CAM', 4),
+    ('SAM', 5)
+])
 
-# select the device for computation
+# Device selection
 if torch.cuda.is_available():
     device = torch.device("cuda")
 elif torch.backends.mps.is_available():
@@ -39,12 +33,11 @@ else:
     device = torch.device("cpu")
 print(f"using device: {device}")
 
-# Define transformations for training
+# Transformations
 IMAGE_TRANSFORM = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.ToTensor(),
-    transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                         std=[0.229, 0.224, 0.225]),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
     transforms.Lambda(lambda x: x.to(torch.half)),
     transforms.Lambda(lambda x: x.to(device).squeeze()),
 ])
@@ -57,50 +50,47 @@ TRIMAP_TRANSFORM = transforms.Compose([
 
 
 class InMemoryPetSegmentationDataset(Dataset):
-    def __init__(self, data_dir, annotation_dir, targets_list: List[DatasetSelection], image_transform=IMAGE_TRANSFORM, trimap_transform=TRIMAP_TRANSFORM, image_shape=(224, 224)):
+    def __init__(self, data_dir, annotation_dir, targets_list: List[DatasetSelection],
+                 image_transform=IMAGE_TRANSFORM, trimap_transform=TRIMAP_TRANSFORM,
+                 image_shape=(224, 224), gt_proportion: float = 1.0):
         available_targets = set(DatasetSelection)
         assert set(targets_list).issubset(available_targets)
         self.targets_list = targets_list
 
         self.data_dir = data_dir
         self.annotation_dir = annotation_dir
-
         self.image_transform = image_transform
         self.trimap_transform = trimap_transform
+        self.image_shape = image_shape
         self.samples = []
 
-        # get image filenames
-        image_files = [f for f in os.listdir(
-            data_dir) if f.endswith(('.jpg', '.png'))]
-        self.image_ind_dict = {
-            f.split('.')[0]: i for i, f in enumerate(image_files)}
-        # convert to list to give it an ordering
+        image_files = [f for f in os.listdir(data_dir) if f.endswith(('.jpg', '.png'))]
+        self.image_ind_dict = {f.split('.')[0]: i for i, f in enumerate(image_files)}
         self.available_images: List[str] = sorted(self.image_ind_dict.keys())
-        print(f'available samples: {self.__len__()}')
-        # shuffle
         dataset_permutation = torch.randperm(len(self.available_images))
-        self.available_images = [self.available_images[i]
-                                 for i in dataset_permutation]  # [:100]
-        self.selected_trimap_inds: Set[int] = set(self.available_images)
+        self.available_images = [self.available_images[i] for i in dataset_permutation]
+
         self.masking_permutation = torch.randperm(len(self.available_images))
+        self.selected_trimap_inds: Set[int] = set(range(len(self.available_images)))
 
-        # get image classes
-        contents = np.genfromtxt(os.path.join(annotation_dir, 'list.txt'), skip_header=6, usecols=(
-            0, 1), dtype=[('name', np.str_, 32), ('grades', np.uint8)])
-        # check all animals are present in dict keys
+        if DatasetSelection.Trimap in self.targets_list:
+            self.trimap_tensor = torch.empty((len(self.available_images), *image_shape), dtype=torch.int8, device=device)
+            self.trimap_name_to_index = {}
+            self.dummy_trimap = -100 * torch.ones(image_shape, dtype=torch.int8, device=device)
+        else:
+            self.trimap_tensor = None
+            self.trimap_name_to_index = {}
+
+        contents = np.genfromtxt(os.path.join(annotation_dir, 'list.txt'), skip_header=6, usecols=(0, 1),
+                                 dtype=[('name', np.str_, 32), ('grades', np.uint8)])
         self.labels_dict = {str(x[0]): int(x[1] - 1) for x in contents}
-        assert all(map(lambda v: 0 <= v < 37, self.labels_dict.values()))
-        assert len(contents) == len(self.labels_dict.keys())
 
-        # get bounding boxes
         xml_dir = os.path.join(annotation_dir, 'xmls')
         self.bbbox_dict = {}
         for filename in os.listdir(xml_dir):
             tree = ET.parse(os.path.join(xml_dir, filename))
             root = tree.getroot()
-            # xmin, ymin, xmax, ymax
-            xmin, ymin, xmax, ymax = (
-                int(root[5][4][i].text) for i in range(4))
+            xmin, ymin, xmax, ymax = (int(root[5][4][i].text) for i in range(4))
             width, height = int(root[3][0].text), int(root[3][1].text)
             self.bbbox_dict[root[1].text.split('.')[0]] = np.array([
                 xmin * image_shape[0] / width,
@@ -109,74 +99,85 @@ class InMemoryPetSegmentationDataset(Dataset):
                 ymax * image_shape[1] / height,
             ]).astype(int)
 
-        for fname in tqdm.tqdm(self.available_images, disable=True):
-            fname_with_extension = fname + '.jpg'
+        sam_dir = os.path.join("weakly_supervised/sam_masks")
+        sam_file = os.path.join(sam_dir, "triangle3-point-sam.pt")
+        if os.path.exists(sam_file):
+            sam_data = torch.load(sam_file)
+            self.sam_data_dict = {name: {"mask": mask, "score": score} for name, mask, score in zip(
+                sam_data["image_names"], sam_data["masks"], sam_data["scores"])}
+            print(f"Loaded SAM predictions for {len(self.sam_data_dict)} images.")
+        else:
+            self.sam_data_dict = {}
 
-            # Load image
-            img_path = os.path.join(data_dir, fname_with_extension)
+        for idx, fname in enumerate(tqdm.tqdm(self.available_images, desc="Loading dataset", disable=False)):
+            img_path = os.path.join(data_dir, fname + '.jpg')
             img = Image.open(img_path).convert('RGB')
             img = self.image_transform(img)
-
             sample_data = {}
+
             if DatasetSelection.Trimap in self.targets_list:
                 trimap = self.load_trimap(fname)
-                sample_data[DatasetSelection.Trimap] = trimap
+                self.trimap_tensor[idx].copy_(trimap)
+                self.trimap_name_to_index[fname] = idx
+                placeholder = torch.empty_like(self.dummy_trimap)
+                placeholder.set_(self.dummy_trimap)
+                sample_data[DatasetSelection.Trimap] = placeholder
+
             if DatasetSelection.Class in self.targets_list:
-                sample_data[DatasetSelection.Class] = self.labels_dict.get(
-                    fname, -100)  # ignore index if label missing
+                sample_data[DatasetSelection.Class] = self.labels_dict.get(fname, -100)
+
             if DatasetSelection.BBox in self.targets_list:
-                sample_data[DatasetSelection.BBox] = self.bbbox_dict.get(
-                    fname, -1*np.ones(4, dtype=int))
+                sample_data[DatasetSelection.BBox] = self.bbbox_dict.get(fname, -1 * np.ones(4, dtype=int))
+
             if DatasetSelection.CAM in self.targets_list:
                 cam_path = os.path.join(annotation_dir, 'heatmaps', fname)
-                sample_data[DatasetSelection.CAM] = (torch.load(
-                    cam_path, weights_only=False) if os.path.exists(cam_path) else -torch.ones((7, 7), dtype=torch.int8)).to(device)
+                sample_data[DatasetSelection.CAM] = (
+                    torch.load(cam_path, weights_only=False)
+                    if os.path.exists(cam_path)
+                    else -torch.ones((7, 7))
+                ).to(device)
+
+            if DatasetSelection.SAM in self.targets_list:
+                sam_pred = self.sam_data_dict.get(fname, None)
+                if sam_pred is not None:
+                    sample_data[DatasetSelection.SAM] = trimap_transform(sam_pred["mask"][None, ...])
+                else:
+                    sample_data[DatasetSelection.SAM] = -100 * torch.ones(image_shape, dtype=torch.int8, device=img.device)
 
             self.samples.append((img, sample_data))
 
-        self.dummy_trimap = -100 * \
-            torch.ones(image_shape, device=img.device, dtype=torch.int8)
+        self.change_gt_proportion(gt_proportion)
 
     def load_trimap(self, fname):
-        # All images have trimaps
-        trimap_file = fname + '.png'
-        trimap_path = os.path.join(
-            self.annotation_dir, 'trimaps', trimap_file)
+        trimap_path = os.path.join(self.annotation_dir, 'trimaps', fname + '.png')
         trimap = Image.open(trimap_path)
         trimap = self.trimap_transform(trimap)
-        trimap[trimap == 1] = -100  # unknown
-        trimap[trimap == 2] = 0     # background
-        trimap[trimap == 3] = 1     # foreground
+        trimap[trimap == 1] = -100
+        trimap[trimap == 2] = 0
+        trimap[trimap == 3] = 1
         return trimap
+
+    def change_gt_proportion(self, gt_proportion):
+        assert 0.0 <= gt_proportion <= 1.0
+        N = len(self.available_images)
+        active_set = set(range(int(gt_proportion * N)))
+
+        for idx in range(N):
+            _, sample_data = self.samples[idx]
+            if DatasetSelection.Trimap not in sample_data:
+                continue
+            placeholder = sample_data[DatasetSelection.Trimap]
+            if idx in active_set:
+                placeholder.set_(self.trimap_tensor[idx])
+            else:
+                placeholder.set_(self.dummy_trimap)
+
+        self.selected_trimap_inds = active_set
 
     def __len__(self):
         return len(self.available_images)
 
-    def change_gt_proportion(self, gt_proportion):
-        assert 0 <= gt_proportion <= 1.0
-        new_selected_trimap_inds = set(
-            range(int(gt_proportion * len(self.available_images))))
-        for idx in new_selected_trimap_inds:
-            if idx not in self.selected_trimap_inds:
-                trimap = self.load_trimap(self.available_images[idx])
-                img, image_data = self.samples[idx]
-                image_data[DatasetSelection.Trimap] = trimap
-                self.samples[idx] = (img, image_data)
-        for idx in range(len(self.available_images)):
-            img, image_data = self.samples[idx]
-            if idx in new_selected_trimap_inds.intersection(self.selected_trimap_inds):
-                continue
-            elif idx in new_selected_trimap_inds:
-                trimap = self.load_trimap(self.available_images[idx])
-                image_data[DatasetSelection.Trimap] = trimap
-            else:
-                image_data[DatasetSelection.Trimap] = self.dummy_trimap.clone()
-            self.samples[idx] = (img, image_data)
-        self.selected_trimap_inds = new_selected_trimap_inds
-
     def __getitem__(self, idx):
-        # since the masking is applied to the prefix of the dataset
-        # we use a permutation at sample-time to ensure masks are uniform
         return self.samples[self.masking_permutation[idx]]
 
 

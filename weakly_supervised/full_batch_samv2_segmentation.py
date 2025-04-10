@@ -28,6 +28,16 @@ elif device.type == "mps":
     print("MPS support is experimental and may yield different results.")
 
 # === PATH SETUP ===
+# Define base directories for better consistency.
+base_dir = os.path.join('..', 'data')
+annotations_dir = os.path.join(base_dir, 'annotations')
+images_dir = os.path.join(base_dir, 'images')
+xml_dir = os.path.join(annotations_dir, 'xmls')
+list_file = os.path.join(annotations_dir, 'list.txt')
+output_dir = './sam_masks'
+os.makedirs(output_dir, exist_ok=True)
+
+# Insert required paths
 sys.path.insert(0, '/workspace/ADL-group-project/weakly_supervised/sam2')
 sys.path.insert(0, os.path.abspath('sam2'))
 
@@ -36,22 +46,23 @@ from sam2.sam2_image_predictor import SAM2ImagePredictor
 
 # === LOAD MODEL ===
 sam2_model = build_sam2("configs/sam2.1/sam2.1_hiera_l.yaml", 
-                        "./models/sam2.1_hiera_large.pt", 
+                        "sam2/models/sam2.1_hiera_large.pt", 
                         device=device)
 predictor = SAM2ImagePredictor(sam2_model)
 
 # === LOAD VALID IMAGE NAMES + CENTERS ===
 print("Loading valid image bounding boxes...")
-
 valid_images = []
 valid_centers = []
 
-with open('../data/oxford-iiit-pet/annotations/list.txt', 'r') as f:
-    for _ in range(6): next(f)
+with open(list_file, 'r') as f:
+    # Skip header lines
+    for _ in range(6):
+        next(f)
     image_names = [line.split()[0] for line in f]
 
 for img_name in image_names:
-    xml_path = f'../data/oxford-iiit-pet/annotations/xmls/{img_name}.xml'
+    xml_path = os.path.join(xml_dir, f'{img_name}.xml')
     if os.path.exists(xml_path):
         try:
             tree = ET.parse(xml_path)
@@ -63,25 +74,25 @@ for img_name in image_names:
 
             valid_images.append(img_name)
             valid_centers.append([(xmin + xmax) / 2, (ymin + ymax) / 2])
-        except Exception:
+        except Exception as e:
+            print(f"Error parsing XML for image {img_name}: {e}")
             continue
 
+# valid_centers is used only for point coordinates later when mode is 'center'.
 valid_centers = np.array(valid_centers)
 print(f"Total valid images: {len(valid_images)}")
 
-# === CONFIG ===
-mode = 'center'  # Options: 'center' or 'triangle3'
+# === CONFIGURATION ===
+mode = 'triangle3'  # Options: 'center' or 'triangle3'
 save_name = "single-point-sam" if mode == 'center' else "triangle3-point-sam"
-output_dir = './sam_masks'
-os.makedirs(output_dir, exist_ok=True)
 
 # === PROCESS IMAGES ===
-sample_size = int(len(valid_images) * 1)
+sample_size = len(valid_images)  # Process all valid images; adjust if needed
 selected_indices = np.random.choice(len(valid_images), sample_size, replace=False)
 
-all_masks = []
-all_scores = []
-processed_names = []
+all_masks = []   # To store per-image masks as torch tensors.
+all_scores = []  # To store per-image scores as torch tensors.
+processed_names = []  # To store processed image names.
 
 print(f"Processing {sample_size} images using mode '{mode}'...")
 
@@ -98,15 +109,15 @@ def show_masks(image, masks, scores, point_coords=None, input_labels=None, borde
 
 for idx in tqdm(selected_indices):
     try:
-        img = Image.open(f'../data/oxford-iiit-pet/images/{valid_images[idx]}.jpg')
+        img_path = os.path.join(images_dir, f'{valid_images[idx]}.jpg')
+        img = Image.open(img_path)
         predictor.set_image(np.array(img))
 
         if mode == 'center':
             point_coords = valid_centers[idx].reshape(1, -1)
             point_labels = np.array([1])
-
         elif mode == 'triangle3':
-            xml_path = f'../data/oxford-iiit-pet/annotations/xmls/{valid_images[idx]}.xml'
+            xml_path = os.path.join(xml_dir, f'{valid_images[idx]}.xml')
             tree = ET.parse(xml_path)
             bbox_elem = tree.getroot().find('object/bndbox')
             xmin = int(bbox_elem.find('xmin').text)
@@ -133,33 +144,39 @@ for idx in tqdm(selected_indices):
             multimask_output=False
         )
 
-        all_masks.append(masks[0])
-        all_scores.append(scores[0])
+        # Convert results to torch tensors where possible.
+        mask_tensor = torch.from_numpy(masks[0])
+        score_tensor = torch.tensor(scores[0])
+        all_masks.append(mask_tensor)
+        all_scores.append(score_tensor)
         processed_names.append(valid_images[idx])
 
-        if len(all_masks) % 300 == 0:
+        if len(all_masks) % 500 == 0:
             print(f"\nProcessed {len(all_masks)} images")
-            print(f"Current average score: {np.mean(all_scores):.3f}")
+            avg_score = torch.stack(all_scores).float().mean().item()
+            print(f"Current average score: {avg_score:.3f}")
             show_masks(np.array(img), masks, scores, point_coords=point_coords, input_labels=point_labels)
 
     except Exception as e:
         print(f"\nError processing {valid_images[idx]}: {str(e)}")
 
-# === SAVE RESULTS ===
-save_path = f'{output_dir}/{save_name}.npy'
+# === SAVE RESULTS USING TORCH.SAVE ===
+save_path = os.path.join(output_dir, f'{save_name}.pt')
 if os.path.exists(save_path):
-    override = input(f"File {save_name}.npy already exists. Override? (y/n): ").lower()
+    override = input(f"File {save_name}.pt already exists. Override? (y/n): ").lower()
     if override != 'y':
         print("Operation cancelled")
         exit()
 
 results = {
-    'masks': np.array(all_masks, dtype=object),
-    'scores': np.array(all_scores),
-    'image_names': np.array(processed_names)
+    'masks': all_masks,                      # List of torch tensors.
+    'scores': torch.stack(all_scores) if all_scores else torch.tensor([]),  # Combined tensor of scores.
+    'image_names': processed_names           # List of strings.
 }
-np.save(save_path, results)
+torch.save(results, save_path)
+
+avg_final_score = torch.stack(all_scores).float().mean().item() if all_scores else 0.0
 
 print("\nProcessing complete!")
 print(f"Total images processed: {len(processed_names)}")
-print(f"Final average score: {np.mean(all_scores):.3f}")
+print(f"Final average score: {avg_final_score:.3f}")

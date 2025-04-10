@@ -1,3 +1,4 @@
+import gc
 import copy
 import xml.etree.ElementTree as ET
 from torch.utils.data import Dataset, DataLoader
@@ -98,7 +99,7 @@ print_annotation_info()
 
 def visualize_predictions(model, dataset, num_samples=8, visual_fname='foo.png'):
     model.eval()
-    _, axes = plt.subplots(num_samples, 5, figsize=(15, 5*num_samples))
+    _, axes = plt.subplots(num_samples, 6, figsize=(15, 5*num_samples))
 
     for idx in range(num_samples):
         img, sample_data = dataset[idx]
@@ -108,6 +109,7 @@ def visualize_predictions(model, dataset, num_samples=8, visual_fname='foo.png')
             pred_cam = torch.sigmoid(
                 pred[DatasetSelection.CAM]).float().squeeze().cpu()
             pred_bbox = (pred[DatasetSelection.BBox] > 0.0).squeeze().cpu()
+            pred_sam = (pred[DatasetSelection.SAM] > 0.0).squeeze().cpu()
 
         true_mask = sample_data[DatasetSelection.Trimap]
         true_mask[true_mask == -100] = 2  # bring back the unknown pixels
@@ -142,6 +144,11 @@ def visualize_predictions(model, dataset, num_samples=8, visual_fname='foo.png')
         axes[idx, 4].imshow(pred_bbox, cmap='tab20')
         axes[idx, 4].set_title('Bounding Box')
         axes[idx, 4].axis('off')
+
+        # Plot predicted mask
+        axes[idx, 5].imshow(pred_sam, cmap='tab20')
+        axes[idx, 5].set_title('SAM Mask')
+        axes[idx, 5].axis('off')
 
     plt.tight_layout()
     os.makedirs('visuals', exist_ok=True)
@@ -180,7 +187,6 @@ def evaluate_model_metrics(model, dataloader, device):
             targets = targets[DatasetSelection.Trimap].cpu().numpy().flatten()
             # mask to filter out the 'unknown' class
             mask = (targets == 0) | (targets == 1)
-            print(preds.shape, targets.shape)
             preds = preds[mask]
             targets = targets[mask]
 
@@ -226,6 +232,7 @@ class CustomLoss(nn.Module):
             DatasetSelection.Trimap: TrimapLoss(),
             DatasetSelection.BBox: BBoxLoss(),
             DatasetSelection.CAM: CamLoss(),
+            DatasetSelection.SAM: SAMLoss(),
         }
         assert set(self.targets_weights.keys()).issubset(
             self.loss_funcs.keys())
@@ -253,7 +260,7 @@ class TrimapLoss(nn.Module):
         logits_2ch = torch.cat([background_logits, logits], dim=1)
         res = self.loss_fn(logits_2ch, targets.long())
         if torch.isnan(res).item():
-            print('Loss is NaN')
+            print('TrimapLoss is NaN')
         return torch.nan_to_num(res)
 
 
@@ -309,6 +316,21 @@ class BBoxLoss(nn.Module):
 
         loss = self.loss_fn(logits_2ch, targets)
         return loss
+
+
+class SAMLoss(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.loss_fn = nn.CrossEntropyLoss(
+            ignore_index=-100)  # uses mean by default
+
+    def forward(self, logits, targets):
+        background_logits = torch.zeros_like(logits)  # fake bg logits
+        logits_2ch = torch.cat([background_logits, logits], dim=1)
+        res = self.loss_fn(logits_2ch, targets.long())
+        if torch.isnan(res).item():
+            print('SAMLoss is NaN')
+        return torch.nan_to_num(res)
 
 
 def train_model(
@@ -420,7 +442,7 @@ def train_model(
 
 print("\n=== Using Segmentation Models PyTorch (SMP) for improved performance ===\n")
 TARGETS_LIST = [DatasetSelection.CAM,
-                DatasetSelection.Trimap, DatasetSelection.BBox]
+                DatasetSelection.Trimap, DatasetSelection.BBox, DatasetSelection.SAM]
 BATCH_SIZE = 128
 EPOCHS = 50
 LEARNING_RATE = 1e-3
@@ -461,6 +483,7 @@ class CustomUNet(nn.Module):
         self.seg_heads[DatasetSelection.Trimap.name] = ConvSegHead()
         self.seg_heads[DatasetSelection.CAM.name] = ConvSegHead()
         self.seg_heads[DatasetSelection.BBox.name] = ConvSegHead()
+        self.seg_heads[DatasetSelection.SAM.name] = ConvSegHead()
 
     def forward(self, img):
         features = self.feature_extractor(img)
@@ -495,12 +518,15 @@ dataset = InMemoryPetSegmentationDataset(
 # dataset_perm = torch.randperm(len(dataset))
 
 GT_PROPORTIONS = [0.1, 1.0]
-LOSS_WEIGHTS = [0.0, 0.1, 1.0]
+LOSS_WEIGHTS = [0.0, 1.0]
 
 
-for idx, experiment_weights in enumerate(product(GT_PROPORTIONS, LOSS_WEIGHTS, LOSS_WEIGHTS)):
-    gt_prop, cam_loss_weight, bbox_loss_weight = experiment_weights
-    print(gt_prop, cam_loss_weight, bbox_loss_weight)
+for idx, experiment_weights in enumerate(product(GT_PROPORTIONS, LOSS_WEIGHTS, LOSS_WEIGHTS, LOSS_WEIGHTS)):
+    # print('MEM at start: ', torch.cuda.memory_summary(
+    #     device=device, abbreviated=True))
+    gt_prop, cam_loss_weight, bbox_loss_weight, sam_loss_weight = experiment_weights
+    print('gt_prop, cam_loss_weight, bbox_loss_weight, sam_loss_weight')
+    print(gt_prop, cam_loss_weight, bbox_loss_weight, sam_loss_weight)
     # set based on how much of the dataset we can use
     dataset.change_gt_proportion(gt_prop)
 
@@ -531,7 +557,7 @@ for idx, experiment_weights in enumerate(product(GT_PROPORTIONS, LOSS_WEIGHTS, L
     )
     smp_model, smp_epoch, smp_best_loss = load_checkpoint(
         smp_model, 'checkpoints/best_model.pth')
-    print(smp_epoch)
+    print("Epoch with lowest loss: ", smp_epoch)
 
     # reset GT proportion to perform evaluation on trimaps correctly
     dataset.change_gt_proportion(1.0)
@@ -547,4 +573,7 @@ for idx, experiment_weights in enumerate(product(GT_PROPORTIONS, LOSS_WEIGHTS, L
         res_str = str(experiment_weights)+'\n'+str(metrics)
         file.write(res_str)
 
-    del train_dataset, val_dataset, train_dataloader, val_dataloader
+    del train_dataset, val_dataset, train_dataloader, val_dataloader, model, smp_model
+
+    gc.collect()
+    torch.cuda.empty_cache()
