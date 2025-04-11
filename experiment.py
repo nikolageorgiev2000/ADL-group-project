@@ -629,8 +629,8 @@ dataset = InMemoryPetSegmentationDataset(
     DATA_DIR, ANNOTATION_DIR, targets_list=TARGETS_LIST)
 # dataset_perm = torch.randperm(len(dataset))
 
-GT_PROPORTIONS = [1.0]
-LOSS_WEIGHTS = [0.0]
+GT_PROPORTIONS = [0.1]
+LOSS_WEIGHTS = [0.0, 1.0]
 
 
 for idx, experiment_weights in enumerate(product(GT_PROPORTIONS, LOSS_WEIGHTS, LOSS_WEIGHTS, LOSS_WEIGHTS)):

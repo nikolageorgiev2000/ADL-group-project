@@ -73,7 +73,7 @@ class InMemoryPetSegmentationDataset(Dataset):
         self.image_ind_dict = {
             f.split('.')[0]: i for i, f in enumerate(image_files)}
         self.available_images: List[str] = sorted(
-            self.image_ind_dict.keys())  #[:200]
+            self.image_ind_dict.keys())  # [:200]
         dataset_permutation = torch.randperm(len(self.available_images))
         self.available_images = [self.available_images[i]
                                  for i in dataset_permutation]
@@ -205,7 +205,7 @@ class InMemoryPetSegmentationDataset(Dataset):
             return self.samples[self.masking_permutation[idx]]
 
         img, sample_data = self.samples[self.masking_permutation[idx]]
-        
+
         # Generate random booleans for horizontal and vertical flip.
         hflip, vflip = (torch.rand((2,)) > 0.5).tolist()
 
@@ -213,38 +213,38 @@ class InMemoryPetSegmentationDataset(Dataset):
         # Assuming img shape is (C, H, W):
         if hflip:
             # Flip horizontally (along the width dimension, i.e. last dimension)
-            img.copy_(img.flip(-1))
+            img.data = img.data.flip(-1)
         if vflip:
             # Flip vertically (along the height dimension, i.e. second dimension)
-            img.copy_(img.flip(-2))
+            img.data = img.data.flip(-2)
 
         # --- Flip each target as appropriate ---
         # 1. Trimap (if available)
         if DatasetSelection.Trimap in sample_data:
             if hflip:
-                sample_data[DatasetSelection.Trimap].copy_(
-                    sample_data[DatasetSelection.Trimap].flip(-1))
+                sample_data[DatasetSelection.Trimap].data = sample_data[DatasetSelection.Trimap].data.flip(
+                    -1)
             if vflip:
-                sample_data[DatasetSelection.Trimap].copy_(
-                    sample_data[DatasetSelection.Trimap].flip(-2))
+                sample_data[DatasetSelection.Trimap].data = sample_data[DatasetSelection.Trimap].data.flip(
+                    -2)
 
         # 2. CAM target (if available)
         if DatasetSelection.CAM in sample_data:
             if hflip:
-                sample_data[DatasetSelection.CAM].copy_(
-                    sample_data[DatasetSelection.CAM].flip(-1))
+                sample_data[DatasetSelection.CAM].data = sample_data[DatasetSelection.CAM].data.flip(
+                    -1)
             if vflip:
-                sample_data[DatasetSelection.CAM].copy_(
-                    sample_data[DatasetSelection.CAM].flip(-2))
+                sample_data[DatasetSelection.CAM].data = sample_data[DatasetSelection.CAM].data.flip(
+                    -2)
 
         # 3. SAM target (if available)
         if DatasetSelection.SAM in sample_data:
             if hflip:
-                sample_data[DatasetSelection.SAM].copy_(
-                    sample_data[DatasetSelection.SAM].flip(-1))
+                sample_data[DatasetSelection.SAM].data = sample_data[DatasetSelection.SAM].data.flip(
+                    -1)
             if vflip:
-                sample_data[DatasetSelection.SAM].copy_(
-                    sample_data[DatasetSelection.SAM].flip(-2))
+                sample_data[DatasetSelection.SAM].data = sample_data[DatasetSelection.SAM].data.flip(
+                    -2)
 
         # 4. Bounding Box (if available)
         # Bounding boxes are stored as [xmin, ymin, xmax, ymax]
@@ -255,15 +255,15 @@ class InMemoryPetSegmentationDataset(Dataset):
                 img_width = self.image_shape[0]
                 old_xmin = bbox[0].clone()
                 old_xmax = bbox[2].clone()
-                bbox[0].copy_(img_width - old_xmax)
-                bbox[2].copy_(img_width - old_xmin)
+                bbox[0].data = img_width - old_xmax
+                bbox[2].data = img_width - old_xmin
             # For the vertical flip, adjust the y-coordinates.
             if vflip:
                 img_height = self.image_shape[1]
                 old_ymin = bbox[1].clone()
                 old_ymax = bbox[3].clone()
-                bbox[1].copy_(img_height - old_ymax)
-                bbox[3].copy_(img_height - old_ymin)
+                bbox[1].data = img_height - old_ymax
+                bbox[3].data = img_height - old_ymin
 
         return img, sample_data
 
