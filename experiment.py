@@ -444,7 +444,7 @@ print("\n=== Using Segmentation Models PyTorch (SMP) for improved performance ==
 TARGETS_LIST = [DatasetSelection.CAM,
                 DatasetSelection.Trimap, DatasetSelection.BBox, DatasetSelection.SAM]
 BATCH_SIZE = 128
-EPOCHS = 50
+EPOCHS = 100
 LEARNING_RATE = 1e-3
 OPTIMIZER_NAME = 'adam'
 SCHEDULER_NAME = 'reduce_on_plateau'
@@ -546,7 +546,7 @@ for idx, experiment_weights in enumerate(product(GT_PROPORTIONS, LOSS_WEIGHTS, L
     model = train_model(
         smp_model,
         {DatasetSelection.Trimap: 1.0, DatasetSelection.CAM: cam_loss_weight,
-            DatasetSelection.BBox: bbox_loss_weight},
+            DatasetSelection.BBox: bbox_loss_weight, DatasetSelection.SAM: sam_loss_weight},
         train_dataloader,
         epochs=EPOCHS,
         learning_rate=LEARNING_RATE,

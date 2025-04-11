@@ -19,877 +19,1878 @@ gt_prop, cam_loss_weight, bbox_loss_weight, sam_loss_weight
 0.1 0.0 0.0 0.0
 
 Starting training...
-Epoch 1/50, Loss: 0.758217
-Epoch 2/50, Loss: 0.703887
-Epoch 3/50, Loss: 0.651793
-Epoch 4/50, Loss: 0.593649
-Epoch 5/50, Loss: 0.538410
-Epoch 6/50, Loss: 0.486044
-Epoch 7/50, Loss: 0.441148
-Epoch 8/50, Loss: 0.402301
-Epoch 9/50, Loss: 0.370832
-Epoch 10/50, Loss: 0.347949
-Epoch 11/50, Loss: 0.326140
-Epoch 12/50, Loss: 0.306093
-Epoch 13/50, Loss: 0.290884
-Epoch 14/50, Loss: 0.278196
-Epoch 15/50, Loss: 0.267475
-Epoch 16/50, Loss: 0.252198
-Epoch 17/50, Loss: 0.242100
-Epoch 18/50, Loss: 0.236286
-Epoch 19/50, Loss: 0.227277
-Epoch 20/50, Loss: 0.220638
-Epoch 21/50, Loss: 0.212760
-Epoch 22/50, Loss: 0.205440
-Epoch 23/50, Loss: 0.201948
-Epoch 24/50, Loss: 0.195251
-Epoch 25/50, Loss: 0.191502
-Epoch 26/50, Loss: 0.189963
-Epoch 27/50, Loss: 0.186621
+Epoch 1/100, Loss: 0.758217
+Epoch 2/100, Loss: 0.703887
+Epoch 3/100, Loss: 0.651793
+Epoch 4/100, Loss: 0.593649
+Epoch 5/100, Loss: 0.538410
+Epoch 6/100, Loss: 0.486044
+Epoch 7/100, Loss: 0.441148
+Epoch 8/100, Loss: 0.402301
+Epoch 9/100, Loss: 0.370832
+Epoch 10/100, Loss: 0.347949
+Epoch 11/100, Loss: 0.326140
+Epoch 12/100, Loss: 0.306093
+Epoch 13/100, Loss: 0.290884
+Epoch 14/100, Loss: 0.278196
+Epoch 15/100, Loss: 0.267475
+Epoch 16/100, Loss: 0.252198
+Epoch 17/100, Loss: 0.242100
+Epoch 18/100, Loss: 0.236286
+Epoch 19/100, Loss: 0.227277
+Epoch 20/100, Loss: 0.220638
+Epoch 21/100, Loss: 0.212760
+Epoch 22/100, Loss: 0.205440
+Epoch 23/100, Loss: 0.201948
+Epoch 24/100, Loss: 0.195251
+Epoch 25/100, Loss: 0.191502
+Epoch 26/100, Loss: 0.189963
+Epoch 27/100, Loss: 0.186621
 TrimapLoss is NaN
-Epoch 28/50, Loss: 0.177049
-Epoch 29/50, Loss: 0.178705
-Epoch 30/50, Loss: 0.176723
-Epoch 31/50, Loss: 0.173927
-Epoch 32/50, Loss: 0.173379
-Epoch 33/50, Loss: 0.168253
-Epoch 34/50, Loss: 0.165515
-Epoch 35/50, Loss: 0.163328
-Epoch 36/50, Loss: 0.165828
+Epoch 28/100, Loss: 0.177049
+Epoch 29/100, Loss: 0.178644
+Epoch 30/100, Loss: 0.176823
+Epoch 31/100, Loss: 0.173775
+Epoch 32/100, Loss: 0.172176
+Epoch 33/100, Loss: 0.167284
+Epoch 34/100, Loss: 0.166050
+Epoch 35/100, Loss: 0.162977
+Epoch 36/100, Loss: 0.168900
 TrimapLoss is NaN
-Epoch 37/50, Loss: 0.157479
-Epoch 38/50, Loss: 0.158611
-Epoch 39/50, Loss: 0.160703
-Epoch 40/50, Loss: 0.156155
-Epoch 41/50, Loss: 0.157928
-Epoch 42/50, Loss: 0.153713
-Epoch 43/50, Loss: 0.152327
-Epoch 44/50, Loss: 0.149384
-Epoch 45/50, Loss: 0.149018
+Epoch 37/100, Loss: 0.158835
+Epoch 38/100, Loss: 0.158426
+Epoch 39/100, Loss: 0.156774
+Epoch 40/100, Loss: 0.154561
+Epoch 41/100, Loss: 0.157610
+Epoch 42/100, Loss: 0.152530
+Epoch 43/100, Loss: 0.149260
+Epoch 44/100, Loss: 0.147417
+Epoch 45/100, Loss: 0.148351
 TrimapLoss is NaN
-Epoch 46/50, Loss: 0.144363
-Epoch 47/50, Loss: 0.148352
-Epoch 48/50, Loss: 0.150860
-Epoch 49/50, Loss: 0.144972
-Epoch 50/50, Loss: 0.144700
+Epoch 46/100, Loss: 0.144616
+Epoch 47/100, Loss: 0.148565
+Epoch 48/100, Loss: 0.151054
+Epoch 49/100, Loss: 0.144997
+Epoch 50/100, Loss: 0.143951
+Epoch 51/100, Loss: 0.142498
+TrimapLoss is NaN
+Epoch 52/100, Loss: 0.140429
+Epoch 53/100, Loss: 0.142157
+Epoch 54/100, Loss: 0.142865
+Epoch 55/100, Loss: 0.141954
+Epoch 56/100, Loss: 0.139882
+Epoch 57/100, Loss: 0.139780
+Epoch 58/100, Loss: 0.136689
+Epoch 59/100, Loss: 0.136721
+Epoch 60/100, Loss: 0.135430
+Epoch 61/100, Loss: 0.135281
+Epoch 62/100, Loss: 0.135187
+Epoch 63/100, Loss: 0.134814
+Epoch 64/100, Loss: 0.131018
+Epoch 65/100, Loss: 0.130500
+Epoch 66/100, Loss: 0.130783
+TrimapLoss is NaN
+Epoch 67/100, Loss: 0.127476
+Epoch 68/100, Loss: 0.129042
+TrimapLoss is NaN
+Epoch 69/100, Loss: 0.127436
+Epoch 70/100, Loss: 0.128203
+Epoch 71/100, Loss: 0.128917
+Epoch 72/100, Loss: 0.128858
+Epoch 73/100, Loss: 0.129472
+Epoch 74/100, Loss: 0.126563
+Epoch 75/100, Loss: 0.124543
+Epoch 76/100, Loss: 0.122846
+Epoch 77/100, Loss: 0.122848
+Epoch 78/100, Loss: 0.123522
+Epoch 79/100, Loss: 0.123012
+Epoch 80/100, Loss: 0.122860
+Epoch 81/100, Loss: 0.118343
+Epoch 82/100, Loss: 0.122943
+TrimapLoss is NaN
+Epoch 83/100, Loss: 0.118652
+Epoch 84/100, Loss: 0.118475
+Epoch 85/100, Loss: 0.117581
+Epoch 86/100, Loss: 0.117892
+Epoch 87/100, Loss: 0.117092
+Epoch 88/100, Loss: 0.118194
+Epoch 89/100, Loss: 0.118072
+Epoch 90/100, Loss: 0.117688
+Epoch 91/100, Loss: 0.117706
+Epoch 92/100, Loss: 0.117331
+Epoch 93/100, Loss: 0.115971
+Epoch 94/100, Loss: 0.117149
+Epoch 95/100, Loss: 0.116423
+Epoch 96/100, Loss: 0.117525
+Epoch 97/100, Loss: 0.116913
+Epoch 98/100, Loss: 0.116872
+Epoch 99/100, Loss: 0.116513
+Epoch 100/100, Loss: 0.115852
 
 Training complete!
-Epoch with lowest loss:  46
+Epoch with lowest loss:  100
 
 Model Performance Metrics:
-Accuracy: 0.836319
-Recall: 0.839396
-Jaccard Index: 0.633544
-F1 Score: 0.761156
+Accuracy: 0.832477
+Recall: 0.839764
+Jaccard Index: 0.629278
+F1 Score: 0.757913
 gt_prop, cam_loss_weight, bbox_loss_weight, sam_loss_weight
 0.1 0.0 0.0 1.0
 
 Starting training...
-Epoch 1/50, Loss: 0.712539
-Epoch 2/50, Loss: 0.663283
-Epoch 3/50, Loss: 0.625490
-Epoch 4/50, Loss: 0.589821
-Epoch 5/50, Loss: 0.550693
-Epoch 6/50, Loss: 0.511494
-Epoch 7/50, Loss: 0.475626
-Epoch 8/50, Loss: 0.442067
-Epoch 9/50, Loss: 0.411056
-Epoch 10/50, Loss: 0.385173
-Epoch 11/50, Loss: 0.361614
-Epoch 12/50, Loss: 0.340585
-Epoch 13/50, Loss: 0.321388
+Epoch 1/100, Loss: 1.333495
+Epoch 2/100, Loss: 1.229319
+Epoch 3/100, Loss: 1.140159
+Epoch 4/100, Loss: 1.068946
+Epoch 5/100, Loss: 1.005911
 TrimapLoss is NaN
-Epoch 14/50, Loss: 0.302120
-Epoch 15/50, Loss: 0.295407
-Epoch 16/50, Loss: 0.283614
-Epoch 17/50, Loss: 0.273538
-Epoch 18/50, Loss: 0.266278
-Epoch 19/50, Loss: 0.257208
-Epoch 20/50, Loss: 0.252067
+Epoch 6/100, Loss: 0.938196
+Epoch 7/100, Loss: 0.894060
+Epoch 8/100, Loss: 0.847352
+Epoch 9/100, Loss: 0.805096
+Epoch 10/100, Loss: 0.769071
+Epoch 11/100, Loss: 0.744335
+Epoch 12/100, Loss: 0.716534
+Epoch 13/100, Loss: 0.694034
+Epoch 14/100, Loss: 0.675411
+Epoch 15/100, Loss: 0.659929
+Epoch 16/100, Loss: 0.645348
+Epoch 17/100, Loss: 0.630842
+Epoch 18/100, Loss: 0.619147
+Epoch 19/100, Loss: 0.604785
+Epoch 20/100, Loss: 0.593358
+Epoch 21/100, Loss: 0.585938
+Epoch 22/100, Loss: 0.577811
 TrimapLoss is NaN
-Epoch 21/50, Loss: 0.236635
-Epoch 22/50, Loss: 0.233402
-Epoch 23/50, Loss: 0.230778
-Epoch 24/50, Loss: 0.224947
-Epoch 25/50, Loss: 0.219590
-Epoch 26/50, Loss: 0.218464
-Epoch 27/50, Loss: 0.211441
-Epoch 28/50, Loss: 0.209124
-Epoch 29/50, Loss: 0.205591
-Epoch 30/50, Loss: 0.203578
-Epoch 31/50, Loss: 0.202804
-Epoch 32/50, Loss: 0.197888
-Epoch 33/50, Loss: 0.193942
-Epoch 34/50, Loss: 0.188965
-Epoch 35/50, Loss: 0.191029
-Epoch 36/50, Loss: 0.187770
-Epoch 37/50, Loss: 0.191780
-Epoch 38/50, Loss: 0.198274
-Epoch 39/50, Loss: 0.189712
-Epoch 40/50, Loss: 0.182742
-Epoch 41/50, Loss: 0.179176
-Epoch 42/50, Loss: 0.178862
-Epoch 43/50, Loss: 0.173914
+Epoch 23/100, Loss: 0.568041
+Epoch 24/100, Loss: 0.563109
+Epoch 25/100, Loss: 0.555785
+Epoch 26/100, Loss: 0.547640
+Epoch 27/100, Loss: 0.540994
+Epoch 28/100, Loss: 0.536631
+Epoch 29/100, Loss: 0.529524
+Epoch 30/100, Loss: 0.526472
+Epoch 31/100, Loss: 0.517996
+Epoch 32/100, Loss: 0.512422
+Epoch 33/100, Loss: 0.507838
+Epoch 34/100, Loss: 0.506033
+Epoch 35/100, Loss: 0.501547
+Epoch 36/100, Loss: 0.498074
 TrimapLoss is NaN
-Epoch 44/50, Loss: 0.168098
-Epoch 45/50, Loss: 0.165502
-Epoch 46/50, Loss: 0.166313
-Epoch 47/50, Loss: 0.169967
-Epoch 48/50, Loss: 0.184179
-Epoch 49/50, Loss: 0.175163
-Epoch 50/50, Loss: 0.164119
+Epoch 37/100, Loss: 0.491995
+Epoch 38/100, Loss: 0.491699
+Epoch 39/100, Loss: 0.489622
+Epoch 40/100, Loss: 0.489866
+Epoch 41/100, Loss: 0.485673
+Epoch 42/100, Loss: 0.481798
+Epoch 43/100, Loss: 0.477175
+Epoch 44/100, Loss: 0.472871
+TrimapLoss is NaN
+Epoch 45/100, Loss: 0.469808
+Epoch 46/100, Loss: 0.468928
+Epoch 47/100, Loss: 0.467636
+Epoch 48/100, Loss: 0.466619
+TrimapLoss is NaN
+Epoch 49/100, Loss: 0.461623
+Epoch 50/100, Loss: 0.461973
+Epoch 51/100, Loss: 0.460246
+Epoch 52/100, Loss: 0.461169
+Epoch 53/100, Loss: 0.458917
+Epoch 54/100, Loss: 0.460312
+Epoch 55/100, Loss: 0.458231
+TrimapLoss is NaN
+Epoch 56/100, Loss: 0.458359
+Epoch 57/100, Loss: 0.454111
+Epoch 58/100, Loss: 0.449725
+Epoch 59/100, Loss: 0.446823
+Epoch 60/100, Loss: 0.447091
+Epoch 61/100, Loss: 0.444767
+Epoch 62/100, Loss: 0.442529
+Epoch 63/100, Loss: 0.439146
+Epoch 64/100, Loss: 0.438294
+Epoch 65/100, Loss: 0.440875
+Epoch 66/100, Loss: 0.440581
+Epoch 67/100, Loss: 0.437550
+Epoch 68/100, Loss: 0.435406
+Epoch 69/100, Loss: 0.433992
+Epoch 70/100, Loss: 0.434303
+Epoch 71/100, Loss: 0.434956
+TrimapLoss is NaN
+Epoch 72/100, Loss: 0.430015
+Epoch 73/100, Loss: 0.432797
+Epoch 74/100, Loss: 0.429020
+Epoch 75/100, Loss: 0.430915
+Epoch 76/100, Loss: 0.431800
+Epoch 77/100, Loss: 0.428468
+Epoch 78/100, Loss: 0.426117
+Epoch 79/100, Loss: 0.425502
+Epoch 80/100, Loss: 0.424526
+Epoch 81/100, Loss: 0.121122
+Epoch 82/100, Loss: 0.118527
+Epoch 83/100, Loss: 0.119756
+Epoch 84/100, Loss: 0.119955
+Epoch 85/100, Loss: 0.118811
+Epoch 86/100, Loss: 0.119542
+Epoch 87/100, Loss: 0.118827
+Epoch 88/100, Loss: 0.116311
+TrimapLoss is NaN
+Epoch 89/100, Loss: 0.111707
+Epoch 90/100, Loss: 0.113993
+Epoch 91/100, Loss: 0.113491
+Epoch 92/100, Loss: 0.113811
+Epoch 93/100, Loss: 0.112494
+Epoch 94/100, Loss: 0.112352
+Epoch 95/100, Loss: 0.111040
+TrimapLoss is NaN
+Epoch 96/100, Loss: 0.108669
+Epoch 97/100, Loss: 0.111926
+Epoch 98/100, Loss: 0.110166
+Epoch 99/100, Loss: 0.109529
+Epoch 100/100, Loss: 0.110915
 
 Training complete!
-Epoch with lowest loss:  50
+Epoch with lowest loss:  96
 
 Model Performance Metrics:
-Accuracy: 0.784838
-Recall: 0.816685
-Jaccard Index: 0.572694
-F1 Score: 0.711980
+Accuracy: 0.898634
+Recall: 0.871771
+Jaccard Index: 0.727570
+F1 Score: 0.832877
 gt_prop, cam_loss_weight, bbox_loss_weight, sam_loss_weight
 0.1 0.0 1.0 0.0
 
 Starting training...
-Epoch 1/50, Loss: 1.362778
+Epoch 1/100, Loss: 1.357180
+Epoch 2/100, Loss: 1.194822
+Epoch 3/100, Loss: 1.073246
+Epoch 4/100, Loss: 0.974327
+Epoch 5/100, Loss: 0.892592
+Epoch 6/100, Loss: 0.819608
 TrimapLoss is NaN
-Epoch 2/50, Loss: 1.224169
-Epoch 3/50, Loss: 1.129221
+Epoch 7/100, Loss: 0.753564
+Epoch 8/100, Loss: 0.714127
 TrimapLoss is NaN
-Epoch 4/50, Loss: 1.025174
-Epoch 5/50, Loss: 0.956825
-Epoch 6/50, Loss: 0.885017
-Epoch 7/50, Loss: 0.812919
-Epoch 8/50, Loss: 0.741757
+Epoch 9/100, Loss: 0.664529
+Epoch 10/100, Loss: 0.636750
+Epoch 11/100, Loss: 0.606595
+Epoch 12/100, Loss: 0.578085
+Epoch 13/100, Loss: 0.551999
+Epoch 14/100, Loss: 0.529930
+Epoch 15/100, Loss: 0.509343
 TrimapLoss is NaN
-Epoch 9/50, Loss: 0.679555
-Epoch 10/50, Loss: 0.639290
-Epoch 11/50, Loss: 0.601673
-Epoch 12/50, Loss: 0.566261
-Epoch 13/50, Loss: 0.546619
-Epoch 14/50, Loss: 0.517583
-Epoch 15/50, Loss: 0.494205
-Epoch 16/50, Loss: 0.478196
-Epoch 17/50, Loss: 0.459617
-Epoch 18/50, Loss: 0.447485
-Epoch 19/50, Loss: 0.431456
-Epoch 20/50, Loss: 0.421135
+Epoch 16/100, Loss: 0.484338
+Epoch 17/100, Loss: 0.475476
+Epoch 18/100, Loss: 0.455888
+Epoch 19/100, Loss: 0.442782
+Epoch 20/100, Loss: 0.428963
+Epoch 21/100, Loss: 0.417664
+Epoch 22/100, Loss: 0.406887
+Epoch 23/100, Loss: 0.395934
+Epoch 24/100, Loss: 0.389194
+Epoch 25/100, Loss: 0.381276
+Epoch 26/100, Loss: 0.368981
+Epoch 27/100, Loss: 0.362466
+Epoch 28/100, Loss: 0.356671
+Epoch 29/100, Loss: 0.352981
+Epoch 30/100, Loss: 0.342453
+Epoch 31/100, Loss: 0.335799
+Epoch 32/100, Loss: 0.333392
+Epoch 33/100, Loss: 0.325638
+Epoch 34/100, Loss: 0.318610
+Epoch 35/100, Loss: 0.317826
+Epoch 36/100, Loss: 0.308946
 TrimapLoss is NaN
-Epoch 21/50, Loss: 0.405871
-Epoch 22/50, Loss: 0.399753
-Epoch 23/50, Loss: 0.389263
-Epoch 24/50, Loss: 0.384355
-Epoch 25/50, Loss: 0.374844
-Epoch 26/50, Loss: 0.364589
-Epoch 27/50, Loss: 0.361473
-Epoch 28/50, Loss: 0.353084
-Epoch 29/50, Loss: 0.344545
-Epoch 30/50, Loss: 0.339661
-Epoch 31/50, Loss: 0.334657
-Epoch 32/50, Loss: 0.333247
-Epoch 33/50, Loss: 0.325294
+Epoch 37/100, Loss: 0.304931
+Epoch 38/100, Loss: 0.304541
+Epoch 39/100, Loss: 0.299176
+Epoch 40/100, Loss: 0.295821
+Epoch 41/100, Loss: 0.291489
+Epoch 42/100, Loss: 0.291676
+Epoch 43/100, Loss: 0.283086
 TrimapLoss is NaN
-Epoch 34/50, Loss: 0.315464
-Epoch 35/50, Loss: 0.316802
-Epoch 36/50, Loss: 0.319924
-Epoch 37/50, Loss: 0.309064
-Epoch 38/50, Loss: 0.305916
-Epoch 39/50, Loss: 0.303544
-Epoch 40/50, Loss: 0.299001
+Epoch 44/100, Loss: 0.280369
+Epoch 45/100, Loss: 0.281585
+Epoch 46/100, Loss: 0.278726
+Epoch 47/100, Loss: 0.276516
 TrimapLoss is NaN
-Epoch 41/50, Loss: 0.164678
-Epoch 42/50, Loss: 0.162080
-Epoch 43/50, Loss: 0.157974
-Epoch 44/50, Loss: 0.161536
-Epoch 45/50, Loss: 0.165746
-Epoch 46/50, Loss: 0.157971
-Epoch 47/50, Loss: 0.153652
-Epoch 48/50, Loss: 0.151911
+Epoch 48/100, Loss: 0.272330
+Epoch 49/100, Loss: 0.270407
+Epoch 50/100, Loss: 0.271116
+Epoch 51/100, Loss: 0.265884
+Epoch 52/100, Loss: 0.262797
+Epoch 53/100, Loss: 0.263150
+Epoch 54/100, Loss: 0.262686
+Epoch 55/100, Loss: 0.264356
+Epoch 56/100, Loss: 0.282923
+Epoch 57/100, Loss: 0.267812
+Epoch 58/100, Loss: 0.259898
+Epoch 59/100, Loss: 0.255337
+Epoch 60/100, Loss: 0.255397
+Epoch 61/100, Loss: 0.252419
+Epoch 62/100, Loss: 0.249675
+Epoch 63/100, Loss: 0.246800
+Epoch 64/100, Loss: 0.243850
+Epoch 65/100, Loss: 0.242520
+Epoch 66/100, Loss: 0.239530
+Epoch 67/100, Loss: 0.240056
 TrimapLoss is NaN
-Epoch 49/50, Loss: 0.147816
-Epoch 50/50, Loss: 0.148004
+Epoch 68/100, Loss: 0.235976
+Epoch 69/100, Loss: 0.236475
+Epoch 70/100, Loss: 0.241505
+Epoch 71/100, Loss: 0.236629
+Epoch 72/100, Loss: 0.234358
+Epoch 73/100, Loss: 0.234859
+Epoch 74/100, Loss: 0.234010
+Epoch 75/100, Loss: 0.233185
+Epoch 76/100, Loss: 0.232761
+Epoch 77/100, Loss: 0.228544
+Epoch 78/100, Loss: 0.230154
+Epoch 79/100, Loss: 0.236124
+Epoch 80/100, Loss: 0.234151
+Epoch 81/100, Loss: 0.130974
+Epoch 82/100, Loss: 0.127379
+Epoch 83/100, Loss: 0.126946
+Epoch 84/100, Loss: 0.126123
+TrimapLoss is NaN
+Epoch 85/100, Loss: 0.121491
+Epoch 86/100, Loss: 0.128751
+Epoch 87/100, Loss: 0.125798
+Epoch 88/100, Loss: 0.130356
+Epoch 89/100, Loss: 0.126825
+Epoch 90/100, Loss: 0.121949
+Epoch 91/100, Loss: 0.122125
+Epoch 92/100, Loss: 0.119683
+Epoch 93/100, Loss: 0.118815
+Epoch 94/100, Loss: 0.119970
+Epoch 95/100, Loss: 0.118981
+Epoch 96/100, Loss: 0.119148
+Epoch 97/100, Loss: 0.115881
+Epoch 98/100, Loss: 0.117109
+Epoch 99/100, Loss: 0.118346
+TrimapLoss is NaN
+Epoch 100/100, Loss: 0.113716
 
 Training complete!
-Epoch with lowest loss:  49
+Epoch with lowest loss:  100
 
 Model Performance Metrics:
-Accuracy: 0.891925
-Recall: 0.862339
-Jaccard Index: 0.713944
-F1 Score: 0.822664
+Accuracy: 0.892761
+Recall: 0.863381
+Jaccard Index: 0.715587
+F1 Score: 0.823904
 gt_prop, cam_loss_weight, bbox_loss_weight, sam_loss_weight
 0.1 0.0 1.0 1.0
 
 Starting training...
-Epoch 1/50, Loss: 1.457923
-Epoch 2/50, Loss: 1.367960
-Epoch 3/50, Loss: 1.287815
-Epoch 4/50, Loss: 1.208667
-Epoch 5/50, Loss: 1.127073
-Epoch 6/50, Loss: 1.043280
-Epoch 7/50, Loss: 0.969304
-Epoch 8/50, Loss: 0.905551
-Epoch 9/50, Loss: 0.849140
-Epoch 10/50, Loss: 0.798515
-Epoch 11/50, Loss: 0.754530
+Epoch 1/100, Loss: 2.169561
 TrimapLoss is NaN
-Epoch 12/50, Loss: 0.704448
+Epoch 2/100, Loss: 2.009964
+Epoch 3/100, Loss: 1.896717
+Epoch 4/100, Loss: 1.781556
+Epoch 5/100, Loss: 1.674449
+Epoch 6/100, Loss: 1.581074
+Epoch 7/100, Loss: 1.487238
+Epoch 8/100, Loss: 1.403604
+Epoch 9/100, Loss: 1.328887
+Epoch 10/100, Loss: 1.261109
+Epoch 11/100, Loss: 1.199023
 TrimapLoss is NaN
-Epoch 13/50, Loss: 0.669664
-Epoch 14/50, Loss: 0.642234
-Epoch 15/50, Loss: 0.614146
-Epoch 16/50, Loss: 0.590569
+Epoch 12/100, Loss: 1.137378
+Epoch 13/100, Loss: 1.098439
+Epoch 14/100, Loss: 1.056399
+Epoch 15/100, Loss: 1.018922
+Epoch 16/100, Loss: 0.988278
+Epoch 17/100, Loss: 0.961106
+Epoch 18/100, Loss: 0.936562
+Epoch 19/100, Loss: 0.913403
+Epoch 20/100, Loss: 0.890916
+Epoch 21/100, Loss: 0.877181
+Epoch 22/100, Loss: 0.856079
+Epoch 23/100, Loss: 0.838897
+Epoch 24/100, Loss: 0.825198
+Epoch 25/100, Loss: 0.812061
+Epoch 26/100, Loss: 0.798927
+Epoch 27/100, Loss: 0.786400
+Epoch 28/100, Loss: 0.775515
+Epoch 29/100, Loss: 0.760881
+Epoch 30/100, Loss: 0.754747
+Epoch 31/100, Loss: 0.743740
 TrimapLoss is NaN
-Epoch 17/50, Loss: 0.562465
-Epoch 18/50, Loss: 0.547016
-Epoch 19/50, Loss: 0.528193
-Epoch 20/50, Loss: 0.511324
-Epoch 21/50, Loss: 0.495075
-Epoch 22/50, Loss: 0.483409
-Epoch 23/50, Loss: 0.466395
+Epoch 32/100, Loss: 0.728761
+Epoch 33/100, Loss: 0.723967
+Epoch 34/100, Loss: 0.716332
+Epoch 35/100, Loss: 0.709417
+Epoch 36/100, Loss: 0.702998
+Epoch 37/100, Loss: 0.699577
+Epoch 38/100, Loss: 0.690425
 TrimapLoss is NaN
-Epoch 24/50, Loss: 0.451417
-Epoch 25/50, Loss: 0.440469
-Epoch 26/50, Loss: 0.434524
-Epoch 27/50, Loss: 0.423516
+Epoch 39/100, Loss: 0.675642
+Epoch 40/100, Loss: 0.677748
+Epoch 41/100, Loss: 0.671951
+Epoch 42/100, Loss: 0.664362
 TrimapLoss is NaN
-Epoch 28/50, Loss: 0.409466
-Epoch 29/50, Loss: 0.404814
-Epoch 30/50, Loss: 0.398905
-Epoch 31/50, Loss: 0.386100
-Epoch 32/50, Loss: 0.393653
-Epoch 33/50, Loss: 0.379273
-Epoch 34/50, Loss: 0.370651
-Epoch 35/50, Loss: 0.365654
-Epoch 36/50, Loss: 0.359734
-Epoch 37/50, Loss: 0.349443
-Epoch 38/50, Loss: 0.346120
-Epoch 39/50, Loss: 0.337144
+Epoch 43/100, Loss: 0.656300
+Epoch 44/100, Loss: 0.651541
+Epoch 45/100, Loss: 0.647311
+Epoch 46/100, Loss: 0.641951
+Epoch 47/100, Loss: 0.638661
+Epoch 48/100, Loss: 0.634108
+Epoch 49/100, Loss: 0.627758
+Epoch 50/100, Loss: 0.627406
+Epoch 51/100, Loss: 0.619792
+Epoch 52/100, Loss: 0.616358
+Epoch 53/100, Loss: 0.614721
+Epoch 54/100, Loss: 0.608726
 TrimapLoss is NaN
-Epoch 40/50, Loss: 0.328564
+Epoch 55/100, Loss: 0.604775
+Epoch 56/100, Loss: 0.602689
+Epoch 57/100, Loss: 0.598910
+Epoch 58/100, Loss: 0.598311
+Epoch 59/100, Loss: 0.594556
+Epoch 60/100, Loss: 0.596115
+Epoch 61/100, Loss: 0.590814
+Epoch 62/100, Loss: 0.584003
+Epoch 63/100, Loss: 0.580537
+Epoch 64/100, Loss: 0.582400
+Epoch 65/100, Loss: 0.575320
 TrimapLoss is NaN
-Epoch 41/50, Loss: 0.167869
-Epoch 42/50, Loss: 0.169115
-Epoch 43/50, Loss: 0.166865
-Epoch 44/50, Loss: 0.164192
-Epoch 45/50, Loss: 0.163107
-Epoch 46/50, Loss: 0.158463
-TrimapLoss is NaN
-Epoch 47/50, Loss: 0.153318
-Epoch 48/50, Loss: 0.156211
-Epoch 49/50, Loss: 0.156656
-Epoch 50/50, Loss: 0.152557
+Epoch 66/100, Loss: 0.571386
+Epoch 67/100, Loss: 0.572972
+Epoch 68/100, Loss: 0.572671
+Epoch 69/100, Loss: 0.570863
+Epoch 70/100, Loss: 0.569389
+Epoch 71/100, Loss: 0.563141
+Epoch 72/100, Loss: 0.563158
+Epoch 73/100, Loss: 0.562483
+Epoch 74/100, Loss: 0.560501
+Epoch 75/100, Loss: 0.556925
+Epoch 76/100, Loss: 0.557699
+Epoch 77/100, Loss: 0.555453
+Epoch 78/100, Loss: 0.558980
+Epoch 79/100, Loss: 0.554910
+Epoch 80/100, Loss: 0.547195
+Epoch 81/100, Loss: 0.135619
+Epoch 82/100, Loss: 0.133534
+Epoch 83/100, Loss: 0.130142
+Epoch 84/100, Loss: 0.129182
+Epoch 85/100, Loss: 0.128920
+Epoch 86/100, Loss: 0.128172
+Epoch 87/100, Loss: 0.127231
+Epoch 88/100, Loss: 0.127705
+Epoch 89/100, Loss: 0.125747
+Epoch 90/100, Loss: 0.124035
+Epoch 91/100, Loss: 0.124863
+Epoch 92/100, Loss: 0.128117
+Epoch 93/100, Loss: 0.127694
+Epoch 94/100, Loss: 0.123880
+Epoch 95/100, Loss: 0.121517
+Epoch 96/100, Loss: 0.119809
+Epoch 97/100, Loss: 0.120469
+Epoch 98/100, Loss: 0.120611
+Epoch 99/100, Loss: 0.119069
+Epoch 100/100, Loss: 0.121239
 
 Training complete!
-Epoch with lowest loss:  50
+Epoch with lowest loss:  99
 
 Model Performance Metrics:
-Accuracy: 0.891420
-Recall: 0.862455
-Jaccard Index: 0.713230
-F1 Score: 0.822143
+Accuracy: 0.903932
+Recall: 0.876715
+Jaccard Index: 0.737776
+F1 Score: 0.840340
 gt_prop, cam_loss_weight, bbox_loss_weight, sam_loss_weight
 0.1 1.0 0.0 0.0
 
 Starting training...
-Epoch 1/50, Loss: 0.681901
-Epoch 2/50, Loss: 0.612698
-Epoch 3/50, Loss: 0.559478
-Epoch 4/50, Loss: 0.510458
-Epoch 5/50, Loss: 0.472757
-Epoch 6/50, Loss: 0.434193
+Epoch 1/100, Loss: 0.709949
+Epoch 2/100, Loss: 0.628512
+Epoch 3/100, Loss: 0.565805
 TrimapLoss is NaN
-Epoch 7/50, Loss: 0.389194
-Epoch 8/50, Loss: 0.365763
+Epoch 4/100, Loss: 0.497946
+Epoch 5/100, Loss: 0.459641
+Epoch 6/100, Loss: 0.418379
+Epoch 7/100, Loss: 0.384117
+Epoch 8/100, Loss: 0.352116
+Epoch 9/100, Loss: 0.330463
+Epoch 10/100, Loss: 0.304335
+Epoch 11/100, Loss: 0.285218
+Epoch 12/100, Loss: 0.268176
+Epoch 13/100, Loss: 0.254989
+Epoch 14/100, Loss: 0.240219
+Epoch 15/100, Loss: 0.230033
+Epoch 16/100, Loss: 0.220838
+Epoch 17/100, Loss: 0.212202
+Epoch 18/100, Loss: 0.207424
+Epoch 19/100, Loss: 0.200974
 TrimapLoss is NaN
-Epoch 9/50, Loss: 0.334649
+Epoch 20/100, Loss: 0.189909
 TrimapLoss is NaN
-Epoch 10/50, Loss: 0.310543
-Epoch 11/50, Loss: 0.300845
-Epoch 12/50, Loss: 0.282281
-Epoch 13/50, Loss: 0.269493
-Epoch 14/50, Loss: 0.253627
-Epoch 15/50, Loss: 0.243926
-Epoch 16/50, Loss: 0.231882
-Epoch 17/50, Loss: 0.226276
-Epoch 18/50, Loss: 0.216928
-Epoch 19/50, Loss: 0.206918
-Epoch 20/50, Loss: 0.203372
-Epoch 21/50, Loss: 0.199003
-Epoch 22/50, Loss: 0.194339
+Epoch 21/100, Loss: 0.184040
+Epoch 22/100, Loss: 0.186316
+Epoch 23/100, Loss: 0.182653
+Epoch 24/100, Loss: 0.176658
+Epoch 25/100, Loss: 0.177125
+Epoch 26/100, Loss: 0.172207
+Epoch 27/100, Loss: 0.167171
+Epoch 28/100, Loss: 0.164927
+Epoch 29/100, Loss: 0.163951
+Epoch 30/100, Loss: 0.162083
+Epoch 31/100, Loss: 0.158358
+Epoch 32/100, Loss: 0.156337
+Epoch 33/100, Loss: 0.152337
+Epoch 34/100, Loss: 0.152267
+Epoch 35/100, Loss: 0.149636
 TrimapLoss is NaN
-Epoch 23/50, Loss: 0.186340
-Epoch 24/50, Loss: 0.184496
-Epoch 25/50, Loss: 0.182425
-Epoch 26/50, Loss: 0.180424
-Epoch 27/50, Loss: 0.181778
-Epoch 28/50, Loss: 0.180580
-Epoch 29/50, Loss: 0.173324
-Epoch 30/50, Loss: 0.169275
-Epoch 31/50, Loss: 0.165025
-Epoch 32/50, Loss: 0.165478
-Epoch 33/50, Loss: 0.161848
-Epoch 34/50, Loss: 0.162300
+Epoch 36/100, Loss: 0.144620
+Epoch 37/100, Loss: 0.145161
+Epoch 38/100, Loss: 0.145205
+Epoch 39/100, Loss: 0.147198
+Epoch 40/100, Loss: 0.145731
+Epoch 41/100, Loss: 0.140832
+Epoch 42/100, Loss: 0.139531
+Epoch 43/100, Loss: 0.138949
 TrimapLoss is NaN
-Epoch 35/50, Loss: 0.157145
-Epoch 36/50, Loss: 0.156272
+Epoch 44/100, Loss: 0.133712
+Epoch 45/100, Loss: 0.134972
+Epoch 46/100, Loss: 0.135865
+Epoch 47/100, Loss: 0.133858
+Epoch 48/100, Loss: 0.132890
+Epoch 49/100, Loss: 0.140166
+Epoch 50/100, Loss: 0.135177
+Epoch 51/100, Loss: 0.135183
+Epoch 52/100, Loss: 0.133914
+Epoch 53/100, Loss: 0.131011
+Epoch 54/100, Loss: 0.131023
+Epoch 55/100, Loss: 0.129981
+Epoch 56/100, Loss: 0.129512
+Epoch 57/100, Loss: 0.128685
+Epoch 58/100, Loss: 0.128591
+Epoch 59/100, Loss: 0.128913
 TrimapLoss is NaN
-Epoch 37/50, Loss: 0.151459
-Epoch 38/50, Loss: 0.150715
+Epoch 60/100, Loss: 0.125554
+Epoch 61/100, Loss: 0.128184
+Epoch 62/100, Loss: 0.126239
+Epoch 63/100, Loss: 0.127234
+Epoch 64/100, Loss: 0.127877
 TrimapLoss is NaN
-Epoch 39/50, Loss: 0.147814
-Epoch 40/50, Loss: 0.151586
-Epoch 41/50, Loss: 0.149258
-Epoch 42/50, Loss: 0.151541
-Epoch 43/50, Loss: 0.149863
-Epoch 44/50, Loss: 0.145669
-Epoch 45/50, Loss: 0.141459
-Epoch 46/50, Loss: 0.140527
-Epoch 47/50, Loss: 0.138973
-Epoch 48/50, Loss: 0.138755
-Epoch 49/50, Loss: 0.142397
-Epoch 50/50, Loss: 0.143424
+Epoch 65/100, Loss: 0.123761
+TrimapLoss is NaN
+Epoch 66/100, Loss: 0.122081
+Epoch 67/100, Loss: 0.125278
+Epoch 68/100, Loss: 0.124960
+Epoch 69/100, Loss: 0.124742
+Epoch 70/100, Loss: 0.125615
+Epoch 71/100, Loss: 0.124740
+Epoch 72/100, Loss: 0.124282
+Epoch 73/100, Loss: 0.124674
+Epoch 74/100, Loss: 0.123381
+Epoch 75/100, Loss: 0.124071
+Epoch 76/100, Loss: 0.122944
+Epoch 77/100, Loss: 0.124170
+Epoch 78/100, Loss: 0.123008
+Epoch 79/100, Loss: 0.124647
+Epoch 80/100, Loss: 0.123071
+Epoch 81/100, Loss: 0.124234
+Epoch 82/100, Loss: 0.124143
+Epoch 83/100, Loss: 0.123477
+Epoch 84/100, Loss: 0.123564
+Epoch 85/100, Loss: 0.122982
+Epoch 86/100, Loss: 0.123123
+Epoch 87/100, Loss: 0.124401
+Epoch 88/100, Loss: 0.123805
+Epoch 89/100, Loss: 0.122988
+Epoch 90/100, Loss: 0.123787
+Epoch 91/100, Loss: 0.124291
+TrimapLoss is NaN
+Epoch 92/100, Loss: 0.120036
+Epoch 93/100, Loss: 0.124374
+Epoch 94/100, Loss: 0.123351
+Epoch 95/100, Loss: 0.124229
+Epoch 96/100, Loss: 0.124188
+Epoch 97/100, Loss: 0.122689
+TrimapLoss is NaN
+Epoch 98/100, Loss: 0.120578
+Epoch 99/100, Loss: 0.128995
+Epoch 100/100, Loss: 0.123187
 
 Training complete!
-Epoch with lowest loss:  48
+Epoch with lowest loss:  92
 
 Model Performance Metrics:
-Accuracy: 0.865789
-Recall: 0.852074
-Jaccard Index: 0.673735
-F1 Score: 0.792448
+Accuracy: 0.864624
+Recall: 0.858207
+Jaccard Index: 0.674232
+F1 Score: 0.793171
 gt_prop, cam_loss_weight, bbox_loss_weight, sam_loss_weight
 0.1 1.0 0.0 1.0
 
 Starting training...
-Epoch 1/50, Loss: 0.677040
-Epoch 2/50, Loss: 0.611614
-Epoch 3/50, Loss: 0.558311
-Epoch 4/50, Loss: 0.508447
+Epoch 1/100, Loss: 1.417623
+Epoch 2/100, Loss: 1.311786
+Epoch 3/100, Loss: 1.224208
+Epoch 4/100, Loss: 1.141771
+Epoch 5/100, Loss: 1.068705
+Epoch 6/100, Loss: 0.997948
+Epoch 7/100, Loss: 0.936250
+Epoch 8/100, Loss: 0.879913
+Epoch 9/100, Loss: 0.830443
+Epoch 10/100, Loss: 0.786806
 TrimapLoss is NaN
-Epoch 5/50, Loss: 0.456229
-Epoch 6/50, Loss: 0.432541
-Epoch 7/50, Loss: 0.400052
-Epoch 8/50, Loss: 0.374280
-Epoch 9/50, Loss: 0.352119
-Epoch 10/50, Loss: 0.331530
-Epoch 11/50, Loss: 0.312246
-Epoch 12/50, Loss: 0.300190
-Epoch 13/50, Loss: 0.281627
-Epoch 14/50, Loss: 0.272419
-Epoch 15/50, Loss: 0.260769
-Epoch 16/50, Loss: 0.249228
-Epoch 17/50, Loss: 0.240512
-Epoch 18/50, Loss: 0.232801
+Epoch 11/100, Loss: 0.746588
+Epoch 12/100, Loss: 0.721524
+Epoch 13/100, Loss: 0.699314
+Epoch 14/100, Loss: 0.679387
 TrimapLoss is NaN
-Epoch 19/50, Loss: 0.219036
-Epoch 20/50, Loss: 0.218440
-Epoch 21/50, Loss: 0.212241
-Epoch 22/50, Loss: 0.211602
-Epoch 23/50, Loss: 0.204181
-Epoch 24/50, Loss: 0.197808
-Epoch 25/50, Loss: 0.193039
-Epoch 26/50, Loss: 0.187832
-Epoch 27/50, Loss: 0.184760
-Epoch 28/50, Loss: 0.181493
-Epoch 29/50, Loss: 0.175338
-Epoch 30/50, Loss: 0.174450
-Epoch 31/50, Loss: 0.170747
-Epoch 32/50, Loss: 0.167700
+Epoch 15/100, Loss: 0.651596
+Epoch 16/100, Loss: 0.643320
+Epoch 17/100, Loss: 0.628015
+Epoch 18/100, Loss: 0.614659
+Epoch 19/100, Loss: 0.598893
+Epoch 20/100, Loss: 0.586370
+Epoch 21/100, Loss: 0.576370
+Epoch 22/100, Loss: 0.565867
+Epoch 23/100, Loss: 0.555865
+Epoch 24/100, Loss: 0.551581
+Epoch 25/100, Loss: 0.543496
+Epoch 26/100, Loss: 0.534819
+Epoch 27/100, Loss: 0.529195
+Epoch 28/100, Loss: 0.521419
+Epoch 29/100, Loss: 0.515698
+Epoch 30/100, Loss: 0.510963
+Epoch 31/100, Loss: 0.506074
+Epoch 32/100, Loss: 0.500740
+Epoch 33/100, Loss: 0.497142
+Epoch 34/100, Loss: 0.492518
+Epoch 35/100, Loss: 0.490756
+Epoch 36/100, Loss: 0.485601
+Epoch 37/100, Loss: 0.481823
+Epoch 38/100, Loss: 0.479422
+Epoch 39/100, Loss: 0.475423
+Epoch 40/100, Loss: 0.473163
+Epoch 41/100, Loss: 0.469237
+Epoch 42/100, Loss: 0.467492
+Epoch 43/100, Loss: 0.464002
+Epoch 44/100, Loss: 0.462850
+Epoch 45/100, Loss: 0.459736
+Epoch 46/100, Loss: 0.458358
+Epoch 47/100, Loss: 0.454115
 TrimapLoss is NaN
-Epoch 33/50, Loss: 0.161132
-Epoch 34/50, Loss: 0.159553
-Epoch 35/50, Loss: 0.155368
-Epoch 36/50, Loss: 0.158774
-Epoch 37/50, Loss: 0.162255
-Epoch 38/50, Loss: 0.156415
-Epoch 39/50, Loss: 0.153143
-Epoch 40/50, Loss: 0.148051
-Epoch 41/50, Loss: 0.146343
-Epoch 42/50, Loss: 0.145693
-Epoch 43/50, Loss: 0.144368
-Epoch 44/50, Loss: 0.141792
+Epoch 48/100, Loss: 0.458999
+Epoch 49/100, Loss: 0.456923
+Epoch 50/100, Loss: 0.453885
+Epoch 51/100, Loss: 0.450864
+Epoch 52/100, Loss: 0.447896
+Epoch 53/100, Loss: 0.446959
+Epoch 54/100, Loss: 0.446584
+Epoch 55/100, Loss: 0.441883
+Epoch 56/100, Loss: 0.441658
+Epoch 57/100, Loss: 0.442028
+Epoch 58/100, Loss: 0.440042
+Epoch 59/100, Loss: 0.442326
+Epoch 60/100, Loss: 0.437990
 TrimapLoss is NaN
-Epoch 45/50, Loss: 0.136688
-Epoch 46/50, Loss: 0.139050
-Epoch 47/50, Loss: 0.138970
-Epoch 48/50, Loss: 0.140101
-Epoch 49/50, Loss: 0.136156
-Epoch 50/50, Loss: 0.136522
+Epoch 61/100, Loss: 0.432789
+TrimapLoss is NaN
+Epoch 62/100, Loss: 0.430238
+Epoch 63/100, Loss: 0.429676
+Epoch 64/100, Loss: 0.430292
+Epoch 65/100, Loss: 0.427820
+Epoch 66/100, Loss: 0.428145
+Epoch 67/100, Loss: 0.429219
+TrimapLoss is NaN
+Epoch 68/100, Loss: 0.426317
+Epoch 69/100, Loss: 0.425466
+Epoch 70/100, Loss: 0.429723
+Epoch 71/100, Loss: 0.428369
+Epoch 72/100, Loss: 0.430085
+Epoch 73/100, Loss: 0.426194
+Epoch 74/100, Loss: 0.422805
+Epoch 75/100, Loss: 0.421300
+TrimapLoss is NaN
+Epoch 76/100, Loss: 0.417249
+Epoch 77/100, Loss: 0.418158
+Epoch 78/100, Loss: 0.417910
+Epoch 79/100, Loss: 0.417654
+Epoch 80/100, Loss: 0.414116
+Epoch 81/100, Loss: 0.119580
+Epoch 82/100, Loss: 0.119993
+Epoch 83/100, Loss: 0.118347
+Epoch 84/100, Loss: 0.119345
+Epoch 85/100, Loss: 0.119620
+Epoch 86/100, Loss: 0.117818
+Epoch 87/100, Loss: 0.117457
+Epoch 88/100, Loss: 0.116633
+Epoch 89/100, Loss: 0.115970
+Epoch 90/100, Loss: 0.115297
+Epoch 91/100, Loss: 0.114199
+Epoch 92/100, Loss: 0.116799
+Epoch 93/100, Loss: 0.118347
+Epoch 94/100, Loss: 0.120685
+Epoch 95/100, Loss: 0.117704
+TrimapLoss is NaN
+Epoch 96/100, Loss: 0.113351
+Epoch 97/100, Loss: 0.115355
+Epoch 98/100, Loss: 0.113067
+TrimapLoss is NaN
+Epoch 99/100, Loss: 0.109613
+Epoch 100/100, Loss: 0.113039
 
 Training complete!
-Epoch with lowest loss:  49
+Epoch with lowest loss:  99
 
 Model Performance Metrics:
-Accuracy: 0.874671
-Recall: 0.856325
-Jaccard Index: 0.687041
-F1 Score: 0.802611
+Accuracy: 0.898731
+Recall: 0.875905
+Jaccard Index: 0.729108
+F1 Score: 0.834135
 gt_prop, cam_loss_weight, bbox_loss_weight, sam_loss_weight
 0.1 1.0 1.0 0.0
 
 Starting training...
-Epoch 1/50, Loss: 1.410789
-Epoch 2/50, Loss: 1.293900
-Epoch 3/50, Loss: 1.185070
-Epoch 4/50, Loss: 1.093657
-Epoch 5/50, Loss: 1.014102
-Epoch 6/50, Loss: 0.945488
-Epoch 7/50, Loss: 0.883195
-Epoch 8/50, Loss: 0.829322
-Epoch 9/50, Loss: 0.778731
-Epoch 10/50, Loss: 0.736035
-Epoch 11/50, Loss: 0.696726
-Epoch 12/50, Loss: 0.664090
-Epoch 13/50, Loss: 0.633305
-Epoch 14/50, Loss: 0.603878
-Epoch 15/50, Loss: 0.582605
-Epoch 16/50, Loss: 0.558287
-Epoch 17/50, Loss: 0.538434
-Epoch 18/50, Loss: 0.519486
-Epoch 19/50, Loss: 0.505933
-Epoch 20/50, Loss: 0.490400
-Epoch 21/50, Loss: 0.476666
-Epoch 22/50, Loss: 0.462261
-Epoch 23/50, Loss: 0.452600
+Epoch 1/100, Loss: 1.414303
+Epoch 2/100, Loss: 1.288831
+Epoch 3/100, Loss: 1.180299
+Epoch 4/100, Loss: 1.078668
+Epoch 5/100, Loss: 0.984226
+Epoch 6/100, Loss: 0.896649
+Epoch 7/100, Loss: 0.818925
+Epoch 8/100, Loss: 0.750082
+Epoch 9/100, Loss: 0.697135
+Epoch 10/100, Loss: 0.658024
+Epoch 11/100, Loss: 0.617351
+Epoch 12/100, Loss: 0.588500
+Epoch 13/100, Loss: 0.562876
+Epoch 14/100, Loss: 0.537654
 TrimapLoss is NaN
-Epoch 24/50, Loss: 0.435648
-Epoch 25/50, Loss: 0.430585
-Epoch 26/50, Loss: 0.420764
-Epoch 27/50, Loss: 0.414013
-Epoch 28/50, Loss: 0.401453
-Epoch 29/50, Loss: 0.394959
-Epoch 30/50, Loss: 0.387215
-Epoch 31/50, Loss: 0.386162
-Epoch 32/50, Loss: 0.374366
-Epoch 33/50, Loss: 0.366552
-Epoch 34/50, Loss: 0.361215
-Epoch 35/50, Loss: 0.353410
-Epoch 36/50, Loss: 0.350474
-Epoch 37/50, Loss: 0.346400
-Epoch 38/50, Loss: 0.341409
-Epoch 39/50, Loss: 0.342556
-Epoch 40/50, Loss: 0.332379
-Epoch 41/50, Loss: 0.183031
-Epoch 42/50, Loss: 0.180781
+Epoch 15/100, Loss: 0.509965
+Epoch 16/100, Loss: 0.495258
 TrimapLoss is NaN
-Epoch 43/50, Loss: 0.173531
-Epoch 44/50, Loss: 0.173159
-Epoch 45/50, Loss: 0.168804
-Epoch 46/50, Loss: 0.169235
+Epoch 17/100, Loss: 0.472533
+Epoch 18/100, Loss: 0.464121
+Epoch 19/100, Loss: 0.448588
+Epoch 20/100, Loss: 0.435899
+Epoch 21/100, Loss: 0.424350
+Epoch 22/100, Loss: 0.411725
 TrimapLoss is NaN
-Epoch 47/50, Loss: 0.163478
-Epoch 48/50, Loss: 0.165254
-Epoch 49/50, Loss: 0.160914
-Epoch 50/50, Loss: 0.160754
+Epoch 23/100, Loss: 0.400128
+Epoch 24/100, Loss: 0.394182
+Epoch 25/100, Loss: 0.389763
+Epoch 26/100, Loss: 0.379212
+Epoch 27/100, Loss: 0.371700
+Epoch 28/100, Loss: 0.365090
+Epoch 29/100, Loss: 0.356663
+Epoch 30/100, Loss: 0.352112
+Epoch 31/100, Loss: 0.345033
+Epoch 32/100, Loss: 0.337560
+Epoch 33/100, Loss: 0.331602
+Epoch 34/100, Loss: 0.328936
+Epoch 35/100, Loss: 0.323459
+Epoch 36/100, Loss: 0.318961
+Epoch 37/100, Loss: 0.314454
+Epoch 38/100, Loss: 0.314545
+Epoch 39/100, Loss: 0.310552
+Epoch 40/100, Loss: 0.309477
+Epoch 41/100, Loss: 0.302136
+Epoch 42/100, Loss: 0.298261
+Epoch 43/100, Loss: 0.295116
+Epoch 44/100, Loss: 0.296777
+Epoch 45/100, Loss: 0.290472
+TrimapLoss is NaN
+Epoch 46/100, Loss: 0.282284
+Epoch 47/100, Loss: 0.282923
+Epoch 48/100, Loss: 0.280381
+Epoch 49/100, Loss: 0.279541
+Epoch 50/100, Loss: 0.276711
+Epoch 51/100, Loss: 0.274069
+Epoch 52/100, Loss: 0.273055
+Epoch 53/100, Loss: 0.270844
+Epoch 54/100, Loss: 0.267154
+Epoch 55/100, Loss: 0.263711
+Epoch 56/100, Loss: 0.264196
+Epoch 57/100, Loss: 0.262560
+Epoch 58/100, Loss: 0.262505
+Epoch 59/100, Loss: 0.260218
+Epoch 60/100, Loss: 0.259213
+Epoch 61/100, Loss: 0.258365
+Epoch 62/100, Loss: 0.255326
+Epoch 63/100, Loss: 0.252980
+Epoch 64/100, Loss: 0.251102
+Epoch 65/100, Loss: 0.251651
+Epoch 66/100, Loss: 0.248432
+Epoch 67/100, Loss: 0.249276
+Epoch 68/100, Loss: 0.246698
+TrimapLoss is NaN
+Epoch 69/100, Loss: 0.242675
+Epoch 70/100, Loss: 0.244139
+Epoch 71/100, Loss: 0.243609
+Epoch 72/100, Loss: 0.241471
+Epoch 73/100, Loss: 0.238864
+TrimapLoss is NaN
+Epoch 74/100, Loss: 0.237242
+Epoch 75/100, Loss: 0.237072
+TrimapLoss is NaN
+Epoch 76/100, Loss: 0.233762
+TrimapLoss is NaN
+Epoch 77/100, Loss: 0.231549
+Epoch 78/100, Loss: 0.233012
+Epoch 79/100, Loss: 0.237295
+Epoch 80/100, Loss: 0.236383
+Epoch 81/100, Loss: 0.126700
+TrimapLoss is NaN
+Epoch 82/100, Loss: 0.123181
+Epoch 83/100, Loss: 0.123047
+Epoch 84/100, Loss: 0.125604
+Epoch 85/100, Loss: 0.124836
+Epoch 86/100, Loss: 0.124032
+Epoch 87/100, Loss: 0.120731
+Epoch 88/100, Loss: 0.120532
+Epoch 89/100, Loss: 0.118358
+Epoch 90/100, Loss: 0.118467
+Epoch 91/100, Loss: 0.120745
+Epoch 92/100, Loss: 0.126604
+Epoch 93/100, Loss: 0.122102
+Epoch 94/100, Loss: 0.118242
+Epoch 95/100, Loss: 0.116315
+Epoch 96/100, Loss: 0.114482
+Epoch 97/100, Loss: 0.115481
+Epoch 98/100, Loss: 0.115487
+Epoch 99/100, Loss: 0.114269
+Epoch 100/100, Loss: 0.112754
 
 Training complete!
-Epoch with lowest loss:  50
+Epoch with lowest loss:  100
 
 Model Performance Metrics:
-Accuracy: 0.865138
-Recall: 0.850545
-Jaccard Index: 0.672358
-F1 Score: 0.791341
+Accuracy: 0.889120
+Recall: 0.866207
+Jaccard Index: 0.711149
+F1 Score: 0.820762
 gt_prop, cam_loss_weight, bbox_loss_weight, sam_loss_weight
 0.1 1.0 1.0 1.0
 
 Starting training...
-Epoch 1/50, Loss: 1.418773
-Epoch 2/50, Loss: 1.295970
-Epoch 3/50, Loss: 1.191229
-Epoch 4/50, Loss: 1.089281
-Epoch 5/50, Loss: 1.002710
-Epoch 6/50, Loss: 0.935387
-Epoch 7/50, Loss: 0.876017
-Epoch 8/50, Loss: 0.822441
-Epoch 9/50, Loss: 0.772396
-Epoch 10/50, Loss: 0.722445
-Epoch 11/50, Loss: 0.677309
-Epoch 12/50, Loss: 0.642389
-Epoch 13/50, Loss: 0.604906
-Epoch 14/50, Loss: 0.570303
-Epoch 15/50, Loss: 0.547329
-Epoch 16/50, Loss: 0.522766
+Epoch 1/100, Loss: 2.142876
+Epoch 2/100, Loss: 2.027742
+Epoch 3/100, Loss: 1.907236
+Epoch 4/100, Loss: 1.777858
+Epoch 5/100, Loss: 1.665777
+Epoch 6/100, Loss: 1.571320
+Epoch 7/100, Loss: 1.490032
+Epoch 8/100, Loss: 1.416225
+Epoch 9/100, Loss: 1.349951
+Epoch 10/100, Loss: 1.288194
+Epoch 11/100, Loss: 1.233864
+Epoch 12/100, Loss: 1.187814
+Epoch 13/100, Loss: 1.142899
+Epoch 14/100, Loss: 1.103718
+Epoch 15/100, Loss: 1.066975
+Epoch 16/100, Loss: 1.035431
+Epoch 17/100, Loss: 1.008506
+Epoch 18/100, Loss: 0.983190
+Epoch 19/100, Loss: 0.962616
+Epoch 20/100, Loss: 0.937215
+Epoch 21/100, Loss: 0.919120
+Epoch 22/100, Loss: 0.900620
+Epoch 23/100, Loss: 0.882323
+Epoch 24/100, Loss: 0.868630
+Epoch 25/100, Loss: 0.853872
+Epoch 26/100, Loss: 0.837609
 TrimapLoss is NaN
-Epoch 17/50, Loss: 0.497968
-Epoch 18/50, Loss: 0.485927
-Epoch 19/50, Loss: 0.470390
-Epoch 20/50, Loss: 0.454118
-Epoch 21/50, Loss: 0.441943
+Epoch 27/100, Loss: 0.821735
+Epoch 28/100, Loss: 0.814847
+Epoch 29/100, Loss: 0.806908
+Epoch 30/100, Loss: 0.793568
+Epoch 31/100, Loss: 0.784047
+Epoch 32/100, Loss: 0.776196
+Epoch 33/100, Loss: 0.768368
+Epoch 34/100, Loss: 0.757835
 TrimapLoss is NaN
-Epoch 22/50, Loss: 0.426763
-Epoch 23/50, Loss: 0.419610
-Epoch 24/50, Loss: 0.408920
-Epoch 25/50, Loss: 0.399827
-Epoch 26/50, Loss: 0.392152
-Epoch 27/50, Loss: 0.384387
-Epoch 28/50, Loss: 0.376197
-Epoch 29/50, Loss: 0.367965
-Epoch 30/50, Loss: 0.363353
-Epoch 31/50, Loss: 0.356456
-Epoch 32/50, Loss: 0.350576
+Epoch 35/100, Loss: 0.744727
+Epoch 36/100, Loss: 0.745000
+Epoch 37/100, Loss: 0.738000
+Epoch 38/100, Loss: 0.733842
+Epoch 39/100, Loss: 0.721876
 TrimapLoss is NaN
-Epoch 33/50, Loss: 0.342160
-Epoch 34/50, Loss: 0.340762
-Epoch 35/50, Loss: 0.334639
+Epoch 40/100, Loss: 0.713249
+Epoch 41/100, Loss: 0.710664
+Epoch 42/100, Loss: 0.705250
+Epoch 43/100, Loss: 0.697831
+Epoch 44/100, Loss: 0.699154
+Epoch 45/100, Loss: 0.711533
 TrimapLoss is NaN
-Epoch 36/50, Loss: 0.327507
-Epoch 37/50, Loss: 0.327412
-Epoch 38/50, Loss: 0.319334
-Epoch 39/50, Loss: 0.319105
-Epoch 40/50, Loss: 0.315947
-Epoch 41/50, Loss: 0.147059
-Epoch 42/50, Loss: 0.146680
-Epoch 43/50, Loss: 0.152270
-Epoch 44/50, Loss: 0.144847
-Epoch 45/50, Loss: 0.139188
-Epoch 46/50, Loss: 0.136890
-Epoch 47/50, Loss: 0.137600
-Epoch 48/50, Loss: 0.135144
-Epoch 49/50, Loss: 0.133202
-Epoch 50/50, Loss: 0.131671
+Epoch 46/100, Loss: 0.690294
+Epoch 47/100, Loss: 0.686587
+Epoch 48/100, Loss: 0.682611
+Epoch 49/100, Loss: 0.676219
+Epoch 50/100, Loss: 0.668097
+Epoch 51/100, Loss: 0.667455
+Epoch 52/100, Loss: 0.662673
+Epoch 53/100, Loss: 0.661711
+Epoch 54/100, Loss: 0.651859
+Epoch 55/100, Loss: 0.649353
+Epoch 56/100, Loss: 0.645497
+Epoch 57/100, Loss: 0.645965
+Epoch 58/100, Loss: 0.640690
+Epoch 59/100, Loss: 0.635361
+Epoch 60/100, Loss: 0.638059
+Epoch 61/100, Loss: 0.635609
+Epoch 62/100, Loss: 0.630942
+TrimapLoss is NaN
+Epoch 63/100, Loss: 0.621306
+Epoch 64/100, Loss: 0.622606
+Epoch 65/100, Loss: 0.619889
+Epoch 66/100, Loss: 0.614990
+TrimapLoss is NaN
+Epoch 67/100, Loss: 0.611902
+Epoch 68/100, Loss: 0.617649
+TrimapLoss is NaN
+Epoch 69/100, Loss: 0.610125
+Epoch 70/100, Loss: 0.608115
+TrimapLoss is NaN
+Epoch 71/100, Loss: 0.601769
+Epoch 72/100, Loss: 0.605041
+Epoch 73/100, Loss: 0.601848
+Epoch 74/100, Loss: 0.599034
+TrimapLoss is NaN
+Epoch 75/100, Loss: 0.599210
+Epoch 76/100, Loss: 0.600709
+Epoch 77/100, Loss: 0.593101
+Epoch 78/100, Loss: 0.593006
+Epoch 79/100, Loss: 0.589095
+TrimapLoss is NaN
+Epoch 80/100, Loss: 0.584052
+Epoch 81/100, Loss: 0.177083
+Epoch 82/100, Loss: 0.175481
+Epoch 83/100, Loss: 0.171099
+Epoch 84/100, Loss: 0.168989
+Epoch 85/100, Loss: 0.166184
+Epoch 86/100, Loss: 0.163531
+Epoch 87/100, Loss: 0.163108
+Epoch 88/100, Loss: 0.158716
+Epoch 89/100, Loss: 0.155896
+Epoch 90/100, Loss: 0.154783
+Epoch 91/100, Loss: 0.152034
+Epoch 92/100, Loss: 0.148060
+Epoch 93/100, Loss: 0.146267
+Epoch 94/100, Loss: 0.145673
+Epoch 95/100, Loss: 0.144265
+Epoch 96/100, Loss: 0.143939
+Epoch 97/100, Loss: 0.147025
+Epoch 98/100, Loss: 0.142969
+Epoch 99/100, Loss: 0.138324
+TrimapLoss is NaN
+Epoch 100/100, Loss: 0.131963
 
 Training complete!
-Epoch with lowest loss:  50
+Epoch with lowest loss:  100
 
 Model Performance Metrics:
-Accuracy: 0.904036
-Recall: 0.865972
-Jaccard Index: 0.734267
-F1 Score: 0.837466
+Accuracy: 0.872552
+Recall: 0.850961
+Jaccard Index: 0.682328
+F1 Score: 0.798813
 gt_prop, cam_loss_weight, bbox_loss_weight, sam_loss_weight
 1.0 0.0 0.0 0.0
 
 Starting training...
-Epoch 1/50, Loss: 0.680227
-Epoch 2/50, Loss: 0.621885
-Epoch 3/50, Loss: 0.572405
-Epoch 4/50, Loss: 0.532277
-Epoch 5/50, Loss: 0.497610
-Epoch 6/50, Loss: 0.465157
-Epoch 7/50, Loss: 0.434740
-Epoch 8/50, Loss: 0.409152
-Epoch 9/50, Loss: 0.389267
-Epoch 10/50, Loss: 0.372960
-Epoch 11/50, Loss: 0.358823
-Epoch 12/50, Loss: 0.347185
-Epoch 13/50, Loss: 0.335582
-Epoch 14/50, Loss: 0.325061
-Epoch 15/50, Loss: 0.314715
-Epoch 16/50, Loss: 0.304779
-Epoch 17/50, Loss: 0.295864
-Epoch 18/50, Loss: 0.286679
-Epoch 19/50, Loss: 0.279191
-Epoch 20/50, Loss: 0.271767
-Epoch 21/50, Loss: 0.264628
-Epoch 22/50, Loss: 0.258571
-Epoch 23/50, Loss: 0.251908
-Epoch 24/50, Loss: 0.245352
-Epoch 25/50, Loss: 0.240234
-Epoch 26/50, Loss: 0.234503
-Epoch 27/50, Loss: 0.229782
-Epoch 28/50, Loss: 0.225998
-Epoch 29/50, Loss: 0.221813
-Epoch 30/50, Loss: 0.218142
-Epoch 31/50, Loss: 0.214539
-Epoch 32/50, Loss: 0.211473
-Epoch 33/50, Loss: 0.208736
-Epoch 34/50, Loss: 0.206308
-Epoch 35/50, Loss: 0.202927
-Epoch 36/50, Loss: 0.199736
-Epoch 37/50, Loss: 0.198639
-Epoch 38/50, Loss: 0.195534
-Epoch 39/50, Loss: 0.192989
-Epoch 40/50, Loss: 0.191442
-Epoch 41/50, Loss: 0.189961
-Epoch 42/50, Loss: 0.186771
-Epoch 43/50, Loss: 0.185053
-Epoch 44/50, Loss: 0.182568
-Epoch 45/50, Loss: 0.180834
-Epoch 46/50, Loss: 0.179433
-Epoch 47/50, Loss: 0.177369
-Epoch 48/50, Loss: 0.176124
-Epoch 49/50, Loss: 0.175240
-Epoch 50/50, Loss: 0.173717
+Epoch 1/100, Loss: 0.697567
+Epoch 2/100, Loss: 0.612828
+Epoch 3/100, Loss: 0.531983
+Epoch 4/100, Loss: 0.463424
+Epoch 5/100, Loss: 0.407634
+Epoch 6/100, Loss: 0.364908
+Epoch 7/100, Loss: 0.332213
+Epoch 8/100, Loss: 0.305693
+Epoch 9/100, Loss: 0.285166
+Epoch 10/100, Loss: 0.266953
+Epoch 11/100, Loss: 0.253042
+Epoch 12/100, Loss: 0.243556
+Epoch 13/100, Loss: 0.233939
+Epoch 14/100, Loss: 0.225862
+Epoch 15/100, Loss: 0.219083
+Epoch 16/100, Loss: 0.214760
+Epoch 17/100, Loss: 0.207757
+Epoch 18/100, Loss: 0.203158
+Epoch 19/100, Loss: 0.198396
+Epoch 20/100, Loss: 0.194993
+Epoch 21/100, Loss: 0.190216
+Epoch 22/100, Loss: 0.187501
+Epoch 23/100, Loss: 0.184043
+Epoch 24/100, Loss: 0.180970
+Epoch 25/100, Loss: 0.178736
+Epoch 26/100, Loss: 0.176231
+Epoch 27/100, Loss: 0.173120
+Epoch 28/100, Loss: 0.172623
+Epoch 29/100, Loss: 0.170589
+Epoch 30/100, Loss: 0.167958
+Epoch 31/100, Loss: 0.166540
+Epoch 32/100, Loss: 0.164483
+Epoch 33/100, Loss: 0.162900
+Epoch 34/100, Loss: 0.162461
+Epoch 35/100, Loss: 0.160322
+Epoch 36/100, Loss: 0.158369
+Epoch 37/100, Loss: 0.157825
+Epoch 38/100, Loss: 0.156501
+Epoch 39/100, Loss: 0.155550
+Epoch 40/100, Loss: 0.156189
+Epoch 41/100, Loss: 0.153535
+Epoch 42/100, Loss: 0.153291
+Epoch 43/100, Loss: 0.152497
+Epoch 44/100, Loss: 0.150598
+Epoch 45/100, Loss: 0.150130
+Epoch 46/100, Loss: 0.148428
+Epoch 47/100, Loss: 0.149055
+Epoch 48/100, Loss: 0.147824
+Epoch 49/100, Loss: 0.148029
+Epoch 50/100, Loss: 0.146817
+Epoch 51/100, Loss: 0.146547
+Epoch 52/100, Loss: 0.145167
+Epoch 53/100, Loss: 0.145308
+Epoch 54/100, Loss: 0.144085
+Epoch 55/100, Loss: 0.143762
+Epoch 56/100, Loss: 0.143068
+Epoch 57/100, Loss: 0.142481
+Epoch 58/100, Loss: 0.142437
+Epoch 59/100, Loss: 0.142415
+Epoch 60/100, Loss: 0.142346
+Epoch 61/100, Loss: 0.143171
+Epoch 62/100, Loss: 0.141376
+Epoch 63/100, Loss: 0.140437
+Epoch 64/100, Loss: 0.140677
+Epoch 65/100, Loss: 0.139793
+Epoch 66/100, Loss: 0.139391
+Epoch 67/100, Loss: 0.139251
+Epoch 68/100, Loss: 0.139939
+Epoch 69/100, Loss: 0.138879
+Epoch 70/100, Loss: 0.137076
+Epoch 71/100, Loss: 0.138317
+Epoch 72/100, Loss: 0.137134
+Epoch 73/100, Loss: 0.136648
+Epoch 74/100, Loss: 0.136935
+Epoch 75/100, Loss: 0.136642
+Epoch 76/100, Loss: 0.136501
+Epoch 77/100, Loss: 0.136740
+Epoch 78/100, Loss: 0.135739
+Epoch 79/100, Loss: 0.136279
+Epoch 80/100, Loss: 0.137066
+Epoch 81/100, Loss: 0.135915
+Epoch 82/100, Loss: 0.136479
+Epoch 83/100, Loss: 0.134627
+Epoch 84/100, Loss: 0.134306
+Epoch 85/100, Loss: 0.133516
+Epoch 86/100, Loss: 0.135058
+Epoch 87/100, Loss: 0.133827
+Epoch 88/100, Loss: 0.132879
+Epoch 89/100, Loss: 0.132108
+Epoch 90/100, Loss: 0.132723
+Epoch 91/100, Loss: 0.132482
+Epoch 92/100, Loss: 0.131822
+Epoch 93/100, Loss: 0.132706
+Epoch 94/100, Loss: 0.133492
+Epoch 95/100, Loss: 0.133013
+Epoch 96/100, Loss: 0.132861
+Epoch 97/100, Loss: 0.131336
+Epoch 98/100, Loss: 0.131547
+Epoch 99/100, Loss: 0.131867
+Epoch 100/100, Loss: 0.132183
 
 Training complete!
-Epoch with lowest loss:  50
+Epoch with lowest loss:  97
 
 Model Performance Metrics:
-Accuracy: 0.932942
-Recall: 0.895978
-Jaccard Index: 0.796987
-F1 Score: 0.881586
+Accuracy: 0.932713
+Recall: 0.892981
+Jaccard Index: 0.795592
+F1 Score: 0.880598
 gt_prop, cam_loss_weight, bbox_loss_weight, sam_loss_weight
 1.0 0.0 0.0 1.0
 
 Starting training...
-Epoch 1/50, Loss: 0.689438
-Epoch 2/50, Loss: 0.604057
-Epoch 3/50, Loss: 0.541268
-Epoch 4/50, Loss: 0.489160
-Epoch 5/50, Loss: 0.446862
-Epoch 6/50, Loss: 0.413489
-Epoch 7/50, Loss: 0.385872
-Epoch 8/50, Loss: 0.362265
-Epoch 9/50, Loss: 0.343306
-Epoch 10/50, Loss: 0.326263
-Epoch 11/50, Loss: 0.312056
-Epoch 12/50, Loss: 0.298563
-Epoch 13/50, Loss: 0.286526
-Epoch 14/50, Loss: 0.277728
-Epoch 15/50, Loss: 0.267583
-Epoch 16/50, Loss: 0.260795
-Epoch 17/50, Loss: 0.251985
-Epoch 18/50, Loss: 0.245573
-Epoch 19/50, Loss: 0.238954
-Epoch 20/50, Loss: 0.234534
-Epoch 21/50, Loss: 0.228883
-Epoch 22/50, Loss: 0.222820
-Epoch 23/50, Loss: 0.218523
-Epoch 24/50, Loss: 0.214997
-Epoch 25/50, Loss: 0.211255
-Epoch 26/50, Loss: 0.208309
-Epoch 27/50, Loss: 0.204086
-Epoch 28/50, Loss: 0.200474
-Epoch 29/50, Loss: 0.198400
-Epoch 30/50, Loss: 0.194902
-Epoch 31/50, Loss: 0.192465
-Epoch 32/50, Loss: 0.189937
-Epoch 33/50, Loss: 0.187001
-Epoch 34/50, Loss: 0.184385
-Epoch 35/50, Loss: 0.182773
-Epoch 36/50, Loss: 0.181350
-Epoch 37/50, Loss: 0.181969
-Epoch 38/50, Loss: 0.178171
-Epoch 39/50, Loss: 0.175568
-Epoch 40/50, Loss: 0.174314
-Epoch 41/50, Loss: 0.171928
-Epoch 42/50, Loss: 0.170407
-Epoch 43/50, Loss: 0.170003
-Epoch 44/50, Loss: 0.167810
-Epoch 45/50, Loss: 0.166161
-Epoch 46/50, Loss: 0.165075
-Epoch 47/50, Loss: 0.163291
-Epoch 48/50, Loss: 0.161976
-Epoch 49/50, Loss: 0.161072
-Epoch 50/50, Loss: 0.160171
+Epoch 1/100, Loss: 1.398203
+Epoch 2/100, Loss: 1.311777
+Epoch 3/100, Loss: 1.238948
+Epoch 4/100, Loss: 1.172780
+Epoch 5/100, Loss: 1.111909
+Epoch 6/100, Loss: 1.059793
+Epoch 7/100, Loss: 1.014400
+Epoch 8/100, Loss: 0.972995
+Epoch 9/100, Loss: 0.939036
+Epoch 10/100, Loss: 0.908885
+Epoch 11/100, Loss: 0.881427
+Epoch 12/100, Loss: 0.857298
+Epoch 13/100, Loss: 0.836318
+Epoch 14/100, Loss: 0.817542
+Epoch 15/100, Loss: 0.798786
+Epoch 16/100, Loss: 0.781736
+Epoch 17/100, Loss: 0.767461
+Epoch 18/100, Loss: 0.753126
+Epoch 19/100, Loss: 0.740057
+Epoch 20/100, Loss: 0.726964
+Epoch 21/100, Loss: 0.716530
+Epoch 22/100, Loss: 0.703796
+Epoch 23/100, Loss: 0.693834
+Epoch 24/100, Loss: 0.684476
+Epoch 25/100, Loss: 0.672707
+Epoch 26/100, Loss: 0.663685
+Epoch 27/100, Loss: 0.654892
+Epoch 28/100, Loss: 0.645596
+Epoch 29/100, Loss: 0.635694
+Epoch 30/100, Loss: 0.627708
+Epoch 31/100, Loss: 0.618270
+Epoch 32/100, Loss: 0.611543
+Epoch 33/100, Loss: 0.604879
+Epoch 34/100, Loss: 0.594975
+Epoch 35/100, Loss: 0.587960
+Epoch 36/100, Loss: 0.577373
+Epoch 37/100, Loss: 0.568540
+Epoch 38/100, Loss: 0.563710
+Epoch 39/100, Loss: 0.557670
+Epoch 40/100, Loss: 0.552288
+Epoch 41/100, Loss: 0.547425
+Epoch 42/100, Loss: 0.541465
+Epoch 43/100, Loss: 0.536900
+Epoch 44/100, Loss: 0.534178
+Epoch 45/100, Loss: 0.528526
+Epoch 46/100, Loss: 0.525026
+Epoch 47/100, Loss: 0.522436
+Epoch 48/100, Loss: 0.518962
+Epoch 49/100, Loss: 0.514982
+Epoch 50/100, Loss: 0.512309
+Epoch 51/100, Loss: 0.509701
+Epoch 52/100, Loss: 0.505477
+Epoch 53/100, Loss: 0.501898
+Epoch 54/100, Loss: 0.498666
+Epoch 55/100, Loss: 0.497206
+Epoch 56/100, Loss: 0.494377
+Epoch 57/100, Loss: 0.491905
+Epoch 58/100, Loss: 0.489559
+Epoch 59/100, Loss: 0.488033
+Epoch 60/100, Loss: 0.484629
+Epoch 61/100, Loss: 0.484104
+Epoch 62/100, Loss: 0.482815
+Epoch 63/100, Loss: 0.479909
+Epoch 64/100, Loss: 0.478929
+Epoch 65/100, Loss: 0.478165
+Epoch 66/100, Loss: 0.474950
+Epoch 67/100, Loss: 0.472701
+Epoch 68/100, Loss: 0.471158
+Epoch 69/100, Loss: 0.470648
+Epoch 70/100, Loss: 0.468193
+Epoch 71/100, Loss: 0.466057
+Epoch 72/100, Loss: 0.464372
+Epoch 73/100, Loss: 0.463313
+Epoch 74/100, Loss: 0.463142
+Epoch 75/100, Loss: 0.458977
+Epoch 76/100, Loss: 0.457982
+Epoch 77/100, Loss: 0.457402
+Epoch 78/100, Loss: 0.458421
+Epoch 79/100, Loss: 0.458003
+Epoch 80/100, Loss: 0.454344
+Epoch 81/100, Loss: 0.149230
+Epoch 82/100, Loss: 0.147187
+Epoch 83/100, Loss: 0.146481
+Epoch 84/100, Loss: 0.145455
+Epoch 85/100, Loss: 0.146317
+Epoch 86/100, Loss: 0.145057
+Epoch 87/100, Loss: 0.144919
+Epoch 88/100, Loss: 0.143756
+Epoch 89/100, Loss: 0.142904
+Epoch 90/100, Loss: 0.142320
+Epoch 91/100, Loss: 0.142098
+Epoch 92/100, Loss: 0.142358
+Epoch 93/100, Loss: 0.143385
+Epoch 94/100, Loss: 0.141876
+Epoch 95/100, Loss: 0.141265
+Epoch 96/100, Loss: 0.141991
+Epoch 97/100, Loss: 0.141023
+Epoch 98/100, Loss: 0.140820
+Epoch 99/100, Loss: 0.140883
+Epoch 100/100, Loss: 0.139791
 
 Training complete!
-Epoch with lowest loss:  50
+Epoch with lowest loss:  100
 
 Model Performance Metrics:
-Accuracy: 0.934143
-Recall: 0.894027
-Jaccard Index: 0.798848
-F1 Score: 0.882787
+Accuracy: 0.934636
+Recall: 0.897057
+Jaccard Index: 0.800792
+F1 Score: 0.884129
 gt_prop, cam_loss_weight, bbox_loss_weight, sam_loss_weight
 1.0 0.0 1.0 0.0
 
 Starting training...
-Epoch 1/50, Loss: 1.350376
-Epoch 2/50, Loss: 1.188021
-Epoch 3/50, Loss: 1.083090
-Epoch 4/50, Loss: 0.999362
-Epoch 5/50, Loss: 0.922945
-Epoch 6/50, Loss: 0.852576
-Epoch 7/50, Loss: 0.788793
-Epoch 8/50, Loss: 0.732636
-Epoch 9/50, Loss: 0.686072
-Epoch 10/50, Loss: 0.645632
-Epoch 11/50, Loss: 0.611294
-Epoch 12/50, Loss: 0.582493
-Epoch 13/50, Loss: 0.556737
-Epoch 14/50, Loss: 0.534274
-Epoch 15/50, Loss: 0.515139
-Epoch 16/50, Loss: 0.497469
-Epoch 17/50, Loss: 0.481216
-Epoch 18/50, Loss: 0.467306
-Epoch 19/50, Loss: 0.454254
-Epoch 20/50, Loss: 0.440067
-Epoch 21/50, Loss: 0.429306
-Epoch 22/50, Loss: 0.419825
-Epoch 23/50, Loss: 0.408180
-Epoch 24/50, Loss: 0.400567
-Epoch 25/50, Loss: 0.391653
-Epoch 26/50, Loss: 0.383350
-Epoch 27/50, Loss: 0.376274
-Epoch 28/50, Loss: 0.368690
-Epoch 29/50, Loss: 0.361379
-Epoch 30/50, Loss: 0.356261
-Epoch 31/50, Loss: 0.350669
-Epoch 32/50, Loss: 0.345090
-Epoch 33/50, Loss: 0.339394
-Epoch 34/50, Loss: 0.335080
-Epoch 35/50, Loss: 0.331259
-Epoch 36/50, Loss: 0.326496
-Epoch 37/50, Loss: 0.320594
-Epoch 38/50, Loss: 0.320483
-Epoch 39/50, Loss: 0.313263
-Epoch 40/50, Loss: 0.310106
-Epoch 41/50, Loss: 0.187973
-Epoch 42/50, Loss: 0.182851
-Epoch 43/50, Loss: 0.179985
-Epoch 44/50, Loss: 0.178180
-Epoch 45/50, Loss: 0.176343
-Epoch 46/50, Loss: 0.173788
-Epoch 47/50, Loss: 0.172130
-Epoch 48/50, Loss: 0.170605
-Epoch 49/50, Loss: 0.170081
-Epoch 50/50, Loss: 0.168134
+Epoch 1/100, Loss: 1.338469
+Epoch 2/100, Loss: 1.236460
+Epoch 3/100, Loss: 1.151207
+Epoch 4/100, Loss: 1.072380
+Epoch 5/100, Loss: 1.002847
+Epoch 6/100, Loss: 0.940890
+Epoch 7/100, Loss: 0.881837
+Epoch 8/100, Loss: 0.825909
+Epoch 9/100, Loss: 0.777567
+Epoch 10/100, Loss: 0.738589
+Epoch 11/100, Loss: 0.703395
+Epoch 12/100, Loss: 0.673567
+Epoch 13/100, Loss: 0.643290
+Epoch 14/100, Loss: 0.614157
+Epoch 15/100, Loss: 0.584533
+Epoch 16/100, Loss: 0.559103
+Epoch 17/100, Loss: 0.536383
+Epoch 18/100, Loss: 0.517682
+Epoch 19/100, Loss: 0.497905
+Epoch 20/100, Loss: 0.482460
+Epoch 21/100, Loss: 0.468292
+Epoch 22/100, Loss: 0.451656
+Epoch 23/100, Loss: 0.439497
+Epoch 24/100, Loss: 0.426173
+Epoch 25/100, Loss: 0.415463
+Epoch 26/100, Loss: 0.406656
+Epoch 27/100, Loss: 0.396001
+Epoch 28/100, Loss: 0.388870
+Epoch 29/100, Loss: 0.381663
+Epoch 30/100, Loss: 0.374152
+Epoch 31/100, Loss: 0.366356
+Epoch 32/100, Loss: 0.359610
+Epoch 33/100, Loss: 0.354686
+Epoch 34/100, Loss: 0.348083
+Epoch 35/100, Loss: 0.343400
+Epoch 36/100, Loss: 0.339583
+Epoch 37/100, Loss: 0.333823
+Epoch 38/100, Loss: 0.329030
+Epoch 39/100, Loss: 0.325463
+Epoch 40/100, Loss: 0.321120
+Epoch 41/100, Loss: 0.318446
+Epoch 42/100, Loss: 0.315653
+Epoch 43/100, Loss: 0.311563
+Epoch 44/100, Loss: 0.308059
+Epoch 45/100, Loss: 0.303896
+Epoch 46/100, Loss: 0.301004
+Epoch 47/100, Loss: 0.295425
+Epoch 48/100, Loss: 0.295167
+Epoch 49/100, Loss: 0.291758
+Epoch 50/100, Loss: 0.288151
+Epoch 51/100, Loss: 0.285301
+Epoch 52/100, Loss: 0.285746
+Epoch 53/100, Loss: 0.283851
+Epoch 54/100, Loss: 0.282093
+Epoch 55/100, Loss: 0.277677
+Epoch 56/100, Loss: 0.278120
+Epoch 57/100, Loss: 0.276491
+Epoch 58/100, Loss: 0.273450
+Epoch 59/100, Loss: 0.269741
+Epoch 60/100, Loss: 0.269898
+Epoch 61/100, Loss: 0.266875
+Epoch 62/100, Loss: 0.265072
+Epoch 63/100, Loss: 0.264992
+Epoch 64/100, Loss: 0.262891
+Epoch 65/100, Loss: 0.266478
+Epoch 66/100, Loss: 0.262886
+Epoch 67/100, Loss: 0.257698
+Epoch 68/100, Loss: 0.256692
+Epoch 69/100, Loss: 0.259590
+Epoch 70/100, Loss: 0.256836
+Epoch 71/100, Loss: 0.253773
+Epoch 72/100, Loss: 0.251868
+Epoch 73/100, Loss: 0.252030
+Epoch 74/100, Loss: 0.249713
+Epoch 75/100, Loss: 0.248014
+Epoch 76/100, Loss: 0.248621
+Epoch 77/100, Loss: 0.245270
+Epoch 78/100, Loss: 0.246757
+Epoch 79/100, Loss: 0.246123
+Epoch 80/100, Loss: 0.244000
+Epoch 81/100, Loss: 0.165182
+Epoch 82/100, Loss: 0.163591
+Epoch 83/100, Loss: 0.161675
+Epoch 84/100, Loss: 0.160551
+Epoch 85/100, Loss: 0.158740
+Epoch 86/100, Loss: 0.158148
+Epoch 87/100, Loss: 0.157871
+Epoch 88/100, Loss: 0.157383
+Epoch 89/100, Loss: 0.155545
+Epoch 90/100, Loss: 0.157038
+Epoch 91/100, Loss: 0.154930
+Epoch 92/100, Loss: 0.153908
+Epoch 93/100, Loss: 0.152755
+Epoch 94/100, Loss: 0.152137
+Epoch 95/100, Loss: 0.152324
+Epoch 96/100, Loss: 0.151322
+Epoch 97/100, Loss: 0.150622
+Epoch 98/100, Loss: 0.150765
+Epoch 99/100, Loss: 0.148889
+Epoch 100/100, Loss: 0.148976
 
 Training complete!
-Epoch with lowest loss:  50
+Epoch with lowest loss:  99
 
 Model Performance Metrics:
-Accuracy: 0.928348
-Recall: 0.880690
-Jaccard Index: 0.782899
-F1 Score: 0.871804
+Accuracy: 0.932397
+Recall: 0.892735
+Jaccard Index: 0.794869
+F1 Score: 0.880105
 gt_prop, cam_loss_weight, bbox_loss_weight, sam_loss_weight
 1.0 0.0 1.0 1.0
 
 Starting training...
-Epoch 1/50, Loss: 1.447225
-Epoch 2/50, Loss: 1.331195
-Epoch 3/50, Loss: 1.202968
-Epoch 4/50, Loss: 1.083573
-Epoch 5/50, Loss: 0.991106
-Epoch 6/50, Loss: 0.913956
-Epoch 7/50, Loss: 0.846748
-Epoch 8/50, Loss: 0.789449
-Epoch 9/50, Loss: 0.738515
-Epoch 10/50, Loss: 0.694206
-Epoch 11/50, Loss: 0.655517
-Epoch 12/50, Loss: 0.618756
-Epoch 13/50, Loss: 0.584569
-Epoch 14/50, Loss: 0.552255
-Epoch 15/50, Loss: 0.528914
-Epoch 16/50, Loss: 0.508295
-Epoch 17/50, Loss: 0.491381
-Epoch 18/50, Loss: 0.473990
-Epoch 19/50, Loss: 0.457632
-Epoch 20/50, Loss: 0.445605
-Epoch 21/50, Loss: 0.434580
-Epoch 22/50, Loss: 0.423969
-Epoch 23/50, Loss: 0.414927
-Epoch 24/50, Loss: 0.402981
-Epoch 25/50, Loss: 0.392331
-Epoch 26/50, Loss: 0.386591
-Epoch 27/50, Loss: 0.379136
-Epoch 28/50, Loss: 0.370496
-Epoch 29/50, Loss: 0.363336
-Epoch 30/50, Loss: 0.357528
-Epoch 31/50, Loss: 0.351135
-Epoch 32/50, Loss: 0.346657
-Epoch 33/50, Loss: 0.339770
-Epoch 34/50, Loss: 0.335813
-Epoch 35/50, Loss: 0.332998
-Epoch 36/50, Loss: 0.330844
-Epoch 37/50, Loss: 0.322748
-Epoch 38/50, Loss: 0.319181
-Epoch 39/50, Loss: 0.316179
-Epoch 40/50, Loss: 0.312785
-Epoch 41/50, Loss: 0.188189
-Epoch 42/50, Loss: 0.183977
-Epoch 43/50, Loss: 0.180987
-Epoch 44/50, Loss: 0.179050
-Epoch 45/50, Loss: 0.176957
-Epoch 46/50, Loss: 0.174728
-Epoch 47/50, Loss: 0.173446
-Epoch 48/50, Loss: 0.173411
-Epoch 49/50, Loss: 0.170344
-Epoch 50/50, Loss: 0.169432
+Epoch 1/100, Loss: 2.026688
+Epoch 2/100, Loss: 1.859849
+Epoch 3/100, Loss: 1.744134
+Epoch 4/100, Loss: 1.645617
+Epoch 5/100, Loss: 1.558373
+Epoch 6/100, Loss: 1.478771
+Epoch 7/100, Loss: 1.402215
+Epoch 8/100, Loss: 1.330817
+Epoch 9/100, Loss: 1.263084
+Epoch 10/100, Loss: 1.201477
+Epoch 11/100, Loss: 1.150515
+Epoch 12/100, Loss: 1.106406
+Epoch 13/100, Loss: 1.065650
+Epoch 14/100, Loss: 1.028759
+Epoch 15/100, Loss: 0.997838
+Epoch 16/100, Loss: 0.967663
+Epoch 17/100, Loss: 0.939292
+Epoch 18/100, Loss: 0.914781
+Epoch 19/100, Loss: 0.894596
+Epoch 20/100, Loss: 0.873277
+Epoch 21/100, Loss: 0.855673
+Epoch 22/100, Loss: 0.837288
+Epoch 23/100, Loss: 0.825107
+Epoch 24/100, Loss: 0.804960
+Epoch 25/100, Loss: 0.793865
+Epoch 26/100, Loss: 0.782058
+Epoch 27/100, Loss: 0.768500
+Epoch 28/100, Loss: 0.756718
+Epoch 29/100, Loss: 0.746345
+Epoch 30/100, Loss: 0.736801
+Epoch 31/100, Loss: 0.726028
+Epoch 32/100, Loss: 0.717109
+Epoch 33/100, Loss: 0.709308
+Epoch 34/100, Loss: 0.702879
+Epoch 35/100, Loss: 0.697135
+Epoch 36/100, Loss: 0.687765
+Epoch 37/100, Loss: 0.683090
+Epoch 38/100, Loss: 0.675846
+Epoch 39/100, Loss: 0.668852
+Epoch 40/100, Loss: 0.660910
+Epoch 41/100, Loss: 0.658381
+Epoch 42/100, Loss: 0.650655
+Epoch 43/100, Loss: 0.645046
+Epoch 44/100, Loss: 0.641016
+Epoch 45/100, Loss: 0.636817
+Epoch 46/100, Loss: 0.632351
+Epoch 47/100, Loss: 0.628153
+Epoch 48/100, Loss: 0.622858
+Epoch 49/100, Loss: 0.620727
+Epoch 50/100, Loss: 0.615345
+Epoch 51/100, Loss: 0.614175
+Epoch 52/100, Loss: 0.609042
+Epoch 53/100, Loss: 0.609922
+Epoch 54/100, Loss: 0.607719
+Epoch 55/100, Loss: 0.599296
+Epoch 56/100, Loss: 0.598498
+Epoch 57/100, Loss: 0.596677
+Epoch 58/100, Loss: 0.593754
+Epoch 59/100, Loss: 0.591229
+Epoch 60/100, Loss: 0.587226
+Epoch 61/100, Loss: 0.584661
+Epoch 62/100, Loss: 0.581747
+Epoch 63/100, Loss: 0.582477
+Epoch 64/100, Loss: 0.581630
+Epoch 65/100, Loss: 0.579804
+Epoch 66/100, Loss: 0.579693
+Epoch 67/100, Loss: 0.575357
+Epoch 68/100, Loss: 0.572036
+Epoch 69/100, Loss: 0.572621
+Epoch 70/100, Loss: 0.568293
+Epoch 71/100, Loss: 0.567565
+Epoch 72/100, Loss: 0.563973
+Epoch 73/100, Loss: 0.567859
+Epoch 74/100, Loss: 0.563609
+Epoch 75/100, Loss: 0.562778
+Epoch 76/100, Loss: 0.559969
+Epoch 77/100, Loss: 0.559929
+Epoch 78/100, Loss: 0.556840
+Epoch 79/100, Loss: 0.554622
+Epoch 80/100, Loss: 0.553949
+Epoch 81/100, Loss: 0.166623
+Epoch 82/100, Loss: 0.163037
+Epoch 83/100, Loss: 0.161991
+Epoch 84/100, Loss: 0.160609
+Epoch 85/100, Loss: 0.158969
+Epoch 86/100, Loss: 0.158337
+Epoch 87/100, Loss: 0.156528
+Epoch 88/100, Loss: 0.156493
+Epoch 89/100, Loss: 0.156044
+Epoch 90/100, Loss: 0.155468
+Epoch 91/100, Loss: 0.154420
+Epoch 92/100, Loss: 0.153822
+Epoch 93/100, Loss: 0.152953
+Epoch 94/100, Loss: 0.152980
+Epoch 95/100, Loss: 0.151247
+Epoch 96/100, Loss: 0.151766
+Epoch 97/100, Loss: 0.151352
+Epoch 98/100, Loss: 0.149858
+Epoch 99/100, Loss: 0.149729
+Epoch 100/100, Loss: 0.150039
 
 Training complete!
-Epoch with lowest loss:  50
+Epoch with lowest loss:  99
 
 Model Performance Metrics:
-Accuracy: 0.931040
-Recall: 0.886653
-Jaccard Index: 0.790196
-F1 Score: 0.876857
+Accuracy: 0.932791
+Recall: 0.889501
+Jaccard Index: 0.794663
+F1 Score: 0.879904
 gt_prop, cam_loss_weight, bbox_loss_weight, sam_loss_weight
 1.0 1.0 0.0 0.0
 
 Starting training...
-Epoch 1/50, Loss: 0.700379
-Epoch 2/50, Loss: 0.593886
-Epoch 3/50, Loss: 0.503836
-Epoch 4/50, Loss: 0.433737
-Epoch 5/50, Loss: 0.383180
-Epoch 6/50, Loss: 0.345854
-Epoch 7/50, Loss: 0.317069
-Epoch 8/50, Loss: 0.294684
-Epoch 9/50, Loss: 0.276658
-Epoch 10/50, Loss: 0.261181
-Epoch 11/50, Loss: 0.249410
-Epoch 12/50, Loss: 0.239329
-Epoch 13/50, Loss: 0.230384
-Epoch 14/50, Loss: 0.222249
-Epoch 15/50, Loss: 0.216520
-Epoch 16/50, Loss: 0.210984
-Epoch 17/50, Loss: 0.205181
-Epoch 18/50, Loss: 0.200451
-Epoch 19/50, Loss: 0.196046
-Epoch 20/50, Loss: 0.192534
-Epoch 21/50, Loss: 0.190086
-Epoch 22/50, Loss: 0.186404
-Epoch 23/50, Loss: 0.182891
-Epoch 24/50, Loss: 0.180889
-Epoch 25/50, Loss: 0.178552
-Epoch 26/50, Loss: 0.175691
-Epoch 27/50, Loss: 0.173744
-Epoch 28/50, Loss: 0.173022
-Epoch 29/50, Loss: 0.170209
-Epoch 30/50, Loss: 0.168317
-Epoch 31/50, Loss: 0.166736
-Epoch 32/50, Loss: 0.164373
-Epoch 33/50, Loss: 0.163916
-Epoch 34/50, Loss: 0.163493
-Epoch 35/50, Loss: 0.161170
-Epoch 36/50, Loss: 0.160174
-Epoch 37/50, Loss: 0.158609
-Epoch 38/50, Loss: 0.158667
-Epoch 39/50, Loss: 0.156525
-Epoch 40/50, Loss: 0.156055
-Epoch 41/50, Loss: 0.154944
-Epoch 42/50, Loss: 0.154063
-Epoch 43/50, Loss: 0.152957
-Epoch 44/50, Loss: 0.152769
-Epoch 45/50, Loss: 0.151574
-Epoch 46/50, Loss: 0.150881
-Epoch 47/50, Loss: 0.151319
-Epoch 48/50, Loss: 0.149799
-Epoch 49/50, Loss: 0.148775
-Epoch 50/50, Loss: 0.148120
+Epoch 1/100, Loss: 0.682467
+Epoch 2/100, Loss: 0.627438
+Epoch 3/100, Loss: 0.574233
+Epoch 4/100, Loss: 0.521998
+Epoch 5/100, Loss: 0.479806
+Epoch 6/100, Loss: 0.447507
+Epoch 7/100, Loss: 0.418868
+Epoch 8/100, Loss: 0.392598
+Epoch 9/100, Loss: 0.372933
+Epoch 10/100, Loss: 0.356013
+Epoch 11/100, Loss: 0.342647
+Epoch 12/100, Loss: 0.330527
+Epoch 13/100, Loss: 0.319702
+Epoch 14/100, Loss: 0.310499
+Epoch 15/100, Loss: 0.300369
+Epoch 16/100, Loss: 0.292936
+Epoch 17/100, Loss: 0.285062
+Epoch 18/100, Loss: 0.278164
+Epoch 19/100, Loss: 0.271872
+Epoch 20/100, Loss: 0.264963
+Epoch 21/100, Loss: 0.259053
+Epoch 22/100, Loss: 0.253749
+Epoch 23/100, Loss: 0.248966
+Epoch 24/100, Loss: 0.244629
+Epoch 25/100, Loss: 0.239412
+Epoch 26/100, Loss: 0.235738
+Epoch 27/100, Loss: 0.230937
+Epoch 28/100, Loss: 0.227491
+Epoch 29/100, Loss: 0.223195
+Epoch 30/100, Loss: 0.220518
+Epoch 31/100, Loss: 0.216821
+Epoch 32/100, Loss: 0.213682
+Epoch 33/100, Loss: 0.211048
+Epoch 34/100, Loss: 0.207838
+Epoch 35/100, Loss: 0.205855
+Epoch 36/100, Loss: 0.203267
+Epoch 37/100, Loss: 0.200716
+Epoch 38/100, Loss: 0.198138
+Epoch 39/100, Loss: 0.195349
+Epoch 40/100, Loss: 0.194867
+Epoch 41/100, Loss: 0.191831
+Epoch 42/100, Loss: 0.189190
+Epoch 43/100, Loss: 0.187532
+Epoch 44/100, Loss: 0.185477
+Epoch 45/100, Loss: 0.184074
+Epoch 46/100, Loss: 0.182188
+Epoch 47/100, Loss: 0.180460
+Epoch 48/100, Loss: 0.178778
+Epoch 49/100, Loss: 0.177947
+Epoch 50/100, Loss: 0.176308
+Epoch 51/100, Loss: 0.174778
+Epoch 52/100, Loss: 0.173417
+Epoch 53/100, Loss: 0.172498
+Epoch 54/100, Loss: 0.170491
+Epoch 55/100, Loss: 0.169092
+Epoch 56/100, Loss: 0.168421
+Epoch 57/100, Loss: 0.167236
+Epoch 58/100, Loss: 0.167068
+Epoch 59/100, Loss: 0.165941
+Epoch 60/100, Loss: 0.164636
+Epoch 61/100, Loss: 0.163576
+Epoch 62/100, Loss: 0.162984
+Epoch 63/100, Loss: 0.161665
+Epoch 64/100, Loss: 0.160672
+Epoch 65/100, Loss: 0.159980
+Epoch 66/100, Loss: 0.159189
+Epoch 67/100, Loss: 0.157979
+Epoch 68/100, Loss: 0.157131
+Epoch 69/100, Loss: 0.157743
+Epoch 70/100, Loss: 0.156700
+Epoch 71/100, Loss: 0.155347
+Epoch 72/100, Loss: 0.154320
+Epoch 73/100, Loss: 0.153584
+Epoch 74/100, Loss: 0.153365
+Epoch 75/100, Loss: 0.152101
+Epoch 76/100, Loss: 0.151322
+Epoch 77/100, Loss: 0.151120
+Epoch 78/100, Loss: 0.150488
+Epoch 79/100, Loss: 0.150447
+Epoch 80/100, Loss: 0.150186
+Epoch 81/100, Loss: 0.149294
+Epoch 82/100, Loss: 0.149265
+Epoch 83/100, Loss: 0.148552
+Epoch 84/100, Loss: 0.147300
+Epoch 85/100, Loss: 0.147685
+Epoch 86/100, Loss: 0.146014
+Epoch 87/100, Loss: 0.146009
+Epoch 88/100, Loss: 0.145311
+Epoch 89/100, Loss: 0.144710
+Epoch 90/100, Loss: 0.144388
+Epoch 91/100, Loss: 0.144059
+Epoch 92/100, Loss: 0.143469
+Epoch 93/100, Loss: 0.144320
+Epoch 94/100, Loss: 0.143440
+Epoch 95/100, Loss: 0.143389
+Epoch 96/100, Loss: 0.142556
+Epoch 97/100, Loss: 0.141662
+Epoch 98/100, Loss: 0.142758
+Epoch 99/100, Loss: 0.141524
+Epoch 100/100, Loss: 0.140911
 
 Training complete!
-Epoch with lowest loss:  50
+Epoch with lowest loss:  100
 
 Model Performance Metrics:
-Accuracy: 0.932797
-Recall: 0.884006
-Jaccard Index: 0.792906
-F1 Score: 0.878618
+Accuracy: 0.932814
+Recall: 0.893676
+Jaccard Index: 0.796009
+F1 Score: 0.880888
 gt_prop, cam_loss_weight, bbox_loss_weight, sam_loss_weight
 1.0 1.0 0.0 1.0
 
 Starting training...
-Epoch 1/50, Loss: 0.685150
-Epoch 2/50, Loss: 0.619556
-Epoch 3/50, Loss: 0.551250
-Epoch 4/50, Loss: 0.495949
-Epoch 5/50, Loss: 0.455368
-Epoch 6/50, Loss: 0.421741
-Epoch 7/50, Loss: 0.393043
-Epoch 8/50, Loss: 0.369838
-Epoch 9/50, Loss: 0.349587
-Epoch 10/50, Loss: 0.333037
-Epoch 11/50, Loss: 0.318766
-Epoch 12/50, Loss: 0.306184
-Epoch 13/50, Loss: 0.295163
-Epoch 14/50, Loss: 0.285249
-Epoch 15/50, Loss: 0.276631
-Epoch 16/50, Loss: 0.268248
+Epoch 1/100, Loss: 1.359417
+Epoch 2/100, Loss: 1.241871
+Epoch 3/100, Loss: 1.139719
+Epoch 4/100, Loss: 1.054683
+Epoch 5/100, Loss: 0.985699
+Epoch 6/100, Loss: 0.927967
+Epoch 7/100, Loss: 0.876085
+Epoch 8/100, Loss: 0.831750
+Epoch 9/100, Loss: 0.790974
+Epoch 10/100, Loss: 0.755378
+Epoch 11/100, Loss: 0.720769
+Epoch 12/100, Loss: 0.693040
+Epoch 13/100, Loss: 0.669848
+Epoch 14/100, Loss: 0.649827
+Epoch 15/100, Loss: 0.627598
+Epoch 16/100, Loss: 0.612227
+Epoch 17/100, Loss: 0.600207
+Epoch 18/100, Loss: 0.585874
+Epoch 19/100, Loss: 0.574912
+Epoch 20/100, Loss: 0.563164
+Epoch 21/100, Loss: 0.553968
+Epoch 22/100, Loss: 0.547211
+Epoch 23/100, Loss: 0.537637
+Epoch 24/100, Loss: 0.530563
+Epoch 25/100, Loss: 0.526246
+Epoch 26/100, Loss: 0.519329
+Epoch 27/100, Loss: 0.514378
+Epoch 28/100, Loss: 0.507886
+Epoch 29/100, Loss: 0.503954
+Epoch 30/100, Loss: 0.498929
+Epoch 31/100, Loss: 0.493564
+Epoch 32/100, Loss: 0.491193
+Epoch 33/100, Loss: 0.488893
+Epoch 34/100, Loss: 0.483640
+Epoch 35/100, Loss: 0.482351
+Epoch 36/100, Loss: 0.477989
+Epoch 37/100, Loss: 0.475748
+Epoch 38/100, Loss: 0.473684
+Epoch 39/100, Loss: 0.469519
+Epoch 40/100, Loss: 0.467767
+Epoch 41/100, Loss: 0.465240
+Epoch 42/100, Loss: 0.464194
+Epoch 43/100, Loss: 0.460407
+Epoch 44/100, Loss: 0.460019
+Epoch 45/100, Loss: 0.458856
+Epoch 46/100, Loss: 0.454936
+Epoch 47/100, Loss: 0.455289
+Epoch 48/100, Loss: 0.455604
+Epoch 49/100, Loss: 0.452437
+Epoch 50/100, Loss: 0.448723
+Epoch 51/100, Loss: 0.447076
+Epoch 52/100, Loss: 0.446027
+Epoch 53/100, Loss: 0.445696
+Epoch 54/100, Loss: 0.444362
+Epoch 55/100, Loss: 0.443967
+Epoch 56/100, Loss: 0.441225
+Epoch 57/100, Loss: 0.440335
+Epoch 58/100, Loss: 0.441721
+Epoch 59/100, Loss: 0.438738
+Epoch 60/100, Loss: 0.440194
+Epoch 61/100, Loss: 0.438309
+Epoch 62/100, Loss: 0.435192
+Epoch 63/100, Loss: 0.434730
+Epoch 64/100, Loss: 0.435645
+Epoch 65/100, Loss: 0.432783
+Epoch 66/100, Loss: 0.431870
+Epoch 67/100, Loss: 0.432352
+Epoch 68/100, Loss: 0.429929
+Epoch 69/100, Loss: 0.432645
+Epoch 70/100, Loss: 0.429033
+Epoch 71/100, Loss: 0.429165
+Epoch 72/100, Loss: 0.428207
+Epoch 73/100, Loss: 0.425792
+Epoch 74/100, Loss: 0.429484
+Epoch 75/100, Loss: 0.426365
+Epoch 76/100, Loss: 0.423323
+Epoch 77/100, Loss: 0.423464
+Epoch 78/100, Loss: 0.423222
+Epoch 79/100, Loss: 0.422685
+Epoch 80/100, Loss: 0.421790
+Epoch 81/100, Loss: 0.144179
+Epoch 82/100, Loss: 0.142901
+Epoch 83/100, Loss: 0.144466
+Epoch 84/100, Loss: 0.143429
+Epoch 85/100, Loss: 0.142612
+Epoch 86/100, Loss: 0.141463
+Epoch 87/100, Loss: 0.141449
+Epoch 88/100, Loss: 0.140287
+Epoch 89/100, Loss: 0.140984
+Epoch 90/100, Loss: 0.140240
+Epoch 91/100, Loss: 0.140058
+Epoch 92/100, Loss: 0.139591
+Epoch 93/100, Loss: 0.138539
+Epoch 94/100, Loss: 0.137766
+Epoch 95/100, Loss: 0.137729
+Epoch 96/100, Loss: 0.138667
+Epoch 97/100, Loss: 0.137429
+Epoch 98/100, Loss: 0.137649
+Epoch 99/100, Loss: 0.136933
+Epoch 100/100, Loss: 0.137987
+
+Training complete!
+Epoch with lowest loss:  99
+
+Model Performance Metrics:
+Accuracy: 0.933743
+Recall: 0.885206
+Jaccard Index: 0.795238
+F1 Score: 0.880210
+gt_prop, cam_loss_weight, bbox_loss_weight, sam_loss_weight
+1.0 1.0 1.0 0.0
+
+Starting training...
+Epoch 1/100, Loss: 1.422907
+Epoch 2/100, Loss: 1.316312
+Epoch 3/100, Loss: 1.216219
+Epoch 4/100, Loss: 1.116956
+Epoch 5/100, Loss: 1.027410
+Epoch 6/100, Loss: 0.956146
+Epoch 7/100, Loss: 0.898539
+Epoch 8/100, Loss: 0.844686
+Epoch 9/100, Loss: 0.792765
+Epoch 10/100, Loss: 0.748711
+Epoch 11/100, Loss: 0.714509
+Epoch 12/100, Loss: 0.683393
+Epoch 13/100, Loss: 0.657599
+Epoch 14/100, Loss: 0.633207
+Epoch 15/100, Loss: 0.613335
+Epoch 16/100, Loss: 0.593383
+Epoch 17/100, Loss: 0.577522
+Epoch 18/100, Loss: 0.561315
+Epoch 19/100, Loss: 0.545618
+Epoch 20/100, Loss: 0.530071
+Epoch 21/100, Loss: 0.517266
+Epoch 22/100, Loss: 0.503819
+Epoch 23/100, Loss: 0.492955
+Epoch 24/100, Loss: 0.481118
+Epoch 25/100, Loss: 0.469487
+Epoch 26/100, Loss: 0.460970
+Epoch 27/100, Loss: 0.450358
+Epoch 28/100, Loss: 0.441857
+Epoch 29/100, Loss: 0.432555
+Epoch 30/100, Loss: 0.423976
+Epoch 31/100, Loss: 0.417249
+Epoch 32/100, Loss: 0.410947
+Epoch 33/100, Loss: 0.402384
+Epoch 34/100, Loss: 0.395759
+Epoch 35/100, Loss: 0.393717
+Epoch 36/100, Loss: 0.384253
+Epoch 37/100, Loss: 0.379107
+Epoch 38/100, Loss: 0.373014
+Epoch 39/100, Loss: 0.368738
+Epoch 40/100, Loss: 0.364926
+Epoch 41/100, Loss: 0.359014
+Epoch 42/100, Loss: 0.354060
+Epoch 43/100, Loss: 0.349170
+Epoch 44/100, Loss: 0.344819
+Epoch 45/100, Loss: 0.342137
+Epoch 46/100, Loss: 0.337461
+Epoch 47/100, Loss: 0.334911
+Epoch 48/100, Loss: 0.329482
+Epoch 49/100, Loss: 0.327259
+Epoch 50/100, Loss: 0.330313
+Epoch 51/100, Loss: 0.323044
+Epoch 52/100, Loss: 0.317802
+Epoch 53/100, Loss: 0.314674
+Epoch 54/100, Loss: 0.312484
+Epoch 55/100, Loss: 0.309532
+Epoch 56/100, Loss: 0.307059
+Epoch 57/100, Loss: 0.304938
+Epoch 58/100, Loss: 0.301977
+Epoch 59/100, Loss: 0.300290
+Epoch 60/100, Loss: 0.296436
+Epoch 61/100, Loss: 0.294535
+Epoch 62/100, Loss: 0.292496
+Epoch 63/100, Loss: 0.288104
+Epoch 64/100, Loss: 0.287779
+Epoch 65/100, Loss: 0.286888
+Epoch 66/100, Loss: 0.284235
+Epoch 67/100, Loss: 0.283772
+Epoch 68/100, Loss: 0.280054
+Epoch 69/100, Loss: 0.278667
+Epoch 70/100, Loss: 0.277742
+Epoch 71/100, Loss: 0.277181
+Epoch 72/100, Loss: 0.272540
+Epoch 73/100, Loss: 0.272431
+Epoch 74/100, Loss: 0.271750
+Epoch 75/100, Loss: 0.272209
+Epoch 76/100, Loss: 0.268787
+Epoch 77/100, Loss: 0.266545
+Epoch 78/100, Loss: 0.264150
+Epoch 79/100, Loss: 0.263906
+Epoch 80/100, Loss: 0.261943
+Epoch 81/100, Loss: 0.165149
+Epoch 82/100, Loss: 0.162960
+Epoch 83/100, Loss: 0.162889
+Epoch 84/100, Loss: 0.161332
+Epoch 85/100, Loss: 0.159798
+Epoch 86/100, Loss: 0.158641
+Epoch 87/100, Loss: 0.157898
+Epoch 88/100, Loss: 0.156432
+Epoch 89/100, Loss: 0.155758
+Epoch 90/100, Loss: 0.155662
+Epoch 91/100, Loss: 0.155562
+Epoch 92/100, Loss: 0.154772
+Epoch 93/100, Loss: 0.153548
+Epoch 94/100, Loss: 0.153004
+Epoch 95/100, Loss: 0.152079
+Epoch 96/100, Loss: 0.151272
+Epoch 97/100, Loss: 0.151423
+Epoch 98/100, Loss: 0.150912
+Epoch 99/100, Loss: 0.150047
+Epoch 100/100, Loss: 0.150072
+
+Training complete!
+Epoch with lowest loss:  99
+
+Model Performance Metrics:
+Accuracy: 0.931238
+Recall: 0.887850
+Jaccard Index: 0.790986
+F1 Score: 0.877416
+gt_prop, cam_loss_weight, bbox_loss_weight, sam_loss_weight
+1.0 1.0 1.0 1.0
+
+Starting training...
+Epoch 1/100, Loss: 2.086681
+Epoch 2/100, Loss: 1.914806
+Epoch 3/100, Loss: 1.754953
+Epoch 4/100, Loss: 1.622627
+Epoch 5/100, Loss: 1.515954
+Epoch 6/100, Loss: 1.425241
+Epoch 7/100, Loss: 1.345299
+Epoch 8/100, Loss: 1.274565
+Epoch 9/100, Loss: 1.214539
+Epoch 10/100, Loss: 1.163001
+Epoch 11/100, Loss: 1.115292
+Epoch 12/100, Loss: 1.074980
+Epoch 13/100, Loss: 1.040544
+Epoch 14/100, Loss: 1.005365
+Epoch 15/100, Loss: 0.978067
+Epoch 16/100, Loss: 0.950191
+Epoch 17/100, Loss: 0.926301
+Epoch 18/100, Loss: 0.900935
+Epoch 19/100, Loss: 0.881687
+Epoch 20/100, Loss: 0.863221
+Epoch 21/100, Loss: 0.843801
+Epoch 22/100, Loss: 0.829001
+Epoch 23/100, Loss: 0.812957
+Epoch 24/100, Loss: 0.799344
+Epoch 25/100, Loss: 0.788462
+Epoch 26/100, Loss: 0.771819
+Epoch 27/100, Loss: 0.758925
+Epoch 28/100, Loss: 0.748311
+Epoch 29/100, Loss: 0.737237
+Epoch 30/100, Loss: 0.727804
+Epoch 31/100, Loss: 0.717616
+Epoch 32/100, Loss: 0.707735
+Epoch 33/100, Loss: 0.699703
+Epoch 34/100, Loss: 0.695122
+Epoch 35/100, Loss: 0.689758
+Epoch 36/100, Loss: 0.679101
+Epoch 37/100, Loss: 0.673556
+Epoch 38/100, Loss: 0.668311
+Epoch 39/100, Loss: 0.662775
+Epoch 40/100, Loss: 0.656508
+Epoch 41/100, Loss: 0.651347
+Epoch 42/100, Loss: 0.647274
+Epoch 43/100, Loss: 0.639406
+Epoch 44/100, Loss: 0.637427
+Epoch 45/100, Loss: 0.633062
+Epoch 46/100, Loss: 0.631004
+Epoch 47/100, Loss: 0.625950
+Epoch 48/100, Loss: 0.623417
+Epoch 49/100, Loss: 0.620549
+Epoch 50/100, Loss: 0.617191
+Epoch 51/100, Loss: 0.611050
+Epoch 52/100, Loss: 0.608555
+Epoch 53/100, Loss: 0.607559
+Epoch 54/100, Loss: 0.603189
+Epoch 55/100, Loss: 0.600988
+Epoch 56/100, Loss: 0.597656
+Epoch 57/100, Loss: 0.595036
+Epoch 58/100, Loss: 0.592671
+Epoch 59/100, Loss: 0.590914
+Epoch 60/100, Loss: 0.587418
+Epoch 61/100, Loss: 0.592251
+Epoch 62/100, Loss: 0.584876
+Epoch 63/100, Loss: 0.582041
+Epoch 64/100, Loss: 0.582941
+Epoch 65/100, Loss: 0.579988
+Epoch 66/100, Loss: 0.580865
+Epoch 67/100, Loss: 0.574563
+Epoch 68/100, Loss: 0.576725
+Epoch 69/100, Loss: 0.570671
+Epoch 70/100, Loss: 0.570317
+Epoch 71/100, Loss: 0.566740
+Epoch 72/100, Loss: 0.570118
+Epoch 73/100, Loss: 0.566177
+Epoch 74/100, Loss: 0.568369
+Epoch 75/100, Loss: 0.563116
+Epoch 76/100, Loss: 0.561241
+Epoch 77/100, Loss: 0.563431
+Epoch 78/100, Loss: 0.558938
+Epoch 79/100, Loss: 0.557411
+Epoch 80/100, Loss: 0.555611
+Epoch 81/100, Loss: 0.166804
+Epoch 82/100, Loss: 0.162937
+Epoch 83/100, Loss: 0.161587
+Epoch 84/100, Loss: 0.159885
+Epoch 85/100, Loss: 0.159290
+Epoch 86/100, Loss: 0.158138
+Epoch 87/100, Loss: 0.157477
+Epoch 88/100, Loss: 0.157661
+Epoch 89/100, Loss: 0.154841
+Epoch 90/100, Loss: 0.155792
+Epoch 91/100, Loss: 0.154019
+Epoch 92/100, Loss: 0.154539
+Epoch 93/100, Loss: 0.154110
+Epoch 94/100, Loss: 0.151937
+Epoch 95/100, Loss: 0.151459
+Epoch 96/100, Loss: 0.151182
+Epoch 97/100, Loss: 0.149740
+Epoch 98/100, Loss: 0.150814
+Epoch 99/100, Loss: 0.150448
+Epoch 100/100, Loss: 0.148343
+
+Training complete!
+Epoch with lowest loss:  100
+
+Model Performance Metrics:
+Accuracy: 0.931229
+Recall: 0.891086
+Jaccard Index: 0.791991
+F1 Score: 0.878156
