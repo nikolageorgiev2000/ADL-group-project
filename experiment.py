@@ -1,7 +1,9 @@
 import gc
 import copy
 import xml.etree.ElementTree as ET
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import DataLoader
+import torch.nn.functional as F
+import torchvision.models as models
 import torch
 import torch.nn as nn
 import tqdm
@@ -11,15 +13,10 @@ from PIL import Image
 from torchvision import transforms
 import numpy as np
 import segmentation_models_pytorch as smp
-from segmentation_models_pytorch.encoders import get_preprocessing_fn
-from torchvision.datasets import OxfordIIITPet
 import torch.nn as nn
-import torch.nn.functional as F
 import torch.optim as optim
-from torch.utils.data import random_split
 from sklearn.metrics import accuracy_score, recall_score, jaccard_score, f1_score
 import numpy as np
-from enum import Enum
 from typing import Dict, List, Tuple, Set
 from itertools import product
 from datasets import *
@@ -315,7 +312,7 @@ class BBoxLoss(nn.Module):
                 targets[i, ymin:ymax, xmin:xmax] = 1  # Foreground inside bbox
 
         loss = self.loss_fn(logits_2ch, targets)
-        return loss
+        return torch.nan_to_num(loss)
 
 
 class SAMLoss(nn.Module):
@@ -403,6 +400,11 @@ def train_model(
 
             running_loss += loss.item()
 
+            del image_data
+
+            gc.collect()
+            torch.cuda.empty_cache()
+
         epoch_loss = running_loss / len(train_dataloader)
         print(f"Epoch {epoch+1}/{epochs}, Loss: {epoch_loss:.6f}")
 
@@ -459,25 +461,135 @@ class ConvSegHead(nn.Module):
     def __init__(self, out_channels=1):
         super(ConvSegHead, self).__init__()
         self.block = nn.Sequential(
-            nn.Conv2d(16, 8, kernel_size=5, padding=2),
+            nn.Conv2d(64, 16, kernel_size=5, padding=2),
             nn.ReLU(inplace=True),
-            nn.BatchNorm2d(8),
-            nn.Conv2d(8, out_channels, kernel_size=3, padding=1)
+            nn.BatchNorm2d(16),
+            nn.Conv2d(16, out_channels, kernel_size=3, padding=1)
         )
 
     def forward(self, x):
         return self.block(x)
 
+class DoubleConv(nn.Module):
+    def __init__(self, in_channels, out_channels):
+        super(DoubleConv, self).__init__()
+        self.double_conv = nn.Sequential(
+            nn.Conv2d(in_channels, out_channels, kernel_size=3, padding=1),
+            nn.BatchNorm2d(out_channels),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(out_channels, out_channels, kernel_size=3, padding=1),
+            nn.BatchNorm2d(out_channels),
+            nn.ReLU(inplace=True)
+        )
+    
+    def forward(self, x):
+        return self.double_conv(x)
+
+class ResNetUNet(nn.Module):
+    def __init__(self, out_channels, pretrained=True):
+        super(ResNetUNet, self).__init__()
+        
+        # Load pretrained ResNet34
+        resnet = models.resnet34(pretrained=pretrained)
+        
+        # Encoder (ResNet layers)
+        self.firstconv = resnet.conv1
+        self.firstbn = resnet.bn1
+        self.firstrelu = resnet.relu
+        self.firstmaxpool = resnet.maxpool
+        self.encoder1 = resnet.layer1  # 64 channels
+        self.encoder2 = resnet.layer2  # 128 channels
+        self.encoder3 = resnet.layer3  # 256 channels
+        self.encoder4 = resnet.layer4  # 512 channels
+        
+        # Decoder - Fix channel dimensions to match ResNet34 output sizes
+        self.decoder4 = DoubleConv(512, 256)
+        self.decoder3 = DoubleConv(256 + 256, 128)
+        self.decoder2 = DoubleConv(128 + 128, 64)
+        self.decoder1 = DoubleConv(64 + 64, 64)
+        self.decoder0 = DoubleConv(64 + 64, 64)
+        self.last_conv = DoubleConv(64 + 64, 64)
+        
+        # Upsampling
+        self.up = nn.Upsample(scale_factor=2, mode='bilinear', align_corners=True)
+        
+        # Additional conv to handle skip from first maxpool
+        self.conv_original_size = DoubleConv(3, 64)
+        
+        # # Final layer
+        # self.final = nn.Conv2d(64, out_channels, kernel_size=1)
+        
+    def forward(self, x):
+        # Save input dimensions for later use
+        h, w = x.size()[2:]
+        
+        # Original size
+        x_original = self.conv_original_size(x)
+        
+        # Encoder
+        x = self.firstconv(x)
+        x = self.firstbn(x)
+        x = self.firstrelu(x)
+        x_conv = x
+        x = self.firstmaxpool(x)
+        
+        x1 = self.encoder1(x)
+        x2 = self.encoder2(x1)
+        x3 = self.encoder3(x2)
+        x4 = self.encoder4(x3)
+        
+        # Decoder with skip connections
+        # Use size matching for each level
+        x = self.up(x4)
+        x = self.decoder4(x)
+        
+        # Ensure x3 and x have same spatial dimensions before concatenating
+        x = self.up(x)
+        if x.size()[2:] != x3.size()[2:]:
+            x = F.interpolate(x, size=x3.size()[2:], mode='bilinear', align_corners=True)
+        x = torch.cat([x, x3], dim=1)
+        x = self.decoder3(x)
+        
+        x = self.up(x)
+        if x.size()[2:] != x2.size()[2:]:
+            x = F.interpolate(x, size=x2.size()[2:], mode='bilinear', align_corners=True)
+        x = torch.cat([x, x2], dim=1)
+        x = self.decoder2(x)
+        
+        x = self.up(x)
+        if x.size()[2:] != x1.size()[2:]:
+            x = F.interpolate(x, size=x1.size()[2:], mode='bilinear', align_corners=True)
+        x = torch.cat([x, x1], dim=1)
+        x = self.decoder1(x)
+        
+        x = self.up(x)
+        if x.size()[2:] != x_conv.size()[2:]:
+            x = F.interpolate(x, size=x_conv.size()[2:], mode='bilinear', align_corners=True)
+        x = torch.cat([x, x_conv], dim=1)
+        x = self.decoder0(x)
+        
+        x = self.up(x)
+        if x.size()[2:] != x_original.size()[2:]:
+            x = F.interpolate(x, size=x_original.size()[2:], mode='bilinear', align_corners=True)
+        x = torch.cat([x, x_original], dim=1)
+        x = self.last_conv(x)
+        
+        # # Final layer
+        # return self.final(x)
+
+        # skip segmentation head
+        return x
 
 class CustomUNet(nn.Module):
     def __init__(self):
         super(CustomUNet, self).__init__()
-        self.feature_extractor = smp.Unet(
-            encoder_name="resnet34",
-            encoder_weights="imagenet",
-            in_channels=3,
-        )
-        self.feature_extractor.segmentation_head = nn.Identity()
+        # self.feature_extractor = smp.Unet(
+        #     encoder_name="resnet34",
+        #     encoder_weights="imagenet",
+        #     in_channels=3,
+        # )
+        self.feature_extractor = ResNetUNet(out_channels=1)
+        # self.feature_extractor.segmentation_head = nn.Identity()
 
         self.seg_heads = nn.ModuleDict()
         self.seg_heads[DatasetSelection.Trimap.name] = ConvSegHead()
@@ -517,8 +629,8 @@ dataset = InMemoryPetSegmentationDataset(
     DATA_DIR, ANNOTATION_DIR, targets_list=TARGETS_LIST)
 # dataset_perm = torch.randperm(len(dataset))
 
-GT_PROPORTIONS = [0.1, 1.0]
-LOSS_WEIGHTS = [0.0, 1.0]
+GT_PROPORTIONS = [1.0]
+LOSS_WEIGHTS = [0.0]
 
 
 for idx, experiment_weights in enumerate(product(GT_PROPORTIONS, LOSS_WEIGHTS, LOSS_WEIGHTS, LOSS_WEIGHTS)):
@@ -529,6 +641,7 @@ for idx, experiment_weights in enumerate(product(GT_PROPORTIONS, LOSS_WEIGHTS, L
     print(gt_prop, cam_loss_weight, bbox_loss_weight, sam_loss_weight)
     # set based on how much of the dataset we can use
     dataset.change_gt_proportion(gt_prop)
+    dataset.train()
 
     # Create train/val split
     train_size = int(0.8*len(dataset))
@@ -561,6 +674,7 @@ for idx, experiment_weights in enumerate(product(GT_PROPORTIONS, LOSS_WEIGHTS, L
 
     # reset GT proportion to perform evaluation on trimaps correctly
     dataset.change_gt_proportion(1.0)
+    dataset.eval()
     val_dataset = torch.utils.data.Subset(
         dataset, range(train_size, train_size + val_size))
     val_dataloader = DataLoader(

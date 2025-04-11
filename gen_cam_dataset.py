@@ -115,7 +115,7 @@ dataset = InMemoryPetSegmentationDataset(
 
 if TRAIN_MODEL:
     train_loader = DataLoader(dataset, batch_size=64, shuffle=True)
-    model = train_model(model, train_loader, num_epochs=5)
+    model = train_model(model, train_loader, num_epochs=8)
 else:
     # Load pretrained model if it exists
     if os.path.exists('./models/cam_model.pth'):
@@ -169,5 +169,3 @@ save_cam_dataset([c[0] for c in cams], [c[1] for c in cams])
 
 
 print("DONE!")
-import time
-time.sleep(10_000)
