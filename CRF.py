@@ -39,16 +39,14 @@ class StaticCRF:
             spatial_spacings = np.ones((batch_size, self.n_spatial_dims))
 
         # Convert single channel to 2 classes
-        # For BCE, positive values = foreground probability > 0.5
-        x = torch.cat([x, -x], dim=1)  # [pos, neg] logits
+        x = torch.cat([x, torch.zeros(x.shape).to(x)], dim=1)
 
         unary = x.clone()
 
         # Mean-field inference iterations
         for _ in range(self.n_iter):
             # Convert to probabilities
-            x = torch.sigmoid(x[:, 0:1])
-            x = torch.cat([x, 1 - x], dim=1)
+            x = F.softmax(x, dim=1)
 
             # Message passing: apply the smoothing filter
             x = self.smoothness_weight * self._smoothing_filter(x, spatial_spacings)
