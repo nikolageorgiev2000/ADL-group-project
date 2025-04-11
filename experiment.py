@@ -1,6 +1,4 @@
 import gc
-import copy
-import xml.etree.ElementTree as ET
 from torch.utils.data import DataLoader
 import torch.nn.functional as F
 import torchvision.models as models
@@ -12,9 +10,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 from torchvision import transforms
 import numpy as np
-import segmentation_models_pytorch as smp
 import torch.nn as nn
-import torch.optim as optim
 from sklearn.metrics import accuracy_score, recall_score, jaccard_score, f1_score
 import numpy as np
 from typing import Dict, List, Tuple, Set
@@ -632,6 +628,8 @@ dataset = InMemoryPetSegmentationDataset(
 GT_PROPORTIONS = [0.1]
 LOSS_WEIGHTS = [0.0, 1.0]
 
+gc.collect()
+torch.cuda.empty_cache()
 
 for idx, experiment_weights in enumerate(product(GT_PROPORTIONS, LOSS_WEIGHTS, LOSS_WEIGHTS, LOSS_WEIGHTS)):
     # print('MEM at start: ', torch.cuda.memory_summary(
@@ -678,7 +676,7 @@ for idx, experiment_weights in enumerate(product(GT_PROPORTIONS, LOSS_WEIGHTS, L
     val_dataset = torch.utils.data.Subset(
         dataset, range(train_size, train_size + val_size))
     val_dataloader = DataLoader(
-        val_dataset, batch_size=4*BATCH_SIZE, shuffle=False)
+        val_dataset, batch_size=BATCH_SIZE, shuffle=False)
     metrics = visualize_predictions(
         smp_model, val_dataset, visual_fname=f"{idx}.jpg")
     metrics = evaluate_model_metrics(smp_model, val_dataloader, device)
