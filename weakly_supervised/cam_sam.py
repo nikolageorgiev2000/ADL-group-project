@@ -114,30 +114,34 @@ args = parser.parse_args()
 
 if __name__ == "__main__":
     # === PATH SETUP ===
-    # Define base directories for better consistency.
-    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data', 'oxford-iiit-pet'))
+    from torchvision.datasets import OxfordIIITPet    
+    # if base_dir not exist, download data
+    # if not os.path.exists(base_dir):
+    # Load the dataset
+    print("Loading dataset...")
+    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data', "oxford-iiit-pet"))
     annotations_dir = os.path.join(base_dir, 'annotations')
     images_dir = os.path.join(base_dir, 'images')
     xml_dir = os.path.join(annotations_dir, 'xmls')
     list_file = os.path.join(annotations_dir, 'list.txt')
     output_dir = os.path.join(os.path.dirname(__file__), 'sam_masks')
     os.makedirs(output_dir, exist_ok=True)
+    
 
     from torchvision.datasets import OxfordIIITPet    
-    # if base_dir not exist, download data
-    # if not os.path.exists(base_dir):
-    # Load the dataset
-    print("Loading dataset...")
-    train_dataset = OxfordIIITPet(root=base_dir, 
+    train_dataset = OxfordIIITPet(root=base_dir.rsplit('/', 1)[0],
                                 split='trainval',
                                 target_types=["category", "segmentation"],
                                 download=True)
 
-    test_dataset = OxfordIIITPet(root=base_dir, 
+    test_dataset = OxfordIIITPet(root=base_dir.rsplit('/', 1)[0],
                             split='test',
                             target_types=["category", "segmentation"],
                             download=True)
 
+    print("base_dir", os.listdir(base_dir))
+    print("annotations_dir:", os.listdir(annotations_dir))
+    
     from sam2.sam2_image_predictor import SAM2ImagePredictor
 
     if not os.path.exists("./models"): os.makedirs("./models")
@@ -326,9 +330,9 @@ if __name__ == "__main__":
     with open(f"{experiment_folder}/results.pkl", "rb") as f:
         results = pickle.load(f)
 
-    from utils.metrics import evaluate_and_visualize_trimaps
+    from utils.metrics import evaluate_trimaps
     # Run evaluation and visualization
-    metrics = evaluate_and_visualize_trimaps(results, experiment_folder, iou_threshold=0.5)
+    metrics = evaluate_trimaps(results, experiment_folder, iou_threshold=0.5)
 
     # Access metrics if needed
     print(f"Classification accuracy: {metrics['classification_accuracy']}")
