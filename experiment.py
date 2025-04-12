@@ -11,7 +11,7 @@ from PIL import Image
 from torchvision import transforms
 import numpy as np
 import torch.nn as nn
-from sklearn.metrics import accuracy_score, recall_score, jaccard_score, f1_score
+from evaluation_metrics import accuracy_score, recall_score, jaccard_score, f1_score
 import numpy as np
 from typing import Dict, List, Tuple, Set
 from itertools import product
@@ -189,12 +189,9 @@ def evaluate_model_metrics(model, dataloader, device):
 
             # Calculate metrics for the batch and accumulate
             total_accuracy += accuracy_score(targets, preds) * len(targets)
-            total_recall += recall_score(targets,
-                                         preds, average='macro') * len(targets)
-            total_jaccard += jaccard_score(targets,
-                                           preds, average='macro') * len(targets)
-            total_f1 += f1_score(targets, preds,
-                                 average='macro') * len(targets)
+            total_recall += recall_score(targets, preds, average='binary') * len(targets)
+            total_jaccard += jaccard_score(targets, preds, average='binary') * len(targets)
+            total_f1 += f1_score(targets, preds, average='binary') * len(targets)
             total_samples += len(targets)
 
     # Calculate average metrics
@@ -256,8 +253,6 @@ class TrimapLoss(nn.Module):
         background_logits = torch.zeros_like(logits)  # fake bg logits
         logits_2ch = torch.cat([background_logits, logits], dim=1)
         res = self.loss_fn(logits_2ch, targets.long())
-        if torch.isnan(res).item():
-            print('TrimapLoss is NaN')
         return torch.nan_to_num(res)
 
 
