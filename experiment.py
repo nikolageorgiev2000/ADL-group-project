@@ -35,6 +35,10 @@ if device.type == "cuda":
         torch.backends.cuda.matmul.allow_tf32 = True
         torch.backends.cudnn.allow_tf32 = True
 
+def free_memory():
+    gc.collect()
+    torch.cuda.empty_cache()
+
 # Set up the data directories
 data_dir = 'data/images'
 annotation_dir = 'data/annotations'  # Add annotations directory
@@ -374,32 +378,43 @@ def train_model(
     os.makedirs(checkpoint_dir, exist_ok=True)
 
     print("\nStarting training...")
+    accumulation_steps = 2  # number of batches to accumulate gradients over
+
     for epoch in range(start_epoch, epochs):
         model.train()
         running_loss = 0.0
 
-        for images, image_data in tqdm.tqdm(train_dataloader, disable=True):
+        optimizer.zero_grad()  # initialize gradients at start of epoch
+
+        for i, (images, image_data) in enumerate(tqdm.tqdm(train_dataloader, disable=True)):
             # images = images.to(device)
             # image_data = image_data.to(device)
 
-            optimizer.zero_grad()
             outputs = model(images)
-            # in the last 20% of the training we focus on the Trimap loss
-            if (epoch+1) / epochs <= 0.8:
-                loss = criterion(
-                    outputs, image_data)
+
+            if (epoch + 1) / epochs <= 0.8:
+                loss = criterion(outputs, image_data)
             else:
-                loss = end_criterion(
-                    outputs, image_data)
+                loss = end_criterion(outputs, image_data)
+
+            loss = loss / accumulation_steps  # normalize loss for accumulation
             loss.backward()
+
+            if (i + 1) % accumulation_steps == 0:
+                optimizer.step()
+                optimizer.zero_grad()
+
+            running_loss += loss.item() * accumulation_steps  # un-normalize to keep consistent logging
+
+        # Optionally: handle remainder batches
+        if (i + 1) % accumulation_steps != 0:
             optimizer.step()
+            optimizer.zero_grad()
 
-            running_loss += loss.item()
 
-            del image_data
+            del image_data[DatasetSelection.BBox]
 
-            gc.collect()
-            torch.cuda.empty_cache()
+            free_memory()
 
         epoch_loss = running_loss / len(train_dataloader)
         print(f"Epoch {epoch+1}/{epochs}, Loss: {epoch_loss:.6f}")
@@ -441,7 +456,7 @@ def train_model(
 print("\n=== Using Segmentation Models PyTorch (SMP) for improved performance ===\n")
 TARGETS_LIST = [DatasetSelection.CAM,
                 DatasetSelection.Trimap, DatasetSelection.BBox, DatasetSelection.SAM]
-BATCH_SIZE = 128
+BATCH_SIZE = 64
 EPOCHS = 100
 LEARNING_RATE = 1e-3
 OPTIMIZER_NAME = 'adam'
@@ -628,10 +643,9 @@ dataset = InMemoryPetSegmentationDataset(
 GT_PROPORTIONS = [0.1]
 LOSS_WEIGHTS = [0.0, 1.0]
 
-gc.collect()
-torch.cuda.empty_cache()
-
 for idx, experiment_weights in enumerate(product(GT_PROPORTIONS, LOSS_WEIGHTS, LOSS_WEIGHTS, LOSS_WEIGHTS)):
+    free_memory()
+
     # print('MEM at start: ', torch.cuda.memory_summary(
     #     device=device, abbreviated=True))
     gt_prop, cam_loss_weight, bbox_loss_weight, sam_loss_weight = experiment_weights
@@ -639,7 +653,7 @@ for idx, experiment_weights in enumerate(product(GT_PROPORTIONS, LOSS_WEIGHTS, L
     print(gt_prop, cam_loss_weight, bbox_loss_weight, sam_loss_weight)
     # set based on how much of the dataset we can use
     dataset.change_gt_proportion(gt_prop)
-    dataset.train()
+    dataset.use_augmentation = True
 
     # Create train/val split
     train_size = int(0.8*len(dataset))
@@ -672,7 +686,7 @@ for idx, experiment_weights in enumerate(product(GT_PROPORTIONS, LOSS_WEIGHTS, L
 
     # reset GT proportion to perform evaluation on trimaps correctly
     dataset.change_gt_proportion(1.0)
-    dataset.eval()
+    dataset.use_augmentation = False
     val_dataset = torch.utils.data.Subset(
         dataset, range(train_size, train_size + val_size))
     val_dataloader = DataLoader(
@@ -686,6 +700,3 @@ for idx, experiment_weights in enumerate(product(GT_PROPORTIONS, LOSS_WEIGHTS, L
         file.write(res_str)
 
     del train_dataset, val_dataset, train_dataloader, val_dataloader, model, smp_model
-
-    gc.collect()
-    torch.cuda.empty_cache()
