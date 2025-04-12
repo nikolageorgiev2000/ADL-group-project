@@ -1,8 +1,6 @@
 import torch
 from PIL import Image, ImageDraw, ImageFont, ImageOps
-from IPython.display import display
 from torchvision.transforms.functional import to_pil_image
-import os
 import numpy as np
 
 def plot_image(img_path, postfix='Original'):
@@ -51,7 +49,7 @@ def plot_image(img_path, postfix='Original'):
 
     return new_img
 
-def combine_images_side_by_side(img, trimap_img, trimap_img2=None, cam_heatmap=None, ):
+def combine_images_side_by_side(img, trimap_img, trimap_img2=None, cam_heatmap=None):
     img = img.convert("RGB")
     trimap_img = trimap_img.convert("RGB")
 
