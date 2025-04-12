@@ -175,3 +175,4 @@ logs
 models
 
 weakly_supervised/sam_masks/*
+data

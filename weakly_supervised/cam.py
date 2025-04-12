@@ -1,8 +1,15 @@
 import os
 import numpy as np
-import matplotlib.pyplot as plt
-from tqdm.notebook import tqdm
-import cv2
+# if matplotlib is installed
+try:
+    import matplotlib.pyplot as plt
+    from tqdm.notebook import tqdm
+    import cv2
+except:
+    print("Matplotlib or tqdm not installed. Skipping visualization.")
+    plt = None
+    tqdm = lambda x: x
+    cv2 = None
 from PIL import Image
 from datetime import datetime
 import logging
