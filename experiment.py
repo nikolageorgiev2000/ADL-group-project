@@ -4,12 +4,8 @@ import torch.nn.functional as F
 import torchvision.models as models
 import torch
 import torch.nn as nn
-import tqdm
 import os
-import matplotlib.pyplot as plt
-from PIL import Image
 from torchvision import transforms
-import numpy as np
 import torch.nn as nn
 from evaluation_metrics import accuracy_score, recall_score, jaccard_score, f1_score
 import numpy as np
@@ -17,6 +13,9 @@ from typing import Dict, List, Tuple, Set
 from itertools import product
 from datasets import *
 
+from IPython.display import display
+from PIL import Image, ImageDraw, ImageFont
+from plot_utils import plot_image, combine_images_side_by_side, tensor_to_pil_image, apply_heatmap
 
 # select the device for computation
 if torch.cuda.is_available():
@@ -39,44 +38,20 @@ def free_memory():
     gc.collect()
     torch.cuda.empty_cache()
 
-# Set up the data directories
 data_dir = 'data/images'
 annotation_dir = 'data/annotations'  # Add annotations directory
+image_files = sorted([f for f in os.listdir(data_dir) if f.endswith(('.jpg', '.png'))])[:4]
 
-# Get list of image files
-image_files = sorted([f for f in os.listdir(data_dir)
-                     if f.endswith(('.jpg', '.png'))])[:4]
-
-# Create a figure with 2x4 subplots (original image + trimap for each row)
-fig, axes = plt.subplots(2, 4, figsize=(20, 10))
-
-# Load and display first 4 images with their annotations
 for idx, img_file in enumerate(image_files):
-    # Load original image
     img_path = os.path.join(data_dir, img_file)
-    img = Image.open(img_path)
+    img = plot_image(img_path, 'Original')
 
-    # Load trimap segmentation
     trimap_file = img_file.replace('.jpg', '.png')
     trimap_path = os.path.join(annotation_dir, 'trimaps', trimap_file)
-    trimap = Image.open(trimap_path)
+    tri_img = plot_image(trimap_path, 'Segmentation Mask')
 
-    # Plot in corresponding subplots
-    row = idx // 2
-    col = idx % 2 * 2  # Multiply by 2 to leave space for annotations
-
-    # Plot original image
-    axes[row, col].imshow(img)
-    axes[row, col].axis('off')
-    axes[row, col].set_title(f'{img_file.split("_")[0]} - Original')
-
-    # Plot trimap segmentation
-    axes[row, col + 1].imshow(trimap, cmap='tab20')
-    axes[row, col + 1].axis('off')
-    axes[row, col + 1].set_title('Segmentation Mask')
-
-plt.tight_layout()
-plt.show()
+    combined_img = combine_images_side_by_side(img, tri_img)
+    display(combined_img)
 
 # Optional: Display annotation statistics
 
@@ -90,67 +65,80 @@ def print_annotation_info():
     print("   - 2: Background")
     print("   - 3: Border/Undefined")
 
-
 print_annotation_info()
-
 
 def visualize_predictions(model, dataset, num_samples=8, visual_fname='foo.png'):
     model.eval()
-    _, axes = plt.subplots(num_samples, 6, figsize=(15, 5*num_samples))
+    rows = []
 
     for idx in range(num_samples):
         img, sample_data = dataset[idx]
         with torch.no_grad():
             pred = model(img.unsqueeze(0))
             pred_trimap = (pred[DatasetSelection.Trimap] > 0.0).squeeze().cpu()
-            pred_cam = torch.sigmoid(
-                pred[DatasetSelection.CAM]).float().squeeze().cpu()
+            pred_cam = torch.sigmoid(pred[DatasetSelection.CAM]).float().squeeze().cpu()
             pred_bbox = (pred[DatasetSelection.BBox] > 0.0).squeeze().cpu()
             pred_sam = (pred[DatasetSelection.SAM] > 0.0).squeeze().cpu()
 
         true_mask = sample_data[DatasetSelection.Trimap]
-        true_mask[true_mask == -100] = 2  # bring back the unknown pixels
+        true_mask[true_mask == -100] = 2
         true_mask = true_mask.cpu()
 
-        img = img.cpu()  # Move to CPU
-        img = img * torch.tensor([0.229, 0.224, 0.225])[:, None, None] + torch.tensor(
-            [0.485, 0.456, 0.406])[:, None, None]  # Reverse normalization
-        img = img.clip(0, 1)  # Clip to valid range
+        img = img.cpu()
+        img_pil = tensor_to_pil_image(img, normalize=True)
+        true_mask_pil = tensor_to_pil_image(true_mask, colormap=True, trimap=True)
+        pred_trimap_pil = tensor_to_pil_image(pred_trimap, colormap=True)
+        pred_cam_pil = apply_heatmap(pred_cam)
+        pred_bbox_pil = tensor_to_pil_image(pred_bbox, colormap=True)
+        pred_sam_pil = tensor_to_pil_image(pred_sam, colormap=True)
 
-        # Plot original image
-        axes[idx, 0].imshow(img.permute(1, 2, 0))
-        axes[idx, 0].set_title('Original Image')
-        axes[idx, 0].axis('off')
+        font = ImageFont.load_default()
+        imgs = [img_pil, true_mask_pil, pred_trimap_pil, pred_cam_pil, pred_bbox_pil, pred_sam_pil]
+        labeled_imgs = []
 
-        # Plot true mask
-        axes[idx, 1].imshow(true_mask, cmap='tab20')
-        axes[idx, 1].set_title('True Mask')
-        axes[idx, 1].axis('off')
+        _, heights = zip(*(i.size for i in imgs))
+        max_height = max(heights)
+        label_height = 15
 
-        # Plot predicted mask
-        axes[idx, 2].imshow(pred_trimap, cmap='tab20')
-        axes[idx, 2].set_title('Trimap Mask')
-        axes[idx, 2].axis('off')
+        label_map = {
+            0: "Original Image",
+            1: "True Mask",
+            2: "Trimap Mask",
+            3: "Cam Heatmap",
+            4: "Bounding box",
+            5: "SAM Mask"
+        }
 
-        # Plot predicted mask
-        axes[idx, 3].imshow(pred_cam)
-        axes[idx, 3].set_title('Cam Heatmap')
-        axes[idx, 3].axis('off')
+        for i, im in enumerate(imgs):
+            im = im.resize((im.width, max_height))
+            labeled = Image.new("RGB", (im.width, max_height + label_height), color=(255, 255, 255))
+            draw = ImageDraw.Draw(labeled)
+            text_width = draw.textlength(label_map[i], font=font)
+            text_x = (im.width - text_width) // 2
+            draw.text((text_x, 0), label_map[i], fill=(0, 0, 0), font=font)
+            labeled.paste(im, (0, label_height))
+            labeled_imgs.append(labeled)
 
-        # Plot predicted mask
-        axes[idx, 4].imshow(pred_bbox, cmap='tab20')
-        axes[idx, 4].set_title('Bounding Box')
-        axes[idx, 4].axis('off')
+        total_width = sum(i.width for i in labeled_imgs)
+        combined_row = Image.new('RGB', (total_width, max_height + label_height))
+        x_offset = 0
+        for im in labeled_imgs:
+            combined_row.paste(im, (x_offset, 0))
+            x_offset += im.width
 
-        # Plot predicted mask
-        axes[idx, 5].imshow(pred_sam, cmap='tab20')
-        axes[idx, 5].set_title('SAM Mask')
-        axes[idx, 5].axis('off')
+        rows.append(combined_row)
 
-    plt.tight_layout()
+    total_height = sum(row.height for row in rows)
+    full_width = rows[0].width
+    final_img = Image.new('RGB', (full_width, total_height), color=(255, 255, 255))
+    y_offset = 0
+    for row in rows:
+        final_img.paste(row, (0, y_offset))
+        y_offset += row.height
+
     os.makedirs('visuals', exist_ok=True)
-    plt.savefig(os.path.join('visuals', visual_fname))
-    plt.show()
+    final_img.save(os.path.join('visuals', visual_fname))
+    display(final_img)
 
 
 def evaluate_model_metrics(model, dataloader, device):
@@ -175,7 +163,7 @@ def evaluate_model_metrics(model, dataloader, device):
     total_samples = 0
 
     with torch.no_grad():
-        for images, targets in tqdm.tqdm(dataloader):
+        for images, targets in dataloader:
             images = images.to(device)
             outputs = model(images)
             preds = (outputs[DatasetSelection.Trimap]
@@ -381,7 +369,7 @@ def train_model(
 
         optimizer.zero_grad()  # initialize gradients at start of epoch
 
-        for i, (images, image_data) in enumerate(tqdm.tqdm(train_dataloader, disable=True)):
+        for i, (images, image_data) in enumerate(train_dataloader, disable=True):
             # images = images.to(device)
             # image_data = image_data.to(device)
 

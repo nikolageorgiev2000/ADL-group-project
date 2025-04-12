@@ -1,10 +1,7 @@
 import xml.etree.ElementTree as ET
-import math
-import copy
 import os
 import torch
 import numpy as np
-import tqdm
 from PIL import Image
 from enum import Enum
 from typing import List, Set
@@ -122,7 +119,7 @@ class InMemoryPetSegmentationDataset(Dataset):
         else:
             self.sam_data_dict = {}
 
-        for idx, fname in enumerate(tqdm.tqdm(self.available_images, desc="Loading dataset", disable=False)):
+        for idx, fname in enumerate(self.available_images, desc="Loading dataset", disable=False):
             img_path = os.path.join(data_dir, fname + '.jpg')
             img = Image.open(img_path).convert('RGB')
             img = self.image_transform(img)

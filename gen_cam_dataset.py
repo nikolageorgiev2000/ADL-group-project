@@ -3,7 +3,6 @@ import torchvision
 from torch.utils.data import Dataset, DataLoader
 import torch
 import torch.nn as nn
-import tqdm
 import os
 import matplotlib.pyplot as plt
 from PIL import Image
@@ -72,13 +71,13 @@ def train_model(model, train_loader, num_epochs):
     print(f"Training on {device}...")
 
     # Training loop
-    for epoch in tqdm.tqdm(range(num_epochs)):
+    for epoch in range(num_epochs):
         model.train()
         running_loss = 0.0
         correct = 0
         total = 0
         
-        for images, image_data in tqdm.tqdm(train_loader, desc=f"Epoch {epoch+1}/{num_epochs}"):
+        for images, image_data in train_loader:
             images = images.to(device)
             labels = image_data[DatasetSelection.Class].to(device)
             
