@@ -326,9 +326,9 @@ if __name__ == "__main__":
     with open(f"{experiment_folder}/results.pkl", "rb") as f:
         results = pickle.load(f)
 
-    from utils.metrics import evaluate_and_visualize_trimaps
+    from utils.metrics import evaluate_trimaps
     # Run evaluation and visualization
-    metrics = evaluate_and_visualize_trimaps(results, experiment_folder, iou_threshold=0.5)
+    metrics = evaluate_trimaps(results, experiment_folder, iou_threshold=0.5)
 
     # Access metrics if needed
     print(f"Classification accuracy: {metrics['classification_accuracy']}")

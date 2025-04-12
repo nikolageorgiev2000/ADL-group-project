@@ -1,5 +1,16 @@
-# This part of the repo does two things
-1. Using SAM to generate additional segmentation labels for training samples from bounding boxes (using the first 10 images as an example only)
+# Installation instructions
+At the parent folder (not ./weakly_supervised but ./ADL-group-project), run
+
+```git submodule update --init --recursive```
+
+Note this is our own version of sam with dependencies removed so you can't just git clone the original sam repo. This submodule points here [Yeok-c/sam2](https://github.com/Yeok-c/sam2/tree/minimal_dependencies)
+
+1 dependency added to the overall project:
+```omegaconf```
+
+# This part of the repo does three things. 
+
+## 1. Using SAM to generate additional segmentation labels for training samples from bounding boxes (using the first 10 images as an example only)
 ```
 # run from weakly_supervised folder
 python ./generate_sam_samples_for_training.py --dataset_size 10 
@@ -7,7 +18,12 @@ python ./generate_sam_samples_for_training.py --dataset_size 10
 This will use the Oxford-IIT data in ```../data```
 Then generate the additional samples and output it as ```.pt``` tensors in ```./sam_masks``` and the first 8 for visualization as png
 
-2. Using CAM as a prompt for SAM 
+## 2. Using CAM as weakly supervised method
+```
+python ./cam.py
+``` 
+
+## 3. Using CAM as a prompt for SAM 
 ```
 # run from weakly_supervised folder
 python ./cam_sam.py --dataset_size 8
@@ -61,3 +77,6 @@ Results
 
 Full Visualizations
 https://drive.google.com/drive/folders/1MkT7KtbhT8KrOmRL2B0WBmmRF_iZv9pN?usp=sharing
+
+# Notes
+The ```.py``` files fulfill your assignment requirements but have poor visualization. The ```.pynb``` files have excellent visualization but requires cv2, matplotlib.
