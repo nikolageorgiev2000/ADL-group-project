@@ -1,25 +1,10 @@
-import xml.etree.ElementTree as ET
 import torchvision
 from torch.utils.data import Dataset, DataLoader
 import torch
 import torch.nn as nn
 import os
-import matplotlib.pyplot as plt
-from PIL import Image
-from torchvision import transforms
-import numpy as np
-import segmentation_models_pytorch as smp
-from segmentation_models_pytorch.encoders import get_preprocessing_fn
-from torchvision.datasets import OxfordIIITPet
 import torch.nn as nn
-import torch.nn.functional as F
 import torch.optim as optim
-from torch.utils.data import random_split
-from evaluation_metrics import accuracy_score, recall_score, jaccard_score, f1_score
-import numpy as np
-from enum import Enum
-from typing import Dict, List, Tuple, Set
-
 from datasets import *
 
 
