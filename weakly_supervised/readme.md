@@ -8,22 +8,27 @@ Note this is our own version of sam with dependencies removed so you can't just 
 1 dependency added to the overall project:
 ```omegaconf```
 
-# This part of the repo does three things. 
-
-## 1. Using SAM to generate additional segmentation labels for training samples from bounding boxes (using the first 10 images as an example only)
+# We use SAM to generate segmentation masks from bounding boxes
+Demonstration with the first 10 images as an example only
 ```
 # run from weakly_supervised folder
-python ./generate_sam_samples_for_training.py --dataset_size 10 
+python ./generate_sam_mask_from_bounding_box.py --dataset_size 10 
 ```
 This will use the Oxford-IIT data in ```../data```
 Then generate the additional samples and output it as ```.pt``` tensors in ```./sam_masks``` and the first 8 for visualization as png
 
-## 2. Using CAM as weakly supervised method
+
+
+
+
+
+# Older scripts
+## Using CAM as weakly supervised method
 ```
 python ./cam.py
 ``` 
 
-## 3. Using CAM as a prompt for SAM 
+## Using CAM as a prompt for SAM 
 ```
 # run from weakly_supervised folder
 python ./cam_sam.py --dataset_size 8
