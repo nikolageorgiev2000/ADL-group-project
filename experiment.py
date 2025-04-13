@@ -177,9 +177,9 @@ def evaluate_model_metrics(model, dataloader, device):
 
             # Calculate metrics for the batch and accumulate
             total_accuracy += accuracy_score(targets, preds) * len(targets)
-            total_recall += recall_score(targets, preds, average='binary') * len(targets)
-            total_jaccard += jaccard_score(targets, preds, average='binary') * len(targets)
-            total_f1 += f1_score(targets, preds, average='binary') * len(targets)
+            total_recall += recall_score(targets, preds, average='macro') * len(targets)
+            total_jaccard += jaccard_score(targets, preds, average='macro') * len(targets)
+            total_f1 += f1_score(targets, preds, average='macro') * len(targets)
             total_samples += len(targets)
 
     # Calculate average metrics
