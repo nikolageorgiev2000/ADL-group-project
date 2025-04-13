@@ -15,7 +15,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 from torch.utils.data import random_split
-from sklearn.metrics import accuracy_score, recall_score, jaccard_score, f1_score
+from evaluation_metrics import accuracy_score, recall_score, jaccard_score, f1_score
 import numpy as np
 from enum import Enum
 from typing import Dict, List, Tuple, Set
