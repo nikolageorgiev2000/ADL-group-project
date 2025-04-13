@@ -9,7 +9,6 @@ from PIL import Image
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), 'sam2')))
-from utils.tqdm import tqdm # homemade tqdm
 
 # import matplotlib.pyplot as plt
 import xml.etree.ElementTree as ET
@@ -140,7 +139,7 @@ if __name__ == "__main__":
     print(f"Processing {sample_size} images using mode '{mode}'...")
 
 
-    for idx in tqdm(selected_indices):
+    for idx in selected_indices:
         try:
             img_path = os.path.join(images_dir, f'{valid_images[idx]}.jpg')
             img = Image.open(img_path)
